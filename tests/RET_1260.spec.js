@@ -2,13 +2,14 @@ import { test, expect } from '@playwright/test';
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('Login to HALO application', async ({ page }) => {
+test('Validate size filter', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
-
     await common.goToHALOShop();
-    //await common.loginAndSubmit('TU_LAB_HALO_NIN_ADM', 'Password01@$')
-    //await common.logout()
-
+    await common.closeHolidayDealsPopup()
+    await pa.enterItemToSearch('Hoodies')
+    await pa.clickOnSizeFilterInPLP()
+    await pa.validateAllSizeFiltersArePresent()
+   
 });
 
