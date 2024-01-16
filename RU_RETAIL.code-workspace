@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "RU_RETAIL",
+			"path": "../HARDROCK_RETAL/RU_RETAIL"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
