@@ -26,7 +26,6 @@ exports.commonSteps = class commonSteps{
         await expect(this.page).toHaveURL('https://staging-na01-hardrock.demandware.net/');
 
         //await expect(this.page).toHaveURL('https://dev.shop.hardrock.com/');
->>>>>>> 22744f9a47181f9ea5286447d0f8d61716ef0e7a
     }
     async loginAndSubmit(username, password){
         await this.username_textbox.type(username);
@@ -40,19 +39,16 @@ exports.commonSteps = class commonSteps{
     async logout(){
         await this.logout_button.click();
     }
-<<<<<<< HEAD
     async closeHolidayDealsPopup(){
     await this.closeHolidayDeal.click();
     }
 
     async navigateBack()    {
         await this.page.goBack();
-     }
+    }
 }
 
 
 
-=======
-}
 
->>>>>>> 22744f9a47181f9ea5286447d0f8d61716ef0e7a
+

@@ -81,7 +81,7 @@ exports.playerAction = class playerAction {
         this.plpSizeXL = page.getByRole('button', { name: 'Refine by Size: XL' })
         this.plpSizeXXL = page.getByRole('button', { name: 'Refine by Size: XXL' })
         this.plpSizeXXXL = page.getByRole('button', { name: 'Refine by Size: XXXL' })
-<<<<<<< HEAD
+
         this.messiAdultFitNavyHoodie = page.locator('//a[contains(text(),"Messi Adult Fit Navy Hoodie")]')
         this.pdpSizeS = page.locator('//button[@data-attr-value="S"]')
         this.pdpSizeM = page.locator('//button[@data-attr-value="M"]')
@@ -323,7 +323,11 @@ exports.playerAction = class playerAction {
        this.HOMEPDPPATH = page.locator('//li[@class="breadcrumb-item"]//a[@href="/" and contains(text(), "Home")]')
        this.WOMENcategoryPDPPATH = page.locator('//li[@class="breadcrumb-item"]//a[@href="/women" ]')
        this.JOGGERSETsubcategoryPDPPATH = page.locator('//li[@class="breadcrumb-item"]//a[@href="/women/jogger-sets"]')
-       
+       //RET_1260
+      this.vFilteredItems = page.locator('//div[@class="grid-result-count-mb thesansb5_plain font-weight-500 font-size-14 mb-3 mx-n2b mx-sm-0 text-right"]')
+
+         
+    
        
       //RET_484
       this.searchKEYWORD = page.locator('(//button[@aria-label="Submit search keywords"])[1]')
@@ -1120,19 +1124,11 @@ async validateShippingIsDisplayed(){
        async validateSuggestedProductPDP(){
          await expect(this.suggestedProductPDP).toBeVisible();
        }
-      
-}
-    
 
     
-=======
         
 
-        //RET_1260
-        this.vFilteredItems = page.locator('//div[@class="grid-result-count-mb thesansb5_plain font-weight-500 font-size-14 mb-3 mx-n2b mx-sm-0 text-right"]')
-
-         
-    } 
+     
     
     
 
@@ -1360,70 +1356,7 @@ async validateShippingIsDisplayed(){
             this.page.locator("//button[@id='btnNext']").click(),
         ]);
         console.log(newWindow.url());
-    }
+      }
 
-    
-
-    
-
-
-   
-}
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 22744f9a47181f9ea5286447d0f8d61716ef0e7a
-
-   
-
-
-
-<<<<<<< HEAD
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-=======
->>>>>>> 22744f9a47181f9ea5286447d0f8d61716ef0e7a
-
+       
+   }
