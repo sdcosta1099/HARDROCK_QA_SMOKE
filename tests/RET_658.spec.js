@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(60000000);
+test.setTimeout(60000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 

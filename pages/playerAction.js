@@ -325,9 +325,6 @@ exports.playerAction = class playerAction {
        this.JOGGERSETsubcategoryPDPPATH = page.locator('//li[@class="breadcrumb-item"]//a[@href="/women/jogger-sets"]')
        //RET_1260
       this.vFilteredItems = page.locator('//div[@class="grid-result-count-mb thesansb5_plain font-weight-500 font-size-14 mb-3 mx-n2b mx-sm-0 text-right"]')
-
-         
-    
        
       //RET_484
       this.searchKEYWORD = page.locator('(//button[@aria-label="Submit search keywords"])[1]')
