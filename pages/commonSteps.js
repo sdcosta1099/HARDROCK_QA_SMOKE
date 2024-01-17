@@ -13,11 +13,21 @@ exports.commonSteps = class commonSteps{
     
     
     async goToHALOShop(){
+<<<<<<< HEAD
         //await this.page.goto('https://storefront:Rock$h0p@staging-na01-hardrock.demandware.net/');
         await this.page.goto('https://storefront:Rock$h0p@dev.shop.hardrock.com/');
         await expect(this.page).toHaveTitle('Hard Rock - Online Rock Shop | Online Hard Rock Store ');
         //await expect(this.page).toHaveURL('https://staging-na01-hardrock.demandware.net/');
         await expect(this.page).toHaveURL('https://dev.shop.hardrock.com/');
+=======
+        await this.page.goto('https://storefront:Rock$h0p@staging-na01-hardrock.demandware.net/');
+
+        //await this.page.goto('https://storefront:Rock$h0p@dev.shop.hardrock.com/');
+        await expect(this.page).toHaveTitle('Hard Rock - Online Rock Shop | Online Hard Rock Store ');
+        await expect(this.page).toHaveURL('https://staging-na01-hardrock.demandware.net/');
+
+        //await expect(this.page).toHaveURL('https://dev.shop.hardrock.com/');
+>>>>>>> 22744f9a47181f9ea5286447d0f8d61716ef0e7a
     }
     async loginAndSubmit(username, password){
         await this.username_textbox.type(username);
@@ -31,6 +41,7 @@ exports.commonSteps = class commonSteps{
     async logout(){
         await this.logout_button.click();
     }
+<<<<<<< HEAD
     async closeHolidayDealsPopup(){
     await this.closeHolidayDeal.click();
     }
@@ -42,3 +53,7 @@ exports.commonSteps = class commonSteps{
 
 
 
+=======
+}
+
+>>>>>>> 22744f9a47181f9ea5286447d0f8d61716ef0e7a
