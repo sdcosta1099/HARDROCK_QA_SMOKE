@@ -34,10 +34,9 @@ module.exports = defineConfig({
   use: {
       
       launchOptions: {
-<<<<<<< HEAD
-=======
+        
         args: ["--start-maximized"],
->>>>>>> 22744f9a47181f9ea5286447d0f8d61716ef0e7a
+
         slowMo: 1000
       },
     /* Base URL to use:  in actions like `await page.goto('/')`. */
