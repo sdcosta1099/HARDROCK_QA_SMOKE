@@ -3,18 +3,14 @@ test.setTimeout(60000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('RET_1261_Validate size filter sequence on the PDP', async ({ page }) => {
+test('RET_1259_Validate size filter', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
     await common.goToHALOShop();
     await common.closeHolidayDealsPopup()
 
   await pa.enterItemToSearch('Hoodie')
-  await pa.clickOnMessiAdultFitNavyHoodie()
-  await pa.validatePDPSizesAreDisplayed()
-  await pa.selectSizeLFromPDP()
-  await pa.clickOnPDPAddToBag()
-  await pa.clickOnCartLogo()
-  await pa.validateItemIsAddedToCart()
+  await pa.clickOnPLPSize()
+  await pa.validatePLPSizeFilters()
 
 });

@@ -5,7 +5,7 @@ const { defineConfig, devices } = require('@playwright/test');
 
 export default defineConfig({
   expect: {
-    timeout: 60 * 1000,
+    timeout: 80 * 1000,
   },
 });
 
@@ -32,7 +32,11 @@ module.exports = defineConfig({
   reporter:[['html'], ['allure-playwright',{outputFolder:'allure-results'}]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    /* Base URL to use in actions like `await page.goto('/')`. */
+      
+      launchOptions: {
+        slowMo: 1000
+      },
+    /* Base URL to use:  in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
