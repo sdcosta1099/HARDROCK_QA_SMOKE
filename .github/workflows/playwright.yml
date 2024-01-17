@@ -23,6 +23,6 @@ jobs:
       uses: actions/upload-artifact@v3
       
       with:
-        name: allure-report
-        path: allure-report
+        name: playwright-report
+        path: playwright-report/
         retention-days: 30
