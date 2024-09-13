@@ -88,7 +88,6 @@ module.exports = defineConfig({
        name: 'chromium',
        use: { //...devices['Desktop Chrome'],
               channel: 'chrome',
-              headless: true,
               viewport: null
           },
      },
