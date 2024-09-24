@@ -40,6 +40,7 @@ test('UH_9512_HALo | Quick Offers | New fields in Quick Offers', async ({ page }
   await pa.clickOnSearchForQuickOffer()
   await pa.validateOfferCreatedDisplayed()
   await common.logout();
+  // 
 
   });
 
