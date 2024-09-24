@@ -19,6 +19,8 @@ export default defineConfig({
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
+  
+
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -31,7 +33,11 @@ module.exports = defineConfig({
   
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+<<<<<<< HEAD
   reporter:[['html'], ['allure-playwright',{outputFolder:'allure-results-7Jan2023'}]],
+=======
+  reporter:[['html'], ['allure-playwright',{outputFolder:'allure-results-5Sep2024'}]],
+>>>>>>> 17b43958f2e013606897d1885c0c62548a4bb81b
 
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */

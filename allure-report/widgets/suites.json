@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"total":1,"items":[{"uid":"36c900977e1d8b81a2c6893cc82bfc01","name":"chromium","statistic":{"failed":1,"broken":2,"skipped":0,"passed":43,"unknown":0,"total":46}}]}
+=======
+{"total":1,"items":[{"uid":"36c900977e1d8b81a2c6893cc82bfc01","name":"chromium","statistic":{"failed":2,"broken":6,"skipped":0,"passed":80,"unknown":0,"total":88}}]}
+>>>>>>> 17b43958f2e013606897d1885c0c62548a4bb81b
