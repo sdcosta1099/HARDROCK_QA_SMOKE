@@ -32,12 +32,9 @@ module.exports = defineConfig({
   workers: process.env.CI ? 1 : undefined,
   
 
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-<<<<<<< HEAD
   reporter:[['html'], ['allure-playwright',{outputFolder:'allure-results-7Jan2023'}]],
-=======
-  reporter:[['html'], ['allure-playwright',{outputFolder:'allure-results-5Sep2024'}]],
->>>>>>> 17b43958f2e013606897d1885c0c62548a4bb81b
+//   reporter:[['html'], ['allure-playwright',{outputFolder:'allure-results-5Sep2024'}]],
+// >>>>>>> 17b43958f2e013606897d1885c0c62548a4bb81b
 
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
