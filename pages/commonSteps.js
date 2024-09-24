@@ -13,9 +13,9 @@ exports.commonSteps = class commonSteps{
     };
     
     async goToHALOWebApplication(){
-        await this.page.goto('https://www.facebook.com/');
+        //await this.page.goto('https://www.facebook.com/');
 
-        // await this.page.goto('https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx');
+        await this.page.goto('https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx');
         // await expect(this.page).toHaveURL('https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx');
     }
     
