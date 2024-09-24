@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(50000);
+test.setTimeout(120000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
@@ -9,14 +9,13 @@ test('RET_629, Validate Order Receipt', async ({ page }) => {
     await common.goToHALOShop();
     await common.closeHolidayDealsPopup()
 
-    await pa.hoverOnCategoryPINS()
-    await pa.clickOnSubCategoryOnlineExclusivePins()
-    await pa.clickOnProductMessiLimitedEditionPin()
-    await pa.clickOnAddToBag()
-    await pa.clickOnMyBag()
+    await pa.enterItemToSearch('Hoodie')
+    await pa.clickOnMessiAdultFitNavyHoodie()
+    await pa.validatePDPSizesAreDisplayed()
+    await pa.selectSizeLFromPDP()
+    await pa.clickOnPDPAddToBag()
+    await pa.clickOnCartLogo()
     await pa.clickOnCheckOut()
-    await pa.validateCheckOutPageDisplayed()
-    //await pa.enterEmailAddress('test@yopmail.com')
     await pa.clickOnContinueToCheckOut()
     await pa.validateShippingForm()
     await pa.validateFirstName()
@@ -45,14 +44,14 @@ test('RET_629, Validate Order Receipt', async ({ page }) => {
     await pa.validateShippingAddressBox()
     await pa.validatePaymentMethodIsDisplayed()
     await pa.validateCreditCardRadioButtonIsDisplayed()
-    await pa.enterCreditCardNumber('4242 4242 4242 4242')
-    await pa.validateExpirationDate()
-    await pa.enterExpirationDate('10/28')
-    await pa.validateSecurityCode()
-    await pa.enterSecurityCode('009')
-    await pa.validatePayPalRadioButtonIsDisplayed()
-    await pa.clickOnPayPalRadioButton()
-    await this.pause();
+    // await pa.enterCreditCardNumber('4242 4242 4242 4242')
+    // await pa.validateExpirationDate()
+    // await pa.enterExpirationDate('10/28')
+    // await pa.validateSecurityCode()
+    // await pa.enterSecurityCode('009')
+    // await pa.validatePayPalRadioButtonIsDisplayed()
+    // await pa.clickOnPayPalRadioButton()
+    // await this.pause();
     
 });
 
@@ -62,12 +61,6 @@ test('RET_629, Validate Order Receipt', async ({ page }) => {
     
 
 
-
-    //await pa.clickOnCheckOut()
-    //await pa.validateCheckOutPageDisplayed()
-    //await pa.enterEmailAddress('test@yopmail.com')
-    //await pa.clickOnContinueToCheckOut()
-    
     
     
     

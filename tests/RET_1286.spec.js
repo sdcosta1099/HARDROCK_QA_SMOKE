@@ -18,13 +18,5 @@ test('RET_1286_Validate PDP Category Breadcrumb', async ({ page }) => {
   await pa.validate_WOMEN_Category_PDP_PATH_is_clickable()
   await pa.validate_JOGGERSET_subcategory_is_clickable()
 
-
-    //await pa.clickOnCategoryPINS()
-    //await pa.clickOnSubCategory3DPINS()
-    //await pa.validatehomeCategorySubcatogeryPathDisplayed()
-    //await pa.clickOnProductPINS()
-    //await pa.validateProductDetailPage()
-    
-
     
 });

@@ -10,10 +10,9 @@ test('Unity User PayPal Buy Now from Mini Bag | Desktop Only |', async ({ page }
     await common.closeHolidayDealsPopup()
 
     await pa.clickOnSignInButton()
-    await pa.validateUnityWebsiteDisplayed()
-    await pa.enterEmailAddress('test@yopmail.com') 
-    await pa.enterPassWord('Password01@') 
-    await pa.clickOnLogin()
+    // await pa.enterEmailAddress('500236845') 
+    // await pa.enterPassWord('Password01@') 
+    // await pa.clickOnLogin()
     
     
     

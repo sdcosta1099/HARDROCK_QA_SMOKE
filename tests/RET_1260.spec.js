@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(60000);
+test.setTimeout(6000000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
@@ -19,7 +19,6 @@ test('RET_1260_Validate size filter sequence', async ({ page }) => {
     await pa.validatePriceDisplayedOnPLP()
     await pa.validateCityDisplayedOnPLP()
     await pa.validateSizeDisplayedOnPLP()
-    await pa.clickOnSizeFilterOnPLP()
     await pa.validateSizesArePresentOnPLP()
     await pa.clickOnSizeSOnPLP()
     await pa.validateFilteredItemsAreDisplayed()

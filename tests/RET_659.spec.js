@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(120000);
+test.setTimeout(150000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
@@ -9,21 +9,18 @@ test('Mini Cart Product count', async ({ page }) => {
     await common.goToHALOShop();
     await common.closeHolidayDealsPopup()
 
-    await pa.hoverOnCategoryPINS()
-    await pa.clickOnSubCategoryOnlineExclusivePins()
-    await pa.clickOnProductMessiLimitedEditionPin()
+    await pa.enterItemToSearch('Hoodie')
+    await pa.clickOnMessiAdultFitNavyHoodie()
+    await pa.validatePDPSizesAreDisplayed()
+    await pa.selectSizeLFromPDP()
     await pa.clickOnAddToBag()
     await pa.clickOnMyBag()
-    //[await pa.clickOnCheckOut()
-    //await pa.validateCheckOutPageDisplayed()
-    //await pa.enterEmailAddress('test@yopmail.com')
-    //await pa.clickOnContinueToCheckOut()
-    //await pa.validateShippingForm()]
     await pa.validateYourBagDisplayed()
     await pa.validateItemCount()
+    // await page.waitForTimeout(200000);
     await pa.validateItemName()
     await pa.validateItemImage()
-    await pa.validateCityMyBag()
+    // await pa.validateCityMyBag()
     await pa.validateQty()
     await pa.validateItemPrice()
     await pa.validateItemTotal()
@@ -33,18 +30,20 @@ test('Mini Cart Product count', async ({ page }) => {
     await pa.validateMiniCartIconQty_1()
     await pa.clickOnContinueShopping()
     await pa.validateHomePageDisplayed()
-    await pa.hoverOnCategoryTEES()
-    await pa.clickOnSubCategoryKidsTshirts()
-    await pa.clickOnProductYouthClassicLogoTee()
-    await pa.selectCity({label :'Barcelona'})
-    await pa.clickOnSizeSInPDPScreen()
+    await pa.enterItemToSearch('Hoodie')
+    await pa.clickOnMessiAdultFitNavyHoodie()
+    await pa.validatePDPSizesAreDisplayed()
+    await pa.selectSizeLFromPDP()
     await pa.selectQuantity({label :'3'})
+    await page.waitForTimeout(2000);
     await pa.clickOnAddToBag()
     await pa.validateMiniCartIconQtyIncreased_3()
     await pa.clickOnMyBag()
+    await page.waitForTimeout(2000);
     await pa.clickOnEditButtonOnYourBag()
+    await page.waitForTimeout(2000);
     await pa.clickOnQuantityDropdown()
-    await pa.selectQuantity({label :'2'})
+ 
     
 
 

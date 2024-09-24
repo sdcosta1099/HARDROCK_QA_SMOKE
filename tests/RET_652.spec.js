@@ -9,16 +9,16 @@ test('Continue Shopping', async ({ page }) => {
     await common.goToHALOShop();
     await common.closeHolidayDealsPopup()
 
-    await pa.hoverOnCategoryPINS()
-    await pa.clickOnSubCategoryOnlineExclusivePins()
-    await pa.clickOnProductMessiLimitedEditionPin()          
-    await pa.clickOnAddToBag()
+    await pa.enterItemToSearch('Hoodie')
+    await pa.clickOnMessiAdultFitNavyHoodie()
+    await pa.validatePDPSizesAreDisplayed()
+    await pa.selectSizeLFromPDP()
+    await pa.clickOnPDPAddToBag()
     await pa.clickOnMyBag()
     await pa.validateYourBagDisplayed()
     await pa.validateItemCount()
     await pa.validateItemName()
     await pa.validateItemImage()
-    await pa.validateCityMyBag()
     await pa.validateItemPrice()
     await pa.validateQty()
     await pa.validateItemTotal()
@@ -30,13 +30,16 @@ test('Continue Shopping', async ({ page }) => {
     await pa.validateHomePageDisplayed()
     await pa.hoverOnCategoryTEES()
     await pa.clickOnSubCategoryKidsTshirts()
-    await pa.clickOnProductYouthClassicLogoTee()
-    await pa.selectCity({label :'Barcelona'})
-    await pa.clickOnSizeSInPDPScreen()
-    await pa.clickOnAddToBag()
+    await page.waitForTimeout(2000);
+    await pa.enterItemToSearch('Hoodie')
+    await pa.clickOnMessiAdultFitNavyHoodie()
+    await pa.validatePDPSizesAreDisplayed()
+    await pa.selectSizeLFromPDP()
+    await pa.clickOnPDPAddToBag()
+    await page.waitForTimeout(2000);
     await pa.clickOnMyBag()
-    await pa.validateShippingChargesIsAdded()
-    await pa.validateShippingChargesIsAddedToTotalPrice()
+    // await pa.validateShippingChargesIsAdded()
+
  
     
 

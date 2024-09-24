@@ -10,7 +10,7 @@ test('RET_485_Verify sort options', async ({ page }) => {
     await common.closeHolidayDealsPopup()
 
   await pa.enterItemToSearch('Hoodie')
-  
+  //validate
   await pa.clickonSortBy()
   await pa.clickonNewArrivals()
   await pa.clickonSortBy()

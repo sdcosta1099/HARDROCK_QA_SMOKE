@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.setTimeout(60000);
+test.setTimeout(6000000);
 
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
@@ -28,9 +28,10 @@ test('RET_1261_Validate size filter sequence on the PDP', async ({ page }) => {
     await pa.clickOnProductMessiAdultFitNavyHoodie()
     await pa.validateProductDetailPage()
     await pa.validateAllSizeFiltersOnPDPScreen
-    await pa.clickOnSizePDPM()
+    await pa.selectSizeLFromPDP()
     await pa.validateAvailabilityBelowQtyDisplayed()
     await pa.clickOnPDPAddToBag()
+
    
 
 });

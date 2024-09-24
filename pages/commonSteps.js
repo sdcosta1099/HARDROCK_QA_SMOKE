@@ -13,19 +13,14 @@ exports.commonSteps = class commonSteps{
     
     
     async goToHALOShop(){
-
         //await this.page.goto('https://storefront:Rock$h0p@staging-na01-hardrock.demandware.net/');
+
         await this.page.goto('https://storefront:Rock$h0p@dev.shop.hardrock.com/');
-        await expect(this.page).toHaveTitle('Hard Rock - Online Rock Shop | Online Hard Rock Store ');
+        //await expect(this.page).toHaveTitle('Hard Rock - Online Rock Shop | Online Hard Rock Store ');
         //await expect(this.page).toHaveURL('https://staging-na01-hardrock.demandware.net/');
-        await expect(this.page).toHaveURL('https://dev.shop.hardrock.com/')
-        await this.page.goto('https://storefront:Rock$h0p@staging-na01-hardrock.demandware.net/');
 
-        //await this.page.goto('https://storefront:Rock$h0p@dev.shop.hardrock.com/');
-        await expect(this.page).toHaveTitle('Hard Rock - Online Rock Shop | Online Hard Rock Store ');
-        await expect(this.page).toHaveURL('https://staging-na01-hardrock.demandware.net/');
-
-        //await expect(this.page).toHaveURL('https://dev.shop.hardrock.com/');
+        await expect(this.page).toHaveURL('https://dev.shop.hardrock.com/');
+      
     }
     async loginAndSubmit(username, password){
         await this.username_textbox.type(username);

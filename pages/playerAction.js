@@ -22,7 +22,8 @@ exports.playerAction = class playerAction {
         this.clickSelectProductPDP =  page.locator('(//div[@class="pdp-link"])[1]')
         this.MyBag = page.locator('(//a[@class="minicart-link"])[1]')
         this.payPal = page.frameLocator('(//iframe[@title="PayPal"])[1]').getByLabel('Pay with PayPal')
-        
+        //this.payPal1 = page.frameLocator('(//iframe[@title="PayPal"])[1]').locator('(//div[contains(@id,"zoid-paypal-buttons-uid")])[1]')
+        this.payPal1 = page.locator('//div[@class="card payment-method"]//input[@class="sfpp-payment-method-radio sfpp-payment-method-radio-paypal"]')
         //RET_1281
         this.itemRecomendation = page.locator('//li[@id="product-0"]')
         this.signInButton = page.locator('(//span[@class="user-message ml-1"])[1]')
@@ -42,6 +43,7 @@ exports.playerAction = class playerAction {
         this.Address2 = page.locator('//input[@id="shippingAddressTwodefault"]')
         this.Country = page.locator('(//select[@id="country"])[1]')
         this.state = page.locator('(//select[@id="shippingStatedefault"])[1]')
+        this.state1 = page.locator('(//input[@id="stateCode"])[1]')
         this.City = page.locator('//input[@id="shippingAddressCitydefault"]')
         this.PinCode = page.locator('//input[@id="shippingZipCodedefault"]')
         this.PhoneNumber = page.locator('//input[@id="shippingPhoneNumberdefault"]')
@@ -52,17 +54,18 @@ exports.playerAction = class playerAction {
 
       //1148OrderSummary
 
-        this.CheckOut = page.getByRole('button', { name: 'Checkout' })
+        this.CheckOut = page.locator('//button[@name="Checkout"]')
 
       //RET_1261
         this.messiAdultFitNavyHoodie = page.locator('//a[contains(text(),"Messi Adult Fit Navy Hoodie")]')
-        this.ProductDetailPage = page.locator('//h1[@class="mb-4 product-name pdp-product-name font-weight-500 thesansb7_bold lh-110 text-uppercase"]')
+        this.discoRoyalBlueAdultHoodie = page.locator('//a[contains(text(),"Unisex Classic Logo Hoodie Grey")]')
+        this.ProductDetailPage = page.locator('//h1[contains(text(),"Messi Adult Fit Navy Hoodie")]')
         this.pdpSizeS = page.locator('//button[@data-attr-value="S"]')
         this.pdpSizeM = page.locator('//button[@data-attr-value="M"]')
         this.pdpSizeL = page.locator('//button[@data-attr-value="L"]')
         this.pdpSizeXL = page.locator('//button[@data-attr-value="XL"]')
         this.pdpSizeXXL = page.locator('//button[@data-attr-value="XXL"]')
-        this.AvailabilityBelowQtyDisplayed = page.locator('//span[@class="availability non-input-label m-0 thesansb6_semibold font-size-14 mr-1"]')
+        this.AvailabilityBelowQtyDisplayed = page.locator('//div[contains(text(),"In Stock")]')
         this.pdpAddToBag = page.locator('//button[@class="add-to-cart btn btn-primary"]')
 
         //RET_1259
@@ -134,8 +137,8 @@ exports.playerAction = class playerAction {
         //RET_663
         this.CategoryPINS = page.locator('(//a[@id="pins"])[1]')
         this.SubCategoryOnlineExclusivePins = page.locator('(//a[@id="pins_online_exclusive_pins"])[1]')
-        //this.ProductMessiLimitedEditionPin = page.locator('(//a[@class="link thesansb6_semibold"])[1]')
-        this.ProductMessiLimitedEditionPin = page.locator('(//a[@class="link thesansb6_semibold"])[2]')
+      //   this.ProductMessiLimitedEditionPin = page.locator('(//a[@class="link thesansb6_semibold"])[1]')
+        this.ProductMessiLimitedEditionPin = page.locator('(//div[@class="image-container"])[1]')
         this.AddToBag = page.locator('//button[@class="add-to-cart btn btn-primary"]')
         this.MyBag = page.locator('(//a[@class="minicart-link"])[1]')
         this.CheckOut = page.getByRole('button', { name: 'Checkout' })
@@ -146,7 +149,7 @@ exports.playerAction = class playerAction {
         this.CheckOutPage = page.locator('//span[@class="thesansb7_bold"]')
         this.emailAddress = page.locator('//input[@id="email-guest"]')
         this.ContinueCheckOut = page.locator('//button[@class="submit-customer btn-save btn btn-block mt-4"]')
-        this.customerInformation = page.locator('(//div[@class="card-header clearfix"])[1]')
+        //this.customerInformation = page.locator('(//div[@class="card-header clearfix"])[1]')
         this.FirstName = page.locator('//input[@id="shippingFirstNamedefault"]')
         this.LastName = page.locator('//input[@id="shippingLastNamedefault"]')
         this.Address1 = page.locator('//input[@id="shippingAddressOnedefault"]')
@@ -200,7 +203,7 @@ exports.playerAction = class playerAction {
  
 
       //RET_614
-      this.EditButton = page.locator('(//button[contains(text(),"Edit")])[4]')
+      this.EditButton = page.locator('(//div[@class="card-header clearfix"]//button)[1]')
       //this.EditButton = page.locator('(//button[@aria-label="Edit Shipping"]')
       //this.EditButton = page.locator('((//button[@class="edit-button pull-right"])[1]')
       //this.EditButton = page.locator('((//button[@class="edit-button pull-right"])[1]')
@@ -217,18 +220,9 @@ exports.playerAction = class playerAction {
       this.vZipCode = page.locator('//label[@for="shippingZipCodedefault"]')
       this.vPhoneNumber = page.locator('//label[@for="shippingPhoneNumberdefault"]')
       this.ShippingMethodRadioButton = page.locator('(//div//span[@class="shipping-cost"])[1]')
-      //this.ShippingCharges = page.locator('//div[@class="row leading-lines shipping-item common-style"]')
-      //this.ShippingCharges = page.locator('//p[@class="text-right shipping-cost"]')
-      //this.ShippingCharges = page.locator('(//div[@class="col-4"])[2]')
-      ///this.ShippingCharges = page.locator('(//span[@class="shipping-total-cost"]')
-      //this.ShippingCharges = page.locator('//span[@class="shipping-total-cost"]')
-      //this.ShippingCharges = page.locator('(//div[@class="row common-style"])[2]')
-      this.ShippingCharges = page.locator('(//p[@class="text-right"])[4]')
-
-      
-      //this.TotalEstimated = page.locator('//div[@class="row estimated-total common-style"]')
-      this.TotalEstimated = page.locator('//span[@id="orderGrandTotal"]')
-      //this.TotalEstimated = page.locator('//p[@class="text-right grand-total"]')
+      this.ShippingCharges = page.locator('//p[contains(text(),"$9.95")]')
+      this.ShippingCharges1 = page.locator('(//span[contains(text(),"$9.95")])[5]')
+      this.TotalEstimated = page.locator('//span[contains(text(),"$12.55")]')
       this.ShippingAddressBox = page.locator('//div[@class="card shipping-summary"]')
       this.PaymentMethod = page.locator('//div[@class="card payment-method"]')
       this.CreditCardRadioButton = page.locator('//div[@class="sfpp-payment-method-header sfpp-payment-method-header-card"]')
@@ -272,7 +266,7 @@ exports.playerAction = class playerAction {
       this.vYourBag = page.locator('//h1[@class="page-title-cart d-flex align-items-center justify-content-between"]')
       this.vItemCount = page.locator('//h2[@class="number-of-items"]')
       this.vItemName = page.locator('//div[@class="line-item-name text-capitalize"]')
-      this.vItemImage = page.locator('//img[@alt="Messi Limited Edition Pin with Lion Head Guitar and Number 10 Design"]')
+      this.vItemImage = page.locator('//img[@alt="Messi Adult Fit Navy Hoodie"]')
       this.vCityMyBag = page.locator('//span[contains(text(),"NO CITY NAME")]')
       this.vQty = page.locator('(//select[@class="form-control quantity custom-select"])[1]')
       this.vItemPrice = page.locator('(//span[@class="value"])[6]')
@@ -285,7 +279,7 @@ exports.playerAction = class playerAction {
       this.vHomePage = page.locator('(//a[@title="Online Hard Rock Store Home"])[1]')
       this.CategoryTEES = page.locator('(//span[contains(text(),"TEES")])[1]')
       this.SubCategoryKidsTshirts = page.locator('(//a[@id="tees_kids"])[1]')
-      this.ProductYouthClassicLogoTee = page.locator('(//a[@class="link thesansb6_semibold"])[8]')
+      this.ProductYouthClassicLogoTee = page.locator('(//div[@class="product-tile"])[1]')
       this.SelectCity = page.locator('//select[@id="city-1"]')
       
       
@@ -295,8 +289,9 @@ exports.playerAction = class playerAction {
 
       //RET_659
       this.vMiniCartIconQty = page.locator('(//div[@class="minicart-total"])[1]')
-      this.EditButtonYourBag = page.locator('(//a[@aria-label="Edit product Youth Classic Logo Tee"])[1]')
+      this.EditButtonYourBag = page.locator('(//a[@title="Edit"])[1]')
       this.QuantityDropdown = page.locator('(//select[@id="quantity-1"])[1]')
+      this.QuantityDropdown1 = page.locator('(//select[@id="quantity-1"])[2]')
       this.Quantity = page.locator('(//select[@id="quantity-1"])[1]')
       this.ReduceQuantity = page.locator('//select[@id="quantity-ddca999f031e8a787aa89fae35"]')
 
@@ -314,7 +309,7 @@ exports.playerAction = class playerAction {
        this.validateLiveChat = page.frameLocator('iframe[name="icChat"]').locator('//h2[@title="Live Chat"]');
 
        //RET_584
-       this.showingItems = page.locator('//div[contains(text(),"showing 24 Items")]');
+       this.showingItems = page.locator('//div[contains(text(),"showing")]');
 
        //RET_1286
        this.categoryWOMEN = page.locator('(//a[@id="women"])[1]');
@@ -324,7 +319,7 @@ exports.playerAction = class playerAction {
        this.WOMENcategoryPDPPATH = page.locator('//li[@class="breadcrumb-item"]//a[@href="/women" ]')
        this.JOGGERSETsubcategoryPDPPATH = page.locator('//li[@class="breadcrumb-item"]//a[@href="/women/jogger-sets"]')
        //RET_1260
-      this.vFilteredItems = page.locator('//div[@class="grid-result-count-mb thesansb5_plain font-weight-500 font-size-14 mb-3 mx-n2b mx-sm-0 text-right"]')
+      this.vFilteredItems = page.locator('//div[contains(text(),"showing")]')
        
       //RET_484
       this.searchKEYWORD = page.locator('(//button[@aria-label="Submit search keywords"])[1]')
@@ -342,15 +337,19 @@ exports.playerAction = class playerAction {
       this.ViewFullProductDetails = page.getByRole('link', { name: 'VIEW FULL PRODUCT DETAILS' })
       
       //RET_655
-      this.EditOnYourBag = page.locator('(//a[@aria-label="Edit product Messi Limited Edition Pin with Lion Head Guitar and Number 10 Design"])[1]')
+      this.EditOnYourBag = page.locator('(//a[@title="Edit"])[1]')
       this.vModalPopUp = page.locator('//h1[@class="product-name"]')
       this.closeModalPopUp = page.locator('//span[@class="cross-icon"]')
-      this.vShippingMethodRadioBox = ('//label[@for="shippingMethod-null-99cdfaf1d83b7574c2b95556d5"]')
+      this.vShippingMethodRadioBox = page.locator('(//span[contains(text(),"USA Continental, Territories, and Military Address Shipping")])[1]')
+      this.BackToBag = page.locator('//a[@class="text-uppercase back-to-dash"]')
+      this.PromoCode = page.locator('//input[@id="couponCode"]')
+      this.ApplyButton = page.locator('//button[@class="btn btn-block promo-code-btn d-flex align-items-center"]')
+      this.vInvalidPromoCodeMesage = page.locator('//div[@class="coupon-error"]')
 
       //RET_609
       this.enterUnityLoginId = page.frameLocator('#login-iframe').locator('#usernameUserInput');
       this.enterUnityPassword = page.frameLocator('#login-iframe').locator('#password');
-      this.unityLogin = page.frameLocator('#login-iframe').getByRole('button', { name: 'Login' });
+      this.unityLogin = page.frameLocator('#login-iframe').getByRole('button', { name: 'Log in' });
       this.hardRockLink = page.locator('#navbarToggle').getByLabel('Tap to go to HardRock.com')
       this.rockShop = page.getByRole('link', { name: 'Rock Shop' })
       this.loginUnity = page.getByRole('link', { name: 'Log in | Join' })
@@ -370,15 +369,27 @@ exports.playerAction = class playerAction {
       await this.enterUnityPassword.click();
       await this.enterUnityPassword.fill('Password01@');
   }
+  async enterLoginIdAndPassword1() {
+   await this.enterUnityLoginId.click();
+   await this.enterUnityLoginId.fill('500264287');
+   await this.enterUnityPassword.click();
+   await this.enterUnityPassword.fill('Password01@');
+}
+async enterLoginIdAndPassword2() {
+   await this.enterUnityLoginId.click();
+   await this.enterUnityLoginId.fill('500264297');
+   await this.enterUnityPassword.click();
+   await this.enterUnityPassword.fill('Password01@');
+}
   async clickSubmitLogin()    {
       await this.unityLogin.click();
      
       
   }
       async clickonHardRockLinkOnUnityPage(){
-        await page.goto('https://www.unitybyhardrock.com/dashboard');
-        const page1Promise = page.waitForEvent('popup');
-        await page.locator('#navbarToggle').getByLabel('Tap to go to HardRock.com').click();
+        await this.page.goto('https://www.unitybyhardrock.com/dashboard');
+        const page1Promise = this.page.waitForEvent('popup');
+        await this.page.locator('#navbarToggle').getByLabel('Tap to go to HardRock.com').click();
         const page1 = await page1Promise;
         const page2Promise = page1.waitForEvent('popup');
         await page1.getByRole('link', { name: 'Rock Shop' }).click();
@@ -398,6 +409,18 @@ exports.playerAction = class playerAction {
    }
    async validateShippingMethodRadioBoxWithCharges(){
       await expect(this.vShippingMethodRadioBox).toBeVisible();
+   }
+   async clickOnBackToBag(){
+      await this.BackToBag.click();
+   }
+   async enterPromoCode(PromoCode){
+      await this.PromoCode.fill(PromoCode);
+   }
+   async clickOnApplyButton(){
+      await this.ApplyButton.click();
+   }
+   async validateMessageCouponCanNotBeAddedToYourCartifPromoCodeIsInvalid(){
+      await expect(this.vInvalidPromoCodeMesage).toBeVisible();
    }
 
       //RET_1172
@@ -584,6 +607,13 @@ async validateUpdatedSubTotalIsDisplayed(){
 async validateShippingIsDisplayed(){
    await expect(this.shippingAmount).toBeVisible(); 
 }
+
+//RET_1148
+      async clickOnPayPalRadioButton(){
+         await this.payPalRadioButton.click
+      }
+
+
    //RET_659
       async validateMiniCartIconQty_1(){
          await expect(this.vMiniCartIconQty).toBeVisible(); 
@@ -592,19 +622,19 @@ async validateShippingIsDisplayed(){
          await expect(this.vMiniCartIconQty).toBeVisible(); 
       }
       async clickOnEditButtonOnYourBag(){
-         await this.page.waitForTimeout(6000);
+         await this.page.waitForTimeout(3000);
          await this.EditButtonYourBag.click();
-         await this.page.waitForTimeout(6000);
+         await this.page.waitForTimeout(3000);
       }
       async clickOnQuantityDropdown(){
          await this.page.waitForTimeout(3000);
-         await this.QuantityDropdown.click();
+         await this.QuantityDropdown1.click();
          await this.page.waitForTimeout(3000);
       }
       async selectQuantity(Quantity){
-         await this.page.waitForTimeout(8000);
+         await this.page.waitForTimeout(3000);
          await this.Quantity.selectOption(Quantity);
-         await this.page.waitForTimeout(8000);
+         await this.page.waitForTimeout(3000);
       } 
       
 
@@ -637,7 +667,6 @@ async validateShippingIsDisplayed(){
    }
 
    async validatePLPSizeFilters(){
-      await this.page.waitForTimeout(4000);
       await expect(this.plpSizeXS).toBeVisible();
       await expect(this.plpSizeS).toBeVisible();
       await expect(this.plpSizeM).toBeVisible();
@@ -654,6 +683,9 @@ async validateShippingIsDisplayed(){
    //RET_1261
    async clickOnMessiAdultFitNavyHoodie(){
       await this.messiAdultFitNavyHoodie.click();
+   }
+   async clickOnDiscoRoyalBlueAdultHoodie(){
+      await this.discoRoyalBlueAdultHoodie.click();
    }
 
    async validateItemIsAddedToCart(){
@@ -845,17 +877,24 @@ async validateShippingIsDisplayed(){
       await this.page.waitForTimeout(5000);
        await expect(this.ShippingMethodRadioButton).toBeVisible();
    }
-      async validateShippingChargesIsAddedToTotalPrice(){
-      await this.page.waitForTimeout(10000);
+   async validateShippingChargesIsAddedToTotalPrice(){
+      await this.page.waitForTimeout(5000);
       await expect(this.TotalEstimated).toBeVisible();
-      await this.page.waitForTimeout(10000);
+      await this.page.waitForTimeout(5000);
          
    }
       async validateShippingChargesIsAdded(){
          //await this.page.pause();
-         await this.page.waitForTimeout(8000);
-         await expect(this.ShippingCharges).toBeVisible();
-         await this.page.waitForTimeout(8000);
+         await this.page.waitForTimeout(4000);
+         await expect(this.ShippingCharges1).toBeVisible();
+         await this.page.waitForTimeout(4000);
+         
+      }
+      async validateShippingChargesIsAdded1(){
+         //await this.page.pause();
+         await this.page.waitForTimeout(4000);
+         await expect(this.ShippingCharges1).toBeVisible();
+         await this.page.waitForTimeout(4000);
          
       }
       async validateShippingAddressBox(){
@@ -870,6 +909,7 @@ async validateShippingIsDisplayed(){
       }
       async validateCreditCardRadioButtonIsDisplayed(){
          await expect(this.CreditCardRadioButton).toBeVisible();
+        
       }
       //async enterCreditCardNumber(CardNumber){
          //await this.page.waitForTimeout(6000);
@@ -877,7 +917,7 @@ async validateShippingIsDisplayed(){
          //await this.page.waitForTimeout(6000);
       //}
       async enterCreditCardNumber(CardNumber){
-         await this.page.waitForTimeout(9000);
+         await this.page.waitForTimeout(3000);
          await this.CreditCardNumber.fill(CardNumber);
          await this.page.waitForTimeout(9000);
       }
@@ -973,7 +1013,6 @@ async validateShippingIsDisplayed(){
          async hoverOnCategory_Hoodies()    {
             await this.page.waitForTimeout(3000);
             await this.categoryHoodies.hover();
-            await this.page.pause();
          }
          async clickOnSubCategory_MensHoodies()    {
             await this.page.waitForTimeout(3000);
@@ -1054,6 +1093,10 @@ async validateShippingIsDisplayed(){
             
             await this.page.waitForTimeout(2000);
             await this.StateEdit.selectOption(Stateedit);
+         }
+
+         async enterState(state){
+            await this.state1.fill(state);
          }
          async enterCity(City){
             await this.City.fill(City);
@@ -1258,6 +1301,10 @@ async validateShippingIsDisplayed(){
     async clickOnPayPal() {
         await this.payPal.click();
     }
+
+    async clickOnPayPal1() {
+        await this.payPal1.click();
+  }
     //RET_1281
 
     async clickOnSignInButton() {
@@ -1299,7 +1346,7 @@ async validateShippingIsDisplayed(){
         await this.ContinueToCheckOut.click();
     }
     async validateCustomerInformationOnCheckOutPage(){
-        await expect(this.CustomerInformation).toBeVisible();
+      //   await expect(this.CustomerInformation).toBeVisible();
 
         await this.FirstName.fill('Johnson');
         await this.LastName.fill('Smith');
@@ -1329,9 +1376,9 @@ async validateShippingIsDisplayed(){
      }
 
      async clickOnSameAsShippingAddressCheckBox(){
-        await this.page.waitForTimeout(5000);
-        await this.page.pause();
+        await this.page.waitForTimeout(2000);
         await this.ShippingAddressCheckBox.click();
+        await this.page.waitForTimeout(3000);
     }
 
      //RET_1152

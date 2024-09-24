@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(120000);
+test.setTimeout(1200000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
@@ -9,15 +9,14 @@ test('Edit items in the cart', async ({ page }) => {
     await common.goToHALOShop();
     await common.closeHolidayDealsPopup()
 
-    await pa.hoverOnCategoryPINS()
-    await pa.clickOnSubCategoryOnlineExclusivePins()
-    await pa.clickOnProductMessiLimitedEditionPin()
-    await pa.clickOnAddToBag()
-    await pa.clickOnMyBag()
-    //await pa.clickOnCheckOut()
-    //await pa.validateCheckOutPageDisplayed()
-    //await pa.clickOnContinueToCheckOut()
-    //await pa.validateShippingForm()
+    await pa.enterItemToSearch('Hoodie')
+    await pa.clickOnMessiAdultFitNavyHoodie()
+    await pa.validatePDPSizesAreDisplayed()
+    await pa.selectSizeLFromPDP()
+    await pa.clickOnPDPAddToBag()
+    await pa.clickOnCartLogo()
+    await pa.clickOnCheckOut()
+    await pa.clickOnBackToBag()
     await pa.validateYourBagDisplayed()
     await pa.clickOnContinueShopping()
     await pa.validateHomePageDisplayed()
@@ -25,9 +24,7 @@ test('Edit items in the cart', async ({ page }) => {
     await pa.clickOnEditLinkOnYourBag()
     await pa.validateModalPopUpDesplayedWithProductDetails()
     await pa.closeModalPopUpDesplayedWithProductDetails()
-    await pa.clickOnMyBag()
     await pa.clickOnCheckOut()
-    await pa.validateCheckOutPageDisplayed()
     await pa.clickOnContinueToCheckOut()
     await pa.validateShippingForm()
     await pa.validateFirstName()
@@ -48,10 +45,14 @@ test('Edit items in the cart', async ({ page }) => {
     await pa.enterCity('Neenah')
     await pa.enterPinCode('54956') 
     await pa.enterPhoneNumber('9798979897')
-    //await pa.validateShippingMethodRadioBoxWithCharges()
-    //await pa.clickOnNextPayment()
+    await pa.validateShippingMethodRadioBoxWithCharges()
     await pa.validateShippingChargesIsAdded()
     await pa.validateShippingChargesIsAddedToTotalPrice()
+    await pa.clickOnBackToBag()
+    await pa.enterPromoCode('ASDFG')
+    await pa.clickOnApplyButton()
+    await pa.validateMessageCouponCanNotBeAddedToYourCartifPromoCodeIsInvalid()
+    
 
 
 

@@ -15,7 +15,6 @@ test('RET_484_Validate Filter by product attribute', async ({ page }) => {
   await pa.validateNumberofItemsDisplayedOntheLeft()
   await pa.clickandselectfemaleGenderCheckbox()
   await pa.validateNumberofItemsDisplayedOntheRight()
- // await pa.clearAlltheselectionandReset()
 
 
 });

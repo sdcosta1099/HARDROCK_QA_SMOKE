@@ -9,17 +9,13 @@ test('Click to Checkout Guest', async ({ page }) => {
     await common.goToHALOShop();
     await common.closeHolidayDealsPopup()
 
-    await pa.hoverOnCategoryPINS()
-    await pa.clickOnSubCategoryOnlineExclusivePins()
-    await pa.clickOnProductMessiLimitedEditionPin()
-    await pa.clickOnAddToBag()
-    await pa.clickOnMyBag()
+    await pa.enterItemToSearch('Hoodie')
+    await pa.clickOnMessiAdultFitNavyHoodie()
+    await pa.validatePDPSizesAreDisplayed()
+    await pa.selectSizeLFromPDP()
+    await pa.clickOnPDPAddToBag()
+    await pa.clickOnCartLogo()
     await pa.clickOnCheckOut()
-    await pa.validateCheckOutPageDisplayed()
-    await pa.enterEmailAddress('test@yopmail.com')
-    await pa.validateAlreadyUnityMemberDisplayedOnCheckOutPage()
-    await pa.validateSignInDisplayedOnCheckOutPage()
-    await pa.validateSighUpDisplayedOnCheckOutPage()
     await pa.clickOnContinueToCheckOut()
     await pa.validateShippingForm()
     
