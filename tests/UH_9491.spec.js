@@ -14,8 +14,6 @@ test('UH_9491_HALO | Patron Dashboard | View Ratings', async ({ page }) => {
   await pa.clickOnSearchForPlayer()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnTripsTab()
-  //await page.waitForTimeout(8000000);
-
   await pa.validateTripHistoryDisplayed()
   await pa.validateLifeToDateTripHistoryDisplayed()
   await pa.validatePlayerTripHistoryDisplayed()

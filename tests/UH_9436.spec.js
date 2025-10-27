@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(500000000);
+test.setTimeout(120000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
@@ -25,21 +25,19 @@ test('@27Oct UH_9436_HALo | Configuration | Events&Offers | Quick Offers | Copy 
   await pa.validateOfferCreatedDisplayed()
   await page.locator("(//input[@title='Copy'])[1]").click();
   await pa.clickOnSaveAndNextStepQuickOfferPage()
-  await page.waitForTimeout(8000000)
   await pa.clickOnSaveAndNextInvitationDetailsPage()
-  await page.waitForTimeout(3000)
   await pa.clickOnSubmitButton()
-  // await pa.validateOfferSuccessfullySubmittedMessage()
-  // await pa.clickOnCloseSuccessPopUp()
-  // await pa.enterOfferNameInSearchBox('UH_9432_Smoke')
-  // await pa.clickOnSearchForQuickOffer()
-  // await pa.validateOfferCreatedDisplayed()
-  // await page.waitForTimeout(3000)
-  // await pa.clickOnDeactiveForRecentlycreatedOffer()
-  // await pa.validateConfirmDeactivateOfferWindowDisplayed()
-  // await pa.clickOnConfirmTab()
-  // await pa.validateNotificationOfOfferDeactivated()
-  // await pa.clickOnCloseDeactivePopUp()
-  // await common.logout();
+  await pa.validateOfferSuccessfullySubmittedMessage()
+  await pa.clickOnCloseSuccessPopUp()
+  await pa.enterOfferNameInSearchBox('UH_9432_Smoke')
+  await pa.clickOnSearchForQuickOffer()
+  await pa.validateOfferCreatedDisplayed()
+  await page.waitForTimeout(3000)
+  await pa.clickOnDeactiveForRecentlycreatedOffer()
+  await pa.validateConfirmDeactivateOfferWindowDisplayed()
+  await pa.clickOnConfirmTab()
+  await pa.validateNotificationOfOfferDeactivated()
+  await pa.clickOnCloseDeactivePopUp()
+  await common.logout();
 
   });

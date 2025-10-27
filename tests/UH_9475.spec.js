@@ -3,7 +3,7 @@ test.setTimeout(500000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('@27Oct UH_9475_HALO | Patron Dashoard | Player Function | Comments | Edit Comment', async ({ page }) => {
+test('UH_9475_HALO | Patron Dashoard | Player Function | Comments | Edit Comment', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
 
@@ -13,7 +13,6 @@ test('@27Oct UH_9475_HALO | Patron Dashoard | Player Function | Comments | Edit 
   await pa.enterPlayerID('660302931')
   await pa.clickOnSearchForPlayer()
   await pa.clickOnClose()
- // await pa.clickOnCloseComment()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnPlayerFunction()
   await pa.clickOnViewComment()
@@ -37,7 +36,6 @@ test('@27Oct UH_9475_HALO | Patron Dashoard | Player Function | Comments | Edit 
   await pa.clickOnPlayerTransactionLog()
   await pa.validatePlayerTransactionLogPopUp()
   await pa.clickOnLeftArrow()
-  //await pa.validateCommentTransactionDisplayed()
   await pa.clickOnClose()
   await common.logout();
 

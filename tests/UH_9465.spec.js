@@ -17,7 +17,6 @@ test('UH_9465_HALO | Comments | Delete Comments', async ({ page }) => {
   await pa.validateViewCommentPopUp()
   await pa.clickOnAdd()
   await pa.selectAddCommentOption1()
-  //await page.waitForTimeout(5000000);
   await pa.clickOnComment()
   await pa.validateReplyEditDeletSettleVoidButtonsDisplayed()
   await pa.clickOnDelete()
@@ -31,13 +30,11 @@ test('UH_9465_HALO | Comments | Delete Comments', async ({ page }) => {
   await pa.validateDeleteAcknowledgePopUp()
   await pa.clickOnOk_1()
   await pa.vDelPopUpClosed()
-  //await pa.validateNoDataFound()
   await pa.clickOnClose()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnPlayerFunctions()
   await pa.clickOnViewComment()
   await pa.validateViewCommentPopUp()
-  //await pa.validateNoDataFound()
   await pa.clickOnClose()
   await common.logout();
   

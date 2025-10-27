@@ -31,7 +31,6 @@ test('UH_9444_HALO | Events & Offers | Offers | Approve an offer', async ({ page
   await pa.clickSaveAndNextStep()
   await pa.clickSaveAndNextStep()
   await pa.clickOnSubmitForReviewButtonAndVerifyOfferIsSubmittedSuccessfully()
- //await page.waitForTimeout(800000);
   await pa.validateActiveViewAndApprovedStateSelectedByDefault()
   await pa.selectStateFromEventsAndOfferStateDropdown('Pending Review')
   await pa.selectViewFromEventsAndOfferViewDropdown('Pipeline')

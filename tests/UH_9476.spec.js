@@ -3,7 +3,7 @@ test.setTimeout(100000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('@27Oct UH_9476_Halo| Patron Dash Board | View Tier History', async ({ page }) => {
+test('UH_9476_Halo| Patron Dash Board | View Tier History', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
 
@@ -14,7 +14,6 @@ test('@27Oct UH_9476_Halo| Patron Dash Board | View Tier History', async ({ page
   await pa.clickOnSearchForPlayer()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnTierHistoryTab()
-  //await page.waitForTimeout(8000000);
   await pa.validateTierHistoryDetailsDisplayed()
   await common.logout();
 

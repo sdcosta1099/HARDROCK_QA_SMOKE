@@ -47,6 +47,5 @@ test('UH_9452_HALO | Events & Offers | Booking | Modify Booked Offer', async ({ 
   await pa.clickOnView()
   await pa.clickOnofferSetupPage()
   await page.waitForTimeout(2500); 
-
   await common.logout();
    });

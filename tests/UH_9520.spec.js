@@ -38,5 +38,5 @@ test('UH_9520_HALo | Quick Offers | Create a Quick offer with Star Level', async
   await pa.clickOnSearchForQuickOffer()
   await pa.validateOfferCreatedDisplayed()
   await common.logout();
-//
+
   });

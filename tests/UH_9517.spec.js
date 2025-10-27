@@ -4,7 +4,7 @@ import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
 
-test('@27Oct UH_9517_HALo | Quick Offers | Validate Expired (inactive) Quick Offers are not displayed', async ({ page }) => {
+test('UH_9517_HALo | Quick Offers | Validate Expired (inactive) Quick Offers are not displayed', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
 
@@ -20,12 +20,11 @@ test('@27Oct UH_9517_HALo | Quick Offers | Validate Expired (inactive) Quick Off
   await pa.clickOnOfferTypeDropdownWhenCasinoIsSelectedInQuickOfferPage()
   await pa.selectOfferTypeQuickOfferPage()
   await pa.clickOnDisplayPropertyDropdownQuickOfferSetupPage()
-  //await pa.checkOptionHardRockNorthernIndianaInDisplayPropertyQuickOffer('Hard Rock Northern Indiana')
+  await pa.checkOptionHardRockNorthernIndianaInDisplayPropertyQuickOffer('Hard Rock Northern Indiana')
   await pa.clickOnDisplayLocationDropdown()
   await pa.checkOptionUnityStoreInDisplayLocationQuickOfferSetupPage('Unity Store')
   await pa.enterDisplayName('UH_9517')
   await pa.clickOnCardTierRestrictionDropdownQuickOfferSetupPage()
-  //await page.waitForTimeout(4000);
   //await pa.selecCardTierRestrictionXQuickOfferPage('X')
   await page.keyboard.press('ArrowDown');
   await page.keyboard.press('ArrowDown');
@@ -33,7 +32,6 @@ test('@27Oct UH_9517_HALo | Quick Offers | Validate Expired (inactive) Quick Off
   await page.keyboard.press('ArrowDown');
   await page.keyboard.press('ArrowDown');
   await page.keyboard.press('Enter');
-  //await page.waitForTimeout(4000);
   await pa.enterExpiredStartDate('12/31/2025')
   await pa.enterExpiredEndDate('12/31/2025')
   await pa.enterDisplayEndDate('12/31/2025')
@@ -52,8 +50,6 @@ test('@27Oct UH_9517_HALo | Quick Offers | Validate Expired (inactive) Quick Off
   await pa.clickOnViewEventsAndOffers()
   await pa.enterEventOfferNameInSearchBox('UH_9517')
   await pa.clickOnSearchViewEventAndOffer()
-  //await page.waitForTimeout(6000000);
-  //await pa.validateOfferCreatedNotDisplayed()
   await common.logout();
 
   });

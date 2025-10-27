@@ -21,8 +21,6 @@ test('UH_9501_HALO | Profile Comments | Filters | Priority Field Validations', a
   await page.frame({name: 'FramePopUp7'}).locator('#ddlSearchPriority').selectOption('4');
   await page.frame({name: 'FramePopUp7'}).locator('#ddlSearchPriority').selectOption('5');
   await page.frame({name: 'FramePopUp7'}).locator('#ddlSearchPriority').selectOption('2');
-  // await pa.validatePriorityDropdownField()
-  // await pa.validateCommentsWhenAllPrioritySelected()
   await pa.selectHighComment()
   await pa.validateHighCommentsAreOnlyDisplayed()
   await pa.clickOnClose()

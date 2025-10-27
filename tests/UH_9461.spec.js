@@ -12,7 +12,6 @@ test('UH_9461_Halo | Player Function | Player Tier with Tier Match| Adjust Playe
 
   await pa.enterPlayerID('807879760')
   await pa.clickOnSearchForPlayer()
-  //await pa.clickOnClose()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnPlayerFunction()
   await pa.clickOnPlayerTierWithTierMatch()

@@ -3,7 +3,7 @@ test.setTimeout(600000)
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('@27Oct UH_9442_HALO | Events and Offers | Create offer with Prize and Attendance', async ({ page }) => {
+test('UH_9442_HALO | Events and Offers | Create offer with Prize and Attendance', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
   
@@ -29,7 +29,6 @@ test('@27Oct UH_9442_HALO | Events and Offers | Create offer with Prize and Atte
   await pa.clickSaveAndNextStep()
   await pa.clickSaveAndNextStep()
   await pa.clickOnSubmitForReviewButtonAndVerifyOfferIsSubmittedSuccessfully()
- //await page.waitForTimeout(800000);
   await pa.validateActiveViewAndApprovedStateSelectedByDefault()
   await pa.selectViewFromEventsAndOfferViewDropdown('Pipeline')
   await pa.selectStateFromEventsAndOfferStateDropdown('Pending Review')

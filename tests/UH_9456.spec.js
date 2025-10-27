@@ -55,7 +55,6 @@ test('UH_9456 HALO | Events & Offers | Offer Mgmt/Check-in Flow - Multiple Atten
   await pa.searchEventInCheckin('Smoke_UH_9456')
   await pa.selectEventInCheckin('Smoke_UH_9456')
   await pa.enterPatronInEventCheckinAndSearch('703039411')
-  // await page.waitForTimeout(80000000);
   await pa.clickOnCheckInButtonInEventCheckIn()
   await pa.validateCheckInSuccessfulPopupAndClose()
   await pa.clickPaceReportButton()

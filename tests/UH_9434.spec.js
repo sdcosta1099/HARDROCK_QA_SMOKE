@@ -32,7 +32,6 @@ test('UH_9434_HALo | Configuration | Events&Offers | Quick Offers | Deactivate C
   await pa.clickOnSearchForQuickOffer()
   await pa.validateOfferCreatedDisplayed()
   await pa.clickOnDeactiveForRecentlycreatedOffer()
-  //await page.waitForTimeout(8000000);
   await pa.validateConfirmDeactivateOfferWindowDisplayed()
   await pa.clickOnConfirmTab()
   await pa.validateNotificationOfOfferDeactivated()

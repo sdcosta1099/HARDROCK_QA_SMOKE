@@ -40,7 +40,6 @@ test('UH_9490 HALO | Patron Dashoard | Player Functions | View Comment | Delete 
   await pa.clickOnPlayerTransactionLog()
   await pa.validatePlayerTransactionLogPopUp()
   await pa.clickOnLeftArrow()
-  //await pa.validateCommentTransactionDisplayed()
   await pa.clickOnClose()
   await common.logout();
   

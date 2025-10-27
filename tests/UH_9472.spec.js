@@ -31,9 +31,6 @@ test('UH_9472_HALO | Patron DashBoard | Player Function | Comments | Create/Add 
   await pa.validateViewCommentPopUp()
   await pa.validateCommentAdded()
   await pa.clickOnClose()
-  //await page.waitForTimeout(800000)
-  //await pa.ValidateYellowIcon()
-  //await page.waitForTimeout(800000)
   await common.logout();
   
   

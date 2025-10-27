@@ -39,5 +39,5 @@ test('UH_9514_HALo | Quick Offers | Validate Quick Offer is displayed to all Pat
   await pa.clickOnSearchForQuickOffer()
   await pa.validateOfferCreatedDisplayed()
   await common.logout();
-// 
+ 
   });

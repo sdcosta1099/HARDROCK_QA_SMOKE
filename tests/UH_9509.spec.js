@@ -22,7 +22,6 @@ test('UH_9509_HALo | Quick Offers | Edit a Quick Offer', async ({ page }) => {
   await pa.editDisclaimerInQuickOfferPage('Test1')
   await pa.clickOnSaveAndNextStepQuickOfferPage()
   await pa.validateSelectAFileButtonDisplayedInInviteeListSection()
-  //await pa.validateUploadButtonDisplayedInInviteeListSection()
   await pa.clickOnSaveAndClose()
   await pa.enterOfferNameInSearchBox('UH_9517_COPY')
   await pa.clickOnSearchForQuickOffer()

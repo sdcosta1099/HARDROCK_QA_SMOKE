@@ -3,7 +3,7 @@ test.setTimeout(60000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('@27Oct UH_9480_Halo| Patron Dash Board | Issue Comp for Discretionary Comps', async ({ page }) => {
+test('UH_9480_Halo| Patron Dash Board | Issue Comp for Discretionary Comps', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
 

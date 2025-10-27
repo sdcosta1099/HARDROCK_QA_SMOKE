@@ -15,7 +15,6 @@ test('UH_9482_Halo| Patron Dash Board | View Club Info', async ({ page }) => {
   await pa.validatePlayerDashboardDisplayed()
   await pa.selectClubInfoFromDropdown()
   await pa.validateCurrentTierCreditCardPic()
-  //await page.waitForTimeout(8000000)
   await pa.validateCurrentTier()
   await pa.validateCurrentTireCredits()
   await pa.validateNextTier()

@@ -17,7 +17,6 @@ test('UH_9451_HALO | Events & Offers | Booking | Book uninvited Patron', async (
   await pa.SelectfillOutNewEventFields4("UH_9451_1")
   await pa.clickSaveAndNextStep()
   await pa.SelectAFile1()
-  //await page.waitForTimeout(800000000); 
   await pa.clickSaveAndNextStep()
   await pa.clickOnAddMasterListItems()
   await pa.addMasterListItem1("PrizeName1","PC","Skip","500","50")

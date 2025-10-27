@@ -725,7 +725,7 @@ exports.playerAction = class playerAction {
       //this.CheckLobQuickOfferHotel = page.locator("//a[contains(text(),'Hotel')]/parent::li[@class='igdd_ListItem igdd_ListItemHover  igdd_ListItemActive']")
       this.checkDisplayPropertyHardRockAtlanticCity = page.locator("(//a[contains(text(),'Hard Rock Atlantic City')])[1]/parent::li//input")
       this.checkDisplayPropertyHardRockHollywood = page.locator("(//a[contains(text(),'Hard Rock Hollywood')])[1]/parent::li//input")
-      this.checkDisplayPropertyHardRockNorthernIndiana = page.locator("//a[contains(text(),'Hard Rock Northern Indiana')]/parent::li//input")
+      this.checkDisplayPropertyHardRockNorthernIndiana = page.locator("(//a[contains(text(),'Hard Rock Northern Indiana')])[1]/parent::li//input")
       this.checkLocationLocation71 = page.locator("//a[contains(text(),'Location 71')]/parent::li//input")
 
       //UH_9521
@@ -741,7 +741,7 @@ exports.playerAction = class playerAction {
       this.StartDate = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtStartDate']")
       this.EndDate = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtEndDate']")
       this.DisplayEndDate = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtDisplayEndDate']")
-      this.CheckDisplayProperty1 = page.locator("//a[contains(text(),'Hard Rock Northern Indiana')]")
+      this.CheckDisplayProperty1 = page.locator("(//a[contains(text(),'Hard Rock Northern Indiana')])[1]")
       this.CheckDisplayLocation1 = page.locator("//a[contains(text(),'Unity Store')]/parent::li//input")
       this.ExpandPlayerSearchIcon = page.locator("//td[@style='padding-top: 3px; padding-left: 2px; position: relative']")
       this.EventAndOfferName = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='txtEventsOfferDisplayName']")

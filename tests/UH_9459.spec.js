@@ -66,7 +66,6 @@ test('UH_9459_HALO | Events & Offers | Offer Mgmt/Check-in Flow - Capacity No | 
   await pa.enterPlayerID('660302931')
   await pa.clickOnSearchForPlayer()
   await pa.clickOnClose()
-  //await pa.clickOnCloseConsentPopUp()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnPlayerFunction()
   await pa.clickOnPlayerTransactionLog()
@@ -77,7 +76,6 @@ test('UH_9459_HALO | Events & Offers | Offer Mgmt/Check-in Flow - Capacity No | 
   await pa.enterPlayerReservationName('UH_9459')
   await pa.clickOnPlayerReservationSearch()
   await pa.clickOnPlayerDetailsLink()
-  //await pa.validateEventDetailsPageWithSuccessfullCheckin()
   await page.waitForTimeout(4000);
   await common.logout();
   

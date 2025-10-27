@@ -3,7 +3,7 @@ test.setTimeout(1500000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('@27Oct UH_9448_HALO | Events & Offers | HALO | Events and Offers | Create offer with Over Ten Items', async ({ page }) => {
+test('UH_9448_HALO | Events & Offers | HALO | Events and Offers | Create offer with Over Ten Items', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
 
@@ -22,7 +22,6 @@ test('@27Oct UH_9448_HALO | Events & Offers | HALO | Events and Offers | Create 
   await pa.addMasterListItem2("PrizeName1","PC","Skip","500","500")
   await pa.clickOnPrize1()
   await pa.addNewItem("10")
-  //await page.waitForTimeout(5000);
   await pa.clickOnAddMasterListItems()
   await pa.addMasterListItem2("PrizeName2","PC","Skip","500","500")
   await pa.clickOnPrize2()
@@ -68,7 +67,6 @@ test('@27Oct UH_9448_HALO | Events & Offers | HALO | Events and Offers | Create 
   await pa.clickSaveAndNextStep()
   await pa.config1()
   await pa.clickSaveAndNextStep()
-  //await pa.selectCheckInNo()
   await pa.clickSaveAndNextStep()
   await pa.clickSaveAndNextStep()
   await pa.clickOnSubmitForReviewButtonAndVerifyOfferIsSubmittedSuccessfully()

@@ -19,7 +19,6 @@ test('UH_9511_HALo | Quick Offers | Create a Quick Offer for Multiple Regions', 
   await pa.clickOnRegionDropdownInQuickOfferPage()
   await pa.uncheckOptionOfRegionQuickOfferSetupPage('Caribbean')
   await pa.clickOnRegionDropdownInQuickOfferPage()
-  //await pa.uncheckOptionOfRegionQuickOfferSetupPage('Europe')
   await pa.clickOnOfferTypeDropdownWhenCasinoIsSelectedInQuickOfferPage()
   await pa.selectOfferTypeQuickOfferPage()
   await pa.clickOnDisplayPropertyDropdownQuickOfferSetupPage()

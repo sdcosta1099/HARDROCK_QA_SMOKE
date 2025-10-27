@@ -17,7 +17,6 @@ test('UH_9512_HALo | Quick Offers | New fields in Quick Offers', async ({ page }
   await pa.validateNewQuickOfferSetupPageDisplayed()
   await pa.validateInLobCasinoOptionSelectedByDefault()
   await pa.clickOnRegionDropdownInQuickOfferPage()
-  //await pa.clickOnUSOptionInRegionQuickOfferPage('US')
   await pa.clickOnOfferTypeDropdownWhenCasinoIsSelectedInQuickOfferPage()
   await pa.selectOfferTypeQuickOfferPage()
   await pa.clickOnDisplayPropertyDropdownQuickOfferSetupPage()
@@ -43,7 +42,7 @@ test('UH_9512_HALo | Quick Offers | New fields in Quick Offers', async ({ page }
   await pa.clickOnSearchForQuickOffer()
   await pa.validateOfferCreatedDisplayed()
   await common.logout();
-  // 
+  
 
   });
 

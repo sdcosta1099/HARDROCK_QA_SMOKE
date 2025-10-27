@@ -17,7 +17,6 @@ test('UH_9478_Halo| Patron Dash Board | View Unity points Earnings', async ({ pa
   await pa.clickOnUnityPointsEarningsTab()
   await pa.clickOnArrowIcone_1InFrontOfDataRecord()
   await pa.validateRecordExpands_1()
-  //await page.waitForTimeout(8000000)
   await pa.validateDataDisplayedByDateTime()
   await page.waitForTimeout(2000)
   await pa.validateDataDisplayedByProperty()

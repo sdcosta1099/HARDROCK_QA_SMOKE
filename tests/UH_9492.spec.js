@@ -9,7 +9,7 @@ test('UH_9492_HALO | Configuration | Offer Management | View a Patron Offer on P
 
   await common.goToHALOWebApplication()
   await common.loginAndSubmit("TU_LAB_HALO_NIN_ADM","Password01@$") 
-  // await pa.loginToApp()
+
   await pa.clickOnConfiguration()
   await pa.clickOnOfferManagement()
   await pa.clickOnManagecampaign()

@@ -12,7 +12,6 @@ test('UH_9460_HALo | Patron Dash Board | Tier Match Star to Icon', async ({ page
 
   await pa.enterPlayerID('807651715 ') 
   await pa.clickOnSearchForPlayer()
-  //await pa.clickOnCloseConsentPopUp()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnPlayerFunction()
   await pa.clickOnPlayerTierWithTierMatch()
@@ -33,7 +32,6 @@ test('UH_9460_HALo | Patron Dash Board | Tier Match Star to Icon', async ({ page
 
   await pa.enterPlayerID('807651715') 
   await pa.clickOnSearchForPlayer()
-  //await pa.clickOnCloseConsentPopUp()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnPlayerFunction()
   await pa.clickOnPlayerTierWithTierMatch()

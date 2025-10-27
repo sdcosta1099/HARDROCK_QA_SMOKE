@@ -1,0 +1,229 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - text: HALO 25.9.1
+      - text: Logged in as TU_LAB_HALO_NIN_ADM
+      - img "HR Casino, Northern Indiana" [ref=e7]
+    - link "Logout" [ref=e9] [cursor=pointer]:
+      - /url: javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$lnkLogout", "", false, "", "SessionOut.aspx", false, true))
+      - img "Logout" [ref=e10]
+  - generic [ref=e12]:
+    - list [ref=e15]:
+      - listitem [ref=e16]:
+        - link "Player Functions" [ref=e17] [cursor=pointer]:
+          - /url: javascript:toggle1("1000010","sub_nav_1000010","1000010");
+      - listitem [ref=e18]:
+        - link "Configuration" [ref=e19] [cursor=pointer]:
+          - /url: javascript:toggle1("1000000","sub_nav_1000000","1000010");
+      - listitem [ref=e20]:
+        - link "Administration" [ref=e21] [cursor=pointer]:
+          - /url: javascript:toggle1("1000002","sub_nav_1000002","1000010");
+    - generic [ref=e22]:
+      - table [ref=e25]:
+        - rowgroup [ref=e26]:
+          - row "PLAYER SEARCH Go To Employee Dashboard 0" [ref=e27]:
+            - cell "PLAYER SEARCH" [ref=e28]
+            - cell [ref=e29]
+            - cell "Go To Employee Dashboard" [ref=e30]:
+              - link "Go To Employee Dashboard" [ref=e31] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkToEmployeeDashboard','')
+                - img [ref=e32]
+            - cell [ref=e34]:
+              - link "Expand Search" [ref=e35] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkSearchSVG','')
+                - img [ref=e36]
+            - cell "0" [ref=e39]:
+              - generic "Show Notification" [ref=e41]
+              - generic:
+                - generic: "0"
+      - generic [ref=e44]:
+        - generic [ref=e45]: Add UH_9523
+        - generic [ref=e46]:
+          - generic [ref=e49]:
+            - generic [ref=e50]:
+              - separator [ref=e52]
+              - strong [ref=e54]: Quick Offer Setup
+              - table [ref=e56]:
+                - rowgroup [ref=e57]:
+                  - row "LOB Casino,Hotel Region North America Offer Type Entertainment" [ref=e58]:
+                    - cell "LOB Casino,Hotel" [ref=e59]:
+                      - generic [ref=e60]: LOB
+                      - text: Casino,Hotel
+                    - cell "Region North America" [ref=e61]:
+                      - generic [ref=e62]: Region
+                      - text: North America
+                    - cell "Offer Type Entertainment" [ref=e63]:
+                      - generic [ref=e64]: Offer Type
+                      - text: Entertainment
+                  - row "Display Property Hard Rock Hotel, Atlantic City,HR Casino, Northern Indiana Display Location Location 71" [ref=e65]:
+                    - cell "Display Property Hard Rock Hotel, Atlantic City,HR Casino, Northern Indiana" [ref=e66]:
+                      - generic [ref=e67]: Display Property
+                      - text: Hard Rock Hotel, Atlantic City,HR Casino, Northern Indiana
+                    - cell "Display Location Location 71" [ref=e68]:
+                      - generic [ref=e69]: Display Location
+                      - generic [ref=e70]: Location 71
+                  - row "Display Name UH_9523 Card Tier Restriction" [ref=e71]:
+                    - cell "Display Name UH_9523" [ref=e72]:
+                      - generic [ref=e73]: Display Name
+                      - text: UH_9523
+                    - cell "Card Tier Restriction" [ref=e74]:
+                      - generic [ref=e75]: Card Tier Restriction
+                  - row "Start Date 10/27/2025 Start Time 12:00 PM Time Zone EST" [ref=e76]:
+                    - cell "Start Date 10/27/2025" [ref=e77]:
+                      - table [ref=e78]:
+                        - rowgroup [ref=e79]:
+                          - row "Start Date 10/27/2025" [ref=e80]:
+                            - cell "Start Date 10/27/2025" [ref=e81]:
+                              - generic [ref=e82]: Start Date
+                              - text: 10/27/2025
+                    - cell "Start Time 12:00 PM Time Zone EST" [ref=e83]:
+                      - table [ref=e84]:
+                        - rowgroup [ref=e85]:
+                          - row "Start Time 12:00 PM Time Zone EST" [ref=e86]:
+                            - cell "Start Time 12:00 PM" [ref=e87]:
+                              - generic [ref=e88]: Start Time
+                              - text: 12:00 PM
+                            - cell "Time Zone EST" [ref=e89]:
+                              - generic [ref=e90]: Time Zone
+                              - text: EST
+                  - row "End Date 10/27/2025 End Time 11:59 PM Time Zone EST" [ref=e91]:
+                    - cell "End Date 10/27/2025" [ref=e92]:
+                      - table [ref=e93]:
+                        - rowgroup [ref=e94]:
+                          - row "End Date 10/27/2025" [ref=e95]:
+                            - cell "End Date 10/27/2025" [ref=e96]:
+                              - generic [ref=e97]: End Date
+                              - text: 10/27/2025
+                    - cell "End Time 11:59 PM Time Zone EST" [ref=e98]:
+                      - table [ref=e99]:
+                        - rowgroup [ref=e100]:
+                          - row "End Time 11:59 PM Time Zone EST" [ref=e101]:
+                            - cell "End Time 11:59 PM" [ref=e102]:
+                              - generic [ref=e103]: End Time
+                              - text: 11:59 PM
+                            - cell "Time Zone EST" [ref=e104]:
+                              - generic [ref=e105]: Time Zone
+                              - text: EST
+                  - row "Display Start Date 10/06/2025 Display Start Time 12:00 PM Time Zone EST" [ref=e106]:
+                    - cell "Display Start Date 10/06/2025" [ref=e107]:
+                      - table [ref=e108]:
+                        - rowgroup [ref=e109]:
+                          - row "Display Start Date 10/06/2025" [ref=e110]:
+                            - cell "Display Start Date 10/06/2025" [ref=e111]:
+                              - generic [ref=e112]: Display Start Date
+                              - text: 10/06/2025
+                    - cell "Display Start Time 12:00 PM Time Zone EST" [ref=e113]:
+                      - table [ref=e114]:
+                        - rowgroup [ref=e115]:
+                          - row "Display Start Time 12:00 PM Time Zone EST" [ref=e116]:
+                            - cell "Display Start Time 12:00 PM" [ref=e117]:
+                              - generic [ref=e118]: Display Start Time
+                              - text: 12:00 PM
+                            - cell "Time Zone EST" [ref=e119]:
+                              - generic [ref=e120]: Time Zone
+                              - text: EST
+                  - row "Display End Date 10/27/2025 Display End Time 11:59 PM Time Zone EST" [ref=e121]:
+                    - cell "Display End Date 10/27/2025" [ref=e122]:
+                      - table [ref=e123]:
+                        - rowgroup [ref=e124]:
+                          - row "Display End Date 10/27/2025" [ref=e125]:
+                            - cell "Display End Date 10/27/2025" [ref=e126]:
+                              - generic [ref=e127]: Display End Date
+                              - text: 10/27/2025
+                    - cell "Display End Time 11:59 PM Time Zone EST" [ref=e128]:
+                      - table [ref=e129]:
+                        - rowgroup [ref=e130]:
+                          - row "Display End Time 11:59 PM Time Zone EST" [ref=e131]:
+                            - cell "Display End Time 11:59 PM" [ref=e132]:
+                              - generic [ref=e133]: Display End Time
+                              - text: 11:59 PM
+                            - cell "Time Zone EST" [ref=e134]:
+                              - generic [ref=e135]: Time Zone
+                              - text: EST
+                  - row "Display Description Smoke Test" [ref=e136]:
+                    - cell "Display Description Smoke Test" [ref=e137]:
+                      - generic [ref=e138]: Display Description
+                      - text: Smoke Test
+                  - row "Disclaimer Smoke Test1" [ref=e139]:
+                    - cell "Disclaimer Smoke Test1" [ref=e140]:
+                      - generic [ref=e141]: Disclaimer
+                      - text: Smoke Test1
+            - separator [ref=e142]
+            - generic [ref=e143]:
+              - strong [ref=e146]: Invitation Details
+              - table [ref=e148]:
+                - rowgroup [ref=e149]:
+                  - row [ref=e150]:
+                    - cell [ref=e151]:
+                      - table [ref=e153]:
+                        - rowgroup [ref=e156]:
+                          - row [ref=e157]:
+                            - cell [ref=e158]:
+                              - table [ref=e159]:
+                                - rowgroup [ref=e160]:
+                                  - row [ref=e161]:
+                                    - cell [ref=e162]:
+                                      - generic:
+                                        - table:
+                                          - rowgroup:
+                                            - row
+                                - rowgroup [ref=e163]:
+                                  - row [ref=e164]:
+                                    - cell [ref=e165]:
+                                      - generic [ref=e166]:
+                                        - table:
+                                          - rowgroup
+                                - rowgroup
+                    - cell [ref=e167]:
+                      - table [ref=e169]:
+                        - rowgroup [ref=e172]:
+                          - row [ref=e173]:
+                            - cell [ref=e174]:
+                              - table [ref=e175]:
+                                - rowgroup [ref=e176]:
+                                  - row [ref=e177]:
+                                    - cell [ref=e178]:
+                                      - generic:
+                                        - table:
+                                          - rowgroup:
+                                            - row
+                                - rowgroup [ref=e179]:
+                                  - row [ref=e180]:
+                                    - cell [ref=e181]:
+                                      - generic [ref=e182]:
+                                        - table:
+                                          - rowgroup
+                                - rowgroup
+            - generic [ref=e183]:
+              - generic [ref=e184]:
+                - text: SUCCESS
+                - link "Close" [ref=e185] [cursor=pointer]:
+                  - /url: javascript:__doPostBack('ctl00$ContentPlaceHolder1$ctrlSummary$btnSubmit','')
+              - generic [ref=e186]:
+                - table [ref=e187]:
+                  - rowgroup [ref=e188]:
+                    - row "The offer has been submitted successfully!" [ref=e189]:
+                      - cell "The offer has been submitted successfully!" [ref=e190]
+                - table [ref=e191]:
+                  - rowgroup [ref=e192]:
+                    - row "Close" [ref=e193]:
+                      - cell "Close" [ref=e194]:
+                        - button "Close" [ref=e195] [cursor=pointer]
+            - separator [ref=e196]
+          - generic [ref=e197]:
+            - heading "Quick Offer Process" [level=2] [ref=e198]
+            - list [ref=e199]:
+              - link "Offer Setup" [ref=e200] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$ContentPlaceHolder1$lstOfferCreationSteps$ctrl0$liStep','')
+              - link "Invitation Details" [ref=e201] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$ContentPlaceHolder1$lstOfferCreationSteps$ctrl1$liStep','')
+              - link "Summary" [ref=e202] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$ContentPlaceHolder1$lstOfferCreationSteps$ctrl2$liStep','')
+        - generic [ref=e203]:
+          - button "Back to Listing" [ref=e204] [cursor=pointer]
+          - button "Delete" [ref=e205] [cursor=pointer]
+          - button "Submit" [ref=e206] [cursor=pointer]
+```

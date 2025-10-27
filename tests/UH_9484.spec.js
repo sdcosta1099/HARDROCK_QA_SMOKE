@@ -15,7 +15,6 @@ test('UH_9484_HALO | Patron Dashboard | View Trips', async ({ page }) => {
   await pa.clickOnClose()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnTripsTab()
-  //await page.waitForTimeout(80000000)
   await pa.validatePlayersTripPageDisplayed()
   await pa.validateTripHistoryDisplayed()
   await pa.validateLifeToDateTripHistoryDisplayed()

@@ -18,10 +18,8 @@ test('UH_9505_HALo | Quick Offers | Create a Quick Offer For LOB=Hotel', async (
   await pa.validateInLobCasinoOptionSelectedByDefault()
   await pa.clickOnLobDropdownQuickOfferPage()
   await pa.uncheckOptionOfLobQuickOfferSetupPage('Casino')
-  //await page.waitForTimeout(8000000);
   await pa.checkOptionOfLobQuickOfferSetupPage('Hotel')
   await pa.clickOnOfferTypeDropdownWhenHotelIsSelectedInQuickOfferPage()
-  //await pa.clickOnOfferTypeDropdownQuickOfferPage()
   await pa.selectOfferTypeQuickOfferPage()
   await pa.clickOnDisplayPropertyDropdownQuickOfferSetupPage()
   await pa.checkOptionDisplayPropertyQuickOffer('Hard Rock Atlantic City')

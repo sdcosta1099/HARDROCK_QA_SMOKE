@@ -51,7 +51,6 @@ test('UH_9458_Testing HALO Events & Offers Offer Mgmt Check in Flow Capacity No 
   await page.waitForTimeout(30000); 
   await pa.clickOnMoreLinkofEvent()
   await pa.ValidateSelectedEventDetailsSectionPage()
-  //await page.waitForTimeout(800000000);
   await pa.validateThisPatronHasNotBeenInvitedToTheEvent()
   await common.logout();
 

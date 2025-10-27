@@ -22,7 +22,6 @@ test('UH_9516_HALo | Quick Offers | Copy an existing Quick Offer', async ({ page
   await pa.clickOnSaveAndNextStepQuickOfferPage()
   await pa.validateSelectAFileButtonDisplayedInInviteeListSection()
   await pa.validateUploadButtonDisplayedInInviteeListSection()
-  //await pa.validateNoFileSelectedInInviteeListSection()//
   await pa.clickOnSaveAndNextInvitationDetailsPage()
   await pa.validateSummaryPage1Displayed()
   await pa.clickOnSubmitButton()
