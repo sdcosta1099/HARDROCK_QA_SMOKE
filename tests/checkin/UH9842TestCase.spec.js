@@ -24,7 +24,7 @@ test('UH-9842 HALo|Check-In|Test|Check In - Items: YES | Attendance: NO | Backup
     await configSteps.goToOfferSetUpPage(offerName, 'NO')
     await  configSteps.goToInvitationPage()
      
-    await configSteps.goToMasterItemListPage()
+    await configSteps.goToMasterItemListPage(1)
     await configSteps.goToAttendeeCapacityPage('NO', 2)
 
     await configSteps.goToSegmentsPage()

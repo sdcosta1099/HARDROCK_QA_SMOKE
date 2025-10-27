@@ -33,8 +33,6 @@ test('UH-9654 HALO | Events and Offers | Create offer with Prize and Attendance'
     //await configSteps.checkInEventAndOffer(offerName)
     await configSteps.approvedOpenOffer(offerName)
     await configSteps.deactivateOffer(offerName)
-
-    
     
     await page.close()
   })

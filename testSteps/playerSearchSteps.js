@@ -602,7 +602,7 @@ async searchPlayerID(playerID ){
        //await expect(this.page).toHaveText(playerID)
        console.log('PlayerID found = ' +playerID)
     }catch(e){
-        console.log('PlayerID  not found')
+        console.log('PlayerID NOT found')
     }
 
  }

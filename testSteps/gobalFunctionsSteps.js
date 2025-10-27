@@ -1,5 +1,6 @@
   
 const {expect } = require("@playwright/test")
+const exp = require("constants")
 const testData= JSON.parse(JSON.stringify(require("../testData.json")))
 
  exports.globalFUnctionSteps= class globalFUnctionSteps{
@@ -23,20 +24,94 @@ const testData= JSON.parse(JSON.stringify(require("../testData.json")))
          
     }
  // Halo QA ENvironmets
-    async gotoQALoginPage(){
-            try{
-                console.log('------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------')
-           //await this.page.goto('https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx');
-            await this.page.goto(testData.Environment.QA)
-           // await expect(this.page).toHaveTitle('HALO');
-            console.log('Using QA Environment URL: https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx')
-            
-        }catch(e){
-            console.log('QA URL not available')
-            //console.log(e)
+    async 
+    gotoQALoginPage(){
+       
+        const envSelection = testData.Environment.EnvSelection
+        this.environmentSelection(envSelection)
 
-        }
     }
+
+
+// Halo PROD ENvironmets
+    async gotoPRODLoginPage(){
+
+        const envSelection = testData.Environment.EnvSelection
+        this.environmentSelection(envSelection)
+
+}
+
+    // validate Environment selection 
+
+            async environmentSelection(env){
+                try{
+
+                    if(env =='QA'){
+                        console.log('------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------')
+                        //await this.page.goto('https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx');
+                         await this.page.goto(testData.Environment.QA)
+                        // await expect(this.page).toHaveTitle('HALO');
+                         console.log('Environment selected =  ' +env)
+                         console.log('Using QA Environment URL:https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx ')
+                       
+
+                    }else 
+                    if(env =='PROD'){
+                        console.log('------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------')
+                    //await this.page.goto('https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx');
+                        await this.page.goto(testData.Environment.PROD)
+                    // await expect(this.page).toHaveTitle('HALO');
+                        console.log('Environment selected =  ' +env)
+                        console.log('Using PROD Environment URL:https://sg24-hawbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx  ')
+                       
+                    }else
+
+                        if(env =='UAT'){
+                            console.log('------------------BEGIN OF UAT AUTOMATION TEST EXECUTION-------------------------------')
+                        //await this.page.goto('https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx');
+                           await this.page.goto(testData.Environment.UAT)
+                        // await expect(this.page).toHaveTitle('HALO');
+                            console.log('Environment selected =  ' +env)
+                            console.log('Using UAT Environment URL: NOT AVAILABLE ')
+                           
+                    } else( 
+
+                        console.log('NO Environment is selected,   '),
+                        console.log('Select a Proper Environment QA, PROD, OR UAT from the TestData Json file ')
+
+                    )
+                   
+                }catch(e){
+                   
+                    console.log('test Data Json FIle is not Available')
+
+            }
+        }
+
+async softAssertions(webElement, expectedText){
+    try{
+        await expect(webElement).toContainText(expectedText)
+        console.log('Soft Assertion Passed:  ' +expectedText + ' is available as expected ')
+
+    }catch(e){
+        console.log('Soft Assertion Failed:  ' +expectedText + ' is NOT available ')
+    }
+
+}
+    
+
+
+async hardAssertions(webElement, expectedText){
+    try{
+        await expect(webElement).toHaveText(expectedText)
+        console.log('Hard Assertion Passed:  ' +expectedText + ' is available as expected ')
+
+    }catch(e){
+        console.log('Hard Assertion Failed:  ' +expectedText + ' is NOT available ')
+        throw new Error('Hard Assertion Failed:  ' +expectedText + ' is NOT available ')
+    }
+}
+
 
     async loginAdminQA(){
         try{
@@ -46,14 +121,35 @@ const testData= JSON.parse(JSON.stringify(require("../testData.json")))
         await this.password_textBox.fill(testData.Credentials.QApassword); 
         await this.domainName_textBox.selectOption('40190');
         await this.submit_Btn.click();
-        //await expect(this.page).toHaveText('PLAYER SEARCH');
+       // await expect(this.page).toHaveText('PLAYER SEARCH');
+       await expect(this.page).toHaveTitle('HALO Web Management Application')
         console.log('User is log to Halo QA ADMIN Env')
         }catch (e){
-            console.log('Halo Admin login Failed')
+            console.log('Halo Admin login QA Failed')
         }
 
 
     }
+
+
+    async loginAdminPROD(){
+        try{
+        await this.userID_textBox.click();
+        await this.userID_textBox.fill(testData.Credentials.PRODuserName);   
+        await this.password_textBox.click();
+        await this.password_textBox.fill(testData.Credentials.PRODpassword); 
+        await this.domainName_textBox.selectOption('40190');
+        await this.submit_Btn.click();
+        //await expect(this.page).toHaveText('PLAYER SEARCH');
+        await expect(this.page).toHaveTitle('HALO Web Management Application')
+        console.log('User is log to Halo PROD ADMIN Env')
+        }catch (e){
+            console.log('Halo Admin login PROD Failed')
+        }
+
+
+    }
+
 
 
 ///////////////////////////////////Global Functions and Method////////////////////////////////////////
@@ -67,6 +163,7 @@ const testData= JSON.parse(JSON.stringify(require("../testData.json")))
         await this.domainName_textBox.selectOption('40190');
         await this.submit_Btn.click();
         //await expect(this.page).toHaveText('PLAYER SEARCH');
+        await expect(this.page).toHaveTitle('HALO Web Management Application')
         console.log('NON ADMIN User with View Only Permission is log to Halo QA Env')
         }catch (e){
             console.log('NON ADMIN USER login Failed')
@@ -77,7 +174,7 @@ const testData= JSON.parse(JSON.stringify(require("../testData.json")))
     async logOut(){
         try{
             await this.logOut_Btn.click()
-            console.log('User log out as expected')
+            console.log('User logs out as expected')
             console.log('-------------------------END OF QA AUTOMATION TEST EXECUTION -----------------------------------------')
         }catch(e){
             console.log('log Out Btn not available')
@@ -111,6 +208,7 @@ const testData= JSON.parse(JSON.stringify(require("../testData.json")))
             if(await this.closeCommentPopUp.isVisible()){ 
                 await this.closeCommentPopUp.click()
             console.log('Comment Pop Up Closed as expected')
+            
             } 
             
         }catch(e){
@@ -139,9 +237,9 @@ const testData= JSON.parse(JSON.stringify(require("../testData.json")))
           randomName(offerName){
         try{
                 let start =10000
-                //let finish =9999
+                //let finish =9999zzx
                 let randomNumber = Math.floor((Math.random() * start))
-               //console.log('QA-Automation-' +offerType +'-' +randomNumber)
+               // console.log('QA-Automation-' +offerType +'-' +randomNumber)
                 let  randomString = ('QA-Automation-' +offerName +'-' +randomNumber)
                 console.log('OfferName = ' +randomString)
                 return randomString

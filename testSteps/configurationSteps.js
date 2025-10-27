@@ -76,6 +76,9 @@ exports.configurationSteps= class configurationSteps{
        // this.newItem_Btn=page.locator('#ctl00_ContentPlaceHolder1_ctrlMasterListOfItem_btnNewItem')
          this.newItem_Btn= page.getByRole('button', { name: 'New Item' })
         this.saveMasterListItem= page.locator('#ctl00_ContentPlaceHolder1_ctrlMasterListOfItem_btnSaveMasterItem')
+       
+        this.okCMPprizeNotFound = page.getByRole('button', { name: 'Ok' })
+        this.cancelCMPprizeNotFound = page.getByRole('button', { name: 'Cancel' })
         this.itemAttribute =page.locator('#ctl00_ContentPlaceHolder1_ctrlMasterListOfItem_lstMasterItems')
         this.saveAttribute = page.locator('#ctl00_ContentPlaceHolder1_ctrlMasterListOfItem_btnSaveAttribute')                                
 
@@ -99,12 +102,8 @@ exports.configurationSteps= class configurationSteps{
        // this.configureUpdate_btn=page.getByRole('button', { name: 'Update' })
         
        
-       
-       
         ////////////////////
         this.checkIn_Tab= page.getByText('Check-in')
-
-
 
 
         this.internalAttachemnt_Tab = page.getByText('Internal Attachment')
@@ -113,7 +112,6 @@ exports.configurationSteps= class configurationSteps{
         this.offerDisplayname=page.locator('#ctl00_ContentPlaceHolder1_ctrlSummary_lblOfferDisplayName')
         this.submitOfferForReview=page.getByRole('button', { name: 'Submit for Review' })
         this.validateSuccessOfferSubmited_PopUp=page.getByText('The offer has been submitted')
-       
        
        
         this.saveAndNextStep_Btn= page.getByRole('button', { name: 'Save & Next Step' })
@@ -197,6 +195,15 @@ exports.configurationSteps= class configurationSteps{
         this.noResultFound_Txt= page.locator('#')
 
        ////////////////////////////////////////////////////////////
+     }
+
+     async focusElement(el ){
+        try{
+                el.wait_for()
+
+        }catch(e){
+            console.log('Element ' +el + ' is Not Focus after wait time ')
+        }
      }
 
 
@@ -709,11 +716,12 @@ exports.configurationSteps= class configurationSteps{
             try{
                 console.log('Adding New Offer Page')
                     this.clickConfiguration_Tab()
+                   // console.log('Open Configuration Tab')
                     this.clickEventsAndOffer_Tab()
+                   // console.log('Open Event And Offer Tab')
                     this.clickManageEventsAndOffer_Tab()
-                
+                   // console.log('open Manage Event and Offer Tab')
                     this.clickAddNewOffer_Tab() 
-                   
                     console.log('Add New Offer Page completed ')
 
              } catch(e){
@@ -735,7 +743,7 @@ exports.configurationSteps= class configurationSteps{
                 const offerEndDate = this.getNextDate(2)
 
                 await this.startDate_Txt.fill(offerStartDate);
-                await  this.endDate_Txt.fill(offerEndDate)
+                await this.endDate_Txt.fill(offerEndDate)
             
                 await this.clickDisplayDescription(testData.eventAndOfferTestAccounts.data)
                 await this.clickDisclaimer(testData.eventAndOfferTestAccounts.data)
@@ -753,7 +761,7 @@ exports.configurationSteps= class configurationSteps{
                     console.log("Display call to action field selected :" + booking)
                     
                     await this.clickSaveAndNext_Btn()
-                    console.log('Offer Set Up Page COmpleted')
+                    console.log('Offer Set Up Page Completed')
 
                 }
 
@@ -768,15 +776,13 @@ exports.configurationSteps= class configurationSteps{
             try{
              
             console.log('Start Invitation Details Page')  
-           // await this.selectFileToUpload_Btn.setInputFiles('dataFiles/resources/config/CSVs_Uploading/Inviteelist-TestSegment2.1.csv')
-                await this.selectFileToUpload_Btn.setInputFiles(filePath)
+                await this.selectFileToUpload_Btn.setInputFiles(filePath, {timeout:15000})
                 await this.uploadFile_Btn.click({timeout:15000})
                 await expect(this.invitationsUploadSuccessfully).toHaveText('Invitations processed successfully!', { timeout: 20000 })
                 console.log('File upload terminated as expected')
                 await  this.backToListing_Btn.scrollIntoViewIfNeeded()
                 console.log('Invitation Details Page Completed') 
-                await  this.clickSaveAndNext_Btn({timeout:5000}) 
-                console.log('Start Invitation Details Page Completed')  
+                await  this.clickSaveAndNext_Btn({timeout:5000})    
                     
         } catch(e){
             console.log('Invitation Details Page not available')
@@ -797,22 +803,25 @@ exports.configurationSteps= class configurationSteps{
             await this.displayPrizeName_txt.fill(testData.prizeItemWithID.prizeName[rowNumber])
             let itemName=testData.prizeItemWithID.prizeName[rowNumber]
             console.log('Item from list: ' +itemName)
+
             await this.cmpPrizeCode_txt.fill(testData.prizeItemWithID.prizeCode[rowNumber])
             await this.InternalDescription.fill(testData.prizeItemWithID.prizeDescription)
             await this.unitCost.fill(testData.prizeItemWithID.prizeUnitPrice[rowNumber])
-            await this.prizeInventory.fill(testData.prizeItemWithID.prizeInventory[rowNumber])
-            await this.saveMasterListItem.click({timeout:5000})
-            await this.itemAttribute.selectOption({label:'Beer',timeout:5000})
-            await this.newItem_Btn.click({timeout:3000})
-            await this.saveAttribute.click({timeout:5000})
+            await this.prizeInventory.fill(testData.prizeItemWithID.prizeInventory[rowNumber])  
+            await this.saveMasterListItem.click({timeout:2000})
+            await this.cancelCMPprizeNotFound.click()
+             //await this.page.pause()
+            // await this.itemAttribute.selectOption({label:'Beer',timeout:5000})
+            // await this.newItem_Btn.click({timeout:3000})
+            // await this.saveAttribute.click({timeout:5000})
            // await waitForSelector(this.saveAttribute).toBeSisible().click()
-             //console.log('Master list of ' +(i+1)+' items entered as expected')
+          //console.log('Master list of ' +(i+1)+' items entered as expected')
            // }
              await this.clickSaveAndNext_Btn({timeout:3000})
             console.log('Master List Of Item Page Completed')
 
              } catch(e){
-                console.log('  Master Item of List Page is not available')
+                console.log('Master Item of List Page is not available')
 
             }
 
@@ -822,7 +831,7 @@ exports.configurationSteps= class configurationSteps{
 
         async goToAttendeeCapacityPage(attendeeCapacity, numberAttendee){
         try{
-            console.log('On Attachment Capacity Page')
+            console.log('On Attendee Capacity Page')
              
             if(attendeeCapacity == 'NO'){
 
@@ -838,24 +847,26 @@ exports.configurationSteps= class configurationSteps{
             console.log('Attendee Capacity Page not Available')
         }
 
-
-
     }
 
         async goToSegmentsPage(numberItem, MaxPrizeQTY, DefaultPrizeQTY){
 
         try{
 
-            await this.maxPrizeQty_txt.fill(MaxPrizeQTY)
-            await this.defaultPrizeQty_txt.fill(DefaultPrizeQTY)
-            await this.page.waitForTimeOut(3000)
+            console.log('Start Segment page')
+            // await this.page.pause()
+           // await this.maxPrizeQty_txt.fill(MaxPrizeQTY)
+           let maxPrizeQty_txt = MaxPrizeQTY
+           let defaultPrizeQty_txt = DefaultPrizeQTY
+            //await this.defaultPrizeQty_txt.fill(DefaultPrize QTY)
+            //await this.page.waitForTimeOut(3000)
             if(numberItem ==1 ){
                 console.log('Configure 1 item')
                  // configure 1 item  
                  
                  await this.configureItem1.click()
 
-                  
+                
                 const context = await browser.newContext();
                 // await page.locator('#ctl00_ContentPlaceHolder1_ctrlSegments_btnAddAllPrimaryPrize').click();
                 // await page.getByRole('button', { name: 'Update' }).click();

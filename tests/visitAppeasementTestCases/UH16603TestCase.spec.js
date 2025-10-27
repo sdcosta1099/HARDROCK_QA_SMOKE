@@ -13,10 +13,10 @@ test('UH-16603 Validate Visit History', async ({ page }) => {
 
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
-    await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16603)
+    await searchPlayerID.searchPlayerID(testData.visitAppeasementTestAccounts.UH16603)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickVisitAppeasement_Tab()
-    
+    await playerFunctionPage.validateVisitAppeasementPage()
     
     await gblFuntSteps.logOut()
      

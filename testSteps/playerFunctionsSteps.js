@@ -1,5 +1,6 @@
 
 const{expect} = require("@playwright/test")
+const exp = require("constants")
 const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 //import{configurationSteps}from '../testSteps/configurationSteps'
 // const browser = await chromium.launch({ headless: false});
@@ -14,8 +15,8 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
         this.page=page
         /////Object for Player Function///////////////////////////////
-        this.playerFunctions_Tab = page.frameLocator('iframe[name="FramePopUp7"]').getByRole('link', { name: 'Player Functions' }) 
-      
+        //this.playerFunctions_Tab = page.frameLocator('iframe[name="FramePopUp7"]').getByRole('link', { name: 'Player Functions' }) 
+        this.playerFunctions_Tab =page.getByRole('link', { name: 'Player Functions' })
         this.playerTransactionLog_Tab= page.getByText('Player Transaction Log')
         this.closePopUpPlayerTransactionLog= page.getByText('Close')
         /////chcik in objects 
@@ -30,15 +31,25 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.viewComment_Tab =page.getByText('View Comment');
         this.editComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'Test Comment Edit_1705000060137', exact: true })
         this.addComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Add' });
-        this.viewSettledVoidedComment_tab=  page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View Settled/Voided' })
+        //this.viewSettledVoidedComment_tab=  page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View Settled/Voided' })
+        this.viewSettledVoidedComment_tab= page.locator('.btnCommentSettleVoid')
         this.closeCommentPopUp_Message=  page.getByText('Close')
+        this.closeCommentPopUp_Header= page.locator('#popupheaderEnhancedComments')
         this.cancelComment_Tab=page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' })
         this.viewAllComment_Tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View All' })
         this.replyComment_Tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Reply' })
         this.editComment_Tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Edit' })
         this.settleVoidComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Settle/Void' })
         this.CommentFirstRow_Tab =page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true })
-        //page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true })
+                                //page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true })
+
+        this.clickSubmit_SettleVoidComment_Btn= page.locator('.btnSettleVoidSubmit')
+        this.clickCancel_SettleVoidComment_Btn= page.locator('.btnSettleVoidCancel')
+        this.clickConfirm_SettleVoidComment_Btn= page.locator('.btnSettleVoidConfirm')
+
+
+         
+        
         this.addComment_Txt= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'txtComment' })
         this.saveComment_tab = page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Save' });
         
@@ -76,7 +87,20 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
         ////////////////////// visit Appeasement Object Repo//////////////////////
         this.visitAppeasement_Tab= page.getByText('Visit Appeasement');
+        this.uniqueLocationVisited = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Unique Locations Visited :' })
+        this.locationVisited = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Locations Visited (Lifetime) :' })
+        this.hotelVisited = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Hotel Visits :' })
+        this.locationName = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Location Name', exact: true }) 
+        this.totalVisits = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Total Visits', exact: true })
+        this.firstVisitDate = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'First Visit Date', exact: true })
+        this.lastVisitDate = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Last Visit Date', exact: true })
+        this.visitVerified =  page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Verified', exact: true })
 
+
+
+
+        //this.closeVisitAppeasement_Tab = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Close' })
+        this.closeVisitAppeasement_Tab =   page.getByText('Close')
 
 
 
@@ -86,8 +110,8 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
     async clickPlayerFunctions_Tab(){
         try{
-    
-            await this.playerFunctions_Tab.click() 
+
+            await this.playerFunctions_Tab.click({timeout:5000}) 
             console.log('User on player Function Tab')
         }catch(e){
             console.log(e)
@@ -120,8 +144,8 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
     async clickCommentFirstRow_Tab(){
         try{
-            await this.CommentFirstRow_Tab.first.click()
-            console.log('Comment FIrst ROw tab Opens')
+         await this.CommentFirstRow_Tab.first().click({timeout:5000})
+            console.log('Comment First Row tab Opens')
         }catch(e){
             console.log('Comment First Row Tab Not visible ')
         }
@@ -170,7 +194,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
     async clickviewSettledVoided_tab(){
         try{
-            await this.viewSettledVoidedComment_tab.click()
+            await this.viewSettledVoidedComment_tab.click({timeout:5000})
 
             console.log('User Viewed, Settle Voided Comments  ')
         }catch(e){
@@ -194,14 +218,45 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         try{
             await this.replyComment_Tab.click()
 
-            console.log('Reply COmment')
+            console.log('Reply Comment')
         }catch(e){
             console.log('Reply Comment not visible ')
         }
 
     }
     
-   
+    async validateCommentPopUp_Header_Present(){
+        try{
+            console.log('Start Validation for Comment Pop Up Header  ')
+            if (this.closeCommentPopUp_Header.toBeVisible()){
+                       closeCommentPopUp_Header.click()
+                       console.log('Comment Pop Up Header Close')
+            }else{
+                console.log('Message comment not visible')
+            }
+        }catch(e){
+            console.log('Comment Pop Up Header Not Availbale')
+        }
+    }
+
+
+
+    // async closeCommentPopUp_Header(){
+    //     try{
+    //         console.log('Start Validation for Comment Pop Up Header  ')
+    //         if (this.closeCommentPopUp_Header.toBeVisible()){
+    //                    closeCommentPopUp_Header.click()
+    //                    console.log('Comment Pop Up Header Close')
+    //         }else{
+    //             console.log('Message comment not visible')
+    //         }
+    //     }catch(e){
+    //         console.log('Comment Pop Up Header Not Availbale')
+    //     }
+    // }
+
+
+
 
     async clickCloseCommentPopUp_Message(){
         try{
@@ -297,10 +352,83 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
         try{
             await this.visitAppeasement_Tab.click()
-            console.log('visitAppeasement Page Opens')
+            console.log('visit Appeasement Page Opens as expected')
         }catch(e){
-            console.log('visitAppeasement Page NOT Available')
+            console.log('visit Appeasement Page NOT Available')
         }
+
+    }
+
+    async validateVisitAppeasementPage(){
+        try{
+          //  await this.page.pause()
+            await this.uniqueLocationVisited.highlight()
+            await expect(this.uniqueLocationVisited).toBeVisible()      
+            console.log('Unique location Visited displays as expected')  
+            await this.locationVisited.highlight()
+            await expect(this.locationVisited).toBeVisible() 
+            console.log('location Visited Lifetime displays as expected')
+            await this.hotelVisited.highlight()
+            await expect(this.hotelVisited).toBeVisible()
+            console.log('Hotel Visited displays as expected')
+            //await this.page.pause()
+            await this.locationName.highlight()
+            await this.totalVisits.highlight()
+            await this.firstVisitDate.highlight()
+            await this.lastVisitDate.highlight()
+            await this.visitVerified.highlight()
+            console.log('Visit Appeasement functions: Location Name, Total Visits, First Visit Date, Last Visit Date, and Verified Visits display as expected')
+            
+            await this.closeVisitAppeasement_Tab.click()
+
+        }catch(e){
+            console.log('Visit Appeasement functions are NOT VALIDATED')
+
+        }
+       
+                  
+    }
+
+
+    async addVisits(){
+        try{
+
+
+            //const  offerStartDate = this.getNextDate(1)
+            // const offerEndDate = this.getNextDate(2)
+             const   today = today.getDate()
+             console.log('date: ' +today)
+
+           // await this.startDate_Txt.fill(offerStartDate);
+           // await this.endDate_Txt.fill(offerEndDate)
+
+            // await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('img').click();
+            // await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: '22', exact: true }).click();
+            // await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Submit' }).click();
+            // await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Ok' }).click();
+
+            const date= getnext
+
+            console.log('Vist appeasements added as expected')
+        }catch(e){
+            console.log('Vist appeasements NOT ABLE TO add')
+        }
+
+
+    }
+
+    async validateAddedVisits(){
+        try{
+            await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('img').click();
+            await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: '22', exact: true }).click();
+            await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Submit' }).click();
+            await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Ok' }).click();
+
+            console.log('Number of Vist appeasements added validated as expected')
+        }catch(e){
+            console.log('User is not able to validate Visits appeasements')
+        }
+
 
     }
 

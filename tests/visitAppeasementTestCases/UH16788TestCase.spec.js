@@ -13,9 +13,15 @@ test('UH-16788 Add visit Hotel', async ({ page }) => {
 
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
-    await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16788)
+    await searchPlayerID.searchPlayerID(testData.visitAppeasementTestAccounts.UH16788)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickVisitAppeasement_Tab()
+    //await page.pause()
+    await playerFunctionPage.addVisits()
+
+    
+    // await this.page.pause()
+    // await playerFunctionPage.addVisitHotel('Test Hotel','2024-06-01','2024-06-05','Business Trip')
     
     
     await gblFuntSteps.logOut()

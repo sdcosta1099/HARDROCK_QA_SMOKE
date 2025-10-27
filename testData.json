@@ -2,6 +2,7 @@
 {
       
 "Environment":{
+            "EnvSelection": "QA",
             "QA" : "https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx",
             "PROD" : "https://sg24-hawbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx",
             "UAT" : "",
@@ -10,8 +11,8 @@
 "Credentials":{
     "QAuserName": "TU_LAB_HALO_NIN_ADM",
     "QApassword": "Password01@$",
-    "PRODuserName": "",
-    "PRODpassword": "",
+    "PRODuserName": "milou.rene",
+    "PRODpassword": "shrssPass$",
     "NonAdminUserName":"TU_LAB_HALO_GenUSR"
 } ,
 
@@ -185,7 +186,8 @@
             "UH16854":"807879446",
             "UH16855":"807879446",
             "UH16856":"807879751",
-            "UH16870":"807879446"
+            "UH16870":"807879446",
+            "Location Visited":"0"
             },
 
         "scriptingData":{
@@ -231,9 +233,4 @@
             ]
         }
 
-
-
-
-
-        
 }

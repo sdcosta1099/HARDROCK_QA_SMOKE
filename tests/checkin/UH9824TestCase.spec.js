@@ -15,20 +15,22 @@ test('UH-9824 HALo|Check-In|Test | Check In - Items: YES | Attendance: NO | Back
     const searchPlayerID= new playerSearchSteps(page)
     const configSteps= new configurationSteps(page)
     //generate random Offer name
+    const fileName='dataFiles/resources/config/CSVs_Uploading/Inviteelist-TestSegment2.csv'
+                    
     const offerName = gblFuntSteps.randomName('UH-9824')
+
     //login steps
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
     //go to Add new Offer steps
     await configSteps.goToAddNewOfferPage()
     await configSteps.goToOfferSetUpPage(offerName, 'NO')
-    await  configSteps.goToInvitationPage()
-     
-    await configSteps.goToMasterItemListPage()
-    await configSteps.goToAttendeeCapacityPage('NO', 2)
+    await  configSteps.goToInvitationPage(fileName)    
+    await configSteps.goToMasterItemListPage(2)
+    await configSteps.goToAttendeeCapacityPage('NO', 0)
 
-    await configSteps.goToSegmentsPage()
-    await configSteps.goToCheckInPage()
+    await configSteps.goToSegmentsPage(1,1,1)
+    await configSteps.goToCheckInPage('YES','NO')
     await configSteps.goToInternalAttachmentsPage()
     await configSteps.goToSummaryPafePage(offerName)
     await configSteps.approvedOpenOffer(offerName)

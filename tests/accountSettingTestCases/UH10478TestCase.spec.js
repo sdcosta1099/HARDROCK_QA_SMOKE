@@ -10,8 +10,6 @@ test('UH10478 HALO | Online Account Settings | Unlock an Online Account', async 
     const gblFuntSteps = new globalFUnctionSteps(page)
     const searchPlayerID= new playerSearchSteps(page)
     const plyFunction = new playerFunctionsSteps(page)
-
-
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
     await searchPlayerID.searchPlayerID(testData.AccountSettingTestData.UH10478)

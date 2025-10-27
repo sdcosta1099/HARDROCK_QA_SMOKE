@@ -14,6 +14,5 @@ test('UH10488 HALO | Online Account Settings | Online account settings displayed
     await searchPlayerID.clickCommPreferences_btn()
     await searchPlayerID.clickAccountSettings_tab()
     await searchPlayerID.validateAccountSettingTextCOntent()
-  
     await gblFuntSteps.logOut()
   });

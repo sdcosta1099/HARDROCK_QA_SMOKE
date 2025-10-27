@@ -12,7 +12,6 @@ test('UH10476 HALO | Online Account Settings | Reset Password link to an Online 
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
     await searchPlayerID.searchPlayerID(testData.AccountSettingTestData.UH10476)
-    //await page.pause()
     await searchPlayerID.clickCommPreferences_btn()
     await searchPlayerID.clickAccountSettings_tab()
     // validate account is disable
@@ -20,6 +19,6 @@ test('UH10476 HALO | Online Account Settings | Reset Password link to an Online 
     await searchPlayerID.clickResetPassword_link()
     await searchPlayerID.clickResetPassword_popUpSend()
     await searchPlayerID.clickResetPassword_message()
-     
-    await gblFuntSteps.logOut()
+
+   await gblFuntSteps.logOut()
   })
