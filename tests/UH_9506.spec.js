@@ -20,7 +20,7 @@ test('UH_9506_HALo | Quick Offers | Create a Quick Offer For LOB=Online', async 
   await pa.clickOnLobDropdownQuickOfferPage()
   await pa.checkOptionOnlineOfLobQuickOfferSetupPage('Online')
   await pa.clickOnOfferTypeDropdownQuickOfferPage()
-  await pa.selectOfferTypeQuickOfferPage()
+  await pa.selectOfferTypeCasinoOnlineOptionSelectedQuickOfferPage()
   await pa.clickOnDisplayPropertyDropdownQuickOfferSetupPage()
   await pa.checkOptionDisplayPropertyQuickOffer('Hard Rock Atlantic City')
   await pa.clickOnDisplayLocationDropdown()

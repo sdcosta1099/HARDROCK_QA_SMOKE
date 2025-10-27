@@ -3,7 +3,7 @@ test.setTimeout(50000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('UH_9481_View Tier History', async ({ page }) => {
+test('UH_9481_Halo| Patron Dash Board | Player Function| View Tier History', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
 

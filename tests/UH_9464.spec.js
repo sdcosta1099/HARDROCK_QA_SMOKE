@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(50000000);
+test.setTimeout(500000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('UH_9464_HALO | Comments | Settle/Void Comments', async ({ page }) => {
+test('@27Oct UH_9464_HALO | Comments | Settle/Void Comments', async ({ page }) => {
   const common = new commonSteps(page)
   const pa = new playerAction(page)
 
@@ -30,6 +30,7 @@ test('UH_9464_HALO | Comments | Settle/Void Comments', async ({ page }) => {
   await pa.validateDialogBoxWithSettleVoidCommentDisplayed()
   await pa.clickOnCancelSettleVoidCommentBox()
   await pa.selectComment1()
+  //await page.waitForTimeout(8000000);
   await pa.selectSettleVoidButton()
   await pa.enterComment('Testing Settle/Void')
   await pa.clickOnSubmit()
@@ -64,6 +65,7 @@ test('UH_9464_HALO | Comments | Settle/Void Comments', async ({ page }) => {
   await pa.clickOnViewComment()
   await pa.validateViewCommentPopUp()
   await pa.selectComment()
+  //await page.waitForTimeout(1000);
   await pa.validateReplyEditDeletSettleVoidButtonsDisplayed()
   await pa.selectSettleVoidButton()
   await pa.validateDialogBoxWithSettleVoidCommentDisplayed()
@@ -73,7 +75,9 @@ test('UH_9464_HALO | Comments | Settle/Void Comments', async ({ page }) => {
   await pa.validateVoidConfirmationMessage()
   await pa.clickOnCancelConfirmationMessagePopUp()
   await pa.clickOnCancelSettleVoidCommentBox()
-  await pa.selectComment1()
+  //await page.waitForTimeout(80000000);
+  await pa.selectComment2()
+  // await page.waitForTimeout(2000)
   await pa.selectSettleVoidButton()
   await pa.selectVoidRadioButton()
   await pa.enterComment('Testing Settle/Void')

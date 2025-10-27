@@ -16,7 +16,7 @@ test('UH_9458_Testing HALO Events & Offers Offer Mgmt Check in Flow Capacity No 
   await pa.ValidateAddNewEventAndOffersPage()
   await pa.SelectfillOutNewEventFields4("Smoke_UH_9458")
   await pa.clickSaveAndNextStep()
-  await pa.SelectAFile()
+  await pa.SelectAFile1()
   await pa.clickSaveAndNextStep()
   await pa.clickOnAddMasterListItems()
   await pa.addMasterListItem1("PrizeName1","PC","Skip","500","50")
@@ -41,15 +41,17 @@ test('UH_9458_Testing HALO Events & Offers Offer Mgmt Check in Flow Capacity No 
   await pa.clickOnEmployeeDashboard()
   await pa.enterPlayerID('807651714') 
   await pa.clickOnSearch()
+  await pa.clickOnClose()
   await pa.validatePlayerDashboardDisplayed()
   await pa.selectEventsAndOffersButtonOnPlayerDashBoard()
   await pa.validatePlayerEventsAndOffersPage()
   await pa.clickOnInvitedFilter()
-  await page.waitForTimeout(30000);  
+  await page.waitForTimeout(50000);  
   await pa.searchOfferFromViewEventsAndOffer('Smoke_UH_9458')
   await page.waitForTimeout(30000); 
   await pa.clickOnMoreLinkofEvent()
   await pa.ValidateSelectedEventDetailsSectionPage()
+  //await page.waitForTimeout(800000000);
   await pa.validateThisPatronHasNotBeenInvitedToTheEvent()
   await common.logout();
 

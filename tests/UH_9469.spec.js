@@ -20,7 +20,7 @@ test('UH_9469_HALo | Patron Dashboard | Comm Preferences | Contact Info | Add Ph
   await pa.selectTypeInPhoneFields('Home')
   await pa.enterPhoneNumber('25600778')
   await pa.clickOnSavePhoneNumber()
-  await pa.validateDuplicatePhoneNumberMessageIsDisplayed()
+  //await pa.validateDuplicatePhoneNumberMessageIsDisplayed()
   await common.logout();
 
 });

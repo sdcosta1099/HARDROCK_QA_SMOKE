@@ -3,7 +3,7 @@ test.setTimeout(100000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('UH_9486_View Player Trip History', async ({ page }) => {
+test('UH_9486_HALO | Patron Dashboard | View Player Trip History', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
 
@@ -12,6 +12,7 @@ test('UH_9486_View Player Trip History', async ({ page }) => {
 
   await pa.enterPlayerID('660302931')
   await pa.clickOnSearchForPlayer()
+  await pa.clickOnClose()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnTripsTab()
   await pa.validatePlayersTripPageDisplayed()

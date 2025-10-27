@@ -1,0 +1,162 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - text: HALO 25.9.1
+      - text: Logged in as TU_LAB_HALO_NIN_ADM
+      - img "HR Casino, Northern Indiana" [ref=e7]
+    - link "Logout" [ref=e9] [cursor=pointer]:
+      - /url: javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$lnkLogout", "", false, "", "SessionOut.aspx", false, true))
+      - img "Logout" [ref=e10]
+  - generic [ref=e12]:
+    - list [ref=e15]:
+      - listitem [ref=e16]:
+        - link "Player Functions" [ref=e17] [cursor=pointer]:
+          - /url: javascript:toggle1("1000010","sub_nav_1000010","1000010");
+      - listitem [ref=e18]:
+        - link "Configuration" [ref=e19] [cursor=pointer]:
+          - /url: javascript:toggle1("1000000","sub_nav_1000000","1000010");
+      - listitem [ref=e20]:
+        - link "Administration" [ref=e21] [cursor=pointer]:
+          - /url: javascript:toggle1("1000002","sub_nav_1000002","1000010");
+    - generic [ref=e22]:
+      - table [ref=e25]:
+        - rowgroup [ref=e26]:
+          - row "PLAYER SEARCH - 807651716 - JULIAN JOHNS (TDM ACCOUNTS REPOSITORY S) Go To Employee Dashboard 0" [ref=e27]:
+            - cell "PLAYER SEARCH" [ref=e28]
+            - cell "- 807651716 - JULIAN JOHNS (TDM ACCOUNTS REPOSITORY S)" [ref=e29]
+            - cell "Go To Employee Dashboard" [ref=e30]:
+              - link "Go To Employee Dashboard" [ref=e31] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkToEmployeeDashboard','')
+                - img [ref=e32]
+            - cell [ref=e34]:
+              - link "Expand Search" [ref=e35] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkSearchSVG','')
+                - img [ref=e36]
+            - cell "0" [ref=e39]:
+              - generic "Show Notification" [ref=e41]
+              - generic:
+                - generic: "0"
+      - generic [ref=e42]:
+        - table [ref=e45]:
+          - rowgroup [ref=e46]:
+            - row [ref=e47]:
+              - cell [ref=e48]:
+                - img [ref=e49]
+        - table [ref=e52]:
+          - rowgroup [ref=e53]:
+            - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e54]:
+              - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e55]:
+                - table [ref=e56]:
+                  - rowgroup [ref=e57]:
+                    - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e58]:
+                      - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e59]:
+                        - generic [ref=e60]: Player Info
+                        - generic [ref=e61]: Transactions
+                        - generic [ref=e62]: Trips
+                        - generic [ref=e63]: Tier History
+                        - generic [ref=e64]: Tier Credits Earnings
+                        - generic [ref=e65]: Offers
+                        - generic [ref=e66]: Unity Points Earnings
+                        - generic [ref=e67]: Earnings
+                        - generic [ref=e68]: Running Balances
+                        - generic [ref=e69]: Promotions
+                        - generic [ref=e70]: Pending Earnings
+                        - generic [ref=e71]: Earnings
+                        - generic [ref=e72]: Overflow Earnings
+                        - generic [ref=e73]: Contact Information
+                        - generic [ref=e74]: Discretionary Comps
+                        - generic [ref=e75]: Discounts
+                        - generic [ref=e76]: Gaming Activity
+                        - generic [ref=e77]: Events & Offers
+                        - generic [ref=e78]: Free Play Rewards
+                        - generic [ref=e79]: Reservations
+                        - generic [ref=e80]: Comm Preferences
+                        - generic [ref=e81]: Consent Management
+                        - generic [ref=e82]: Discreet
+                    - row [ref=e83]:
+                      - cell [ref=e84]:
+                        - iframe [ref=e85]:
+                          - table [ref=f1e5]:
+                            - rowgroup [ref=f1e8]:
+                              - row "Transaction Date Transaction Type Previous Tier New Tier Authorizer Lock Until Lock Type Reason Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied 02/20/2024 Ranking Legend Star Yearend Expiration 2/28/2025 08/01/2022 Gifted Star Legend v-juan.brassea 2/28/2023 None System Testing 01/10/2022 Ranking Star Star LAWS 2/28/2026" [ref=f1e9]:
+                                - cell "Transaction Date Transaction Type Previous Tier New Tier Authorizer Lock Until Lock Type Reason Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied 02/20/2024 Ranking Legend Star Yearend Expiration 2/28/2025 08/01/2022 Gifted Star Legend v-juan.brassea 2/28/2023 None System Testing 01/10/2022 Ranking Star Star LAWS 2/28/2026" [ref=f1e10]:
+                                  - table [ref=f1e11]:
+                                    - rowgroup [ref=f1e12]:
+                                      - row "Transaction Date Transaction Type Previous Tier New Tier Authorizer Lock Until Lock Type Reason Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied" [ref=f1e13]:
+                                        - cell "Transaction Date Transaction Type Previous Tier New Tier Authorizer Lock Until Lock Type Reason Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied" [ref=f1e14]:
+                                          - table [ref=f1e16]:
+                                            - rowgroup [ref=f1e17]:
+                                              - row "Transaction Date Transaction Type Previous Tier New Tier Authorizer Lock Until Lock Type Reason" [ref=f1e18]:
+                                                - cell "Transaction Date" [ref=f1e19]
+                                                - cell "Transaction Type" [ref=f1e20]
+                                                - cell "Previous Tier" [ref=f1e21]
+                                                - cell "New Tier" [ref=f1e22]
+                                                - cell "Authorizer" [ref=f1e23]
+                                                - cell "Lock Until" [ref=f1e24]
+                                                - cell "Lock Type" [ref=f1e25]
+                                                - cell "Reason" [ref=f1e26]
+                                              - row "Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied" [ref=f1e27]:
+                                                - cell "Filter Not Applied" [ref=f1e28]:
+                                                  - button "Filter Not Applied" [ref=f1e29]:
+                                                    - img "Filter Not Applied" [ref=f1e30]
+                                                - cell "Filter Not Applied" [ref=f1e31]:
+                                                  - button "Filter Not Applied" [ref=f1e32]:
+                                                    - img "Filter Not Applied" [ref=f1e33]
+                                                - cell "Filter Not Applied" [ref=f1e34]:
+                                                  - button "Filter Not Applied" [ref=f1e35]:
+                                                    - img "Filter Not Applied" [ref=f1e36]
+                                                - cell "Filter Not Applied" [ref=f1e37]:
+                                                  - button "Filter Not Applied" [ref=f1e38]:
+                                                    - img "Filter Not Applied" [ref=f1e39]
+                                                - cell "Filter Not Applied" [ref=f1e40]:
+                                                  - button "Filter Not Applied" [ref=f1e41]:
+                                                    - img "Filter Not Applied" [ref=f1e42]
+                                                - cell "Filter Not Applied" [ref=f1e43]:
+                                                  - button "Filter Not Applied" [ref=f1e44]:
+                                                    - img "Filter Not Applied" [ref=f1e45]
+                                                - cell "Filter Not Applied" [ref=f1e46]:
+                                                  - button "Filter Not Applied" [ref=f1e47]:
+                                                    - img "Filter Not Applied" [ref=f1e48]
+                                                - cell "Filter Not Applied" [ref=f1e49]:
+                                                  - button "Filter Not Applied" [ref=f1e50]:
+                                                    - img "Filter Not Applied" [ref=f1e51]
+                                    - rowgroup [ref=f1e52]:
+                                      - row "02/20/2024 Ranking Legend Star Yearend Expiration 2/28/2025 08/01/2022 Gifted Star Legend v-juan.brassea 2/28/2023 None System Testing 01/10/2022 Ranking Star Star LAWS 2/28/2026" [ref=f1e53]:
+                                        - cell "02/20/2024 Ranking Legend Star Yearend Expiration 2/28/2025 08/01/2022 Gifted Star Legend v-juan.brassea 2/28/2023 None System Testing 01/10/2022 Ranking Star Star LAWS 2/28/2026" [ref=f1e54]:
+                                          - table [ref=f1e56]:
+                                            - rowgroup [ref=f1e57]:
+                                              - row "02/20/2024 Ranking Legend Star Yearend Expiration 2/28/2025" [ref=f1e58]:
+                                                - cell "02/20/2024" [ref=f1e59]
+                                                - cell "Ranking" [ref=f1e60]
+                                                - cell "Legend" [ref=f1e61]
+                                                - cell "Star" [ref=f1e62]
+                                                - cell "Yearend Expiration" [ref=f1e63]
+                                                - cell "2/28/2025" [ref=f1e64]
+                                                - cell [ref=f1e65]
+                                                - cell [ref=f1e66]
+                                              - row "08/01/2022 Gifted Star Legend v-juan.brassea 2/28/2023 None System Testing" [ref=f1e67]:
+                                                - cell "08/01/2022" [ref=f1e68]
+                                                - cell "Gifted" [ref=f1e69]
+                                                - cell "Star" [ref=f1e70]
+                                                - cell "Legend" [ref=f1e71]
+                                                - cell "v-juan.brassea" [ref=f1e72]
+                                                - cell "2/28/2023" [ref=f1e73]
+                                                - cell "None" [ref=f1e74]
+                                                - cell "System Testing" [ref=f1e75]
+                                              - row "01/10/2022 Ranking Star Star LAWS 2/28/2026" [ref=f1e76]:
+                                                - cell "01/10/2022" [ref=f1e77]
+                                                - cell "Ranking" [ref=f1e78]
+                                                - cell "Star" [ref=f1e79]
+                                                - cell "Star" [ref=f1e80]
+                                                - cell "LAWS" [ref=f1e81]
+                                                - cell "2/28/2026" [ref=f1e82]
+                                                - cell [ref=f1e83]
+                                                - cell [ref=f1e84]
+                                    - rowgroup
+                              - row "1" [ref=f1e85]:
+                                - cell "1" [ref=f1e86]:
+                                  - generic [ref=f1e87]: "1"
+```

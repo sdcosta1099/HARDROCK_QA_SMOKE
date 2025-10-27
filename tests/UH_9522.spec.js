@@ -24,7 +24,12 @@ test('UH_9522_HALo | Quick Offers | Create a Quick offer with Icon Level', async
   await pa.checkOptionOfDisplayLocationQuickOfferSetupPage()
   await pa.enterDisplayName('UH_9522')
   await pa.clickOnCardTierRestrictionDropdownQuickOfferSetupPage()
-  await pa.selecCardTierRestrictionIconQuickOfferPage('Icon')
+  //await pa.selecCardTierRestrictionIconQuickOfferPage('Icon')
+  await page.keyboard.press('ArrowDown');
+  await page.keyboard.press('ArrowDown');
+  await page.keyboard.press('ArrowDown');
+  await page.keyboard.press('ArrowDown');
+  await page.keyboard.press('Enter');
   await pa.enterDisplayDescriptionInQuickOfferPage('Smoke Test')
   await pa.enterDisclaimerInQuickOfferPage('Smoke Test1')
   await pa.clickOnSaveAndNextStepQuickOfferPage()

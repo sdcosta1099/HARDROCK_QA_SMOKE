@@ -12,6 +12,7 @@ test('UH_9477_HALo | Patron Dash Board | View Tier Credit Earnings', async ({ pa
 
   await pa.enterPlayerID('550296941')
   await pa.clickOnSearchForPlayer()
+  await pa.clickOnClose()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnTierCreditsEarningsTab()
   await pa.clickOnArrowIconeInFrontOfDataRecord()

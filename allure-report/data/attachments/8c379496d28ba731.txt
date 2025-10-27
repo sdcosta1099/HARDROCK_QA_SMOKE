@@ -1,0 +1,70 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e5]: HALO 25.9.1
+  - generic [ref=e12]:
+    - generic [ref=e13]:
+      - radio "Manual" [checked] [ref=e14]
+      - text: Manual
+      - generic [ref=e15]:
+        - radio "Fingerprint" [ref=e16]
+        - text: Fingerprint
+      - button "Verify" [ref=e17] [cursor=pointer]
+    - generic [ref=e18]:
+      - generic [ref=e19]: Log In
+      - table [ref=e21]:
+        - rowgroup [ref=e22]:
+          - row [ref=e23]:
+            - cell [ref=e24]
+          - row [ref=e25]:
+            - cell [ref=e26]
+          - row "User ID" [ref=e27]:
+            - cell "User ID" [ref=e28]
+          - row "Remember my User ID" [ref=e29]:
+            - cell [ref=e30]:
+              - textbox [ref=e31]
+            - cell [ref=e32]
+            - cell [ref=e33]:
+              - checkbox [ref=e34]
+            - cell [ref=e35]
+            - cell "Remember my User ID" [ref=e36]:
+              - strong [ref=e38]: Remember my User ID
+          - row "Password" [ref=e39]:
+            - cell "Password" [ref=e40]
+          - row [ref=e41]:
+            - cell [ref=e42]:
+              - textbox [ref=e43]
+              - text: 
+          - row [ref=e44]:
+            - cell [ref=e45]
+          - row "Domain Name" [ref=e46]:
+            - cell "Domain Name" [ref=e47]
+          - row "------------------Select Domain----------------------- Remember my Domain Name" [ref=e48]:
+            - cell "------------------Select Domain-----------------------" [ref=e49]:
+              - combobox [ref=e50]:
+                - option "------------------Select Domain-----------------------" [selected]
+                - option "gamingaig.local"
+                - option "ds1.hardrockcorp.com"
+                - option "hardrock.local"
+                - option "seminolehardrock.fl.local"
+            - cell [ref=e51]
+            - cell [ref=e52]:
+              - checkbox [ref=e53]
+            - cell [ref=e54]
+            - cell "Remember my Domain Name" [ref=e55]:
+              - strong [ref=e57]: Remember my Domain Name
+          - row [ref=e58]:
+            - cell [ref=e59]
+          - row [ref=e60]:
+            - cell [ref=e61]
+          - row "Submit Cancel" [ref=e62]:
+            - cell "Submit Cancel" [ref=e63]:
+              - table [ref=e65]:
+                - rowgroup [ref=e66]:
+                  - row "Submit Cancel" [ref=e67]:
+                    - cell "Submit" [ref=e68]:
+                      - button "Submit" [active] [ref=e69] [cursor=pointer]
+                    - cell "Cancel" [ref=e70]:
+                      - button "Cancel" [ref=e71] [cursor=pointer]
+```

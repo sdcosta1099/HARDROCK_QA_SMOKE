@@ -28,7 +28,10 @@ test('UH_9511_HALo | Quick Offers | Create a Quick Offer for Multiple Regions', 
   await pa.checkOptionOfDisplayLocationQuickOfferSetupPage('Hard Rock Live')
   await pa.enterDisplayName('UH_9511')
   await pa.clickOnCardTierRestrictionDropdownQuickOfferSetupPage()
-  await pa.selecCardTierRestrictionStarQuickOfferPage('Star')
+  //await pa.selecCardTierRestrictionStarQuickOfferPage('Star')
+  await page.keyboard.press('ArrowDown');
+  await page.keyboard.press('ArrowDown');
+  await page.keyboard.press('Enter');
   await pa.clickOnCardTierRestrictionDropdownQuickOfferSetupPage()
   await pa.enterDisplayDescriptionInQuickOfferPage('Test')
   await pa.enterDisclaimerInQuickOfferPage('Test1')

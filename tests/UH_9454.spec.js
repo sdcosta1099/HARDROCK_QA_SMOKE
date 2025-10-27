@@ -19,7 +19,6 @@ test('UH_9454 HALO | Events & Offers | Check-In | Non Invited Patron Not Booked'
   await pa.SelectAFile()
   await pa.clickSaveAndNextStep()
   await pa.clickOnAddMasterListItems()
-  //await page.waitForTimeout(800000000);
   await pa.addMasterListItem1("PrizeName1","PC","Skip","500","50")
   await pa.clickSaveAndNextStep()
   await pa.EnterAttendanceCapacity("2")

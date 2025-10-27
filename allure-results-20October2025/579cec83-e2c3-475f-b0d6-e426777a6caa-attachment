@@ -1,0 +1,215 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - text: HALO 25.9.1
+      - text: Logged in as TU_LAB_HALO_NIN_ADM
+      - img "HR Casino, Northern Indiana" [ref=e7]
+    - link "Logout" [ref=e9] [cursor=pointer]:
+      - /url: javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$lnkLogout", "", false, "", "SessionOut.aspx", false, true))
+      - img "Logout" [ref=e10]
+  - generic [ref=e12]:
+    - list [ref=e15]:
+      - listitem [ref=e16]:
+        - link "Player Functions" [ref=e17] [cursor=pointer]:
+          - /url: javascript:toggle1("1000010","sub_nav_1000010","1000010");
+      - listitem [ref=e18]:
+        - link "Configuration" [ref=e19] [cursor=pointer]:
+          - /url: javascript:toggle1("1000000","sub_nav_1000000","1000010");
+      - listitem [ref=e20]:
+        - link "Administration" [ref=e21] [cursor=pointer]:
+          - /url: javascript:toggle1("1000002","sub_nav_1000002","1000010");
+    - generic [ref=e22]:
+      - table [ref=e25]:
+        - rowgroup [ref=e26]:
+          - row "PLAYER SEARCH Go To Employee Dashboard 0" [ref=e27]:
+            - cell "PLAYER SEARCH" [ref=e28]
+            - cell [ref=e29]
+            - cell "Go To Employee Dashboard" [ref=e30]:
+              - link "Go To Employee Dashboard" [ref=e31] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkToEmployeeDashboard','')
+                - img [ref=e32]
+            - cell [ref=e34]:
+              - link "Expand Search" [ref=e35] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkSearchSVG','')
+                - img [ref=e36]
+            - cell "0" [ref=e39]:
+              - generic "Show Notification" [ref=e41]
+              - generic:
+                - generic: "0"
+      - generic [ref=e42]:
+        - table [ref=e46]:
+          - rowgroup [ref=e47]:
+            - row [ref=e48]:
+              - cell [ref=e49]:
+                - img [ref=e50]
+        - generic [ref=e52]:
+          - generic [ref=e53]: Edit $100,000 Bonus Times Slot Tournament
+          - generic [ref=e54]:
+            - generic [ref=e57]:
+              - strong [ref=e60]: Quick Offer Setup
+              - table [ref=e62]:
+                - rowgroup [ref=e63]:
+                  - row:
+                    - cell
+                  - row "LOB Casino Region North America Offer Type Tournaments" [ref=e64]:
+                    - cell "LOB Casino" [ref=e65]:
+                      - text: LOB
+                      - table [ref=e68]:
+                        - rowgroup [ref=e69]:
+                          - row "Casino" [ref=e70]:
+                            - cell "Casino" [ref=e71]:
+                              - textbox [disabled] [ref=e72]: Casino
+                            - cell [ref=e73]
+                    - cell "Region North America" [ref=e74]:
+                      - text: Region
+                      - table [ref=e77]:
+                        - rowgroup [ref=e78]:
+                          - row "North America" [ref=e79]:
+                            - cell "North America" [ref=e80]:
+                              - textbox [disabled] [ref=e81]: North America
+                            - cell [ref=e82]
+                    - cell "Offer Type Tournaments" [ref=e83]:
+                      - text: Offer Type
+                      - table [ref=e86]:
+                        - rowgroup [ref=e87]:
+                          - row "Tournaments" [ref=e88]:
+                            - cell "Tournaments" [ref=e89]:
+                              - textbox [ref=e90]: Tournaments
+                            - cell [ref=e91]
+                  - row "Display Property Hard Rock Atlantic City Display Locations Player's Club" [ref=e92]:
+                    - cell "Display Property Hard Rock Atlantic City" [ref=e93]:
+                      - text: Display Property
+                      - table [ref=e96]:
+                        - rowgroup [ref=e97]:
+                          - row "Hard Rock Atlantic City" [ref=e98]:
+                            - cell "Hard Rock Atlantic City" [ref=e99]:
+                              - textbox [ref=e100]: Hard Rock Atlantic City
+                            - cell [ref=e101]
+                    - cell "Display Locations Player's Club" [ref=e102]:
+                      - text: Display Locations
+                      - table [ref=e105]:
+                        - rowgroup [ref=e106]:
+                          - row "Player's Club" [ref=e107]:
+                            - cell "Player's Club" [ref=e108]:
+                              - textbox [ref=e109]: Player's Club
+                            - cell [ref=e110]
+                  - row "Visited Property Dominant Property" [ref=e111]:
+                    - cell "Visited Property" [ref=e112]:
+                      - text: Visited Property
+                      - table [ref=e115]:
+                        - rowgroup [ref=e116]:
+                          - row [ref=e117]:
+                            - cell [ref=e118]:
+                              - textbox [ref=e119]
+                            - cell [ref=e120]
+                    - cell "Dominant Property" [ref=e121]:
+                      - text: Dominant Property
+                      - table [ref=e124]:
+                        - rowgroup [ref=e125]:
+                          - row [ref=e126]:
+                            - cell [ref=e127]:
+                              - textbox [ref=e128]
+                            - cell [ref=e129]
+                  - row "Display Name $100,000 Bonus Times Slot Tournament Card Tier Restriction None" [ref=e130]:
+                    - cell "Display Name $100,000 Bonus Times Slot Tournament" [ref=e131]:
+                      - generic [ref=e132]: Display Name
+                      - textbox "Display Name" [ref=e133]: $100,000 Bonus Times Slot Tournament
+                    - cell "Card Tier Restriction None" [ref=e134]:
+                      - generic [ref=e135]: Card Tier Restriction
+                      - table [ref=e138]:
+                        - rowgroup [ref=e139]:
+                          - row "None" [ref=e140]:
+                            - cell "None" [ref=e141]:
+                              - textbox [ref=e142]: None
+                            - cell [ref=e143]
+                  - row "Start Date 08/06/2025 Start Time 12:00 AM  Time Zone EST End Date 12/30/2025 End Time 11:59 PM  Time Zone EST" [ref=e144]:
+                    - cell "Start Date 08/06/2025 Start Time 12:00 AM  Time Zone EST End Date 12/30/2025 End Time 11:59 PM  Time Zone EST" [ref=e145]:
+                      - table [ref=e148]:
+                        - rowgroup [ref=e149]:
+                          - row "Start Date 08/06/2025 Start Time 12:00 AM  Time Zone EST" [ref=e150]:
+                            - cell "Start Date 08/06/2025" [ref=e151]:
+                              - text: Start Date
+                              - generic [ref=e152]:
+                                - textbox [ref=e153]: 08/06/2025
+                                - img [ref=e154]
+                            - cell "Start Time 12:00 AM " [ref=e155]:
+                              - text: Start Time
+                              - generic [ref=e156]:
+                                - textbox [ref=e157]: 12:00 AM
+                                - generic [ref=e158]: 
+                            - cell "Time Zone EST" [ref=e159]:
+                              - text: Time Zone
+                              - textbox [disabled] [ref=e161]: EST
+                          - row "End Date 12/30/2025 End Time 11:59 PM  Time Zone EST" [ref=e162]:
+                            - cell "End Date 12/30/2025" [ref=e163]:
+                              - text: End Date
+                              - generic [ref=e164]:
+                                - textbox [ref=e165]: 12/30/2025
+                                - img [ref=e166]
+                            - cell "End Time 11:59 PM " [ref=e167]:
+                              - text: End Time
+                              - generic [ref=e168]:
+                                - textbox [ref=e169]: 11:59 PM
+                                - generic [ref=e170]: 
+                            - cell "Time Zone EST" [ref=e171]:
+                              - text: Time Zone
+                              - textbox [disabled] [ref=e173]: EST
+                  - row
+                  - row "Display Start Date 07/16/2025 Display Start Time 12:00 AM  Time Zone EST Display End Date 12/30/2025 Display End Time 11:59 PM  Time Zone EST" [ref=e174]:
+                    - cell "Display Start Date 07/16/2025 Display Start Time 12:00 AM  Time Zone EST Display End Date 12/30/2025 Display End Time 11:59 PM  Time Zone EST" [ref=e175]:
+                      - table [ref=e178]:
+                        - rowgroup [ref=e179]:
+                          - row "Display Start Date 07/16/2025 Display Start Time 12:00 AM  Time Zone EST" [ref=e180]:
+                            - cell "Display Start Date 07/16/2025" [ref=e181]:
+                              - text: Display Start Date
+                              - generic [ref=e182]:
+                                - textbox [ref=e183]: 07/16/2025
+                                - img [ref=e184]
+                            - cell "Display Start Time 12:00 AM " [ref=e185]:
+                              - text: Display Start Time
+                              - generic [ref=e186]:
+                                - textbox [ref=e187]: 12:00 AM
+                                - generic [ref=e188]: 
+                            - cell "Time Zone EST" [ref=e189]:
+                              - text: Time Zone
+                              - textbox [disabled] [ref=e191]: EST
+                          - row "Display End Date 12/30/2025 Display End Time 11:59 PM  Time Zone EST" [ref=e192]:
+                            - cell "Display End Date 12/30/2025" [ref=e193]:
+                              - text: Display End Date
+                              - generic [ref=e194]:
+                                - textbox [ref=e195]: 12/30/2025
+                                - img [ref=e196]
+                            - cell "Display End Time 11:59 PM " [ref=e197]:
+                              - text: Display End Time
+                              - generic [ref=e198]:
+                                - textbox [ref=e199]: 11:59 PM
+                                - generic [ref=e200]: 
+                            - cell "Time Zone EST" [ref=e201]:
+                              - text: Time Zone
+                              - textbox [disabled] [ref=e203]: EST
+                  - row
+                  - row "Display Description Test" [ref=e204]:
+                    - cell "Display Description Test" [ref=e205]:
+                      - text: Display Description
+                      - textbox [ref=e206]: Test
+                  - row "Disclaimer Test1" [ref=e207]:
+                    - cell "Disclaimer Test1" [ref=e208]:
+                      - text: Disclaimer
+                      - textbox [ref=e209]: Test1
+            - generic [ref=e210]:
+              - heading "Quick Offer Process" [level=2] [ref=e211]
+              - list [ref=e212]:
+                - link "Offer Setup" [ref=e213] [cursor=pointer]:
+                  - /url: javascript:__doPostBack('ctl00$ContentPlaceHolder1$lstOfferCreationSteps$ctrl0$liStep','')
+                - link "Invitation Details" [ref=e214] [cursor=pointer]:
+                  - /url: javascript:__doPostBack('ctl00$ContentPlaceHolder1$lstOfferCreationSteps$ctrl1$liStep','')
+                - link "Summary" [ref=e215] [cursor=pointer]:
+                  - /url: javascript:__doPostBack('ctl00$ContentPlaceHolder1$lstOfferCreationSteps$ctrl2$liStep','')
+          - generic [ref=e216]:
+            - button "Back to Listing" [ref=e217] [cursor=pointer]
+            - button "Save & Next Step" [disabled] [ref=e218] [cursor=pointer]
+            - button "Save & Close" [ref=e219] [cursor=pointer]
+```

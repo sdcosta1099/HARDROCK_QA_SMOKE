@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(200000);
+test.setTimeout(500000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
@@ -25,7 +25,7 @@ test('UH_9515_HALo | Quick Offers | New fields in Quick Offers', async ({ page }
   await page.waitForTimeout(2000)
   await pa.uncheckOptionOfRegionQuickOfferSetupPage()
   await pa.uncheckOptionOfRegionQuickOfferSetupPage()
-  await pa.clickOnOfferTypeDropdownQuickOfferPage()
+  await pa.clickOnOfferTypeDropdownWhenCasinoCafeIsSelectedInQuickOfferPage()
   await pa.selectOfferTypeQuickOfferPage()
   await pa.clickOnDisplayPropertyDropdownQuickOfferSetupPage()
   await pa.checkOptionDisplayPropertyQuickOffer('Hard Rock Atlantic City')

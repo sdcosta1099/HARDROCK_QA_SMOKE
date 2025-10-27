@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(5000000);
+test.setTimeout(500000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('UH_9491_View Ratings', async ({ page }) => {
+test('UH_9491_HALO | Patron Dashboard | View Ratings', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
 
@@ -14,6 +14,8 @@ test('UH_9491_View Ratings', async ({ page }) => {
   await pa.clickOnSearchForPlayer()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnTripsTab()
+  //await page.waitForTimeout(8000000);
+
   await pa.validateTripHistoryDisplayed()
   await pa.validateLifeToDateTripHistoryDisplayed()
   await pa.validatePlayerTripHistoryDisplayed()

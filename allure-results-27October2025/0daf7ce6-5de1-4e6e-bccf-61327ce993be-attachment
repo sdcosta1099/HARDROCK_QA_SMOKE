@@ -1,0 +1,521 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - text: HALO 25.9.1
+        - text: Logged in as TU_LAB_HALO_NIN_ADM
+        - img "HR Casino, Northern Indiana" [ref=e7]
+      - link "Logout" [ref=e9] [cursor=pointer]:
+        - /url: javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$lnkLogout", "", false, "", "SessionOut.aspx", false, true))
+        - img "Logout" [ref=e10]
+    - generic [ref=e12]:
+      - list [ref=e15]:
+        - listitem [ref=e16]:
+          - link "Player Functions" [ref=e17] [cursor=pointer]:
+            - /url: javascript:toggle1("1000010","sub_nav_1000010","1000010");
+        - listitem [ref=e18]:
+          - link "Configuration" [ref=e19] [cursor=pointer]:
+            - /url: javascript:toggle1("1000000","sub_nav_1000000","1000010");
+        - listitem [ref=e20]:
+          - link "Administration" [ref=e21] [cursor=pointer]:
+            - /url: javascript:toggle1("1000002","sub_nav_1000002","1000010");
+      - generic [ref=e22]:
+        - table [ref=e25]:
+          - rowgroup [ref=e26]:
+            - row "PLAYER SEARCH - 807879582 - Logan Nanton Go To Employee Dashboard 0" [ref=e27]:
+              - cell "PLAYER SEARCH" [ref=e28]
+              - cell "- 807879582 - Logan Nanton" [ref=e29]
+              - cell "Go To Employee Dashboard" [ref=e30]:
+                - link "Go To Employee Dashboard" [ref=e31] [cursor=pointer]:
+                  - /url: javascript:__doPostBack('ctl00$lnkToEmployeeDashboard','')
+                  - img [ref=e32]
+              - cell [ref=e34]:
+                - link "Expand Search" [ref=e35] [cursor=pointer]:
+                  - /url: javascript:__doPostBack('ctl00$lnkSearchSVG','')
+                  - img [ref=e36]
+              - cell "0" [ref=e39]:
+                - generic "Show Notification" [ref=e41]
+                - generic:
+                  - generic: "0"
+        - table [ref=e45]:
+          - rowgroup [ref=e46]:
+            - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e47]:
+              - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e48]:
+                - table [ref=e49]:
+                  - rowgroup [ref=e50]:
+                    - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e51]:
+                      - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e52]:
+                        - generic [ref=e53]: Player Info
+                        - generic [ref=e54]: Transactions
+                        - generic [ref=e55]: Trips
+                        - generic [ref=e56]: Tier History
+                        - generic [ref=e57]: Tier Credits Earnings
+                        - generic [ref=e58]: Offers
+                        - generic [ref=e59]: Unity Points Earnings
+                        - generic [ref=e60]: Earnings
+                        - generic [ref=e61]: Running Balances
+                        - generic [ref=e62]: Promotions
+                        - generic [ref=e63]: Pending Earnings
+                        - generic [ref=e64]: Earnings
+                        - generic [ref=e65]: Overflow Earnings
+                        - generic [ref=e66]: Contact Information
+                        - generic [ref=e67]: Discretionary Comps
+                        - generic [ref=e68]: Discounts
+                        - generic [ref=e69]: Gaming Activity
+                        - generic [ref=e70]: Events & Offers
+                        - generic [ref=e71]: Free Play Rewards
+                        - generic [ref=e72]: Reservations
+                        - generic [ref=e73]: Comm Preferences
+                        - generic [ref=e74]: Consent Management
+                        - generic [ref=e75]: Discreet
+                    - row [ref=e76]:
+                      - cell [ref=e77]:
+                        - iframe [ref=e78]:
+                          - generic [ref=f1e2]:
+                            - table [ref=f1e3]:
+                              - rowgroup [ref=f1e4]:
+                                - 'row "Player Info Show Links (0) Logan Nanton Player ID: 807879582 Player Type: Non Local DOB: 6/26/1970 Member Since: 9/23/2022 Tier Expiration: 2/28/2026 Account Type: Standard Next Star Predominant Location: Hard Rock Hollywood 47 * Valuation & Rank Hard Rock Northern Indiana Valuation: 0.00 Rank: 14 Balances Tier Credits Earned Today : 0 Tier Credits : 0 DComps : $0 Unity Points Earned Today : 0 Unity Points : 0 Last Point Activity: Issue Comp Send To Submit Free Play Rewards Available Balance: $0 Play More. Earn More. The more you play, the bigger your Bounce Back Free Play offer! View Details" [ref=f1e5]':
+                                  - 'cell "Player Info Show Links (0) Logan Nanton Player ID: 807879582 Player Type: Non Local DOB: 6/26/1970 Member Since: 9/23/2022 Tier Expiration: 2/28/2026 Account Type: Standard Next Star Predominant Location: Hard Rock Hollywood 47 *" [ref=f1e6]':
+                                    - generic [ref=f1e10]:
+                                      - table [ref=f1e11]:
+                                        - rowgroup [ref=f1e12]:
+                                          - row "Player Info Show Links (0)" [ref=f1e13]:
+                                            - cell "Player Info Show Links (0)" [ref=f1e14]:
+                                              - table [ref=f1e15]:
+                                                - rowgroup [ref=f1e16]:
+                                                  - row "Player Info Show Links (0)" [ref=f1e17]:
+                                                    - cell "Player Info" [ref=f1e18]:
+                                                      - combobox [ref=f1e19]:
+                                                        - option "Player Info" [selected]
+                                                        - option "Club Info"
+                                                        - option "Player Images"
+                                                    - cell "Show Links (0)" [ref=f1e20]
+                                                    - cell [ref=f1e21]:
+                                                      - img [ref=f1e22]
+                                                    - cell [ref=f1e23]:
+                                                      - link [ref=f1e24] [cursor=pointer]:
+                                                        - /url: javascript:__doPostBack('lnkHeartBtn','')
+                                                        - img [ref=f1e25]
+                                      - table [ref=f1e28]:
+                                        - rowgroup [ref=f1e29]:
+                                          - 'row "Logan Nanton Player ID: 807879582 Player Type: Non Local DOB: 6/26/1970 Member Since: 9/23/2022 Tier Expiration: 2/28/2026 Account Type: Standard Next Star" [ref=f1e30]':
+                                            - 'cell "Logan Nanton Player ID: 807879582 Player Type: Non Local DOB: 6/26/1970 Member Since: 9/23/2022 Tier Expiration: 2/28/2026 Account Type: Standard" [ref=f1e31]':
+                                              - table [ref=f1e32]:
+                                                - rowgroup [ref=f1e33]:
+                                                  - row "Logan Nanton" [ref=f1e34]:
+                                                    - cell "Logan Nanton" [ref=f1e35]
+                                                  - 'row "Player ID: 807879582" [ref=f1e36]':
+                                                    - 'cell "Player ID: 807879582" [ref=f1e37]'
+                                                  - 'row "Player Type: Non Local" [ref=f1e38]':
+                                                    - 'cell "Player Type: Non Local" [ref=f1e39]':
+                                                      - generic [ref=f1e40]: "Player Type: Non Local"
+                                                  - 'row "DOB: 6/26/1970" [ref=f1e41]':
+                                                    - 'cell "DOB: 6/26/1970" [ref=f1e42]'
+                                                  - 'row "Member Since: 9/23/2022" [ref=f1e43]':
+                                                    - 'cell "Member Since: 9/23/2022" [ref=f1e44]':
+                                                      - generic [ref=f1e45]: "Member Since: 9/23/2022"
+                                                  - 'row "Tier Expiration: 2/28/2026" [ref=f1e46]':
+                                                    - 'cell "Tier Expiration: 2/28/2026" [ref=f1e47]'
+                                                  - 'row "Account Type: Standard" [ref=f1e48]':
+                                                    - 'cell "Account Type: Standard" [ref=f1e49]':
+                                                      - generic [ref=f1e50]: "Account Type: Standard"
+                                            - cell "Next Star" [ref=f1e51]:
+                                              - table [ref=f1e52]:
+                                                - rowgroup [ref=f1e53]:
+                                                  - row "Next Star" [ref=f1e54]:
+                                                    - cell "Next Star" [ref=f1e55]:
+                                                      - button "Next" [ref=f1e56] [cursor=pointer]
+                                                      - text: Star
+                                                  - row [ref=f1e57]:
+                                                    - cell [ref=f1e58]
+                                                  - row [ref=f1e59]:
+                                                    - cell [ref=f1e60]
+                                                  - row [ref=f1e61]:
+                                                    - cell [ref=f1e62]
+                                          - 'row "Predominant Location: Hard Rock Hollywood" [ref=f1e64]':
+                                            - 'cell "Predominant Location: Hard Rock Hollywood" [ref=f1e65]':
+                                              - generic [ref=f1e66]: "Predominant Location: Hard Rock Hollywood"
+                                          - row "47 *" [ref=f1e67]:
+                                            - cell "47 *" [ref=f1e68]:
+                                              - button "47 *" [ref=f1e69] [cursor=pointer]
+                                  - cell [ref=f1e70]
+                                  - 'cell "Valuation & Rank Hard Rock Northern Indiana Valuation: 0.00 Rank: 14 Balances Tier Credits Earned Today : 0 Tier Credits : 0 DComps : $0 Unity Points Earned Today : 0 Unity Points : 0 Last Point Activity: Issue Comp" [ref=f1e71]':
+                                    - generic [ref=f1e72]:
+                                      - table [ref=f1e73]:
+                                        - rowgroup [ref=f1e74]:
+                                          - row "Valuation & Rank" [ref=f1e75]:
+                                            - cell "Valuation & Rank" [ref=f1e76]
+                                      - table [ref=f1e79]:
+                                        - rowgroup [ref=f1e80]:
+                                          - row:
+                                            - cell
+                                          - row:
+                                            - cell
+                                          - row "Hard Rock Northern Indiana" [ref=f1e81]:
+                                            - cell "Hard Rock Northern Indiana" [ref=f1e82]:
+                                              - combobox [ref=f1e83]:
+                                                - option "Hard Rock Hollywood"
+                                                - option "Hard Rock Atlantic City"
+                                                - option "Hard Rock Cincinnati"
+                                                - option "Hard Rock Northern Indiana" [selected]
+                                                - option "Hard Rock Rockford"
+                                                - option "Hard Rock Sacramento"
+                                                - option "Hard Rock Tampa"
+                                                - option "Seminole Brighton"
+                                                - option "Seminole Classic"
+                                                - option "Seminole Coconut Creek"
+                                                - option "Seminole Immokalee"
+                                          - 'row "Valuation: 0.00 Rank: 14" [ref=f1e84]':
+                                            - 'cell "Valuation: 0.00 Rank: 14" [ref=f1e85]':
+                                              - table [ref=f1e86]:
+                                                - rowgroup [ref=f1e87]:
+                                                  - 'row "Valuation: 0.00 Rank: 14" [ref=f1e88]':
+                                                    - 'cell "Valuation: 0.00 Rank: 14" [ref=f1e89]':
+                                                      - table [ref=f1e90]:
+                                                        - rowgroup [ref=f1e91]:
+                                                          - 'row "Valuation: 0.00" [ref=f1e92]':
+                                                            - cell "Valuation:" [ref=f1e93]
+                                                            - cell "0.00" [ref=f1e94]
+                                                          - 'row "Rank: 14" [ref=f1e95]':
+                                                            - cell "Rank:" [ref=f1e96]
+                                                            - cell "14" [ref=f1e97]
+                                    - generic [ref=f1e98]:
+                                      - table [ref=f1e99]:
+                                        - rowgroup [ref=f1e100]:
+                                          - row "Balances" [ref=f1e101]:
+                                            - cell "Balances" [ref=f1e102]
+                                      - table [ref=f1e105]:
+                                        - rowgroup [ref=f1e106]:
+                                          - 'row "Tier Credits Earned Today : 0" [ref=f1e107]':
+                                            - cell "Tier Credits Earned Today :" [ref=f1e108]
+                                            - cell "0" [ref=f1e109]
+                                          - 'row "Tier Credits : 0" [ref=f1e110]':
+                                            - cell "Tier Credits :" [ref=f1e111]
+                                            - cell "0" [ref=f1e112]
+                                          - 'row "DComps : $0" [ref=f1e113]':
+                                            - cell "DComps :" [ref=f1e114]
+                                            - cell "$0" [ref=f1e115]
+                                          - 'row "Unity Points Earned Today : 0" [ref=f1e116]':
+                                            - cell "Unity Points Earned Today :" [ref=f1e117]
+                                            - cell "0" [ref=f1e118]
+                                          - 'row "Unity Points : 0" [ref=f1e119] [cursor=pointer]':
+                                            - cell "Unity Points :" [ref=f1e120]
+                                            - cell "0" [ref=f1e121]
+                                          - row [ref=f1e122]:
+                                            - cell [ref=f1e123]
+                                          - row "Last Point Activity:" [ref=f1e125]:
+                                            - cell "Last Point Activity:" [ref=f1e126]
+                                            - cell [ref=f1e127]
+                                          - row [ref=f1e128]:
+                                            - cell [ref=f1e129]
+                                    - button "Issue Comp" [ref=f1e132] [cursor=pointer]
+                                  - 'cell "Send To Submit Free Play Rewards Available Balance: $0 Play More. Earn More. The more you play, the bigger your Bounce Back Free Play offer! View Details" [ref=f1e133]':
+                                    - table [ref=f1e134]:
+                                      - rowgroup [ref=f1e135]:
+                                        - row "Send To Submit" [ref=f1e136]:
+                                          - cell "Send To" [ref=f1e137]:
+                                            - button "Send To" [ref=f1e138] [cursor=pointer]
+                                          - cell "Submit" [ref=f1e139]:
+                                            - button "Submit" [ref=f1e140] [cursor=pointer]
+                                    - table [ref=f1e141]:
+                                      - rowgroup [ref=f1e142]:
+                                        - row "Free Play Rewards" [ref=f1e143]:
+                                          - cell "Free Play Rewards" [ref=f1e144]:
+                                            - strong [ref=f1e145]: Free Play Rewards
+                                    - table [ref=f1e146]:
+                                      - rowgroup [ref=f1e147]:
+                                        - row "Available Balance:" [ref=f1e148]:
+                                          - cell "Available Balance:" [ref=f1e149]:
+                                            - strong [ref=f1e150]: "Available Balance:"
+                                        - row "$0" [ref=f1e151]:
+                                          - cell "$0" [ref=f1e152]:
+                                            - strong [ref=f1e153]: $0
+                                        - row [ref=f1e154]:
+                                          - cell [ref=f1e155]:
+                                            - strong [ref=f1e156]
+                                        - row [ref=f1e157]:
+                                          - cell [ref=f1e158]
+                                        - row "Play More. Earn More. The more you play, the bigger your Bounce Back Free Play offer!" [ref=f1e160]:
+                                          - cell "Play More. Earn More. The more you play, the bigger your Bounce Back Free Play offer!" [ref=f1e161]:
+                                            - table [ref=f1e163]:
+                                              - rowgroup [ref=f1e164]:
+                                                - row "Play More. Earn More." [ref=f1e165]:
+                                                  - cell "Play More. Earn More." [ref=f1e166]:
+                                                    - strong [ref=f1e167]: Play More.
+                                                    - strong [ref=f1e168]: Earn More.
+                                                - row "The more you play, the bigger your Bounce Back Free Play offer!" [ref=f1e169]:
+                                                  - cell "The more you play, the bigger your Bounce Back Free Play offer!" [ref=f1e170]:
+                                                    - strong [ref=f1e171]:
+                                                      - text: The more you play, the bigger
+                                                      - text: your Bounce Back Free Play offer!
+                                        - row "View Details" [ref=f1e172]:
+                                          - cell "View Details" [ref=f1e173]:
+                                            - button "View Details" [ref=f1e174] [cursor=pointer]
+                            - generic [ref=f1e175]:
+                              - generic [ref=f1e177]: Upcoming Event & Offers
+                              - button "View Events & Offers" [ref=f1e180] [cursor=pointer]
+                              - table [ref=f1e184]:
+                                - rowgroup [ref=f1e187]:
+                                  - row "Event Start Date Event & Offer Name Type Property 08/06/2025 $100,000 Bonus Times Slot Tournament Tournament Hard Rock Atlantic City 10/24/2025 Test Visit Amenities Hard Rock Hollywood 10/27/2025 TestDevQuick10_27_1 Amenities Hard Rock Hollywood 10/31/2025 Other Offer Tetiana test Other Hard Rock Tampa 11/05/2025 $100K Blackjack Tournament Tournament Hard Rock Hollywood" [ref=f1e188]:
+                                    - cell "Event Start Date Event & Offer Name Type Property 08/06/2025 $100,000 Bonus Times Slot Tournament Tournament Hard Rock Atlantic City 10/24/2025 Test Visit Amenities Hard Rock Hollywood 10/27/2025 TestDevQuick10_27_1 Amenities Hard Rock Hollywood 10/31/2025 Other Offer Tetiana test Other Hard Rock Tampa 11/05/2025 $100K Blackjack Tournament Tournament Hard Rock Hollywood" [ref=f1e189]:
+                                      - table [ref=f1e190]:
+                                        - rowgroup [ref=f1e191]:
+                                          - row "Event Start Date Event & Offer Name Type Property" [ref=f1e192]:
+                                            - cell "Event Start Date Event & Offer Name Type Property" [ref=f1e193]:
+                                              - table [ref=f1e195]:
+                                                - rowgroup [ref=f1e196]:
+                                                  - row "Event Start Date Event & Offer Name Type Property" [ref=f1e197]:
+                                                    - cell "Event Start Date" [ref=f1e198]
+                                                    - cell "Event & Offer Name" [ref=f1e199]
+                                                    - cell "Type" [ref=f1e200]
+                                                    - cell "Property" [ref=f1e201]
+                                                    - cell [ref=f1e202]
+                                        - rowgroup [ref=f1e203]:
+                                          - row "08/06/2025 $100,000 Bonus Times Slot Tournament Tournament Hard Rock Atlantic City 10/24/2025 Test Visit Amenities Hard Rock Hollywood 10/27/2025 TestDevQuick10_27_1 Amenities Hard Rock Hollywood 10/31/2025 Other Offer Tetiana test Other Hard Rock Tampa 11/05/2025 $100K Blackjack Tournament Tournament Hard Rock Hollywood" [ref=f1e204]:
+                                            - cell "08/06/2025 $100,000 Bonus Times Slot Tournament Tournament Hard Rock Atlantic City 10/24/2025 Test Visit Amenities Hard Rock Hollywood 10/27/2025 TestDevQuick10_27_1 Amenities Hard Rock Hollywood 10/31/2025 Other Offer Tetiana test Other Hard Rock Tampa 11/05/2025 $100K Blackjack Tournament Tournament Hard Rock Hollywood" [ref=f1e205]:
+                                              - table [ref=f1e207]:
+                                                - rowgroup [ref=f1e208]:
+                                                  - row "08/06/2025 $100,000 Bonus Times Slot Tournament Tournament Hard Rock Atlantic City" [ref=f1e209]:
+                                                    - cell "08/06/2025" [ref=f1e210]
+                                                    - cell "$100,000 Bonus Times Slot Tournament" [ref=f1e211]
+                                                    - cell "Tournament" [ref=f1e212]
+                                                    - cell "Hard Rock Atlantic City" [ref=f1e213]
+                                                    - cell [ref=f1e214]
+                                                  - row "10/24/2025 Test Visit Amenities Hard Rock Hollywood" [ref=f1e216]:
+                                                    - cell "10/24/2025" [ref=f1e217]
+                                                    - cell "Test Visit" [ref=f1e218]
+                                                    - cell "Amenities" [ref=f1e219]
+                                                    - cell "Hard Rock Hollywood" [ref=f1e220]
+                                                    - cell [ref=f1e221]
+                                                  - row "10/27/2025 TestDevQuick10_27_1 Amenities Hard Rock Hollywood" [ref=f1e223]:
+                                                    - cell "10/27/2025" [ref=f1e224]
+                                                    - cell "TestDevQuick10_27_1" [ref=f1e225]
+                                                    - cell "Amenities" [ref=f1e226]
+                                                    - cell "Hard Rock Hollywood" [ref=f1e227]
+                                                    - cell [ref=f1e228]
+                                                  - row "10/31/2025 Other Offer Tetiana test Other Hard Rock Tampa" [ref=f1e230]:
+                                                    - cell "10/31/2025" [ref=f1e231]
+                                                    - cell "Other Offer Tetiana test" [ref=f1e232]
+                                                    - cell "Other" [ref=f1e233]
+                                                    - cell "Hard Rock Tampa" [ref=f1e234]
+                                                    - cell [ref=f1e235]
+                                                  - row "11/05/2025 $100K Blackjack Tournament Tournament Hard Rock Hollywood" [ref=f1e237]:
+                                                    - cell "11/05/2025" [ref=f1e238]
+                                                    - cell "$100K Blackjack Tournament" [ref=f1e239]
+                                                    - cell "Tournament" [ref=f1e240]
+                                                    - cell "Hard Rock Hollywood" [ref=f1e241]
+                                                    - cell [ref=f1e242]
+                                        - rowgroup
+                              - generic [ref=f1e244]:
+                                - generic [ref=f1e245]:
+                                  - generic [ref=f1e247]: Reservations
+                                  - table [ref=f1e249]:
+                                    - rowgroup [ref=f1e250]:
+                                      - row "Event & Offer Reservations View Reservations" [ref=f1e251]:
+                                        - cell "Event & Offer Reservations" [ref=f1e252]:
+                                          - generic [ref=f1e253]: Event & Offer Reservations
+                                        - cell "View Reservations" [ref=f1e254]:
+                                          - button "View Reservations" [ref=f1e255] [cursor=pointer]
+                                - table [ref=f1e260]:
+                                  - rowgroup [ref=f1e263]:
+                                    - row "Start Date Reservation Name Type Property No Data Found" [ref=f1e264]:
+                                      - cell "Start Date Reservation Name Type Property No Data Found" [ref=f1e265]:
+                                        - table [ref=f1e266]:
+                                          - rowgroup [ref=f1e267]:
+                                            - row "Start Date Reservation Name Type Property" [ref=f1e268]:
+                                              - cell "Start Date Reservation Name Type Property" [ref=f1e269]:
+                                                - table [ref=f1e271]:
+                                                  - rowgroup [ref=f1e272]:
+                                                    - row "Start Date Reservation Name Type Property" [ref=f1e273]:
+                                                      - cell "Start Date" [ref=f1e274]
+                                                      - cell "Reservation Name" [ref=f1e275]
+                                                      - cell "Type" [ref=f1e276]
+                                                      - cell "Property" [ref=f1e277]
+                                                      - cell [ref=f1e278]
+                                          - rowgroup [ref=f1e279]:
+                                            - row "No Data Found" [ref=f1e280]:
+                                              - cell "No Data Found" [ref=f1e281]:
+                                                - table [ref=f1e283]:
+                                                  - rowgroup [ref=f1e284]:
+                                                    - row "No Data Found" [ref=f1e285]:
+                                                      - cell "No Data Found" [ref=f1e286]:
+                                                        - table [ref=f1e287]:
+                                                          - rowgroup [ref=f1e288]:
+                                                            - row "No Data Found" [ref=f1e289]:
+                                                              - cell "No Data Found" [ref=f1e290]
+                                          - rowgroup
+                              - generic [ref=f1e292]:
+                                - table [ref=f1e294]:
+                                  - rowgroup [ref=f1e295]:
+                                    - row "Hotel/Dining Reservations" [ref=f1e296]:
+                                      - cell "Hotel/Dining Reservations" [ref=f1e297]:
+                                        - generic [ref=f1e298]: Hotel/Dining Reservations
+                                - table [ref=f1e302]:
+                                  - rowgroup [ref=f1e305]:
+                                    - 'row "Start Date End Date Property Type Reservation Name Conf # Status No Data Found" [ref=f1e306]':
+                                      - 'cell "Start Date End Date Property Type Reservation Name Conf # Status No Data Found" [ref=f1e307]':
+                                        - table [ref=f1e308]:
+                                          - rowgroup [ref=f1e309]:
+                                            - 'row "Start Date End Date Property Type Reservation Name Conf # Status" [ref=f1e310]':
+                                              - 'cell "Start Date End Date Property Type Reservation Name Conf # Status" [ref=f1e311]':
+                                                - table [ref=f1e313]:
+                                                  - rowgroup [ref=f1e314]:
+                                                    - 'row "Start Date End Date Property Type Reservation Name Conf # Status" [ref=f1e315]':
+                                                      - cell "Start Date" [ref=f1e316]
+                                                      - cell "End Date" [ref=f1e317]
+                                                      - cell "Property" [ref=f1e318]
+                                                      - cell "Type" [ref=f1e319]
+                                                      - cell "Reservation Name" [ref=f1e320]
+                                                      - 'cell "Conf #" [ref=f1e321]'
+                                                      - cell "Status" [ref=f1e322]
+                                                      - cell [ref=f1e323]
+                                          - rowgroup [ref=f1e324]:
+                                            - row "No Data Found" [ref=f1e325]:
+                                              - cell "No Data Found" [ref=f1e326]:
+                                                - table [ref=f1e328]:
+                                                  - rowgroup [ref=f1e329]:
+                                                    - row "No Data Found" [ref=f1e330]:
+                                                      - cell "No Data Found" [ref=f1e331]:
+                                                        - table [ref=f1e332]:
+                                                          - rowgroup [ref=f1e333]:
+                                                            - row "No Data Found" [ref=f1e334]:
+                                                              - cell "No Data Found" [ref=f1e335]
+                                          - rowgroup
+  - generic [ref=e80]:
+    - generic [ref=e81]:
+      - text: ISSUE COMP
+      - generic "Close" [ref=e82]
+    - iframe [active] [ref=e84]:
+      - table [ref=f2e5]:
+        - rowgroup [ref=f2e6]:
+          - row "Select Comp Source Earnings Discretionary Comp Select Comp Type Food & Beverage Select Comp Item HGNIN-Constant Grind" [ref=f2e7]:
+            - cell "Select Comp Source Earnings Discretionary Comp Select Comp Type Food & Beverage Select Comp Item HGNIN-Constant Grind" [ref=f2e8]:
+              - table [ref=f2e9]:
+                - rowgroup [ref=f2e10]:
+                  - row "Select Comp Source Earnings Discretionary Comp" [ref=f2e11]:
+                    - cell "Select Comp Source" [ref=f2e12]
+                    - cell [ref=f2e13]
+                    - cell "Earnings Discretionary Comp" [ref=f2e14]:
+                      - table [ref=f2e15]:
+                        - rowgroup [ref=f2e16]:
+                          - row "Earnings Discretionary Comp" [ref=f2e17]:
+                            - cell "Earnings" [ref=f2e18]:
+                              - generic [ref=f2e19]:
+                                - radio "Earnings" [disabled] [ref=f2e20]
+                                - text: Earnings
+                            - cell "Discretionary Comp" [ref=f2e21]:
+                              - radio "Discretionary Comp" [checked] [ref=f2e22]
+                              - text: Discretionary Comp
+                  - row "Select Comp Type Food & Beverage" [ref=f2e23]:
+                    - cell "Select Comp Type" [ref=f2e24]
+                    - cell [ref=f2e25]
+                    - cell "Food & Beverage" [ref=f2e26]:
+                      - combobox [ref=f2e27]:
+                        - option "007_OT"
+                        - option "Entertainment"
+                        - option "Food & Beverage" [selected]
+                        - option "Hotel"
+                        - option "Other"
+                        - option "Resort"
+                        - option "Retail"
+                        - option "Retail Tobacco"
+                        - option "SGA External"
+                        - option "SGA Resort"
+                        - option "Test"
+                        - option "Tobacco"
+                        - option "Transportation"
+                  - row "Select Comp Item HGNIN-Constant Grind" [ref=f2e28]:
+                    - cell "Select Comp Item" [ref=f2e29]
+                    - cell [ref=f2e30]
+                    - cell "HGNIN-Constant Grind" [ref=f2e31]:
+                      - combobox [ref=f2e32]:
+                        - option "HCHOL Restaurant Comp"
+                        - option "HGNIN-Constant Grind" [selected]
+                        - option "HGNIN-Hard Rock Cafe"
+                        - option "HGNIN-YouYu"
+                        - option "HWHR-Hard Rock Cafe"
+                        - option "Test.5:1"
+          - 'row "Select Comp Count 10 TOTAL COMP VALUE $10.00 Comp Availability $0.00 Comps Remaining ($10.00) Issued Date 10/27/2025 ISSUE COMP CANCEL Authorization Login: TU_LAB_HALO_NIN_ADM Password: Password01@$ Reason: Guest Satisfaction Comment: Test 60 characters remaining" [ref=f2e33]':
+            - 'cell "Select Comp Count 10 TOTAL COMP VALUE $10.00 Comp Availability $0.00 Comps Remaining ($10.00) Issued Date 10/27/2025 ISSUE COMP CANCEL Authorization Login: TU_LAB_HALO_NIN_ADM Password: Password01@$ Reason: Guest Satisfaction Comment: Test 60 characters remaining" [ref=f2e34]':
+              - table [ref=f2e35]:
+                - rowgroup [ref=f2e36]:
+                  - 'row "Select Comp Count 10 TOTAL COMP VALUE $10.00 Comp Availability $0.00 Comps Remaining ($10.00) Issued Date 10/27/2025 ISSUE COMP CANCEL Authorization Login: TU_LAB_HALO_NIN_ADM Password: Password01@$ Reason: Guest Satisfaction Comment: Test 60 characters remaining" [ref=f2e37]':
+                    - cell "Select Comp Count 10 TOTAL COMP VALUE $10.00 Comp Availability $0.00 Comps Remaining ($10.00) Issued Date 10/27/2025 ISSUE COMP CANCEL" [ref=f2e38]:
+                      - table [ref=f2e39]:
+                        - rowgroup [ref=f2e40]:
+                          - row "Select Comp Count 10" [ref=f2e41]:
+                            - cell "Select Comp Count" [ref=f2e42]
+                            - cell [ref=f2e43]
+                            - cell "10" [ref=f2e44]:
+                              - textbox [ref=f2e45]: "10"
+                          - row "TOTAL COMP VALUE $10.00" [ref=f2e46]:
+                            - cell "TOTAL COMP VALUE" [ref=f2e47]
+                            - cell [ref=f2e48]
+                            - cell "$10.00" [ref=f2e49]:
+                              - textbox [ref=f2e50]: $10.00
+                          - row "Comp Availability $0.00" [ref=f2e51]:
+                            - cell "Comp Availability" [ref=f2e52]
+                            - cell [ref=f2e53]
+                            - cell "$0.00" [ref=f2e54]:
+                              - generic [ref=f2e55]: $0.00
+                          - row "Comps Remaining ($10.00)" [ref=f2e56]:
+                            - cell "Comps Remaining" [ref=f2e57]
+                            - cell [ref=f2e58]
+                            - cell "($10.00)" [ref=f2e59]:
+                              - generic [ref=f2e60]: ($10.00)
+                          - row "Issued Date 10/27/2025" [ref=f2e61]:
+                            - cell "Issued Date" [ref=f2e62]
+                            - cell [ref=f2e63]
+                            - cell "10/27/2025" [ref=f2e64]:
+                              - textbox [ref=f2e65]: 10/27/2025
+                              - img [ref=f2e66]
+                          - row [ref=f2e67]:
+                            - cell [ref=f2e68]
+                          - row "ISSUE COMP CANCEL" [ref=f2e69]:
+                            - cell "ISSUE COMP" [ref=f2e70]:
+                              - button "ISSUE COMP" [ref=f2e71] [cursor=pointer]
+                            - cell "CANCEL" [ref=f2e72]:
+                              - button "CANCEL" [ref=f2e73] [cursor=pointer]
+                    - 'cell "Authorization Login: TU_LAB_HALO_NIN_ADM Password: Password01@$ Reason: Guest Satisfaction Comment: Test 60 characters remaining" [ref=f2e74]':
+                      - table [ref=f2e75]:
+                        - rowgroup [ref=f2e76]:
+                          - 'row "Authorization Login: TU_LAB_HALO_NIN_ADM Password: Password01@$ Reason: Guest Satisfaction Comment: Test 60 characters remaining" [ref=f2e77]':
+                            - 'cell "Authorization Login: TU_LAB_HALO_NIN_ADM Password: Password01@$ Reason: Guest Satisfaction Comment: Test 60 characters remaining" [ref=f2e78]':
+                              - table [ref=f2e80]:
+                                - rowgroup [ref=f2e81]:
+                                  - row "Authorization" [ref=f2e82]:
+                                    - cell "Authorization" [ref=f2e83]
+                                  - row "Login:" [ref=f2e84]:
+                                    - cell "Login:" [ref=f2e85]:
+                                      - strong [ref=f2e86]: "Login:"
+                                  - row "TU_LAB_HALO_NIN_ADM" [ref=f2e87]:
+                                    - cell "TU_LAB_HALO_NIN_ADM" [ref=f2e88]:
+                                      - textbox [active] [ref=f2e89]: TU_LAB_HALO_NIN_ADM
+                                  - row "Password:" [ref=f2e90]:
+                                    - cell "Password:" [ref=f2e91]:
+                                      - strong [ref=f2e92]: "Password:"
+                                  - row "Password01@$" [ref=f2e93]:
+                                    - cell "Password01@$" [ref=f2e94]:
+                                      - textbox [ref=f2e95]: Password01@$
+                                  - row "Reason:" [ref=f2e96]:
+                                    - cell "Reason:" [ref=f2e97]:
+                                      - strong [ref=f2e98]: "Reason:"
+                                  - row "Guest Satisfaction" [ref=f2e99]:
+                                    - cell "Guest Satisfaction" [ref=f2e100]:
+                                      - combobox [ref=f2e101]:
+                                        - option "Guest Satisfaction" [selected]
+                                        - option "Service Recovery"
+                                        - option "System Error"
+                                        - option "System Testing"
+                                        - option "Trip Incentive"
+                                  - row "Comment:" [ref=f2e102]:
+                                    - cell "Comment:" [ref=f2e103]:
+                                      - strong [ref=f2e104]: "Comment:"
+                                  - row "Test 60 characters remaining" [ref=f2e105]:
+                                    - cell "Test 60 characters remaining" [ref=f2e106]:
+                                      - textbox [ref=f2e107]: Test
+                                      - text: 60 characters remaining
+```

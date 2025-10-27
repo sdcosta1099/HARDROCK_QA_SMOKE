@@ -14,7 +14,7 @@ test('UH_9447_HALO | Events & Offers | HALO | Events and Offers | Create offer w
   await pa.clickOnManageEventsAndOffers()
   await pa.clickOnAddNewEventAndOffers()
   await pa.ValidateAddNewEventAndOffersPage()
-  await pa.SelectfillOutNewEventFields1("UH_9447")
+  await pa.SelectfillOutNewEventFields4("UH_9447")
   await pa.clickSaveAndNextStep()
   await pa.SelectAFile()
   await pa.clickSaveAndNextStep()

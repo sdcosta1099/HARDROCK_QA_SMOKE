@@ -1,0 +1,212 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - text: HALO 25.9.1
+      - text: Logged in as TU_LAB_HALO_NIN_ADM
+      - img "HR Casino, Northern Indiana" [ref=e7]
+    - link "Logout" [ref=e9] [cursor=pointer]:
+      - /url: javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$lnkLogout", "", false, "", "SessionOut.aspx", false, true))
+      - img "Logout" [ref=e10]
+  - generic [ref=e12]:
+    - list [ref=e15]:
+      - listitem [ref=e16]:
+        - link "Player Functions" [ref=e17] [cursor=pointer]:
+          - /url: javascript:toggle1("1000010","sub_nav_1000010","1000010");
+      - listitem [ref=e18]:
+        - link "Configuration" [ref=e19] [cursor=pointer]:
+          - /url: javascript:toggle1("1000000","sub_nav_1000000","1000010");
+      - listitem [ref=e20]:
+        - link "Administration" [ref=e21] [cursor=pointer]:
+          - /url: javascript:toggle1("1000002","sub_nav_1000002","1000010");
+    - generic [ref=e22]:
+      - table [ref=e25]:
+        - rowgroup [ref=e26]:
+          - row "PLAYER SEARCH Go To Employee Dashboard 0" [ref=e27]:
+            - cell "PLAYER SEARCH" [ref=e28]
+            - cell [ref=e29]
+            - cell "Go To Employee Dashboard" [ref=e30]:
+              - link "Go To Employee Dashboard" [ref=e31] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkToEmployeeDashboard','')
+                - img [ref=e32]
+            - cell [ref=e34]:
+              - link "Expand Search" [ref=e35] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkSearchSVG','')
+                - img [ref=e36]
+            - cell "0" [ref=e39]:
+              - generic "Show Notification" [ref=e41]
+              - generic:
+                - generic: "0"
+      - generic [ref=e42]:
+        - table [ref=e46]:
+          - rowgroup [ref=e47]:
+            - row [ref=e48]:
+              - cell [ref=e49]:
+                - img [ref=e50]
+        - generic [ref=e52]:
+          - generic [ref=e53]: Add New Quick Offer Setup
+          - generic [ref=e54]:
+            - generic [ref=e57]:
+              - strong [ref=e60]: Quick Offer Setup
+              - table [ref=e62]:
+                - rowgroup [ref=e63]:
+                  - row:
+                    - cell
+                  - row "LOB Casino Region North America Offer Type Entertainment" [ref=e64]:
+                    - cell "LOB Casino" [ref=e65]:
+                      - text: LOB
+                      - table [ref=e68]:
+                        - rowgroup [ref=e69]:
+                          - row "Casino" [ref=e70]:
+                            - cell "Casino" [ref=e71]:
+                              - textbox [ref=e72]: Casino
+                            - cell [ref=e73]
+                    - cell "Region North America" [ref=e74]:
+                      - text: Region
+                      - table [ref=e77]:
+                        - rowgroup [ref=e78]:
+                          - row "North America" [ref=e79]:
+                            - cell "North America" [ref=e80]:
+                              - textbox [ref=e81]: North America
+                            - cell [ref=e82]
+                    - cell "Offer Type Entertainment" [ref=e83]:
+                      - text: Offer Type
+                      - table [ref=e86]:
+                        - rowgroup [ref=e87]:
+                          - row "Entertainment" [ref=e88]:
+                            - cell "Entertainment" [ref=e89]:
+                              - textbox [ref=e90]: Entertainment
+                            - cell [ref=e91]
+                  - row "Display Property Hard Rock Atlantic City Display Locations Player's Club" [ref=e92]:
+                    - cell "Display Property Hard Rock Atlantic City" [ref=e93]:
+                      - text: Display Property
+                      - table [ref=e96]:
+                        - rowgroup [ref=e97]:
+                          - row "Hard Rock Atlantic City" [ref=e98]:
+                            - cell "Hard Rock Atlantic City" [ref=e99]:
+                              - textbox [ref=e100]: Hard Rock Atlantic City
+                            - cell [ref=e101]
+                    - cell "Display Locations Player's Club" [ref=e102]:
+                      - text: Display Locations
+                      - table [ref=e105]:
+                        - rowgroup [ref=e106]:
+                          - row "Player's Club" [ref=e107]:
+                            - cell "Player's Club" [ref=e108]:
+                              - textbox [ref=e109]: Player's Club
+                            - cell [ref=e110]
+                  - row [ref=e111]:
+                    - cell [ref=e112]:
+                      - text: Visited Property
+                      - table [ref=e115]:
+                        - rowgroup [ref=e116]:
+                          - row [ref=e117]:
+                            - cell [ref=e118]:
+                              - textbox [ref=e119]: 1st Street Deli,1st Street Deli,24K,Abiaka,Alexias Patisserie,Alpine Union Bar & Kitchen,Amp Bar,Asian Fusion,Asylum,Asylum Sound Stage,Aubi & Ramsa,Aubi & Ramsa,Backline Bistro,Bae Korean Grill,Bar,Beach Club,Ben & Jerry's,Bernie Robbins Jewelers,Body Rock Fitness Center,Body Rock Fitness Center,Body Rock Fitness Center,Body Rock Fitness Center,Bora Pool,Brick'd Pizza,Business Center,Cafetto,Cafetto,Cappuccino's Coffee and Pastry Bar,Center Bar,Center Bar,Center Bar,Champions Grill,Chip's Sandwich Shop,Chop & Toss,Cipresso,Cipresso,Constant Grind,Constant Grind,Constant Grind,Constant Grind,Constant Grind,Constant Grind Coffee Shop,Council Oak,Council Oak,Council Oak Bar & Lounge,Council Oak Lounge,Council Oak Steak & Seafood,Council Oak Steak & Seafood,Council Oak Steak & Seafood,Council Oak Steaks & Seafood,DAER Dayclub,DAER Nightclub,DAER Nightclub,Davidoff Cigar Lounge,Dunkin' Donuts,EE-TO-LEET-KE Grill,Entice Ultra Lounge,Fish & Co,Flip Side,Flying Cow,Food Court,Franlinger's,Fresh Harvest,Fresh Harvest,Fresh Harvest,Fresh Harvest,Fresh Harvest Buffet,Fu Express,Fuel,Fuel American Grill,Grill Bar,Half Shell Oyster House,HALo Universe,Hard Rock Atlantic City,Hard Rock Biloxi,Hard Rock Bristol,Hard Rock Cafe Center Bar,Hard Rock Casino Punta Cana,Hard Rock Cincinnati,Hard Rock Hollywood,Hard Rock Lake Tahoe,Hard Rock Live Atlantic City,Hard Rock Live Biloxi,Hard Rock Live Bristol,Hard Rock Live Casino Punta Cana,Hard Rock Live Cincinnati,Hard Rock Live Hollywood,Hard Rock Live New York,Hard Rock Live Northern Indiana,Hard Rock Live Orlando,Hard Rock Live Ottawa,Hard Rock Live Riviera Maya,Hard Rock Live Rockford,Hard Rock Live Sacramento,Hard Rock Live Seminole Casino Coconut Creek,Hard Rock Live Seminole Casino Hotel Immokalee,Hard Rock Live Sioux City,Hard Rock Live Tampa,Hard Rock Northern Indiana,Hard Rock Ottawa,Hard Rock Rockford,Hard Rock Sacramento,Hard Rock Sioux City,Hard Rock Tampa,Hard Rock Tulsa,Hard Rock Vancouver,Hit The Road,HRHC - Tejon,HWY 66 Diner,Il Mulino New York,InMotion,Introstem,Jocale,Josiah,Jubao Palace Noodle Bar,Kristals,Kristals,Kuro,Kuro,Kuro Bar & Lounge,L Bar,L Bar,Lavish,Legends Lounge,Lucky Cigar,Lucky Mi Bar,Lucky Mi Noodle House,Lux,Macau Kitchen,Maceoo,Maceoo,Main + Abbey,Malta Bar (Valletta),Marky's Caviar Lounge,McGill's on 19,Memorabilia Hard Rock Atlantic City,Mirage Events,Mojoe,Montserrat Manor,Mr. Lucky's,Nectar,Noodle 8,NYY Steak,Oculus Bar,Park Prime Steakhouse,Peppermill,Perfect Cup,Pie Five,Pizata Pizza & Pasta,PLA Sports Bar,Player's Club,Poker Snack Bar,Pool Bar & Grill,Pool Bar & Grill,Powder House,Prism Piano Bar & Lounge,Prism Steak & Seafood,Prive,Psycho Bunny,Rain Maker,Restaurant,Revolt Tattoos,Rise Kitchen & Deli,Rise Kitchen & Deli,Roadies Burger Bar,Rock 'N Raw,Rock Bar & Lounge,Rock Spa,Rock Spa,Rock Spa & Salon,Rock Spa & Salon,Rock Spa® & Salon,Rocksino by Hard Rock Deadwood,Rocktane,Ruth's Chris,Salsa,Sandpiper Coastal Bar & Grill,Satisfaction Buffet,Seminole Brighton,Seminole Center,Seminole Cigar Landing,Seminole Classic,Seminole Coconut Creek,Seminole Immokalee,Slice,Slice,Sound Waves,Soygood,Splash,Starbucks,Starbucks,Sugar Factory,Sugar Factory,Sugar Factory,Sunset Grill,Tequila's On The Gulf,The BOL,The BOL,The Cellar Wine and Spirits,The Comedy Club,The Eatery,The Food Court,The Green Bar,The Mirage,The Oyster Bar,The Rez Grill,The Show Theatre,Tobacco 2:3,Track 5.,Villa Services,Wentworth Gallery,Wentworth Gallery,Weston Jewelers,White House Subs,Wild Card Rewards Store,Wild Card Store,World Tour Buffet,Youyu,YouYu,YOUYU Noodle Bar,YOUYU Noodle Bar,Zig Zag Lounge
+                            - cell [ref=e120]
+                    - cell [ref=e121]:
+                      - text: Dominant Property
+                      - table [ref=e124]:
+                        - rowgroup [ref=e125]:
+                          - row [ref=e126]:
+                            - cell [ref=e127]:
+                              - textbox [ref=e128]: 1st Street Deli,1st Street Deli,24K,Abiaka,Alexias Patisserie,Alpine Union Bar & Kitchen,Amp Bar,Asian Fusion,Asylum,Asylum Sound Stage,Aubi & Ramsa,Aubi & Ramsa,Backline Bistro,Bae Korean Grill,Bar,Beach Club,Ben & Jerry's,Bernie Robbins Jewelers,Body Rock Fitness Center,Body Rock Fitness Center,Body Rock Fitness Center,Body Rock Fitness Center,Bora Pool,Brick'd Pizza,Business Center,Cafetto,Cafetto,Cappuccino's Coffee and Pastry Bar,Center Bar,Center Bar,Center Bar,Champions Grill,Chip's Sandwich Shop,Chop & Toss,Cipresso,Cipresso,Constant Grind,Constant Grind,Constant Grind,Constant Grind,Constant Grind,Constant Grind Coffee Shop,Council Oak,Council Oak,Council Oak Bar & Lounge,Council Oak Lounge,Council Oak Steak & Seafood,Council Oak Steak & Seafood,Council Oak Steak & Seafood,Council Oak Steaks & Seafood,DAER Dayclub,DAER Nightclub,DAER Nightclub,Davidoff Cigar Lounge,Dunkin' Donuts,EE-TO-LEET-KE Grill,Entice Ultra Lounge,Fish & Co,Flip Side,Flying Cow,Food Court,Franlinger's,Fresh Harvest,Fresh Harvest,Fresh Harvest,Fresh Harvest,Fresh Harvest Buffet,Fu Express,Fuel,Fuel American Grill,Grill Bar,Half Shell Oyster House,HALo Universe,Hard Rock Atlantic City,Hard Rock Biloxi,Hard Rock Bristol,Hard Rock Cafe Center Bar,Hard Rock Casino Punta Cana,Hard Rock Cincinnati,Hard Rock Hollywood,Hard Rock Lake Tahoe,Hard Rock Live Atlantic City,Hard Rock Live Biloxi,Hard Rock Live Bristol,Hard Rock Live Casino Punta Cana,Hard Rock Live Cincinnati,Hard Rock Live Hollywood,Hard Rock Live New York,Hard Rock Live Northern Indiana,Hard Rock Live Orlando,Hard Rock Live Ottawa,Hard Rock Live Riviera Maya,Hard Rock Live Rockford,Hard Rock Live Sacramento,Hard Rock Live Seminole Casino Coconut Creek,Hard Rock Live Seminole Casino Hotel Immokalee,Hard Rock Live Sioux City,Hard Rock Live Tampa,Hard Rock Northern Indiana,Hard Rock Ottawa,Hard Rock Rockford,Hard Rock Sacramento,Hard Rock Sioux City,Hard Rock Tampa,Hard Rock Tulsa,Hard Rock Vancouver,Hit The Road,HRHC - Tejon,HWY 66 Diner,Il Mulino New York,InMotion,Introstem,Jocale,Josiah,Jubao Palace Noodle Bar,Kristals,Kristals,Kuro,Kuro,Kuro Bar & Lounge,L Bar,L Bar,Lavish,Legends Lounge,Lucky Cigar,Lucky Mi Bar,Lucky Mi Noodle House,Lux,Macau Kitchen,Maceoo,Maceoo,Main + Abbey,Malta Bar (Valletta),Marky's Caviar Lounge,McGill's on 19,Memorabilia Hard Rock Atlantic City,Mirage Events,Mojoe,Montserrat Manor,Mr. Lucky's,Nectar,Noodle 8,NYY Steak,Oculus Bar,Park Prime Steakhouse,Peppermill,Perfect Cup,Pie Five,Pizata Pizza & Pasta,PLA Sports Bar,Player's Club,Poker Snack Bar,Pool Bar & Grill,Pool Bar & Grill,Powder House,Prism Piano Bar & Lounge,Prism Steak & Seafood,Prive,Psycho Bunny,Rain Maker,Restaurant,Revolt Tattoos,Rise Kitchen & Deli,Rise Kitchen & Deli,Roadies Burger Bar,Rock 'N Raw,Rock Bar & Lounge,Rock Spa,Rock Spa,Rock Spa & Salon,Rock Spa & Salon,Rock Spa® & Salon,Rocksino by Hard Rock Deadwood,Rocktane,Ruth's Chris,Salsa,Sandpiper Coastal Bar & Grill,Satisfaction Buffet,Seminole Brighton,Seminole Center,Seminole Cigar Landing,Seminole Classic,Seminole Coconut Creek,Seminole Immokalee,Slice,Slice,Sound Waves,Soygood,Splash,Starbucks,Starbucks,Sugar Factory,Sugar Factory,Sugar Factory,Sunset Grill,Tequila's On The Gulf,The BOL,The BOL,The Cellar Wine and Spirits,The Comedy Club,The Eatery,The Food Court,The Green Bar,The Mirage,The Oyster Bar,The Rez Grill,The Show Theatre,Tobacco 2:3,Track 5.,Villa Services,Wentworth Gallery,Wentworth Gallery,Weston Jewelers,White House Subs,Wild Card Rewards Store,Wild Card Store,World Tour Buffet,Youyu,YouYu,YOUYU Noodle Bar,YOUYU Noodle Bar,Zig Zag Lounge
+                            - cell [ref=e129]
+                  - row "Display Name UH_9513_Test Card Tier Restriction Star" [ref=e130]:
+                    - cell "Display Name UH_9513_Test" [ref=e131]:
+                      - generic [ref=e132]: Display Name
+                      - textbox "Display Name" [ref=e133]: UH_9513_Test
+                    - cell "Card Tier Restriction Star" [ref=e134]:
+                      - generic [ref=e135]: Card Tier Restriction
+                      - table [ref=e138]:
+                        - rowgroup [ref=e139]:
+                          - row "Star" [ref=e140]:
+                            - cell "Star" [ref=e141]:
+                              - textbox [ref=e142]: Star
+                            - cell [ref=e143]
+                  - row "Start Date 10/20/2025 Start Time 12:00 PM  Time Zone EST End Date 10/20/2025 End Time 11:59 PM  Time Zone EST" [ref=e144]:
+                    - cell "Start Date 10/20/2025 Start Time 12:00 PM  Time Zone EST End Date 10/20/2025 End Time 11:59 PM  Time Zone EST" [ref=e145]:
+                      - table [ref=e148]:
+                        - rowgroup [ref=e149]:
+                          - row "Start Date 10/20/2025 Start Time 12:00 PM  Time Zone EST" [ref=e150]:
+                            - cell "Start Date 10/20/2025" [ref=e151]:
+                              - text: Start Date
+                              - generic [ref=e152]:
+                                - textbox [ref=e153]: 10/20/2025
+                                - img [ref=e154]
+                            - cell "Start Time 12:00 PM " [ref=e155]:
+                              - text: Start Time
+                              - generic [ref=e156]:
+                                - textbox [ref=e157]: 12:00 PM
+                                - generic [ref=e158]: 
+                            - cell "Time Zone EST" [ref=e159]:
+                              - text: Time Zone
+                              - textbox [disabled] [ref=e161]: EST
+                          - row "End Date 10/20/2025 End Time 11:59 PM  Time Zone EST" [ref=e162]:
+                            - cell "End Date 10/20/2025" [ref=e163]:
+                              - text: End Date
+                              - generic [ref=e164]:
+                                - textbox [ref=e165]: 10/20/2025
+                                - img [ref=e166]
+                            - cell "End Time 11:59 PM " [ref=e167]:
+                              - text: End Time
+                              - generic [ref=e168]:
+                                - textbox [ref=e169]: 11:59 PM
+                                - generic [ref=e170]: 
+                            - cell "Time Zone EST" [ref=e171]:
+                              - text: Time Zone
+                              - textbox [disabled] [ref=e173]: EST
+                  - row
+                  - row "Display Start Date 09/29/2025 Display Start Time 12:00 PM  Time Zone EST Display End Date 10/20/2025 Display End Time 11:59 PM  Time Zone EST" [ref=e174]:
+                    - cell "Display Start Date 09/29/2025 Display Start Time 12:00 PM  Time Zone EST Display End Date 10/20/2025 Display End Time 11:59 PM  Time Zone EST" [ref=e175]:
+                      - table [ref=e178]:
+                        - rowgroup [ref=e179]:
+                          - row "Display Start Date 09/29/2025 Display Start Time 12:00 PM  Time Zone EST" [ref=e180]:
+                            - cell "Display Start Date 09/29/2025" [ref=e181]:
+                              - text: Display Start Date
+                              - generic [ref=e182]:
+                                - textbox [ref=e183]: 09/29/2025
+                                - img [ref=e184]
+                            - cell "Display Start Time 12:00 PM " [ref=e185]:
+                              - text: Display Start Time
+                              - generic [ref=e186]:
+                                - textbox [ref=e187]: 12:00 PM
+                                - generic [ref=e188]: 
+                            - cell "Time Zone EST" [ref=e189]:
+                              - text: Time Zone
+                              - textbox [disabled] [ref=e191]: EST
+                          - row "Display End Date 10/20/2025 Display End Time 11:59 PM  Time Zone EST" [ref=e192]:
+                            - cell "Display End Date 10/20/2025" [ref=e193]:
+                              - text: Display End Date
+                              - generic [ref=e194]:
+                                - textbox [ref=e195]: 10/20/2025
+                                - img [ref=e196]
+                            - cell "Display End Time 11:59 PM " [ref=e197]:
+                              - text: Display End Time
+                              - generic [ref=e198]:
+                                - textbox [ref=e199]: 11:59 PM
+                                - generic [ref=e200]: 
+                            - cell "Time Zone EST" [ref=e201]:
+                              - text: Time Zone
+                              - textbox [disabled] [ref=e203]: EST
+                  - row
+                  - row "Display Description Smoke Test" [ref=e204]:
+                    - cell "Display Description Smoke Test" [ref=e205]:
+                      - text: Display Description
+                      - textbox [ref=e206]: Smoke Test
+                  - row "Disclaimer Smoke Test1" [ref=e207]:
+                    - cell "Disclaimer Smoke Test1" [ref=e208]:
+                      - text: Disclaimer
+                      - textbox [ref=e209]: Smoke Test1
+            - generic [ref=e210]:
+              - heading "Quick Offer Process" [level=2] [ref=e211]
+              - list [ref=e212]:
+                - generic [ref=e213]: Offer Setup
+                - generic [ref=e214]: Invitation Details
+                - generic [ref=e215]: Summary
+          - generic [ref=e216]:
+            - button "Back to Listing" [ref=e217] [cursor=pointer]
+            - button "Save & Next Step" [disabled] [ref=e218] [cursor=pointer]
+            - button "Save & Close" [ref=e219] [cursor=pointer]
+```

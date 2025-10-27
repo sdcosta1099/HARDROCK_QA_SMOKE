@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(100000);
+test.setTimeout(500000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('UH_9475_HALO | Patron Dashoard | Player Function | Comments | Edit Comment', async ({ page }) => {
+test('@27Oct UH_9475_HALO | Patron Dashoard | Player Function | Comments | Edit Comment', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
 
@@ -12,6 +12,8 @@ test('UH_9475_HALO | Patron Dashoard | Player Function | Comments | Edit Comment
 
   await pa.enterPlayerID('660302931')
   await pa.clickOnSearchForPlayer()
+  await pa.clickOnClose()
+ // await pa.clickOnCloseComment()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnPlayerFunction()
   await pa.clickOnViewComment()

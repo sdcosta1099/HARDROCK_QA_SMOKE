@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","106085","UH_9429_HALo | Configuration | Events & Offers | Quick Offers | Sort Quick Offers by Name, Description, Start Date, End Date and Display Date","chromium","Wed Mar 12 16:48:31 EDT 2025","passed","Wed Mar 12 16:50:17 EDT 2025","","UH_9429.spec.js","",""

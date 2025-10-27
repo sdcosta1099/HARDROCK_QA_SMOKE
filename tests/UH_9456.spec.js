@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(1800000);
+test.setTimeout(500000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
@@ -57,25 +57,26 @@ test('UH_9456 HALO | Events & Offers | Offer Mgmt/Check-in Flow - Multiple Atten
   await pa.enterPatronInEventCheckinAndSearch('703039411')
   // await page.waitForTimeout(80000000);
   await pa.clickOnCheckInButtonInEventCheckIn()
-  // await pa.validateCheckInSuccessfulPopupAndClose()
-  // await pa.clickPaceReportButton()
-  // await pa.validatePaceReportPopupIsOpen()
-  // await pa.closePaceReportPopup()
-  // await pa.clickOnEmployeeDashboard()
-  // await pa.enterPlayerID('703039411')
-  // await pa.clickOnSearchForPlayer()
-  // await pa.validatePlayerDashboardDisplayed()
-  // await pa.clickOnPlayerFunction()
-  // await pa.clickOnPlayerTransactionLog()
-  // await pa.clickOnLeftArrow()
-  // await pa.validateEventDetailsInPlayerTransaction()
-  // await pa.clickOnclosePlayerTransactionWindow()
-  // //await pa.clickOnPlayerReservation()
-  //await pa.enterPlayerReservationName('Smoke_UH_9456')
-  //await pa.clickOnPlayerReservationSearch()
-  //await pa.clickOnPlayerDetailsLink()
-  //await pa.validateEventDetailsPageWithSuccessfullCheckin()
-  //await page.waitForTimeout(4000);
+  await pa.validateCheckInSuccessfulPopupAndClose()
+  await pa.clickPaceReportButton()
+  await pa.validatePaceReportPopupIsOpen()
+  await pa.closePaceReportPopup()
+  await pa.clickOnEmployeeDashboard()
+  await pa.enterPlayerID('703039411')
+  await pa.clickOnSearchForPlayer()
+  await pa.validatePlayerDashboardDisplayed()
+  await pa.clickOnCloseComment()
+  await pa.clickOnPlayerFunction()
+  await pa.clickOnPlayerTransactionLog()
+  await pa.clickOnLeftArrow()
+  await pa.validateEventDetailsInPlayerTransaction()
+  await pa.clickOnclosePlayerTransactionWindow()
+  await pa.clickOnPlayerReservation()
+  await pa.enterPlayerReservationName('Smoke_UH_9456')
+  await pa.clickOnPlayerReservationSearch()
+  await pa.clickOnPlayerDetailsLink()
+  await pa.validateEventDetailsPageWithSuccessfullCheckin()
+  await page.waitForTimeout(4000);
   await common.logout();
   
   });

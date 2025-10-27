@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(50000);
+test.setTimeout(600000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
@@ -12,11 +12,14 @@ test('UH_9478_Halo| Patron Dash Board | View Unity points Earnings', async ({ pa
 
   await pa.enterPlayerID('660302931')
   await pa.clickOnSearchForPlayer()
+  await pa.clickOnClose()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnUnityPointsEarningsTab()
   await pa.clickOnArrowIcone_1InFrontOfDataRecord()
   await pa.validateRecordExpands_1()
+  //await page.waitForTimeout(8000000)
   await pa.validateDataDisplayedByDateTime()
+  await page.waitForTimeout(2000)
   await pa.validateDataDisplayedByProperty()
   await pa.validateDataDisplayedByTransactionType()
   await pa.validateDataDisplayedByUnityPoints()

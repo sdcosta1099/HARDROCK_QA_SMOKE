@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(1000000);
+test.setTimeout(500000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
@@ -38,7 +38,6 @@ test('UH_9452_HALO | Events & Offers | Booking | Modify Booked Offer', async ({ 
   await pa.clickOnApprovedOfferTab()
   await pa.validateOfferApprovedSuccessPopUp()
   await pa.clickOnCloseOfferSuccessPopup1()
-
   await pa.clickOnConfiguration()
   await pa.clickOnEventsAndOffers()
   await pa.clickOnManageEventsAndOffers()

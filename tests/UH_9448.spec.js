@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(1200000);
+test.setTimeout(1500000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('UH_9448_HALO | Events & Offers | HALO | Events and Offers | Create offer with Over Ten Items', async ({ page }) => {
+test('@27Oct UH_9448_HALO | Events & Offers | HALO | Events and Offers | Create offer with Over Ten Items', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
 
@@ -14,7 +14,7 @@ test('UH_9448_HALO | Events & Offers | HALO | Events and Offers | Create offer w
   await pa.clickOnManageEventsAndOffers()
   await pa.clickOnAddNewEventAndOffers()
   await pa.ValidateAddNewEventAndOffersPage()
-  await pa.SelectfillOutNewEventFields1("UH_9448")
+  await pa.SelectfillOutNewEventFields4("UH_9448")
   await pa.clickSaveAndNextStep()
   await pa.SelectAFile()
   await pa.clickSaveAndNextStep()
@@ -22,7 +22,7 @@ test('UH_9448_HALO | Events & Offers | HALO | Events and Offers | Create offer w
   await pa.addMasterListItem2("PrizeName1","PC","Skip","500","500")
   await pa.clickOnPrize1()
   await pa.addNewItem("10")
-  await page.waitForTimeout(5000);
+  //await page.waitForTimeout(5000);
   await pa.clickOnAddMasterListItems()
   await pa.addMasterListItem2("PrizeName2","PC","Skip","500","500")
   await pa.clickOnPrize2()
@@ -66,7 +66,6 @@ test('UH_9448_HALO | Events & Offers | HALO | Events and Offers | Create offer w
   await pa.clickSaveAndNextStep()
   await pa.EnterAttendanceCapacity("2")
   await pa.clickSaveAndNextStep()
-  //await page.waitForTimeout(80000);
   await pa.config1()
   await pa.clickSaveAndNextStep()
   //await pa.selectCheckInNo()

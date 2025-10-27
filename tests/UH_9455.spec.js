@@ -9,6 +9,7 @@ test('UH_9455 HALO | Events & Offers | Check-In | Invited booked Patron', async 
 
   await common.goToHALOWebApplication()
   await common.loginAndSubmit("TU_LAB_HALO_NIN_ADM","Password01@$") 
+
   await pa.clickOnConfiguration()
   await pa.clickOnEventsAndOffers()
   await pa.clickOnManageEventsAndOffers()
@@ -46,7 +47,6 @@ test('UH_9455 HALO | Events & Offers | Check-In | Invited booked Patron', async 
   await pa.enterPatronInEventCheckinAndSearch('703039411')
   await pa.clickOnCheckInButtonInEventCheckIn()
   await pa.validateCheckInSuccessfulPopupAndClose()
-  //await page.waitForTimeout(80000000);
   await pa.clickPaceReportButton()
   await pa.validatePaceReportPopupIsOpen()
   await pa.closePaceReportPopup()

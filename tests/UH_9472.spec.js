@@ -11,6 +11,7 @@ test('UH_9472_HALO | Patron DashBoard | Player Function | Comments | Create/Add 
   await common.loginAndSubmit("TU_LAB_HALO_NIN_ADM","Password01@$")
   await pa.enterPlayerID('550296941')
   await pa.clickOnSearch()
+  await pa.clickOnClose()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnPlayerFunctions()
   await pa.validatePlayerFunctionList()
@@ -33,7 +34,7 @@ test('UH_9472_HALO | Patron DashBoard | Player Function | Comments | Create/Add 
   //await page.waitForTimeout(800000)
   //await pa.ValidateYellowIcon()
   //await page.waitForTimeout(800000)
-  //await common.logout();
+  await common.logout();
   
   
 

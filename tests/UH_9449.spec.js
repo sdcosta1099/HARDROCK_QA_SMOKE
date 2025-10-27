@@ -19,7 +19,6 @@ test('UH_9449_HALO | Events & Offers | Booking | Book invited Patron', async ({ 
   await pa.SelectAFile()
   await pa.clickSaveAndNextStep()
   await pa.clickOnAddMasterListItems()
-  //await page.waitForTimeout(80000000);
   await pa.addMasterListItem1("PrizeName1","PC","Skip","500","50")
   await pa.clickSaveAndNextStep()
   await pa.EnterAttendanceCapacity("2")

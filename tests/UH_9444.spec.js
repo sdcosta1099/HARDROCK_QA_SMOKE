@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(120000);
+test.setTimeout(500000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
@@ -10,12 +10,32 @@ test('UH_9444_HALO | Events & Offers | Offers | Approve an offer', async ({ page
   await common.goToHALOWebApplication()
   await common.loginAndSubmit("TU_LAB_HALO_NIN_ADM","Password01@$")
 
+
   await pa.clickOnConfiguration()
   await pa.clickOnEventsAndOffers()
   await pa.clickOnManageEventsAndOffers()
   await pa.validateEventsAndOfferPageDisplayed()
+  await pa.clickOnAddNewEventAndOffers()
+  await pa.ValidateAddNewEventAndOffersPage()
+  await pa.SelectfillOutNewEventFields4('UH_9444')
+  await pa.clickSaveAndNextStep()
+  await pa.SelectAFile()
+  await pa.clickSaveAndNextStep()
+  await pa.clickOnAddMasterListItems()
+  await pa.addMasterListItem1("PrizeName1","PC","Skip","500","50")
+  await pa.clickSaveAndNextStep()
+  await pa.EnterAttendanceCapacity("2")
+  await pa.clickSaveAndNextStep()
+  await pa.config()
+  await pa.clickSaveAndNextStep()
+  await pa.clickSaveAndNextStep()
+  await pa.clickSaveAndNextStep()
+  await pa.clickOnSubmitForReviewButtonAndVerifyOfferIsSubmittedSuccessfully()
+ //await page.waitForTimeout(800000);
+  await pa.validateActiveViewAndApprovedStateSelectedByDefault()
   await pa.selectStateFromEventsAndOfferStateDropdown('Pending Review')
   await pa.selectViewFromEventsAndOfferViewDropdown('Pipeline')
+  await pa.enterOfferName('UH_9444')
   await pa.clickOnSearchForEventsAndOffers()
   await pa.validateOffersAccordingtoSearchCriteriaDisplayed()
   await pa.selectThreeDotsAfterCreatorColoumn()

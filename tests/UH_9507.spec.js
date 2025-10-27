@@ -24,7 +24,14 @@ test('UH_9507_HALo | Quick Offers | Create a Quick offer with X card Level', asy
   await pa.checkOptionOfDisplayLocationQuickOfferSetupPage('Hard Rock Live')
   await pa.enterDisplayName('UH_9507')
   await pa.clickOnCardTierRestrictionDropdownQuickOfferSetupPage()
+ // await page.waitForTimeout(200);
   await pa.selecCardTierRestrictionXQuickOfferPage()
+  // await page.keyboard.press('ArrowDown');
+  // await page.keyboard.press('ArrowDown');
+  // await page.keyboard.press('ArrowDown');
+  // await page.keyboard.press('ArrowDown');
+  // await page.keyboard.press('ArrowDown');
+  // await page.keyboard.press('Enter');
   await pa.enterDisplayDescriptionInQuickOfferPage('Test')
   await pa.enterDisclaimerInQuickOfferPage('Test1')
   await pa.clickOnSaveAndNextStepQuickOfferPage()

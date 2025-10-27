@@ -30,11 +30,10 @@ module.exports = defineConfig({
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
-  
 
-  reporter:[['html'], ['allure-playwright',{outputFolder:'allure-results-7Jan2023'}]],
-//   reporter:[['html'], ['allure-playwright',{outputFolder:'allure-results-5Sep2024'}]],
-// >>>>>>> 17b43958f2e013606897d1885c0c62548a4bb81b
+  
+  reporter: [['html'],["allure-playwright",{outputFolder:'allure-results-27October2025'}]] ,
+
 
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */

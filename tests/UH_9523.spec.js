@@ -3,7 +3,7 @@ test.setTimeout(500000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-test('UH_9523_HALo | Quick Offers | Create a Quick Offer with multiple LOB', async ({ page }) => {
+test('@27Oct UH_9523_HALo | Quick Offers | Create a Quick Offer with multiple LOB', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
 

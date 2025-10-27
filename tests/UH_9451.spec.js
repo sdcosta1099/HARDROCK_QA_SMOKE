@@ -16,7 +16,8 @@ test('UH_9451_HALO | Events & Offers | Booking | Book uninvited Patron', async (
   await pa.ValidateAddNewEventAndOffersPage()
   await pa.SelectfillOutNewEventFields4("UH_9451_1")
   await pa.clickSaveAndNextStep()
-  await pa.SelectAFile()
+  await pa.SelectAFile1()
+  //await page.waitForTimeout(800000000); 
   await pa.clickSaveAndNextStep()
   await pa.clickOnAddMasterListItems()
   await pa.addMasterListItem1("PrizeName1","PC","Skip","500","50")
@@ -41,11 +42,12 @@ test('UH_9451_HALO | Events & Offers | Booking | Book uninvited Patron', async (
   await pa.clickOnEmployeeDashboard()
   await pa.enterPlayerID('807651714') 
   await pa.clickOnSearch()
+  await pa.clickOnClose()
   await pa.validatePlayerDashboardDisplayed()
   await pa.selectEventsAndOffersButtonOnPlayerDashBoard()
   await pa.validatePlayerEventsAndOffersPage()
   await pa.clickOnInvitedFilter()
-  await page.waitForTimeout(30000);  
+  await page.waitForTimeout(50000);  
   await pa.searchOfferFromViewEventsAndOffer('UH_9451_1')
   await page.waitForTimeout(30000); 
   await pa.clickOnMoreLinkofEvent()

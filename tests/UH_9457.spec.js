@@ -46,7 +46,6 @@ test('UH_9457 Testing Check-In Multiple Attendees and Max Prize quantity set to 
   await pa.enterPatronInEventCheckinAndSearch('703039411')
   await pa.clickOnCheckInButtonInEventCheckIn()
   await pa.validateCheckInSuccessfulPopupAndClose()
-  //await page.waitForTimeout(80000000);
   await pa.clickPaceReportButton()
   await pa.validatePaceReportPopupIsOpen()
   await pa.closePaceReportPopup()

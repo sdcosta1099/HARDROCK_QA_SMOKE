@@ -1,0 +1,133 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - text: HALO 25.9.1
+      - text: Logged in as TU_LAB_HALO_NIN_ADM
+      - img "HR Casino, Northern Indiana" [ref=e7]
+    - link "Logout" [ref=e9] [cursor=pointer]:
+      - /url: javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$lnkLogout", "", false, "", "SessionOut.aspx", false, true))
+      - img "Logout" [ref=e10]
+  - generic [ref=e12]:
+    - list [ref=e15]:
+      - listitem [ref=e16]:
+        - link "Player Functions" [ref=e17] [cursor=pointer]:
+          - /url: javascript:toggle1("1000010","sub_nav_1000010","1000010");
+      - listitem [ref=e18]:
+        - link "Configuration" [ref=e19] [cursor=pointer]:
+          - /url: javascript:toggle1("1000000","sub_nav_1000000","1000010");
+      - listitem [ref=e20]:
+        - link "Administration" [ref=e21] [cursor=pointer]:
+          - /url: javascript:toggle1("1000002","sub_nav_1000002","1000010");
+    - generic [ref=e22]:
+      - table [ref=e25]:
+        - rowgroup [ref=e26]:
+          - row "PLAYER SEARCH Go To Employee Dashboard 0" [ref=e27]:
+            - cell "PLAYER SEARCH" [ref=e28]
+            - cell [ref=e29]
+            - cell "Go To Employee Dashboard" [ref=e30]:
+              - link "Go To Employee Dashboard" [ref=e31] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkToEmployeeDashboard','')
+                - img [ref=e32]
+            - cell [ref=e34]:
+              - link "Expand Search" [ref=e35] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkSearchSVG','')
+                - img [ref=e36]
+            - cell "0" [ref=e39]:
+              - generic "Show Notification" [ref=e41]
+              - generic:
+                - generic: "0"
+      - generic [ref=e44]:
+        - generic [ref=e45]: Edit UH_9432_Smoke-COPY
+        - generic [ref=e46]:
+          - generic [ref=e48]:
+            - generic [ref=e49]:
+              - strong [ref=e50]: Invitation Details
+              - separator [ref=e51]
+              - generic [ref=e53]:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic [ref=e54] [cursor=pointer]:
+                        - text: Select a file
+                        - button "Choose File" [ref=e55]
+                      - generic: No file selected
+                    - button "Upload" [disabled] [ref=e57]
+              - generic [ref=e59]:
+                - generic [ref=e60]: INVITEE LIST
+                - generic [ref=e61]: 0 Total Invitees
+              - table [ref=e63]:
+                - rowgroup [ref=e64]:
+                  - row "File List Invitees No Results Found Segments Invitees No Results Found" [ref=e65]:
+                    - cell "File List Invitees No Results Found" [ref=e66]:
+                      - table [ref=e69]:
+                        - rowgroup [ref=e72]:
+                          - row "File List Invitees No Results Found" [ref=e73]:
+                            - cell "File List Invitees No Results Found" [ref=e74]:
+                              - table [ref=e75]:
+                                - rowgroup [ref=e76]:
+                                  - row "File List Invitees" [ref=e77]:
+                                    - cell "File List Invitees" [ref=e78]:
+                                      - table [ref=e80]:
+                                        - rowgroup [ref=e81]:
+                                          - row "File List Invitees" [ref=e82]:
+                                            - cell "File List" [ref=e83]
+                                            - cell "Invitees" [ref=e84]
+                                - rowgroup [ref=e85]:
+                                  - row "No Results Found" [ref=e86]:
+                                    - cell "No Results Found" [ref=e87]:
+                                      - table [ref=e89]:
+                                        - rowgroup [ref=e90]:
+                                          - row "No Results Found" [ref=e91]:
+                                            - cell "No Results Found" [ref=e92]:
+                                              - table [ref=e93]:
+                                                - rowgroup [ref=e94]:
+                                                  - row "No Results Found" [ref=e95]:
+                                                    - cell "No Results Found" [ref=e96]:
+                                                      - generic [ref=e98]: No Results Found
+                                - rowgroup
+                    - cell "Segments Invitees No Results Found" [ref=e99]:
+                      - table [ref=e102]:
+                        - rowgroup [ref=e105]:
+                          - row "Segments Invitees No Results Found" [ref=e106]:
+                            - cell "Segments Invitees No Results Found" [ref=e107]:
+                              - table [ref=e108]:
+                                - rowgroup [ref=e109]:
+                                  - row "Segments Invitees" [ref=e110]:
+                                    - cell "Segments Invitees" [ref=e111]:
+                                      - table [ref=e113]:
+                                        - rowgroup [ref=e114]:
+                                          - row "Segments Invitees" [ref=e115]:
+                                            - cell "Segments" [ref=e116]
+                                            - cell "Invitees" [ref=e117]
+                                - rowgroup [ref=e118]:
+                                  - row "No Results Found" [ref=e119]:
+                                    - cell "No Results Found" [ref=e120]:
+                                      - table [ref=e122]:
+                                        - rowgroup [ref=e123]:
+                                          - row "No Results Found" [ref=e124]:
+                                            - cell "No Results Found" [ref=e125]:
+                                              - table [ref=e126]:
+                                                - rowgroup [ref=e127]:
+                                                  - row "No Results Found" [ref=e128]:
+                                                    - cell "No Results Found" [ref=e129]:
+                                                      - generic [ref=e131]: No Results Found
+                                - rowgroup
+            - text: Select a file Select a file
+          - generic [ref=e132]:
+            - heading "Quick Offer Process" [level=2] [ref=e133]
+            - list [ref=e134]:
+              - link "Offer Setup" [ref=e135] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$ContentPlaceHolder1$lstOfferCreationSteps$ctrl0$liStep','')
+              - link "Invitation Details" [ref=e136] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$ContentPlaceHolder1$lstOfferCreationSteps$ctrl1$liStep','')
+              - link "Summary" [ref=e137] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$ContentPlaceHolder1$lstOfferCreationSteps$ctrl2$liStep','')
+        - generic [ref=e138]:
+          - button "Back to Listing" [ref=e139] [cursor=pointer]
+          - button "Previous Step" [ref=e140] [cursor=pointer]
+          - button "Save & Next Step" [active] [ref=e141] [cursor=pointer]
+          - button "Save & Close" [ref=e142] [cursor=pointer]
+```

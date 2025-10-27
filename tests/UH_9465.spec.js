@@ -17,6 +17,7 @@ test('UH_9465_HALO | Comments | Delete Comments', async ({ page }) => {
   await pa.validateViewCommentPopUp()
   await pa.clickOnAdd()
   await pa.selectAddCommentOption1()
+  //await page.waitForTimeout(5000000);
   await pa.clickOnComment()
   await pa.validateReplyEditDeletSettleVoidButtonsDisplayed()
   await pa.clickOnDelete()

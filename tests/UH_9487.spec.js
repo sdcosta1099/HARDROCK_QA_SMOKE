@@ -10,8 +10,9 @@ test('UH_9487_HALo | Comm Preferences | Contact Info | Edit Physical Address', a
   await common.goToHALOWebApplication()
   await common.loginAndSubmit("TU_LAB_HALO_NIN_ADM","Password01@$")
 
-  await pa.enterPlayerID('807879760')
+  await pa.enterPlayerID('660302931')//807879760//
   await pa.clickOnSearchForPlayer()
+  //await pa.clickOnClose()
   await pa.validatePlayerDashboardDisplayed()
   await pa.clickOnCommPreferencesTab()
   await pa.clickOnContactInformationTab()

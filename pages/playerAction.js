@@ -4,22 +4,29 @@ import exp from 'constants';
 import { off } from 'process';
 const { setInputFiles } = require('playwright/test');
 exports.playerAction = class playerAction {
-    constructor(page) {
-        this.page = page
-        this.configuration_link = page.getByRole('link', { name: 'Configuration' })
-        this.itemSearchField = page.getByRole('combobox', { name: 'Enter Keyword or Item No.' })
+   constructor(page) {
+      this.page = page
+      this.configuration_link = page.getByRole('link', { name: 'Configuration' })
+      this.itemSearchField = page.getByRole('combobox', { name: 'Enter Keyword or Item No.' })
+
+   
+
       //UH_9446
+      this.YesRadio = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlInvitationDetails_rbPatronUnderageAllow_0']")
       this.empDashboardButton = page.locator("//a[@id='ctl00_lnkToEmployeeDashboard']")
       this.viewEventsAndOffers = page.frameLocator('#ifrContent').locator("//input[@id='btnViewEventsAndOffers']")
-      this.searchOfferInViewEventsAndOffer = page.frameLocator('#ifrContent').locator("//input[@name='txtEventsOfferDisplayName']")
-      this.searchOfferInEventsAndOffer= page.frameLocator('#ifrContent').locator("//input[@id='btnSearchClick']")
+      this.searchOfferInViewEventsAndOffer = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@name='txtEventsOfferDisplayName']")
+      this.searchOfferInEventsAndOffer = page.frameLocator("//tbody//tr//td//iframe[@id='ifrContent']").locator("//tbody//tr//td//input[@id='btnSearchClick']")
+
+
       this.moreInViewEventsAndOffer = page.frameLocator('#ifrContent').locator("(//a[contains(text(),'More')])[1]")
-      this.VOverRideMessage = page.frameLocator('#ifrContent').locator("//span[contains(text(),'This patron has not been invited to the event. Click')]													")
+      this.VOverRideMessage = page.frameLocator("//iframe[@id='ifrContent']").locator("//span[contains(text(),'This patron has not been invited to the event.')]")
       //UH_9443
+      this.WarningPopupOK = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlMasterListOfItem_wdgWarning_tmpl_btnPopupSubmit']")
       this.startTime = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtStarttime']")
       this.view1 = page.locator("(//input[@value='View' and @class='popup-option'])[1]")
       //this.closeSuccessPopup = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlSummary_btnClose']")
-      this.addmasterListItem = page.locator("//input[@title='Add Group']")
+      this.addmasterListItem = page.locator("//div//input[@id='ctl00_ContentPlaceHolder1_ctrlMasterListOfItem_btnAddMultiplier']")
       this.displayPrizeName = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlMasterListOfItem_txtDisplayPrizeName']")
       this.prizeCode = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlMasterListOfItem_txtCmpPrizeCode']")
       this.internalDescription = page.locator("//textarea[@name='ctl00$ContentPlaceHolder1$ctrlMasterListOfItem$txtInternalDescription']")
@@ -44,7 +51,7 @@ exports.playerAction = class playerAction {
       this.attendanceRadioButton = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlAttendeeCapacity_rdAttendeeCapacity_1']");
       this.attendeeCapacityField = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlAttendeeCapacity_txtMaximunAttendeeCapacity']")
       this.submitForReview = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnSubmitForReview']")
-      this.offerSubmittedSuccessfullyMessage = page.locator("//span[contains(text(),'The offer has been submitted successfully!')]")      
+      this.offerSubmittedSuccessfullyMessage = page.locator("//span[contains(text(),'The offer has been submitted successfully!')]")
       //UH_9429
       this.Name = page.locator("//th[contains(text(),'Name')]")
       this.Ascending = page.locator("//img[@title='Ascending']")
@@ -67,7 +74,7 @@ exports.playerAction = class playerAction {
       this.vSelectedOffers = page.locator("//div[@id='ctl00_ContentPlaceHolder1_pnlManageQuickOffer']")
 
       //UH_9432
-      
+
       this.OfferTypeQuickOffer1 = page.locator("(//img[@mkr='ButtonImage'])[3]")
       this.selectEntertainmentQuickOffers = page.locator("//li//a[contains(text(),'Entertainment')]")
       this.displayPropertyDropdownQuickOffer1 = page.locator("(//img[@mkr='ButtonImage'])[4]")
@@ -76,425 +83,10 @@ exports.playerAction = class playerAction {
       this.selectOptionDisplayLocationQuickOffers1 = page.locator("//li[@class='igdd_ListItem  igdd_ListItemActive']")
       this.cardTierRestrictionQuickOffers = page.locator("(//img[@mkr='ButtonImage'])[6]")
       this.selectOptionCardTierRestrictionQuickOffer = page.locator("//input[@class='igdd_ValueDisplay ig_Hover igdd_ValueDisplayHover ']")
-    
-<<<<<<< HEAD
-        //RET_1286
-        
-        this.CategoryPINS = page.locator("(//a[@id='pins'])[1]")
-        this.SubCategory3DPINS = page.getByRole('menu').getByText('3D Pins')
-        this.homeCategorySubcatogeryPathDisplayed = page.locator("//div[@class='plp-breadcrumbs']//a[@href='/s/hardrock/pins/3d-pins']")
-        this.Product = page.locator("(//a[@class='link thesansb6_semibold'])[1]")
-        this.Product_NativeAmericanPin= page.getByRole('link', { name: 'Native American Pinktoberr Pin 23' })
-
-        //RET_1172
-
-        this.clickSelectProductPDP =  page.locator('(//div[@class="pdp-link"])[1]')
-        this.MyBag = page.locator('(//a[@class="minicart-link"])[1]')
-        this.payPal = page.frameLocator('(//iframe[@title="PayPal"])[1]').getByLabel('Pay with PayPal')
-        //this.payPal1 = page.frameLocator('(//iframe[@title="PayPal"])[1]').locator('(//div[contains(@id,"zoid-paypal-buttons-uid")])[1]')
-        this.payPal1 = page.locator('//div[@class="card payment-method"]//input[@class="sfpp-payment-method-radio sfpp-payment-method-radio-paypal"]')
-        //RET_1281
-        this.itemRecomendation = page.locator('//li[@id="product-0"]')
-        this.signInButton = page.locator('(//span[@class="user-message ml-1"])[1]')
-        this.unityWebsiteDisplayed = page.locator('//div[@class="shr-header__logo"]')
-        this.emailAddress = page.locator('//input[@id="email-guest"]')
-        this.passWord = page.locator("//input[@id='password']")
-        this.login = page.locator("//button[@id='js-shr-login__submit']")
-        //this.selectQuantity5ForOrderAbove1000 = page.locator('//select[@class="quantity-select custom-select form-control"]')
-        this.quantity = page.locator('//select[@id="quantity-1"]')
-        this.yourBag = page.locator('//h1[@class="page-title-cart d-flex align-items-center justify-content-between"]')
-        this.checkOutPage = page.locator('//span[@class="thesansb7_bold"]')
-        this.ContinueToCheckOut = page.locator('//button[@class="submit-customer btn-save btn btn-block mt-4"]')
-        this.CustomerInformation = page.locator('(//h2[@class="pull-left card-header-custom"])[1]')
-        this.FirstName = page.locator('//input[@id="shippingFirstNamedefault"]')
-        this.LastName = page.locator('//input[@id="shippingLastNamedefault"]')
-        this.Address1 = page.locator('//input[@id="shippingAddressOnedefault"]')
-        this.Address2 = page.locator('//input[@id="shippingAddressTwodefault"]')
-        this.Country = page.locator('(//select[@id="country"])[1]')
-        this.state = page.locator('(//select[@id="shippingStatedefault"])[1]')
-        this.state1 = page.locator('(//input[@id="stateCode"])[1]')
-        this.City = page.locator('//input[@id="shippingAddressCitydefault"]')
-        this.PinCode = page.locator('//input[@id="shippingZipCodedefault"]')
-        this.PhoneNumber = page.locator('//input[@id="shippingPhoneNumberdefault"]')
-        this.NextPayment = page.locator('//button[@value="submit-shipping"]')
-        this.ShippingandBilling = page.locator('(//h2[@class="pull-left card-header-custom"])[2]')
-        this.ShippingAddressCheckBox = page.locator('//div[@class="card payment-form"]//div[@class="card-body"]//input[@type="checkbox"]')
-        this.OrderSummary = page.locator('//div[@class="order-summary col-lg-5 checkout-card-spacer"]')
-
-      //1148OrderSummary
-
-        this.CheckOut = page.locator('//button[@name="Checkout"]')
-
-      //RET_1261
-        this.messiAdultFitNavyHoodie = page.locator('//a[contains(text(),"Messi Adult Fit Navy Hoodie")]')
-        this.discoRoyalBlueAdultHoodie = page.locator('//a[contains(text(),"Unisex Classic Logo Hoodie Grey")]')
-        this.ProductDetailPage = page.locator('//h1[contains(text(),"Messi Adult Fit Navy Hoodie")]')
-        this.pdpSizeS = page.locator('//button[@data-attr-value="S"]')
-        this.pdpSizeM = page.locator('//button[@data-attr-value="M"]')
-        this.pdpSizeL = page.locator('//button[@data-attr-value="L"]')
-        this.pdpSizeXL = page.locator('//button[@data-attr-value="XL"]')
-        this.pdpSizeXXL = page.locator('//button[@data-attr-value="XXL"]')
-        this.AvailabilityBelowQtyDisplayed = page.locator('//div[contains(text(),"In Stock")]')
-        this.pdpAddToBag = page.locator('//button[@class="add-to-cart btn btn-primary"]')
-
-        //RET_1259
-        this.SearchBox = page.locator('(//input[@placeholder="Search" and @role="combobox"])[1]')
-        this.vPLPResult = page.locator('//ol[@class = "breadcrumb"]')
-        this.vGenderPLP = page.locator('//button[@data-target="#refinement-gender"]')
-        this.vColorPLP = page.locator('//button[@data-target="#refinement-color"]')
-        this.vPricePLP = page.locator('//button[@data-target="#refinement-price"]')
-        this.vCityPLP = page.locator('//button[@data-target="#refinement-city"]')
-        this.vSizePLP = page.locator('//button[@data-target="#refinement-size"]')
-        this.plpSizeFilter = page.locator('//button[@data-target = "#refinement-size"]')
-        this.plpSizeXS = page.getByRole('button', { name: 'Refine by Size: XS' })
-        this.plpSizeS = page.getByRole('button', { name: 'Refine by Size: S' })
-        this.plpSizeM = page.getByRole('button', { name: 'Refine by Size: M' })
-        this.plpSizeL = page.getByRole('button', { name: 'Refine by Size: L' })
-        this.plpSizeXL = page.getByRole('button', { name: 'Refine by Size: XL' })
-        this.plpSizeXXL = page.getByRole('button', { name: 'Refine by Size: XXL' })
-        this.plpSizeXXXL = page.getByRole('button', { name: 'Refine by Size: XXXL' })
-
-        this.messiAdultFitNavyHoodie = page.locator('//a[contains(text(),"Messi Adult Fit Navy Hoodie")]')
-        this.pdpSizeS = page.locator('//button[@data-attr-value="S"]')
-        this.pdpSizeM = page.locator('//button[@data-attr-value="M"]')
-        this.pdpSizeL = page.locator('//button[@data-attr-value="L"]')
-        this.pdpSizeXL = page.locator('//button[@data-attr-value="XL"]')
-        this.pdpSizeXXL = page.locator('//button[@data-attr-value="XXL"]')
-        this.pdpAddToBag = page.getByRole('button', { name: 'Add to Bag' })
-        this.pdpCart = page.getByRole('link', { name: 'Cart 1 Items' })
-
-        this.cartQuantity1 = page.locator('#maincontent').getByLabel('quantity: 1')
-        this.selectCartQuantity = page.locator('#maincontent').getByLabel('quantity: 1')
-        this.estimatedTotal = page.getByText('$12.55')
-        this.estimatedTotal2 = page.getByText('$15.15')
-        this.subTotal = page.locator('p').filter({ hasText: '$2.60' })
-        this.subTotal2 = page.locator('p').filter({ hasText: '$5.20' })
-        this.shippingAmount = page.getByText('$9.95')
-        this.productImageInCart = page.locator('//img[@title="Messi Adult Fit Navy Hoodie"]')
-        this.noSearchResultLabel = page.getByText('No Search Results For')
-        this.searchSuggestion = page.getByLabel('Messi x Hard Rock Track Jogger Pants')
-        this.suggestedProductPDP = page.getByText('THE MESSI COLLECTION Messi x Hard Rock Track Jogger Pants')
-
-        //RET_485
-         this.sortBy = page.getByText('Sort By')
-         this.newArrivals = page.getByRole('link', { name: 'New Arrivals' })
-         this.sortHighLow = page.getByRole('link', { name: 'Price High to Low' })
-         this.sortLowHigh = page.getByRole('link', { name: 'Price Low To High' })
-         this.sortHighToLow80 = page.locator('(//*[contains(text(),"$80.00")])[1]')
-         this.sortHighToLow70 = page.locator('(//*[contains(text(),"$70.00")])[1]')
-         this.sortLowToHigh20 = page.locator('(//*[contains(text(),"$20.00")])[1]')
-         this.sortLowToHigh24 = page.locator('(//*[contains(text(),"$24.99")])[1]')
-
-         //RET_497
-         this.nextImage = page.locator('.slick-next')
-         this.previousImage = page.locator('#maincontent svg').first()
-         this.firstImage =  page.getByRole('img', { name: 'Messi Adult Fit Navy Hoodie image number 1' }).nth(1)
-         this.secondImage = page.getByRole('img', { name: 'Messi Adult Fit Navy Hoodie image number 2' }).nth(1)
-         this.thirdImage = page.getByRole('img', { name: 'Messi Adult Fit Navy Hoodie image number 3' }).nth(1)
-         this.forthImage = page.getByRole('img', { name: 'Messi Adult Fit Navy Hoodie image number 4' }).nth(1)
-         this.fifthImage = page.getByRole('img', { name: 'Messi Adult Fit Navy Hoodie image number 5' }).nth(1)
-         this.sixthImage = page.getByRole('img', { name: 'Messi Adult Fit Navy Hoodie image number 6' }).nth(1)
-   
+      this.closeConsentPopUp = page.locator("//a[@id='close']")
 
 
-        
-        //RET_618
-        this.CategoryMENS = page.locator('(//a[@id="men"])[1]')
-        this.CategoryWOMENS = page.locator('(//a[@id="women"])[1]')
-      
 
-        //RET_663
-        this.CategoryPINS = page.locator('(//a[@id="pins"])[1]')
-        this.SubCategoryOnlineExclusivePins = page.locator('(//a[@id="pins_online_exclusive_pins"])[1]')
-      //   this.ProductMessiLimitedEditionPin = page.locator('(//a[@class="link thesansb6_semibold"])[1]')
-        this.ProductMessiLimitedEditionPin = page.locator('(//div[@class="image-container"])[1]')
-        this.AddToBag = page.locator('//button[@class="add-to-cart btn btn-primary"]')
-        this.MyBag = page.locator('(//a[@class="minicart-link"])[1]')
-        this.CheckOut = page.getByRole('button', { name: 'Checkout' })
-         //this.CheckOut = page.locator('//a[@href="https://dev.shop.hardrock.com/checkout"]')
-         //this.CheckOut = page.locator('//div[@class="mb-sm-3"]')
-        this.CheckOutPage = page.locator('//span[@class="thesansb7_bold" and contains(text(), "Checkout")]')
-        this.CheckOut = page.locator('//div[@class="mb-sm-3"]')
-        this.CheckOutPage = page.locator('//span[@class="thesansb7_bold"]')
-        this.emailAddress = page.locator('//input[@id="email-guest"]')
-        this.ContinueCheckOut = page.locator('//button[@class="submit-customer btn-save btn btn-block mt-4"]')
-        //this.customerInformation = page.locator('(//div[@class="card-header clearfix"])[1]')
-        this.FirstName = page.locator('//input[@id="shippingFirstNamedefault"]')
-        this.LastName = page.locator('//input[@id="shippingLastNamedefault"]')
-        this.Address1 = page.locator('//input[@id="shippingAddressOnedefault"]')
-        this.Address2 = page.locator('//input[@id="shippingAddressTwodefault"]')
-        this.Country = page.locator('(//select[@id="country"])[1]')
-        //this.State = page.locator('(//select[@id="shippingStatedefault"])[1]')
-        this.State = page.locator('(//select[@aria-describedby="defaultState"])[1]')
-        this.StateEdit = page.locator('(//select[@id="shippingStatedefault"])[2]')
-        //this.State = page.locator('(//select[@id="shippingStatedefault"])[2]')
-        this.City = page.locator('//input[@id="shippingAddressCitydefault"]')
-        this.PinCode = page.locator('//input[@id="shippingZipCodedefault"]')
-        this.PhoneNumber = page.locator('//input[@id="shippingPhoneNumberdefault"]')
-        //this.CheckBox = page.locator('//label[@class="custom-control-label"]')
-        //this.CheckBox = page.locator('(//input[@type="checkbox"])[3]')
-        this.Purchase = page.locator('//button[@class="btn btn-primary btn-block place-order submit-payment m-0"]')
-
-        //RET_660
-        this.NextPayment = page.locator('//button[@class="btn btn-save btn-block submit-shipping text-uppercase"]')
-        this.ShippingAddressCheckBox = page.locator('//label[@for="isSameAddress"]')
-
-        //RET_612
-        this.ShippingForm = page.locator('(//h2[@class="card-header-custom"])[4]')
-        //this.ErrorMessage = page.locator('//div[contains(text(),"Please fill out this field.")]')
-        this.ErrorMessage = page.locator('//div[@id="defaultFirstName"]')
-        this.ErrorInvalidPhone = page.locator('//div[@id="defaultTelephoneNumber"]')
-        this.ErrorInvalidZipCode = page.locator('//div[@id="defaultZipCode"]')
-
-        
-   //RET_589
-        this.categoryHoodies = page.locator('(//a[@id="hoodies"]//span[contains(text(),"HOODIES")])[1]')
-        this.SubCategoryMensHoodies = page.locator('(//*[@id="hoodies_mens"])[1]')
-        this.productCount = page.locator('//span[@class="product-count"]')
-        this.productImage = page.locator('(//div[@class="image-container"])[1]')
-        this.productNameLink  = page.locator('(//a[@class="link thesansb6_semibold"])[1]')
-        this.pLPpage = page.locator('//div[@class="container search-results"]')
-        this.pdpPage = page.locator('//div[@class="container product-detail product-wrapper"]')
-         
-
-         //RET_613
-        this.SearchBox = page.locator('(//input[@placeholder="Search" and @role="combobox"])[1]')
-        this.ItemKeyWordSubmit = page.locator('(//button[@name="search-button"])[1]')
-        this.DoYouMean = page.locator('//div[contains(text(),"Do you mean?")]')
-        this.SelectProduct = page.locator('(//div[@class="col-xs-12 col-sm-12"])[1]')
-        this.SearchResult = page.locator('//div[@class="col-lg-8 nosearchresultsTag"]')
-        this.ResultFor = page.locator('(//input[@class="form-control search-field"])[1]')
-        this.ProductTitle = page.locator('(//div[@class="col-xs-12 col-sm-12"])[2]')
-        this.GuitarShapedGrillSpatula = page.locator('//span[contains(text(),"Hard Rock Guitar Shaped Grill Spatula")]')
-        this.vPath = page.locator('(//ol[@class="breadcrumb"])[1]')
-        this.Category_PINS = page.locator('(//li[@class="breadcrumb-item"])[2]')
-        this.vPLP = page.locator('//ol[@class="breadcrumb"]')
- 
-
-      //RET_614
-      this.EditButton = page.locator('(//div[@class="card-header clearfix"]//button)[1]')
-      //this.EditButton = page.locator('(//button[@aria-label="Edit Shipping"]')
-      //this.EditButton = page.locator('((//button[@class="edit-button pull-right"])[1]')
-      //this.EditButton = page.locator('((//button[@class="edit-button pull-right"])[1]')
-        
-
-      //RET_623
-      this.vFirstName = page.locator('//label[@for="shippingFirstNamedefault"]')
-      this.vLastName = page.locator('//label[@for="shippingLastNamedefault"]')
-      this.vAddress1 = page.locator('//label[@for="shippingAddressOnedefault"]')
-      this.vAddress2 = page.locator('//label[@for="shippingAddressTwodefault"]')
-      this.vCountry = page.locator('//label[@for="shippingCountrydefault"]')
-      this.vState = page.locator('(//label[@for="shippingStatedefault"])[3]')
-      this.vCity = page.locator('//label[@for="shippingAddressCitydefault"]')
-      this.vZipCode = page.locator('//label[@for="shippingZipCodedefault"]')
-      this.vPhoneNumber = page.locator('//label[@for="shippingPhoneNumberdefault"]')
-      this.ShippingMethodRadioButton = page.locator('(//div//span[@class="shipping-cost"])[1]')
-      this.ShippingCharges = page.locator('//p[contains(text(),"$9.95")]')
-      this.ShippingCharges1 = page.locator('(//span[contains(text(),"$9.95")])[5]')
-      this.TotalEstimated = page.locator('//span[contains(text(),"$12.55")]')
-      this.ShippingAddressBox = page.locator('//div[@class="card shipping-summary"]')
-      this.PaymentMethod = page.locator('//div[@class="card payment-method"]')
-      this.CreditCardRadioButton = page.locator('//div[@class="sfpp-payment-method-header sfpp-payment-method-header-card"]')
-      //this.CardNumber = page.locator('(//input[@name="cardnumber"])[1]')
-      //this.CardNumber = page.locator('//input[@value="4242 4242 4242 4242"]')
-      //this.CreditCardNumber = page.locator('//input[@class="InputElement is-complete Input"]')
-      //this.CreditCardNumber = page.locator('//input[@aria-label="Credit or debit card number"]')
-      //this.CreditCardNumber = page.locator('(//input[@autocomplete="cc-number"])[1]')
-      this.CreditCardNumber=page.locator('//input[@data-elements-stable-field-name="cardNumber"]')
-
-      this.vExpirationDate = page.locator('//label[@class="sfpp-payment-method-card-expiry-label"]')
-      this.ExpirationDate = page.locator('//input[@name="exp-date"]')
-      this.vSecurityCode = page.locator('//label[@class="sfpp-payment-method-card-cvc-label"]')
-      this.SecurityCode = page.locator('//input[@name="cvc"]')
-      this.vPayPalRadioButton = page.locator('//div[@class="sfpp-payment-method-header sfpp-payment-method-header-paypal"]')
-      this.PayPalRadioButton = page.locator('//input[@class="sfpp-payment-method-radio sfpp-payment-method-radio-paypal"]')
-
-      //RET_661
-      this.vSignIn = page.locator('//a[@aria-label="Login With Unity Account"]')
-      this.vSighUp = page.locator('//a[@aria-label="Sign Up to a Unity Account"]')
-      this.vUnityMember = page.locator('//p[@class="mb-1 unity-block-heading"]')
-      this.SignIn = page.locator('//a[@aria-label="Login With Unity Account"]')
-      this.vUnityWindow = page.locator('//div[@id="js-shr-title__login-title"]')
-      this.searchItemf = page.getByRole('combobox', { name: 'Enter Keyword or Item No.' })
-
-      //RET_631
-      this.vShippingAddress = page.locator('//div[@class="card shipping-summary"]')
-      this.vPaymentPage = page.locator('(//h2[contains(text(),"Payment")])[2]')
-      this.vPPFirstName = page.locator('//label[@for="billingFirstName"]')
-      this.vPPLastName = page.locator('//label[@for="billingLastName"]')
-      this.vPPAddress1 = page.locator('//label[@for="billingAddressOne"]')
-      this.vPPAddress2 = page.locator('//label[@for="billingAddressTwo"]')
-      this.vPPCountry = page.locator('//label[@for="billingCountry"]')
-      this.vPPState = page.locator('(//label[@for="billingState"])[3]')
-      this.vPPCity = page.locator('//label[@for="billingAddressCity"]')
-      this.vPPZipCode = page.locator('//label[@for="billingZipCode"]')
-      this.vPPPhoneNumber = page.locator('//label[@for="phoneNumber"]')
-      this.vPPEmailAddress = page.locator('//label[@for="email-guest"]')
-
-      //RET_652 
-      this.vYourBag = page.locator('//h1[@class="page-title-cart d-flex align-items-center justify-content-between"]')
-      this.vItemCount = page.locator('//h2[@class="number-of-items"]')
-      this.vItemName = page.locator('//div[@class="line-item-name text-capitalize"]')
-      this.vItemImage = page.locator('//img[@alt="Messi Adult Fit Navy Hoodie"]')
-      this.vCityMyBag = page.locator('//span[contains(text(),"NO CITY NAME")]')
-      this.vQty = page.locator('(//select[@class="form-control quantity custom-select"])[1]')
-      this.vItemPrice = page.locator('(//span[@class="value"])[6]')
-      this.vItemTotal = page.locator('//div[@class="line-item-total-price cart-total-price"]')
-      this.vHelplineNumber = page.locator('//a[@class="help-phone-number t-underline"]')
-      this.vPromoCode = page.locator('//label[contains(text(),"Enter Promo Code")]')
-      this.MyBagIcon = page.locator('(//div[@class="minicart"])[1]')
-      this.ViewBag = page.locator('(//a[contains(text(),"View Bag")])[1]')
-      this.ContinueShopping = page.locator('//a[@class="continue-shopping-link text-uppercase"]')
-      this.vHomePage = page.locator('(//a[@title="Online Hard Rock Store Home"])[1]')
-      this.CategoryTEES = page.locator('(//span[contains(text(),"TEES")])[1]')
-      this.SubCategoryKidsTshirts = page.locator('(//a[@id="tees_kids"])[1]')
-      this.ProductYouthClassicLogoTee = page.locator('(//div[@class="product-tile"])[1]')
-      this.SelectCity = page.locator('//select[@id="city-1"]')
-      
-      
-
-      //RET_1340
-      this.vShippingAddressCheckBox = page.locator('//input[@id="isSameAddress"]')
-
-      //RET_659
-      this.vMiniCartIconQty = page.locator('(//div[@class="minicart-total"])[1]')
-      this.EditButtonYourBag = page.locator('(//a[@title="Edit"])[1]')
-      this.QuantityDropdown = page.locator('(//select[@id="quantity-1"])[1]')
-      this.QuantityDropdown1 = page.locator('(//select[@id="quantity-1"])[2]')
-      this.Quantity = page.locator('(//select[@id="quantity-1"])[1]')
-      this.ReduceQuantity = page.locator('//select[@id="quantity-ddca999f031e8a787aa89fae35"]')
-
-       //RET_1275
-       this.closecookies = page.getByRole('button', { name: 'Close' });
-       this.livechat = page.frameLocator('iframe[name="icChatButton"]').getByRole('button', { name: 'Live Chat' });
-       this.chatoptiondropdown = page.frameLocator('iframe[name="icChat"]').getByLabel('Choose an option from the list').locator('svg');
-       this.LC_option_benefits = page.frameLocator('iframe[name="icChat"]').getByLabel('Benefits');
-       this.messageTextBoxLivechat = page.frameLocator('iframe[name="icChat"]').getByLabel('Please tell us how we can help');
-       this.submitLC_Message = page.frameLocator('iframe[name="icChat"]').getByLabel('submit');
-       this.endChat1 = page.frameLocator('iframe[name="icChat"]').getByRole('button', { name: 'End chat' });
-       this.endChat2 = page.frameLocator('iframe[name="icChat"]').getByLabel('End Chat', { exact: true });
-       this.closeChat =  page.frameLocator('iframe[name="icChat"]').getByLabel('CLOSE CHAT');  
-       this.NEW = page.getByRole('button', { name: 'NEW' });
-       this.validateLiveChat = page.frameLocator('iframe[name="icChat"]').locator('//h2[@title="Live Chat"]');
-
-       //RET_584
-       this.showingItems = page.locator('//div[contains(text(),"showing")]');
-
-       //RET_1286
-       this.categoryWOMEN = page.locator('(//a[@id="women"])[1]');
-       this.subcategoryJOGGERSETS = page.locator('(//li//a[contains(text(), "Jogger Sets") and @class="dropdown-link"])[1]');
-       this.validatePDP_PATH = page.locator('//li[@class="breadcrumb-item"]//a[@href="/women/jogger-sets"]')
-       this.HOMEPDPPATH = page.locator('//li[@class="breadcrumb-item"]//a[@href="/" and contains(text(), "Home")]')
-       this.WOMENcategoryPDPPATH = page.locator('//li[@class="breadcrumb-item"]//a[@href="/women" ]')
-       this.JOGGERSETsubcategoryPDPPATH = page.locator('//li[@class="breadcrumb-item"]//a[@href="/women/jogger-sets"]')
-       //RET_1260
-      this.vFilteredItems = page.locator('//div[contains(text(),"showing")]')
-       
-      //RET_484
-      this.searchKEYWORD = page.locator('(//button[@aria-label="Submit search keywords"])[1]')
-      this.validateNo_of_items = page.locator('//span[@class="product-count"]')
-      this.validateNo_of_items_rightSide = page.locator('//span[@class="product-count"]')
-      this.femaleCheckBox = page.locator('(//div[@id="refinement-gender"]//button//i[@class="check-icon"])[1]')
-      this.ClearAll_Reset = page.locator('(//button[@class="reset btn btn-link text-uppercase"])[1]')
-     
-      //RET_575
-      this.QuickView = page.locator('(//div//img[@class="eye-icon"])[1]')
-      this.Product_PLP = page.locator('(//div[@class="pdp-link"])[1]')
-      this.navigateImages = page.locator('//span[@class="slick-next slick-arrow-rounded slick-arrow"]')
-      this.selectSizeLarge = page.getByRole('button', { name: 'L', exact: true })
-      this.statusAvailibility =  page.locator('//div[contains(text(), "In Stock")]');
-      this.ViewFullProductDetails = page.getByRole('link', { name: 'VIEW FULL PRODUCT DETAILS' })
-      
-      //RET_655
-      this.EditOnYourBag = page.locator('(//a[@title="Edit"])[1]')
-      this.vModalPopUp = page.locator('//h1[@class="product-name"]')
-      this.closeModalPopUp = page.locator('//span[@class="cross-icon"]')
-      this.vShippingMethodRadioBox = page.locator('(//span[contains(text(),"USA Continental, Territories, and Military Address Shipping")])[1]')
-      this.BackToBag = page.locator('//a[@class="text-uppercase back-to-dash"]')
-      this.PromoCode = page.locator('//input[@id="couponCode"]')
-      this.ApplyButton = page.locator('//button[@class="btn btn-block promo-code-btn d-flex align-items-center"]')
-      this.vInvalidPromoCodeMesage = page.locator('//div[@class="coupon-error"]')
-
-      //RET_609
-      this.enterUnityLoginId = page.frameLocator('#login-iframe').locator('#usernameUserInput');
-      this.enterUnityPassword = page.frameLocator('#login-iframe').locator('#password');
-      this.unityLogin = page.frameLocator('#login-iframe').getByRole('button', { name: 'Log in' });
-      this.hardRockLink = page.locator('#navbarToggle').getByLabel('Tap to go to HardRock.com')
-      this.rockShop = page.getByRole('link', { name: 'Rock Shop' })
-      this.loginUnity = page.getByRole('link', { name: 'Log in | Join' })
-
-   }
-
-   //RET_609
-   async goToUnityByHardrock(){
-      await this.page.goto('https://www.unitybyhardrock.com/');
-  }
-  async clickLoginOnUnityPage() {
-      await this.loginUnity.click();
-  }
-  async enterLoginIdAndPassword() {
-      await this.enterUnityLoginId.click();
-      await this.enterUnityLoginId.fill('500236845');
-      await this.enterUnityPassword.click();
-      await this.enterUnityPassword.fill('Password01@');
-  }
-  async enterLoginIdAndPassword1() {
-   await this.enterUnityLoginId.click();
-   await this.enterUnityLoginId.fill('500264287');
-   await this.enterUnityPassword.click();
-   await this.enterUnityPassword.fill('Password01@');
-}
-async enterLoginIdAndPassword2() {
-   await this.enterUnityLoginId.click();
-   await this.enterUnityLoginId.fill('500264297');
-   await this.enterUnityPassword.click();
-   await this.enterUnityPassword.fill('Password01@');
-}
-  async clickSubmitLogin()    {
-      await this.unityLogin.click();
-     
-      
-  }
-      async clickonHardRockLinkOnUnityPage(){
-        await this.page.goto('https://www.unitybyhardrock.com/dashboard');
-        const page1Promise = this.page.waitForEvent('popup');
-        await this.page.locator('#navbarToggle').getByLabel('Tap to go to HardRock.com').click();
-        const page1 = await page1Promise;
-        const page2Promise = page1.waitForEvent('popup');
-        await page1.getByRole('link', { name: 'Rock Shop' }).click();
-        const page2 = await page2Promise;
-      }
-
-   //RET_655
-   
-   async clickOnEditLinkOnYourBag(){
-      await this.EditOnYourBag.click();
-   }
-   async validateModalPopUpDesplayedWithProductDetails(){
-      await expect(this.vModalPopUp).toBeVisible();
-   }
-   async closeModalPopUpDesplayedWithProductDetails(){
-      await this.closeModalPopUp.click();
-   }
-   async validateShippingMethodRadioBoxWithCharges(){
-      await expect(this.vShippingMethodRadioBox).toBeVisible();
-   }
-   async clickOnBackToBag(){
-      await this.BackToBag.click();
-   }
-   async enterPromoCode(PromoCode){
-      await this.PromoCode.fill(PromoCode);
-   }
-   async clickOnApplyButton(){
-      await this.ApplyButton.click();
-   }
-   async validateMessageCouponCanNotBeAddedToYourCartifPromoCodeIsInvalid(){
-      await expect(this.vInvalidPromoCodeMesage).toBeVisible();
-   }
-=======
-      
-     
-      
       //UH_9437
       this.PropertyQuickOffer = page.locator("//select[@name='ctl00$ContentPlaceHolder1$ddlProperty']")
 
@@ -503,11 +95,11 @@ async enterLoginIdAndPassword2() {
       this.vEventsAndOfferPage = page.locator("//div[@id='dvEventsOffers']")
       this.AddNew = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnEventsOfferAddNew']")
       this.OfferName = page.locator("//input[@id='ctl00_ContentPlaceHolder1_txtEventsOfferDisplayName']")
-      this.SearchEventsOffers = page.locator("//input[@id = 'ctl00_ContentPlaceHolder1_btnSearchClick']")
+      this.SearchEventsOffers = page.locator("//input[@id ='ctl00_ContentPlaceHolder1_btnSearchClick']")
+      this.SearchEventsOffers1 = page.locator("//input[@id='btnSearchClick']")
       this.FromDateEventSearch = page.locator("//input[@id='ctl00_ContentPlaceHolder1_txtEventsOfferSearchFromDate']")
       this.ToDateEventSearch = page.locator("//input[@id='ctl00_ContentPlaceHolder1_txtEventsOfferSearchToDate']")
       this.Clear = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnEventsOfferClear']")
->>>>>>> 17b43958f2e013606897d1885c0c62548a4bb81b
 
       //UH_9439
       this.PropertyEventsAndOffers = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ddlEventsOfferPageProperty']")
@@ -544,85 +136,92 @@ async enterLoginIdAndPassword2() {
       this.configStar = page.locator("//a[@id='ctl00_ContentPlaceHolder1_ctrlSegments_wdgManageOfferSegment_it7_3_lnkConfigure']")
       this.configXcard = page.locator("//a[@id='ctl00_ContentPlaceHolder1_ctrlSegments_wdgManageOfferSegment_it7_4_lnkConfigure']")
       this.selectPrimaryPrize = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option")
+      //this.selectMoveButton = page.locator("//input[@name='ctl00$ContentPlaceHolder1$ctrlSegments$btnAddPrimaryPrize']")
       this.selectMoveButton = page.locator("//input[@name='ctl00$ContentPlaceHolder1$ctrlSegments$btnAddPrimaryPrize']")
       this.update = page.locator("//input[@name='ctl00$ContentPlaceHolder1$ctrlSegments$Button1']")
-      this.closeButtonOfferApprovedPopUP=page.locator("//input[@name='ctl00$ContentPlaceHolder1$ctrlSummary$btnClose']")
-//UH_9454
+      this.closeButtonOfferApprovedPopUP = page.locator("//input[@name='ctl00$ContentPlaceHolder1$ctrlSummary$btnClose']")
+      //UH_9454
       this.PaceReport = page.locator("//input[@value='View Pace Report']")
       this.PaceReportPopup = page.locator("//span[contains(text(),'PACE REPORT')]")
-      this.paceReportClose = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnClose']")     
+      this.paceReportClose = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnClose']")
       this.checkInSucessMessage = page.locator("//*[contains(text(),'has been successfully checked-in.')]")
       this.vPlayerNotInvitedPopup = page.locator("//span[contains(text(),'Patron was not invited to the event')]")
       this.addPlayerToEvent = page.locator('#ctl00_ContentPlaceHolder1_btnPlayerAddToEvent')
-      this.voverRideReason =  page.getByText('Override Reason')
+      this.voverRideReason = page.getByText('Override Reason')
       this.vApproverUsername = page.getByText('Approving Username')
-      this.vApproverPassword =  page.getByText('Password')
-      this.overrideReasonInput =  page.locator('#ctl00_ContentPlaceHolder1_txtOverrrideReason')
+      this.vApproverPassword = page.getByText('Password')
+      this.overrideReasonInput = page.locator('#ctl00_ContentPlaceHolder1_txtOverrrideReason')
       this.overrideUsernameInput = page.locator('#ctl00_ContentPlaceHolder1_txtUsername')
       this.overridePasswordInput = page.locator('#ctl00_ContentPlaceHolder1_txtPassword')
-      this.OverrideButton =  page.getByRole('button', { name: 'Override' })
-     
+      this.OverrideButton = page.getByRole('button', { name: 'Override' })
+
       // UH_9445
-     this.RejectOffer = page.locator("//input[@name='ctl00$ContentPlaceHolder1$btnRejectOffer']")
-     this.RejectPopUp = page.locator("//div[contains(text(),'REJECT OFFER')]")
-     this.rejectReason = page.locator("//textarea[@id='ctl00_ContentPlaceHolder1_ctrlSummary_txtRejectReason']")
-     this.rejectTab = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlSummary_btnRejectOffer']")
-     this.EventsAndOffersPage = page.locator("//span[@class='GoLeft']")
-     this.rejectedOffer = page.locator("//tbody[@class='ig_Item igg_Item borderNoneClass']")
+      this.RejectOffer = page.locator("//input[@name='ctl00$ContentPlaceHolder1$btnRejectOffer']")
+      this.RejectPopUp = page.locator("//div[contains(text(),'REJECT OFFER')]")
+      this.rejectReason = page.locator("//textarea[@id='ctl00_ContentPlaceHolder1_ctrlSummary_txtRejectReason']")
+      this.rejectTab = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlSummary_btnRejectOffer']")
+      this.EventsAndOffersPage = page.locator("//span[@class='GoLeft']")
+      this.rejectedOffer = page.locator("//tbody[@class='ig_Item igg_Item borderNoneClass']")
 
-     //Uh_9456
-     this.maxNoOfAttendees = page.locator("//input[@name='ctl00$ContentPlaceHolder1$ctrlSegments$txtMaxAttendees']")
-     this.maxPrizeQuantity = page.locator("//input[@name='ctl00$ContentPlaceHolder1$ctrlSegments$txtMaxPrizeQuantity']")
-     this.vResendConfirmation = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@name='ctrlEventCheckInDetail$btnResendEmail']")
-     this.closePlayerTransactionWindow = page.locator("(//a[@ID='close'])[1]")
-     
+      //Uh_9456
+      this.maxNoOfAttendees = page.locator("//input[@name='ctl00$ContentPlaceHolder1$ctrlSegments$txtMaxAttendees']")
+      this.maxPrizeQuantity = page.locator("//input[@name='ctl00$ContentPlaceHolder1$ctrlSegments$txtMaxPrizeQuantity']")
+      this.vResendConfirmation = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@name='ctrlEventCheckInDetail$btnResendEmail']")
+      this.closePlayerTransactionWindow = page.locator("(//a[@ID='close'])[1]")
 
-     //UH_9448
-    this.selectPrimaryPrize1 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
-    this.selectPrimaryPrize2 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
-    this.selectPrimaryPrize3 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
-    this.selectPrimaryPrize4 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
-    this.selectPrimaryPrize5 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
-    this.selectPrimaryPrize6 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
-    this.selectPrimaryPrize7 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
-    this.selectPrimaryPrize8 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
-    this.selectPrimaryPrize9 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
-    this.selectPrimaryPrize10 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
-    this.selectPrimaryPrize11 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
-     
-    this.selectBackUpPrize1 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[1]")
-    this.selectBackUpPrize2 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[1]")
-    this.selectBackUpPrize3 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[1]")
-    this.selectBackUpPrize4 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[1]")
-    this.selectBackUpPrize5 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[1]")
-    this.selectBackUpPrize6 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[1]")
-    this.selectBackUpPrize7 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[7]")
-    this.selectBackUpPrize8 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[7]")
-    this.selectBackUpPrize9 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[7]")
-    this.selectBackUpPrize10 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[7]")
-    this.selectBackUpPrize11 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[7]")
-    this.selectMoveButton1 = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlSegments_btnAddSecondaryPrize']")
-    
 
-    //UH_9451
+      //Uh_9459
+      this.attendeeCapacityNoneRadioButton = page.locator("//input[@value='None']")
+      this.configWalkin = page.locator("//a[@id='ctl00_ContentPlaceHolder1_ctrlSegments_wdgManageOfferSegment_it7_0_lnkConfigure']")
+
+
+      //UH_9448
+      this.selectPrimaryPrize1 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
+      this.selectPrimaryPrize2 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
+      this.selectPrimaryPrize3 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
+      this.selectPrimaryPrize4 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
+      this.selectPrimaryPrize5 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
+      this.selectPrimaryPrize6 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
+      this.selectPrimaryPrize7 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
+      this.selectPrimaryPrize8 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
+      this.selectPrimaryPrize9 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
+      this.selectPrimaryPrize10 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
+      this.selectPrimaryPrize11 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstPrimaryPrizesNotSelected']/option[1]")
+
+      this.selectBackUpPrize1 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[1]")
+      this.selectBackUpPrize2 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[1]")
+      this.selectBackUpPrize3 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[1]")
+      this.selectBackUpPrize4 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[1]")
+      this.selectBackUpPrize5 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[1]")
+      this.selectBackUpPrize6 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[1]")
+      this.selectBackUpPrize7 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[7]")
+      this.selectBackUpPrize8 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[7]")
+      this.selectBackUpPrize9 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[7]")
+      this.selectBackUpPrize10 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[7]")
+      this.selectBackUpPrize11 = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ctrlSegments_lstSecondayPrizesNotSelected']/option[7]")
+      this.selectMoveButton1 = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlSegments_btnAddSecondaryPrize']")
+
+
+      //UH_9451
       this.playerEventAndOfferDashboard = page.frameLocator("//iframe[@id='ifrContent']").locator("//div[@id='dvEventDetail']")
       this.vNewEventCreatedVisibilityOnPage = page.frameLocator("//iframe[@id='ifrContent']").locator("//tr[contains(text(),'UH_9451')]")
       this.EventsAndOffersButtonOnPlayerDashBoard = page.locator("//div[@id='dvEventsAndOffers']")
       this.vPlayerEventsAndOffersPage = page.frameLocator("//iframe[@id='ifrContent']").locator("//div[@id='wdgEventsOfferListing']")
       this.InvitedFilter = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnInvitedUninvited']")
-      this.MoreLinkofEvent =  page.frameLocator("//iframe[@id='ifrContent']").locator("//a[@id='wdgEventsOfferListing_it8_0_lnkMoreDetail']")
+      this.MoreLinkofEvent = page.frameLocator("//iframe[@id='ifrContent']").locator("//a[@id='wdgEventsOfferListing_it8_0_lnkMoreDetail']")
+      //
       this.vSelectedEventDetailsPage = page.frameLocator("//iframe[@id='ifrContent']").locator("//div[@id='dvEventDetailsSection']")
-      this.vBookNowButton =  page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@value='Book Now']")
-      this.vUninvitedPatron =  page.frameLocator("//iframe[@id='ifrContent']").locator("//span[contains(text(),'This patron has not been invited to the event.')]")
+      this.vBookNowButton = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@value='Book Now']")
+      this.vUninvitedPatron = page.frameLocator("//iframe[@id='ifrContent']").locator("//span[contains(text(),'This patron has not been invited to the event.')]")
       this.SearchTabPlayerEvents = page.locator("//input[@value='Event & Offer Name']")
       //this.vNewEventCreatedVisibilityOnSecondPage = page.frameLocator("//iframe[@id='ifrContent']").locator("//tr[@adr='0']")
 
       //UH_9460
-      this.Justification = page.frameLocator("//*[@id='ctl00_FramePopUp1']").locator("//*[@id='txtJustification']") 
+      this.Justification = page.frameLocator("//*[@id='ctl00_FramePopUp1']").locator("//*[@id='txtJustification']")
       this.Tier = page.frameLocator("//*[@id='ctl00_FramePopUp1']").locator("//*[@id='ddlMatchedTer']")
       this.Adjust = page.frameLocator("//*[@id='ctl00_FramePopUp1']").locator("//*[@id='btnPlayerAdjust']")
       this.AuthorizationReason1 = page.locator("//select[@id='ddlTierProgramMatch']")
-      
+
       //UH_9463
       this.PlayerTierwithTierMatch = page.locator("//a[contains(text(),'Player Tier With Tier Match')]")
       this.vTierPopUp = page.locator("//*[@id='ctl00_FramePopUp1']")
@@ -635,20 +234,20 @@ async enterLoginIdAndPassword2() {
       this.Reason_2 = page.locator("//*[@id='ddlTierProgramMatch']")
       this.Comment_2 = page.locator("//textarea[@id='TxtAuthComment']")
       this.Submit_2 = page.locator("//input[@name='ctl00$ContentPlaceHolder1$btnPopupSubmit']")
-     
-      
-      
-        
+
+
+
+
       //UH_9465
       this.ViewComment = page.locator("//a[contains(text(), 'View Comment')]")
       this.Add = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@id='btnAdd']")
-      this.Comment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator('//tr[@id="x:1558101725.21:adr:0:tag::chlGCnt:0:exp:False"]')
+      this.Comment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//tbody//tr[@id='x:1558101725.21:adr:0:tag::chlGCnt:0:exp:False']")
       this.Delete = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@name='btnCommentDelete']")
       this.Cancel = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@name='ctl08']")
       this.Confirm = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@name='btnDeleteConfirm']")
       this.Password = page.locator("//input[@name='ctl00$ContentPlaceHolder1$TxtAuthorisationPwd']")
       this.Reason_3 = page.locator("//select[@name='ctl00$ContentPlaceHolder1$ddlDeleteCommentReason']")
-      this.AutComment1 =page.locator("//textarea[@id='TxtAuthComment']")
+      this.AutComment1 = page.locator("//textarea[@id='TxtAuthComment']")
       this.Submit = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@id='btnSettleVoidSubmit']")
       this.Submit_3 = page.locator("//input[@name='ctl00$ContentPlaceHolder1$btnPopupSubmit']")
       this.vSource_1 = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@name='ddlSearchSource']")
@@ -686,7 +285,7 @@ async enterLoginIdAndPassword2() {
       this.Save_1 = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@name='btnCommentSave']")
       this.Ok_1 = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@name='ctl10']")
       this.vNoData = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//span[contains(text(),'No data found')]")
-      this.Close = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//a[@id='close']")
+      //this.Close = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//a[@id='close']")
       this.vViewComment_PopUp = page.locator("//iframe[@id='ctl00_FramePopUp7']")
 
       //UH_9466
@@ -695,24 +294,25 @@ async enterLoginIdAndPassword2() {
       this.selectCincinati = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//li[@class='igdd_ListItem igdd_ListItemSelected igdd_ListItemActive ']")
       this.LimitToPropertyDropDown = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//img[@mkr='ButtonImage']")
       this.unCheckNever = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@id='chkCommentExpirationDate']")
-      this.vNewCommentAdded =  page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("(//tbody//tr[@chlgcnt='0'])[1]") 
+      this.vNewCommentAdded = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("(//tbody//tr[@chlgcnt='0'])[1]")
       this.vCommentDetailsSection = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//span[contains(text(),'Comment Details')]")
+      //this.LimitToProperty1 = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("(//a[contains(text(),'Hard Rock Casino, Cincinnati')])[7]/parent::li/input")
       this.LimitToProperty1 = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("(//a[contains(text(),'Hard Rock Cincinnati')])[7]/parent::li/input")
       this.NeverCheckBox = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//label[contains(text(),' Never')]/parent::td/input")
       this.vAlertPopUpMessage = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//p[contains(text(),'Please enter Comment')]")
-      
+
       //UH_9470
       this.CommPreferences = page.locator("//div[@id='dvCPContactInformation']")
       this.ContactInformation = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnContactInformation']")
       this.vSocialMedia = page.frameLocator("//iframe[@id='ifrContent']").locator("//h3[contains(text(),'Social Media')]")
       this.AddNewSocialMedia = page.frameLocator("//iframe[@id='ifrContent']").locator("//a[contains(text(),'Add New Social Media')]")
-      this.Type =  page.frameLocator("//iframe[@id='ifrContent']").locator("//select[@class='form-control default-border']")
+      this.Type = page.frameLocator("//iframe[@id='ifrContent']").locator("//select[@class='form-control default-border']")
       this.AccountName = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@class='default-form-control']")
       this.SaveSocialMedia = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnSaveSocialMedia']")
       this.DeleteSocialMedia = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@name='ucCPSocialMedia68842ba3_e1a5_474c_ae16_073cc18b59e0$btnDeleteSocial']")
-      this.vDeleteSocialMedia =  page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='ucCPSocialMediacdb6fa5f_99b0_49a1_bc49_1daa0a61bae9_btnDeleteSocial']")
-      this.vEditSocialMedia = page.frameLocator("//iframe[@id='ifrContent']") .locator("//input[@id='btnEditSocialMedia']")
-      
+      this.vDeleteSocialMedia = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='ucCPSocialMediacdb6fa5f_99b0_49a1_bc49_1daa0a61bae9_btnDeleteSocial']")
+      this.vEditSocialMedia = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnEditSocialMedia']")
+
       //UH_9492
       this.offerManagement = page.getByRole('link', { name: 'Offer Management' })
       this.ManageCampaign = page.getByRole('link', { name: 'Manage Campaign' })
@@ -727,79 +327,20 @@ async enterLoginIdAndPassword2() {
       this.domain = page.locator("//select[@id='ddlDomain']")
       this.loginBtn = page.locator("//input[@id='btnSubmit1']")
 
-<<<<<<< HEAD
-   //RET_658
-   async validateCartQuantityIs1(){
-   await expect(this.cartQuantity1).toBeVisible(); 
-}
-async selectCartQuantity2(){
-   await this.selectCartQuantity.selectOption('2');
-}
-async selectCartQuantity1(){
-   await this.selectCartQuantity.selectOption('1');
-}
-async validateProductImageIsDisplayed(){
-   await expect(this.productImageInCart).toBeVisible(); 
-}
-async validateEstimatedTotalIsDisplayed(){
-   await expect(this.estimatedTotal).toBeVisible(); 
-}
-async validateSubTotalIsDisplayed(){
-   await expect(this.subTotal).toBeVisible(); 
-}
-async validateUpdatedEstimatedTotalIsDisplayed(){
-   await expect(this.estimatedTotal2).toBeVisible(); 
-}
-async validateUpdatedSubTotalIsDisplayed(){
-   await expect(this.subTotal2).toBeVisible(); 
-}
-async validateShippingIsDisplayed(){
-   await expect(this.shippingAmount).toBeVisible(); 
-}
-
-//RET_1148
-      async clickOnPayPalRadioButton(){
-         await this.payPalRadioButton.click
-      }
-
-
-   //RET_659
-      async validateMiniCartIconQty_1(){
-         await expect(this.vMiniCartIconQty).toBeVisible(); 
-      }
-      async validateMiniCartIconQtyIncreased_3(){
-         await expect(this.vMiniCartIconQty).toBeVisible(); 
-      }
-      async clickOnEditButtonOnYourBag(){
-         await this.page.waitForTimeout(3000);
-         await this.EditButtonYourBag.click();
-         await this.page.waitForTimeout(3000);
-      }
-      async clickOnQuantityDropdown(){
-         await this.page.waitForTimeout(3000);
-         await this.QuantityDropdown1.click();
-         await this.page.waitForTimeout(3000);
-      }
-      async selectQuantity(Quantity){
-         await this.page.waitForTimeout(3000);
-         await this.Quantity.selectOption(Quantity);
-         await this.page.waitForTimeout(3000);
-      } 
-=======
       //UH_9471
       this.SearchPlayer = page.locator("//input[@id='ctl00_ImgSearch']")
       this.PlayerFunction = page.locator("//a[@id='main_nav_1000010']")
       this.PlayerTransactionLog = page.locator("//a[contains(text(),'Player Transaction Log')]")
-      this.vTransactionDateTime = page.frameLocator('#ctl00_FramePopUp3').locator("//th[contains(text(),'Transaction Date/Time')]")
+      this.vTransactionDateTime = page.frameLocator('#ctl00_FramePopUp3').locator("(//th[@class='igg_HeaderCaption grid-header'])[1]")
       this.vTransactionDescription = page.frameLocator("//iframe[@id='ctl00_FramePopUp3']").locator("//th[contains(text(),'Transaction Description')]")
       this.vCreator = page.frameLocator("//iframe[@id='ctl00_FramePopUp3']").locator("//th[contains(text(),'Creator')]")
       this.vPropertyName = page.frameLocator("//iframe[@id='ctl00_FramePopUp3']").locator("//th[contains(text(),'Property Name')]")
-      this.LeftArrow =  page.frameLocator("//iframe[@id='ctl00_FramePopUp3']").locator("(//td//img[@title='Expand Row'])[1]")
-      this.vValueBefore =  page.frameLocator("//iframe[@id='ctl00_FramePopUp3']").locator("//th[contains(text(),'Value Before')]")
-      this.vValueAfter =  page.frameLocator("//iframe[@id='ctl00_FramePopUp3']").locator("//th[contains(text(),'Value After')]")
-      this.vApprovedBy =  page.frameLocator("//iframe[@id='ctl00_FramePopUp3']").locator("//th[contains(text(),'Approved By')]")
-      this.Close = page.locator("//a[@id='close']")
-      this.highComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//td[contains(text(),'2-High')]")
+      this.LeftArrow = page.frameLocator("//iframe[@id='ctl00_FramePopUp3']").locator("(//td//img[@title='Expand Row'])[1]")
+      this.vValueBefore = page.frameLocator("//iframe[@id='ctl00_FramePopUp3']").locator("//th[contains(text(),'Value Before')]")
+      this.vValueAfter = page.frameLocator("//iframe[@id='ctl00_FramePopUp3']").locator("//th[contains(text(),'Value After')]")
+      this.vApprovedBy = page.frameLocator("//iframe[@id='ctl00_FramePopUp3']").locator("//th[contains(text(),'Approved By')]")
+      this.Close = page.locator("(//a[@id='close'])[1]")
+      this.highComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("(//td[contains(text(),'2-High')])[1]")
 
       //UH_9472
       this.vPlayerFunction = page.locator("//a[@id='main_nav_1000010']")
@@ -815,70 +356,71 @@ async validateShippingIsDisplayed(){
       this.vViewComment = page.locator("//a[contains (text(),'View Comment')]")
       this.Comment_1 = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//textarea[@id='txtComment']")
       this.Department = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@name='ddlCommentDepartment']")
-      this.YellowIcon = page.locator("//input[@class='playerFlag playerFlagOrange commentBtnWithAsterisk']")
+      this.YellowIcon = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@class='playerFlag playerFlagOrange commentBtnWithAsterisk']")
 
 
       //UH_9473
-      this.LeftArrowUTL = page.locator("//img[@id='x:1380623324.30:mkr:expColBtn:un:0']")
+      this.LeftArrowUTL = page.locator("//td//img[@id='x:1380623324.30:mkr:expColBtn:un:0' and @class='ighg_ExpandButton']")
       this.vValueBeforeUTL = page.locator("//th[contains(text(),'Value Before')]")
-      this.vValueAfterUTL =  page.locator("//th[contains(text(),'Value After')]")
-      this.vApprovedByUTL =  page.locator("//th[contains(text(),'Approved By')]")
-      
-      //UH_9474
-       this.UserTransactionLog = page.locator("//a[contains(text(),'User Transaction Log')]")
-       this.vUserID = page.locator("//th[contains(text(),'User ID')]")
-       this.vCorpProp = page.locator("//th[contains(text(),'Corp Prop')]")
-       this.vDateRange = page.locator("//th[contains(text(),'Date Range')]")
-       this.vClearButton = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnClear']")
-       this.vSearchButton = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnSearch']")
-       this.UserID = page.locator("//input[@id='ctl00_ContentPlaceHolder1_txtUserID']")
-       this.CorpProp = page.locator("//input[@id='ctl00_ContentPlaceHolder1_txtPropCode']")
-       this.DateRangeUTL = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ddlDateRange']")
-       this.vTransactionDateTimeUserTransactionLog = page.locator("//th[contains(text(),'Transaction Date/Time')]")
-       this.vPlayerIdUserTransactionLog = page.getByText('Player Id')
-       this.vUserID_1 = page.locator("(//th[contains(text(),'User ID')])[2]")
-       this.vCorpProp_1 = page.locator("(//th[contains(text(),'Corp Prop')])[2]")
-       this.vTransaction = page.locator("//table[@id='x:1380623324.9:mkr:contentTbl']")
+      this.vValueAfterUTL = page.locator("//th[contains(text(),'Value After')]")
+      this.vApprovedByUTL = page.locator("//th[contains(text(),'Approved By')]")
 
-       //UH_9475
+      //UH_9474
+      this.UserTransactionLog = page.locator("//a[contains(text(),'User Transaction Log')]")
+      this.vUserID = page.locator("//th[contains(text(),'User ID')]")
+      this.vCorpProp = page.locator("//th[contains(text(),'Corp Prop')]")
+      this.vDateRange = page.locator("//th[contains(text(),'Date Range')]")
+      this.vClearButton = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnClear']")
+      this.vSearchButton = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnSearch']")
+      this.UserID = page.locator("//input[@id='ctl00_ContentPlaceHolder1_txtUserID']")
+      this.CorpProp = page.locator("//input[@id='ctl00_ContentPlaceHolder1_txtPropCode']")
+      this.DateRangeUTL = page.locator("//select[@id='ctl00_ContentPlaceHolder1_ddlDateRange']")
+      this.vTransactionDateTimeUserTransactionLog = page.locator("//th[contains(text(),'Transaction Date/Time')]")
+      this.vPlayerIdUserTransactionLog = page.getByText('Player Id')
+      this.vUserID_1 = page.locator("(//th[contains(text(),'User ID')])[2]")
+      this.vCorpProp_1 = page.locator("(//th[contains(text(),'Corp Prop')])[2]")
+      this.vTransaction = page.locator("//table[@id='x:1380623324.9:mkr:contentTbl']")
+
+      //UH_9475
       this.AddComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@id='btnAdd']")
       this.PriorityViewComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@id='ddlCommentPriority']")
-      this.LimitToDepartmentViewComment =  page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@id='ddlCommentDepartment']")
+      this.LimitToDepartmentViewComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@id='ddlCommentDepartment']")
       this.EnterTextViewComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//textarea[@id='txtComment']")
       this.SaveViewComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@id='btnCommentSave']")
       this.vCommentAddedPopup = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//p[contains(text(),'Comment added successfully!')]")
       //this.SelectComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//tr[@id='x:1558101725.23:adr:0:tag::chlGCnt:0:exp:False']")
-      this.SelectComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//tr[@type='row']")                                                                                   
+      this.SelectComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//tr[@type='row']")
       this.EditButton = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@id='btnCommentEdit']")
       this.vEditModeComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//span[contains(text(),'Edit Comment Details')]")
       this.vCommentUpdatedMessage = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//p[contains(text(),'Comment updated successfully!')]")
       this.OkMessagePopUp = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@name='ctl10']")
-      this.CloseComment =  page.locator("//a[@id='close']")
+      this.CloseComment = page.locator("//div//a[@id='close']")
       this.vCommentTransaction = page.frameLocator("//iframe[@name='FramePopUp3']").locator("(//tbody[@class='ig_Item igg_Item'])[2]")
 
       //UH_9477
-      this.TierCreditsEarningsTab = page.locator("//div[@id='dvTierPtEarn']")  
-      this.ArrowIcone = page.frameLocator("//iframe[@id='ifrContent']").locator("//img[@id='x:10588114.31:mkr:expColBtn:un:0']")
-      this.vRecordExpand = page.frameLocator("//iframe[@id='ifrContent']").locator("//tr[@id='x:668532068.23:adr:0:tag::chlGCnt:0:exp:False']") 
-      this.vDateTime = page.frameLocator("//iframe[@id='ifrContent']").locator("(//th[contains(text(),'Date/Time')])[1]") 
-      this.vProperty1 = page.frameLocator("//iframe[@id='ifrContent']").locator("(//th[contains(text(),'Property')])[1]")  
-      this.vTransactionType = page.frameLocator("//iframe[@id='ifrContent']").locator("(//th[contains(text(),'Transaction Type')])[1]")  
-      this.vTierCredits = page.frameLocator("//iframe[@id='ifrContent']").locator("(//th[contains(text(),'Tier Credits')])[1]")  
-      
+      this.TierCreditsEarningsTab = page.locator("//div[@id='dvTierPtEarn']")
+      this.ArrowIcone = page.frameLocator("//iframe[@id='ifrContent']").locator("(//img[@class='ighg_ExpandButton'])[1]")
+      this.vRecordExpand = page.frameLocator("//iframe[@id='ifrContent']").locator("(//tr[@mkr='columnHeaderRow'])[2]")
+      this.vDateTime = page.frameLocator("//iframe[@id='ifrContent']").locator("(//tbody//tr//th[contains(text(),'Date/Time')])[1]")
+      this.vProperty1 = page.frameLocator("//iframe[@id='ifrContent']").locator("(//th[contains(text(),'Property')])[1]")
+      this.vTransactionType = page.frameLocator("//iframe[@id='ifrContent']").locator("(//th[contains(text(),'Transaction Type')])[1]")
+      this.vTierCredits = page.frameLocator("//iframe[@id='ifrContent']").locator("(//th[contains(text(),'Tier Credits')])[2]")
+
       //UH_9453
-      this.vReservationCancelSuccessful = page.frameLocator("//iframe[@id='ifrContent']").locator("//p[contains(text(),'The reservation was cancelled successfully!')]")
+      this.vReservationCancelSuccessful = page.frameLocator("//iframe[@id='ifrContent']").locator("//div//p[contains(text(),'The reservation was cancelled successfully!')]")
       this.playerReservation = page.locator("//div[@id='dvReservations']")
-      this.playerReservationName= page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='txtReservationName']")
-      this.playerReservationSearch =page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnSearchClick']")
+      this.playerReservationName = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='txtReservationName']")
+      this.playerReservationSearch = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnSearchClick']")
       this.playerDetails = page.frameLocator("//iframe[@id='ifrContent']").locator("(//a[contains(text(),'Details')])[1]")
       this.cancelPlayerReservation = page.frameLocator("//iframe[@id='ifrContent']").locator("//div[@id='ctrlEventCheckInDetail_pnlUpdateReservation']/child::input[@value='Cancel Reservation']")
       this.confirmCancellation = page.frameLocator("//iframe[@id='ifrContent']").locator("//div[@id='popupheaderCancelReservation']/parent::div//input[@value='Confirm']")
-      this.closeCancellationSuccsessPopup = page.frameLocator("//iframe[@id='ifrContent']").locator("//div[@id='popupheaderCancelSameDayReservation']/child::a[@id='close']");
+      this.closeCancellationSuccsessPopup = page.frameLocator("//iframe[@id='ifrContent']").locator("//div//input[@name='ctrlEventCheckInDetail$btnCancelMultipleReservation']");
       //UH_9478
       this.UnityPointsEarningsTab = page.locator("//div[@id='dvCashBackEarn']")
-      this.ArrowIcone_1 = page.frameLocator("//iframe[@id='ifrContent']").locator("//img[@id='x:1244363346.27:mkr:expColBtn:un:0']")
-      this.vRecordExpand_1 = page.frameLocator("//iframe[@id='ifrContent']").locator("//tr[@id='x:148235847.25:adr:0:tag::chlGCnt:0:exp:False']")
-      this.vUnityPoints = page.frameLocator("//iframe[@id='ifrContent']").locator("(//th[contains(text(),'Unity Points')])[2]")
+      this.ArrowIcone_1 = page.frameLocator("//iframe[@id='ifrContent']").locator("(//td[@class='ighg_ExpansionColumn'])[2]")
+      //this.ArrowIcone_1 = page.locator("(//td[@class='ighg_ExpansionColumn'])[2]")
+      this.vRecordExpand_1 = page.frameLocator("//iframe[@id='ifrContent']").locator("(//tr[@mkr='columnHeaderRow'])[2]")
+      this.vUnityPoints = page.frameLocator("//iframe[@id='ifrContent']").locator("(//th[contains(text(),'Points')])[2]")
       this.vFlexRule = page.frameLocator("//iframe[@id='ifrContent']").locator("(//th[contains(text(),'Flex Rule')])[1]")
 
       //UH_9479
@@ -888,7 +430,7 @@ async validateShippingIsDisplayed(){
       this.vViewCompDetails = page.frameLocator("//iframe[@id='ifrContent']").locator("//div[@id='wdCompDetails']")
       this.XIcone = page.frameLocator("//iframe[@id='ifrContent']").locator("//img[@id='x:1269945244.4:mkr:Close']")
 
-      
+
       //UH_9480
       this.IssueCompButton = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnIssueComp']")
       this.vIssueCompPopUpWindow = page.locator("//span[contains(text(),'ISSUE COMP')]")
@@ -902,10 +444,12 @@ async validateShippingIsDisplayed(){
       this.vIssuedDate = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("(//td[@class='style6'])[4]")
       this.UserNameAD = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//input[@name='txtUserId']")
       this.PassWordAD = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//input[@name='txtPwd']")
-      this.CommentAD = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//textarea[@name='TxtAuthComment']")
+      this.CommentAD = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//textarea[@id='txtAuthComment']")
+      this.Reason = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//select[@id='ddlAuthReason']")
+
       this.IssueCompButton1 = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("(//input[@value='ISSUE COMP'])[2]")
       this.vIssueCompPopUpMessage = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//span[@id='lblcompExeption']")
-      this.ProceedButton =  page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//button[contains(text(),' PROCEED')]")
+      this.ProceedButton = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//input[@value='PROCEED']")
       this.CommentIssueComp = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//textarea[@id='txtnegComment']")
       this.IssueCompButton2 = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("(//input[@value='ISSUE COMP'])[1]")
       //9481
@@ -926,11 +470,11 @@ async validateShippingIsDisplayed(){
       this.vCardPic = page.frameLocator('#ifrContent').getByText('Star', { exact: true })
       this.vCurrentTier = page.frameLocator('#ifrContent').locator("//span[@id='lblcrntTier']")
       this.vTireCredits = page.frameLocator('#ifrContent').getByText('Current Tier Credits:')
-      this.vNextTier= page.frameLocator('#ifrContent').getByText('Next Tier -')
+      this.vNextTier = page.frameLocator('#ifrContent').getByText('Next Tier -')
       this.vTierCreditsRequired = page.frameLocator('#ifrContent').getByText('Tier Credits Required:')
       this.vNextTierCredits = page.frameLocator('#ifrContent').getByText('Required to Next Tier:')
       this.vRequiredToNextTierCredits = page.frameLocator('#ifrContent').locator('//div[@id="tdNextExpirationlabel"]')
-      
+
       //UH_9483
       this.vPlayerName = page.frameLocator('#ifrContent').getByText('Rae  Clark')
       this.vPlayerId = page.frameLocator('#ifrContent').getByText('Player Id')
@@ -980,17 +524,17 @@ async validateShippingIsDisplayed(){
       this.vActiveList = page.locator("//select[@id='ctl00_ContentPlaceHolder1_lstTrips']")
       this.ActiveTab = page.locator("//a[@id='ctl00_ContentPlaceHolder1_btnActive']")
       this.vInActiveList = page.locator("//select[@id='ctl00_ContentPlaceHolder1_lstTrips']")
-      
+
       //UH_9486
       this.vHideGraphSetting = page.frameLocator('#ifrContent').locator("//div[@id='dbTripSetGraph']")
       this.vBuildGridDisplay = page.frameLocator('#ifrContent').locator("//input[@name='ucUserSeletedGraph$btntdTripBuildGraph']")
       this.vSaveSearchSetting = page.frameLocator('#ifrContent').locator("//input[@id='ucUserSeletedGraph_btnTripSave']")
-      this.vExpandGraphSetting =  page.frameLocator("//iframe[@id='ifrContent']").locator("//div[contains(text(),'Expand Graph Setting')]")
+      this.vExpandGraphSetting = page.frameLocator("//iframe[@id='ifrContent']").locator("//div[contains(text(),'Expand Graph Setting')]")
       this.vFrom = page.frameLocator("//iframe[@id='ifrContent']").locator("(//th[contains(text(),'From')])[1]")
       this.vTo = page.frameLocator('#ifrContent').locator("(//th[contains(text(),'To')])[1]")
       this.DateRange = page.frameLocator('#ifrContent').locator("//select[@id='ddldbTripsDateRange']")
       this.Property1 = page.frameLocator('#ifrContent').locator("//input[@id='ucUserSeletedGraph_cklProperty_5']")
-      this.RatingType =page.frameLocator('#ifrContent').locator("//select[@name='ucUserSeletedGraph$tdTripDdlRatingType']")
+      this.RatingType = page.frameLocator('#ifrContent').locator("//select[@name='ucUserSeletedGraph$tdTripDdlRatingType']")
       this.SaveSearchSetting = page.frameLocator('#ifrContent').locator("//input[@id='ucUserSeletedGraph_btnTripSave']")
       this.vUserTripGraphWindow = page.locator("//div[contains(text(),'User Trip Graph')]")
       this.Ok = page.locator("//input[@value='OK']")
@@ -1028,9 +572,9 @@ async validateShippingIsDisplayed(){
       this.AuthorizationReason = page.locator("//select[@id='ddlSettleVoidCommentReason']")
       this.AuthorizationPassword = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator(" //input[@id='TxtAuthorisationPwd']")
       this.vCommentSettledMessage = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//p[contains(text(),'Comment Settled successfully!')]")
-      //this.vCommentSettledMessage = page.locator("//p[contains(text(),'Comment Settled successfully!')]")
+      //this.vCommentSettledMessage = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//p[@id='txtPopupBody']")
       this.vviewSettledVoidedComments = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("(//tbody[@class='ig_Item igg_Item'])[1]")
-      
+
       //UH_9444
       this.ThreeDots = page.locator("(//a[@id='imgbtnViewEventsOfferOps']//img)[1]")
       this.View = page.locator("(//input[@value='View'])[1]")
@@ -1050,49 +594,51 @@ async validateShippingIsDisplayed(){
       this.Location67DisplayLocationQuickOffer = page.locator("//a[contains(text(),'Location 67')]/parent::li/input")
 
       //UH_9505
-      this. AddNewQuickOffer = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnNewQuickOffer']")
+      this.AddNewQuickOffer = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnNewQuickOffer']")
       this.vNewQuickOfferSetupPage = page.locator("//span[contains(text(),'New Quick Offer Setup')]")
       this.LobDropdownQuickOfferPage = page.locator("(//img[@mkr='ButtonImage'])[1]")
       this.UncheckLobQuickOffer = page.locator("//li[@id='x:463268121.9:adr:1']//a[contains(text(),'Casino')]")
+      //this.OfferTypeDropdownQuickOffer = page.locator("(//img[@class='igdd_DropDownButton'])[1]")
       this.OfferTypeDropdownQuickOffer = page.locator("//td[@id='x:1061541114.3:mkr:Button']")
       //this.OfferTypeQuickOffer = page.locator("//li[@id='x:1061541114.10:adr:2']//a[contains(text(),'Entertainment')]")
       //this.OfferTypeQuickOffer = page.locator("//div[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_ddlOfferType']")
       this.OfferTypeQuickOfferValue = page.locator("//li//a[contains(text(),'Entertainment')]")
       this.DisplayPropertyDropdownQuickOffer = page.locator("//img[@id='x:753879057.4:mkr:ButtonImage']")
-      this.CheckDisplayProperty =page.locator("//li[@id='x:753879057.8:adr:0']")
+      this.CheckDisplayProperty = page.locator("//li[@id='x:753879057.8:adr:0']")
       this.DisplayLocationDropdown = page.locator("//img[@id='x:1838980312.4:mkr:ButtonImage']")
       this.CheckDisplayLocation = page.locator("//li[@id='x:1838980312.8:adr:0']")
       this.DisplayNameQuickOffer = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtPromotionDisplayName']")
       this.TierRestrictionDropdown = page.locator("//img [@id='x:47688940.4:mkr:ButtonImage']")
-      //this.CardTierRestriction = page.locator("//input[@id='x:47688940.2:mkr:Input']")
+      this.CardTierRestriction = page.locator("//input[@id='x:47688940.2:mkr:Input']")
       this.DisplayDescription = page.locator("//textarea[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtDisplayDescription']")
       this.Disclaimer = page.locator("//textarea[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtDisplayDisclaimer']")
       this.SaveAndNextStepQuickOfferPage = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnSaveNext']")
       this.vSelectAFileButton = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlInvitationDetails_flUpload']")
-      this.vUploadButton= page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlInvitationDetails_btnInvitationUpload']")
+      this.vUploadButton = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlInvitationDetails_btnInvitationUpload']")
       this.SubmitButton = page.locator("//input[@name='ctl00$ContentPlaceHolder1$btnSubmitForReview']")
       this.vOfferSubmittedMessage = page.locator("//span[contains(text(),'The offer has been submitted successfully!')]")
       this.OfferSearch = page.locator("//input[@id='ctl00_ContentPlaceHolder1_txtQuickOffer']")
-      //this.vOfferCreated = page.locator("//tbody[@id='x:1698345930.20:mkr:rows:nw:1']")
       this.vOfferCreated = page.locator("//div[@id='ctl00_ContentPlaceHolder1_wdgQuickOffersList']")
-      
+      //UH_9433
+      this.vOfferCreated3 = page.locator("(//td[contains(text(),'UH_9433_Smoke')])[1]")
+
       //UH_9506
       this.OnlineLobQuickOfferSetupPage = page.locator("(//a[contains(text(),'Online')])[1]/parent::li//input")
-      
+
       //UH_9476
       this.TierHistoryTab = page.locator("//div[@id='dvTierHistory']")
-      this.vTierHistoryDetails = page.frameLocator("//iframe[@id='ifrContent']").locator("//tbody[@id='x:613926798.28:mkr:rows:nw:1']")
-      
+      this.vTierHistoryDetails = page.frameLocator("//iframe[@id='ifrContent']").locator("//div//tbody[@id='x:613926798.28:mkr:rows:nw:1']")
+
       //UH_9469
       this.vPhoneSection = page.frameLocator("//iframe[@id='ifrContent']").locator("//h3[contains(text(),'Phone')]")
-      this.PhoneType = page.frameLocator("//iframe[@id='ifrContent']").locator("//select[@class='form-control default-border']")
+      this.PhoneType = page.frameLocator("//iframe[@id='ifrContent']").locator("(//select[@class='form-control default-border'])[1]")
       this.PhoneNumber = page.frameLocator("//iframe[@id='ifrContent']").locator("(//input[contains(@name,'txtPhoneNumber')])[1]")
       this.SavePhoneNumber = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnSavePhone']")
       this.vDuplicatePhoneNumberMessage = page.frameLocator("//iframe[@id='ifrContent']").locator("//span[contains(text(),'Phone Type cannot be duplicate.')]")
       //this.vEditPhoneTab = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnEditPhone']")
       //this.vDeletePhoneTab = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='ucCPPhone20252ec0_feb5_4673_8b1c_02f0fad08026_btnDeletePhone']")
       this.vAddNewPhone = page.frameLocator("//iframe[@id='ifrContent']").locator("//a[contains(text(),'Add New Phone')]")
-      
+
       //UH_9467
       this.vAddress = page.frameLocator("//iframe[@id='ifrContent']").locator("//h3[contains(text(),'Address')]")
       this.AddNewAddress = page.frameLocator("//iframe[@id='ifrContent']").locator("//a[contains(text(),'Add New Address')]")
@@ -1100,11 +646,11 @@ async validateShippingIsDisplayed(){
       this.Address1 = page.frameLocator("//iframe[@id='ifrContent']").locator("(//input[contains(@name,'txtAddress1')])[1]")
       this.Address2 = page.frameLocator("//iframe[@id='ifrContent']").locator(" (//input[contains(@name,'txtAddress2')])[1]")
       this.City = page.frameLocator("//iframe[@id='ifrContent']").locator("(//input[contains(@name,'txtCity')])[1]")
-      this.Country= page.frameLocator("//iframe[@id='ifrContent']").locator("(//select[contains(@name,'ddlCountry')])[1]")
-      this.State= page.frameLocator("//iframe[@id='ifrContent']").locator("(//select[contains(@name,'ddlState')])[1]")
+      this.Country = page.frameLocator("//iframe[@id='ifrContent']").locator("(//select[contains(@name,'ddlCountry')])[1]")
+      this.State = page.frameLocator("//iframe[@id='ifrContent']").locator("(//select[contains(@name,'ddlState')])[1]")
       this.Zip = page.frameLocator("//iframe[@id='ifrContent']").locator("(//input[contains(@name,'txtZip')])[1]")
       this.SaveAddress = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnSaveAddress']")
-      
+
       //UH_
       this.vReplyAddedPopup = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//p[contains(text(),'Reply added successfully!')]")
       this.LeftArrowViewComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("(//img[@class='ighg_ExpandButton'])[1]")
@@ -1115,19 +661,19 @@ async validateShippingIsDisplayed(){
       //UH_9495
       this.VoidRadioButton = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@id='rdVoid']")
       this.vVoidConfirmation = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//p[contains(text(),'Are you sure you want to Void the Comment?')]")
-      this.vCommentVoidedMessage = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//p[contains(text(),'Comment Voided successfully!')]") 
+      this.vCommentVoidedMessage = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//p[contains(text(),'Comment Voided successfully!')]")
 
       //UH_9461
       this.PlayerTyerWithTierMatch = page.locator("//a[contains(text(),'Player Tier With Tier Match')]")
       this.vPopUpWindow = page.locator("//span[contains(text(),'Player Tier With Tier Match')]")
-      this.Reason = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//select[@id='ddlReason']") 
-      this.CompetitorCasino =  page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//select[@id='ddlCompetitorCasino']")
+      this.Reason = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//select[@id='ddlReason']")
+      this.CompetitorCasino = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//select[@id='ddlCompetitorCasino']")
       this.vPatronUpgradedMessage = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("")
       this.CancelButtonTierMatchWindow = page.frameLocator("(//iframe[@name='FramePopUp1'])[1]").locator("//div[@id='divVisible3']//input[@id='btnCancel']")
-      
+
       //UH_9462
-      this.LighteningIcon = page.frameLocator("//iframe[@id='ifrContent']").locator("//a[@id='lnkHeartBtn']")
-      this.AlertWindow = page.locator("(//div[@id='popupheader'])[1]")
+      this.LighteningIcon = page.frameLocator("//iframe[@id='ifrContent']").locator("//td//a[@id='lnkHeartBtn']")
+      this.AlertWindow = page.locator("//span[contains(text(),'Alert')]")
       this.closeAlert = page.frameLocator("//iframe[@id='ctl00_FramePopUp1']").locator("//button[@id='button']")
       this.ExpandSearchIcon = page.locator("//a[@title='Expand Search']")
 
@@ -1135,12 +681,13 @@ async validateShippingIsDisplayed(){
       this.vCasinoOptionLOBDropdown = page.locator("//input[@id='x:463268121.2:mkr:Input']")
 
       //UH_9507
-      this.CardTierRestrictionDropdownQuickOfferSetup = page.locator("//img[@id='x:47688940.4:mkr:ButtonImage']")
+      this.CardTierRestrictionDropdownQuickOfferSetup = page.locator("//td[@id='x:47688940.3:mkr:Button']")
       this.CardTierRestriction1 = page.locator("//li//a[contains(text(),'X')]")
       this.vSummaryPage1 = page.locator("//a[contains(text(),'Summary')]")
-      
+      this.CardTierRestrictionScrollDown = page.locator("//div[@id='x:47688940.6:mkr:DropDownContents']")
+
       //UH_9508
-      this.CardTierRestriction = page.locator("//li//a[contains(text(),'Star')]")
+      //this.CardTierRestriction = page.locator("//li//a[contains(text(),'Star')]")
 
       //UH_9511
 
@@ -1154,14 +701,14 @@ async validateShippingIsDisplayed(){
       this.OfferSetUP = page.locator("//ul//a[contains(text(),'Offer Setup')]")
       this.SaveAndClose = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnSaveClose']")
       this.vLobNotEditable = page.locator("//div[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_ddlLOB']")
-      
+
       //UH_9516
       this.vCopyButtonQuickOffer = page.locator("//input[@id='ctl00_ContentPlaceHolder1_wdgQuickOffersList_it7_0_btnCopy']")
       this.vOfferInEditModeCopy = page.locator("//div[@class='SubHeader RevColor H26']")
       this.vNoFileSelected = page.locator("(//span[@class='txt-middle'])[1]")
 
       //UH_9510
-      
+
       this.DeactiveButton = page.locator("//td//input[@id='ctl00_ContentPlaceHolder1_wdgQuickOffersList_it7_0_btnDelete']")
       this.vConfirmDeactivatePopup = page.locator("(//div[@id='popupheader2'])[1]")
       this.ConfirmTab = page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnDeleteOffer']")
@@ -1171,12 +718,13 @@ async validateShippingIsDisplayed(){
       //UH_9524
       this.StartDateQuickOffer = page.locator("//input[@name='ctl00$ContentPlaceHolder1$ctrlOfferSetup$txtStartDate']")
       this.EndDateQuickOffer = page.locator("//input[@name='ctl00$ContentPlaceHolder1$ctrlOfferSetup$txtEndDate']")
->>>>>>> 17b43958f2e013606897d1885c0c62548a4bb81b
-      
+
 
       //UH_9523
-      this.CheckLobQuickOfferHotel = page.locator("//li[@id='x:463268121.10:adr:2']")
+      this.CheckLobQuickOfferHotel = page.locator("//a[text()='Hotel']/parent::li//input")
+      //this.CheckLobQuickOfferHotel = page.locator("//a[contains(text(),'Hotel')]/parent::li[@class='igdd_ListItem igdd_ListItemHover  igdd_ListItemActive']")
       this.checkDisplayPropertyHardRockAtlanticCity = page.locator("(//a[contains(text(),'Hard Rock Atlantic City')])[1]/parent::li//input")
+      this.checkDisplayPropertyHardRockHollywood = page.locator("(//a[contains(text(),'Hard Rock Hollywood')])[1]/parent::li//input")
       this.checkDisplayPropertyHardRockNorthernIndiana = page.locator("//a[contains(text(),'Hard Rock Northern Indiana')]/parent::li//input")
       this.checkLocationLocation71 = page.locator("//a[contains(text(),'Location 71')]/parent::li//input")
 
@@ -1190,56 +738,36 @@ async validateShippingIsDisplayed(){
       this.RegionUS = page.locator("//li[@id='x:1997031700.10:adr:2']")
 
       //UH_9517
-     this.StartDate = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtStartDate']")
-     this.EndDate = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtEndDate']")
-     this.DisplayEndDate = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtDisplayEndDate']")
-     this.CheckDisplayProperty1 =page.locator("//li[@id='x:753879057.11:adr:3']//a[contains(text(),'Hard Rock Northern Indiana')]")
-     this.CheckDisplayLocation1 = page.locator("//a[contains(text(),'Unity Store')]/parent::li//input")
-     this.ExpandPlayerSearchIcon = page.locator("//td[@style='padding-top: 3px; padding-left: 2px; position: relative']")
-     this.EventAndOfferName = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='txtEventsOfferDisplayName']")
-     this.SearchViewEventAndOffer = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnSearchClick']")
-     this.vOfferNotDisplayed = page.frameLocator("//iframe[@id='ifrContent']").locator("//span[contains(text(),'No Data Found')]")
-     //9468
-     this.vEmailSection = page.frameLocator("//iframe[@id='ifrContent']").locator("//h3[contains(text(),'Email')]")
-     this.EditEmail =  page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnEditEmail']")
-     this.EmailTypeArrow = page.frameLocator("//iframe[@id='ifrContent']").locator("//select[@name='ucCPEmailff1cb806_7c64_4cfc_9e06_b054034e9a16$ddlEmailtype']")
-     this.EmailType = page.frameLocator("//iframe[@id='ifrContent']").locator("//select[@class='form-control default-border']")
-     this.EmailAddress =  page.frameLocator("//iframe[@id='ifrContent']").locator("(//input[contains(@name,'txtEmailAddress')])[1]")
-     this.SaveEmail = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnSaveEmail']")
-     this.AddNewEmail = page.frameLocator("//iframe[@id='ifrContent']").locator("//a[contains(text(),'Add New Email')]")
+      this.StartDate = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtStartDate']")
+      this.EndDate = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtEndDate']")
+      this.DisplayEndDate = page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtDisplayEndDate']")
+      this.CheckDisplayProperty1 = page.locator("//a[contains(text(),'Hard Rock Northern Indiana')]")
+      this.CheckDisplayLocation1 = page.locator("//a[contains(text(),'Unity Store')]/parent::li//input")
+      this.ExpandPlayerSearchIcon = page.locator("//td[@style='padding-top: 3px; padding-left: 2px; position: relative']")
+      this.EventAndOfferName = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='txtEventsOfferDisplayName']")
+      this.SearchViewEventAndOffer = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnSearchClick']")
+      this.vOfferNotDisplayed = page.frameLocator("//iframe[@id='ifrContent']").locator("//span[contains(text(),'No Data Found')]")
+      this.cardTierRestrictionTAB = page.locator("//input[@value='None']")
 
-<<<<<<< HEAD
-   async validatePLPSizeFilters(){
-      await expect(this.plpSizeXS).toBeVisible();
-      await expect(this.plpSizeS).toBeVisible();
-      await expect(this.plpSizeM).toBeVisible();
-      await expect(this.plpSizeL).toBeVisible();
-      await expect(this.plpSizeXL).toBeVisible();
-      await expect(this.plpSizeXXL).toBeVisible();
-      await expect(this.plpSizeXXXL).toBeVisible();
-   }
-   async selectPLPSizeXS(){
-      await this.plpSizeXS.click();
-      await this.page.waitForTimeout(3000);
-   }
 
-   //RET_1261
-   async clickOnMessiAdultFitNavyHoodie(){
-      await this.messiAdultFitNavyHoodie.click();
-   }
-   async clickOnDiscoRoyalBlueAdultHoodie(){
-      await this.discoRoyalBlueAdultHoodie.click();
-   }
-=======
-     //9498
-     this.ClosePopupWindow = page.locator("//a[@id='close']")
-     this.vSystemDisplayResult = page.locator("//span[@id='hd']")
-     this.FromDate = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//td//input[@id='txtSearchFrom']")
-     this.ToDate = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@id='txtSearchTo']")
-     this.selectSource = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@id='ddlSearchSource']")
-     this.selectPriority = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@name='ddlSearchPriority']")
-     this.vNoData = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//span[contains(text(),'No data found')]")
-     this.SearchOffer =  page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@id='ImgSearch']")
+      //9468
+      this.vEmailSection = page.frameLocator("//iframe[@id='ifrContent']").locator("//h3[contains(text(),'Email')]")
+      this.EditEmail = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnEditEmail']")
+      this.EmailTypeArrow = page.frameLocator("//iframe[@id='ifrContent']").locator("(//td//select[@class='form-control default-border'])[1]")
+      this.EmailType = page.frameLocator("//iframe[@id='ifrContent']").locator("(//td//select[@class='form-control default-border'])[1]")
+      this.EmailAddress = page.frameLocator("//iframe[@id='ifrContent']").locator("(//input[contains(@name,'txtEmailAddress')])[1]")
+      this.SaveEmail = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnSaveEmail']")
+      this.AddNewEmail = page.frameLocator("//iframe[@id='ifrContent']").locator("//a[contains(text(),'Add New Email')]")
+
+      //9498
+      this.ClosePopupWindow = page.locator("//a[@id='close']")
+      this.vSystemDisplayResult = page.locator("//span[@id='hd']")
+      this.FromDate = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//td//input[@id='txtSearchFrom']")
+      this.ToDate = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@id='txtSearchTo']")
+      this.selectSource = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@id='ddlSearchSource']")
+      this.selectPriority = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@name='ddlSearchPriority']")
+      this.vNoData = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//span[contains(text(),'No data found')]")
+      this.SearchOffer = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@id='ImgSearch']")
 
       //9499
       this.OffersTab = page.locator("//div[@id='dvOffers']")
@@ -1254,979 +782,564 @@ async validateShippingIsDisplayed(){
       this.vDeletePlayerButton = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnRemovePlayerOffer']")
       this.vScanBarcodeButton = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnScanBarcode']")
       this.vCheckForUpdateButton = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnCheckForUpdate']")
-      this.SelectOffer = page.frameLocator("//iframe[@id='ifrContent']").locator("//tbody//tr[@id='x:1952661193.30:adr:0:tag:']")
+      this.SelectOffer = page.frameLocator("//iframe[@id='ifrContent']").locator("(//tbody//tr[@type='row'])[2]")
       this.vOfferDetailsWindow = page.frameLocator("//iframe[@id='ifrContent']").locator("(//span[contains(text(),'CHARLES  BAUGH  660302931')])[1]")
       this.CloseOfferDetailsWindow = page.frameLocator("//iframe[@id='ifrContent']").locator("(//td[@class='igdw_HeaderContent igdw_HeaderButtonArea'])[1]")
       this.vOfferSyncPopUpWindow = page.frameLocator("//iframe[@id='ifrContent']").locator("//span[contains(text(),'Timeout occurred during the offers sync process.  Please try again.')]")
       this.OkOfferSync = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='Button1']")
-   
+
       //UH_9487
-      this.EditAddress = page.frameLocator("//iframe[@id='ifrContent']") .locator("//input[@id='btnEditAddress']")
->>>>>>> 17b43958f2e013606897d1885c0c62548a4bb81b
+      this.EditAddress = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnEditAddress']")
 
       //UH_9432
-      this.vOfferCreated1 =  page.frameLocator("//iframe[@id='ifrContent']") .locator("//tbody[@class='ig_Item igg_Item borderNoneClass']")
+      this.vOfferCreated1 = page.frameLocator("//iframe[@id='ifrContent']").locator("//tbody[@class='ig_Item igg_Item borderNoneClass']")
+      this.vOfferCreated2 = page.locator("(//td[contains(text(),'UH_9432_Smoke')])[1]")
+      this.vOfferCreatedEventsOffer = page.frameLocator("//iframe[@id='ifrContent']").locator("//div//table//tbody[@class='ig_Item igg_Item borderNoneClass']")
 
       //UH_9496
       this.PropertyViewComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@id='ddlSearchProperty']")
-      this.DepartmentViewComment =  page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@id='ddlSearchDepartment']")
-      this.CommentTypeViewComment =  page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@id='ddlCommentType']")
-      this.ExpirationDateViewComment =  page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@id='txtCommentExpirationDate']")
+      this.DepartmentViewComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@id='ddlSearchDepartment']")
+      this.CommentTypeViewComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//select[@id='ddlCommentType']")
+      this.ExpirationDateViewComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@id='txtCommentExpirationDate']")
       this.vAllLimitToDepartmentViewComment = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//input[@class='ig_Disabled igdd_ValueDisplayDisabled ']")
       this.vGlobalPropertiesChecked = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//label[contains(text(),' Global (All Properties)')]")
       this.UncheckedGlobalProperties = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//label[contains(text(),' Global (All Properties)')]/parent::td//input")
       this.LimitToPropertyDropdown = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//td[@class='igdd_DropDownButton ']")
       this.vPropertyList = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("(//ul[@class='igdd_DropDownList '])[3]")
-      this.LimitToProperty = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("(//a[contains(text(),'SG Casino, Brighton')])[3]/parent::li/input")
+      this.LimitToProperty = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("(//a[contains(text(),'SG Casino, Brighton')])[3]/parent::li/input/parent::li/input")
       this.vNeverCheckBox = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//label[contains(text(),' Never')]")
-   
+
       //UH_9515
 
-   this.validateLOBDefault = page.locator("//input[@type='text' and @value='Casino']")
-   this.valiidateRegionDropdown = page.locator("//img[@id='x:1997031700.4:mkr:ButtonImage']")
-   this.validateStartDate = page.locator("(//label[contains(., 'Start Date')])[1]");
-   this.validateEndDate = page.locator("(//label[contains(., 'End Date')])[1]");
-   this.SelectLobCafe = page.locator("(//a[contains(text(),'Cafe')])[1]/parent::li//input")
+      this.validateLOBDefault = page.locator("//input[@type='text' and @value='Casino']")
+      this.valiidateRegionDropdown = page.locator("//img[@id='x:1997031700.4:mkr:ButtonImage']")
+      this.validateStartDate = page.locator("(//label[contains(., 'Start Date')])[1]");
+      this.validateEndDate = page.locator("(//label[contains(., 'End Date')])[1]");
+      this.SelectLobCafe = page.locator("(//a[contains(text(),'Cafe')])[1]/parent::li//input")
       //UH_9464
-      this.CancelSettleVoidCommentBox =   page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//td//input[@id='btnSettleVoidCancel']")
-      this.Comment1 = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("(//tr[@type='row'])[2]") 
+      this.CancelSettleVoidCommentBox = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//td//input[@id='btnSettleVoidCancel']")
+      this.Comment1 = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("(//td[@title='UH_9464'])[2]")
+      this.Comment2 = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("//td[@title='UH_9464']")
       this.CancelConfirmation = page.frameLocator("//iframe[@id='ctl00_FramePopUp7']").locator("(//input[@onClick='return dismissPop(event);'])[2]")
-     
+
+      //UH_9489
+      this.vEditPhoneTab = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='btnEditPhone']")
+      //this.vDeletePhoneTab = page.frameLocator("//iframe[@id='ifrContent']").locator("//input[@id='ucCPPhone20252ec0_feb5_4673_8b1c_02f0fad08026_btnDeletePhone']")
+
+      
    }
    //*******************************************************************************************************************
+   
+   
+   //UH_9489
+   async clickOnEditPhoneTab() {
+      await this.vEditPhoneTab.click();
+   }
    UH_9515
-   async validateLOBdropdownIsDisplayedAndCasinoOptionIsSelectedByDefault(){
+   async validateLOBdropdownIsDisplayedAndCasinoOptionIsSelectedByDefault() {
       await expect(this.validateLOBDefault).toBeVisible();
    }
-   async validateRegionDropdownDisplaysOptionsAccordingToLOBSelection(){
+   async validateRegionDropdownDisplaysOptionsAccordingToLOBSelection() {
       await expect(this.valiidateRegionDropdown).toBeVisible();
    }
-   async vaidateStartDateAndEndDateAreAvailableForUsersToCreateOffer(){
+   async vaidateStartDateAndEndDateAreAvailableForUsersToCreateOffer() {
       await expect(this.validateStartDate).toBeVisible();
       await expect(this.validateEndDate).toBeVisible();
    }
-   async checkCafeOptionOfLobQuickOfferSetupPage(){
+   async checkCafeOptionOfLobQuickOfferSetupPage() {
       await this.SelectLobCafe.click();
    }
-<<<<<<< HEAD
-   async vailidateState(){
-      await expect(this.vState).toBeVisible();
+   async clickOnOfferTypeDropdownWhenCasinoCafeIsSelectedInQuickOfferPage() {
+      await this.page.waitForTimeout(4000);
+      await this.OfferTypeDropdownQuickOffer.click();
+      await this.page.waitForTimeout(4000);
+      await this.OfferTypeDropdownQuickOffer.click();
+      await this.page.waitForTimeout(4000);
+      await this.OfferTypeDropdownQuickOffer.click();
+      await this.page.waitForTimeout(4000);
+
    }
-   async validateCity(){
-      await expect(this.vCity).toBeVisible();
-   }
-   async validateZipCode(){
-      await expect(this.vZipCode).toBeVisible();
-   }
-   async validatePhoneNumber(){  
-       await expect(this.vPhoneNumber).toBeVisible();
-   }
-   async validateShippingMethodRadioBoxIsPopulatedWithCharges(){
-      await this.page.waitForTimeout(5000);
-       await expect(this.ShippingMethodRadioButton).toBeVisible();
-   }
-   async validateShippingChargesIsAddedToTotalPrice(){
-      await this.page.waitForTimeout(5000);
-      await expect(this.TotalEstimated).toBeVisible();
-      await this.page.waitForTimeout(5000);
-         
-   }
-      async validateShippingChargesIsAdded(){
-         //await this.page.pause();
-         await this.page.waitForTimeout(4000);
-         await expect(this.ShippingCharges1).toBeVisible();
-         await this.page.waitForTimeout(4000);
-         
-      }
-      async validateShippingChargesIsAdded1(){
-         //await this.page.pause();
-         await this.page.waitForTimeout(4000);
-         await expect(this.ShippingCharges1).toBeVisible();
-         await this.page.waitForTimeout(4000);
-         
-      }
-      async validateShippingAddressBox(){
-         await this.page.waitForTimeout(3000);
-         await expect(this.ShippingAddressBox).toBeVisible();
-         
-      }
-      async validatePaymentMethodIsDisplayed(){
-         await this.page.waitForTimeout(3000);
-         await expect(this.PaymentMethod).toBeVisible();
-         await this.page.waitForTimeout(3000);
-      }
-      async validateCreditCardRadioButtonIsDisplayed(){
-         await expect(this.CreditCardRadioButton).toBeVisible();
-        
-      }
-      //async enterCreditCardNumber(CardNumber){
-         //await this.page.waitForTimeout(6000);
-         //await this.CardNumber.fill(CardNumber);
-         //await this.page.waitForTimeout(6000);
-      //}
-      async enterCreditCardNumber(CardNumber){
-         await this.page.waitForTimeout(3000);
-         await this.CreditCardNumber.fill(CardNumber);
-         await this.page.waitForTimeout(9000);
-      }
- 
-      async validateExpirationDate(){
-         await expect(this.vExpirationDate).toBeVisible();
-      }
-      async enterExpirationDate(ExpirationDate){
-         await this.page.waitForTimeout(3000);
-         await this.ExpirationDate.fill(ExpirationDate); 
-         await this.page.waitForTimeout(3000);
-      }
-      async validateSecurityCode(){
-         await expect(this.vSecurityCode).toBeVisible()
-      }
-      async enterSecurityCode(SecurityCode){
-         await this.SecurityCode.fill(SecurityCode);
-      }
-      async validatePayPalRadioButtonIsDisplayed(){
-         await expect(this.vPaypalRadioButton).toBeVisible();
-      }
-      async clickOnPayPalRadioButton(){
-         await this.PayPalRadioButton.click();
-      }
 
 
-      //RET_614
-      async clickOnEditButtonToUpdateShippingAddress(){
-         await this.page.waitForTimeout(8000);
-      await this.EditButton.click();
-      await this.page.waitForTimeout(8000);
-=======
-   
->>>>>>> 17b43958f2e013606897d1885c0c62548a4bb81b
-  
-   
+
    //UH_9464
-   async clickOnCancelSettleVoidCommentBox(){
+   async clickOnCancelSettleVoidCommentBox() {
       await this.CancelSettleVoidCommentBox.click();
    }
-   async selectComment1(){
+   async selectComment1() {
+      //await this.page.waitForSelector("(//tr[@type='row'])[2]", { state: 'visible', timeout:5000})
+      //await this.page.waitForTimeout(3000);
       await this.Comment1.click();
    }
-   async clickOnCancelConfirmationMessagePopUp(){
+
+   async selectComment2() {
+      await this.Comment2.click();
+   }
+   async clickOnCancelConfirmationMessagePopUp() {
       await this.CancelConfirmation.click();
    }
-   async validateCommentWithStatusSettledDisplayed(){
+   async validateCommentWithStatusSettledDisplayed() {
       await expect(this.vviewSettledVoidedComments).toBeVisible();
 
    }
-   async validateCommentWithStatusVoidedDisplayed(){
+   async validateCommentWithStatusVoidedDisplayed() {
       await expect(this.vviewSettledVoidedComments).toBeVisible();
    }
    //UH_9496
-   async selectPropertyViewCommentPage(Property){
+   async selectPropertyViewCommentPage(Property) {
       await this.PropertyViewComment.selectOption(Property);
    }
-   async selectDepartViewCommentPage(Department){
+   async selectDepartViewCommentPage(Department) {
       await this.DepartmentViewComment.selectOption(Department);
    }
-   async selectCommentTypeViewCommentPage(CommentType){
+   async selectCommentTypeViewCommentPage(CommentType) {
       await this.CommentTypeViewComment.selectOption(CommentType);
    }
-   async enterExpirationDateViewCommentPage(ExpirationDate){
+   async enterExpirationDateViewCommentPage(ExpirationDate) {
       await this.ExpirationDateViewComment.fill(ExpirationDate);
    }
-   async validateAllSelectedByDefaultInLimitToDepartment(){
+   async validateAllSelectedByDefaultInLimitToDepartment() {
       await expect(this.vAllLimitToDepartmentViewComment).toBeVisible();
    }
-   async validateGlobalAllPropertiesIsCheckedByDefault(){
+   async validateGlobalAllPropertiesIsCheckedByDefault() {
       await expect(this.vGlobalPropertiesChecked).toBeVisible();
    }
-   async uncheckedGlobalAllPropertiesCheckBox(){
+   async uncheckedGlobalAllPropertiesCheckBox() {
       await this.UncheckedGlobalProperties.click();
    }
-   async validatePropertyListDisplayed(){
+   async validatePropertyListDisplayed() {
       await expect(this.vPropertyList).toBeVisible();
    }
-   async clickOnLimitToPropertyDropdown(){
+   async clickOnLimitToPropertyDropdown() {
       await this.LimitToPropertyDropDown.click();
    }
-   async selectLimitToPropertyViewCommentPage(){
+   async selectLimitToPropertyViewCommentPage() {
       await this.LimitToProperty.click();
    }
-   async validateNeverCheckboxIsNextToExpirationDate(){
+   async validateNeverCheckboxIsNextToExpirationDate() {
 
    }
-     //UH_9432
-  async validateCreatedOfferInEventAndOffersTabForStarCardDisplayed(){
-   await expect(this.vOfferCreated1).toBeVisible();
-  }
+   //UH_9432
+
+   async clickOnCloseConsentPopUp() {
+      await this.closeConsentPopUp.click()
+   }
+   async validateCreatedOfferInEventAndOffersTabForStarCardDisplayed() {
+      await expect(this.vOfferCreated1).toBeVisible();
+   }
    //9487
-   async clickOnEditTab(){
-         await this.EditAddress.click();
-    }
+   async clickOnEditTab() {
+      await this.EditAddress.click();
+   }
 
    //9499
- async validateOffersTabDisplayed(){
-   await expect(this.OffersTab).toBeVisible();
- }
-   async clickOnOffersTab(){
-      await this.OffersTab.click();
-}
-async validateByDefaultActiveRedeemedVoidedExpiredReservedCheckBoxesIsCheckedNextToThePageName(){
-   await expect(this.vActiveCheckBox).toBeVisible();
-   await expect(this.vRedeemedCheckBox).toBeVisible();
-   await expect(this.vVoidedCheckBox).toBeVisible();
-   await expect(this.vExpiredCheckBox).toBeVisible();
-   await expect(this.vReservedCheckBox).toBeVisible();
-}
- async validateOffersInTheListDisplayed(){
-   await expect(this.vOffersList).toBeVisible();
- }
- async validateViewOfferDetailsRedeemOfferDeletePlayerOfferScanBarCodeCheckForUpdatesButtonsDisplayed(){
-   await expect(this.vViewOfferDetailsButton).toBeVisible();
-   await expect(this.vRedeemOfferButton).toBeVisible();
-   await expect(this.vDeletePlayerButton).toBeVisible();
-   await expect(this.vScanBarcodeButton).toBeVisible();
-   await expect(this.vCheckForUpdateButton).toBeVisible();
-}
-async selectOfferFromTheAssignedList(){
-   await this.SelectOffer.click();
-}
- async clickOnViewOfferDetailsButton(){
-   await this.vViewOfferDetailsButton.click();
- }   
- async validateViewOfferDetailsWindowDisplayed(){
-   await expect(this.vOfferDetailsWindow).toBeVisible();
- }
- async closeOfferDetailsWindow(){
-   await this.CloseOfferDetailsWindow.click();
- }
- async clickOnCheckForUpdatesButton(){
-   await this.vCheckForUpdateButton.click();
- }
- async validateOfferSyncPopUpWindowWithCloseAndOkButtons(){
-   await this.vOfferSyncPopUpWindow.click();
- }
- async clickOnOkOfferSyncPopUpWindow(){
-   await this.OkOfferSync.click();
- }
-   //9498
- async clickOnClosePopupWindow(){
-   await this.ClosePopupWindow.click();
- }
+   async validateOffersTabDisplayed() {
+      await expect(this.OffersTab).toBeVisible();
+   }
 
- async validateSystemDisplaySearchResult(){
-   await expect(this.vSystemDisplayResult).toBeVisible();
- }
-async enterDateRange(){
-   await this.FromDate.fill('08/01/2024');
-   await this.ToDate.fill('08/19/2024');
-}
-async selectSourceOption(Option){
-   await this.selectSource.selectOption(Option);
-}
-async selectPriorityOption(Option){
-   await this.selectPriority.selectOption(Option);
-}
-async validateNoDataFound(){
-   await expect(this.vNoData).toBeVisible();
-}
-async clickOnSearchOffer(){
-   await this.SearchOffer.click();
-}
+   async selectDisplayCallToActionAsOnlineBooking() {
+      await this.DisplayActionDropdown.click();
+      await this.selectOnlineBooking.click();
+   }
+   async clickOnOffersTab() {
+      await this.OffersTab.click();
+   }
+   async validateByDefaultActiveRedeemedVoidedExpiredReservedCheckBoxesIsCheckedNextToThePageName() {
+      await expect(this.vActiveCheckBox).toBeVisible();
+      await expect(this.vRedeemedCheckBox).toBeVisible();
+      await expect(this.vVoidedCheckBox).toBeVisible();
+      await expect(this.vExpiredCheckBox).toBeVisible();
+      await expect(this.vReservedCheckBox).toBeVisible();
+   }
+   async validateOffersInTheListDisplayed() {
+      await expect(this.vOffersList).toBeVisible();
+   }
+   async validateViewOfferDetailsRedeemOfferDeletePlayerOfferScanBarCodeCheckForUpdatesButtonsDisplayed() {
+      await expect(this.vViewOfferDetailsButton).toBeVisible();
+      await expect(this.vRedeemOfferButton).toBeVisible();
+      await expect(this.vDeletePlayerButton).toBeVisible();
+      await expect(this.vScanBarcodeButton).toBeVisible();
+      await expect(this.vCheckForUpdateButton).toBeVisible();
+   }
+   async selectOfferFromTheAssignedList() {
+      await this.page.waitForTimeout(2000);
+      await this.SelectOffer.click();
+   }
+   async clickOnViewOfferDetailsButton() {
+      await this.vViewOfferDetailsButton.click();
+   }
+   async validateViewOfferDetailsWindowDisplayed() {
+      await expect(this.vOfferDetailsWindow).toBeVisible();
+   }
+   async closeOfferDetailsWindow() {
+      await this.CloseOfferDetailsWindow.click();
+   }
+   async clickOnCheckForUpdatesButton() {
+      await this.vCheckForUpdateButton.click();
+   }
+   async validateOfferSyncPopUpWindowWithCloseAndOkButtons() {
+      await this.vOfferSyncPopUpWindow.click();
+   }
+   async clickOnOkOfferSyncPopUpWindow() {
+      await this.OkOfferSync.click();
+   }
+   //9498
+   async clickOnClosePopupWindow() {
+      await this.ClosePopupWindow.click();
+   }
+
+   async validateSystemDisplaySearchResult() {
+      await expect(this.vSystemDisplayResult).toBeVisible();
+   }
+   async enterDateRange() {
+      await this.FromDate.fill('08/01/2024');
+      await this.ToDate.fill('08/19/2024');
+   }
+   async selectSourceOption(Option) {
+      await this.selectSource.selectOption(Option);
+   }
+   async selectPriorityOption(Option) {
+      await this.selectPriority.selectOption(Option);
+   }
+   async validateNoDataFound() {
+      await expect(this.vNoData).toBeVisible();
+   }
+   async clickOnSearchOffer() {
+      await this.SearchOffer.click();
+   }
 
 
    //UH_9468
- async validateEmailSectionDisplayed(){
-   await expect(this.vEmailSection).toBeVisible();
- }
- async clickOnAddNewEmailLink(){
-   await this.AddNewEmail.click();
- }
- async clickOnEmailEditButton(){
-   await this.EditEmail.click();
- }
- async clickOnEmailTypeArrow(){
-   await this.EmailTypeArrow.click();
- }
-async selectEmailType(EmailType){
-   await this.EmailType.selectOption(EmailType);
-}
-async enterEmailAddress(EmailAddress1){
-   await this.EmailAddress.fill(EmailAddress1);
-}
- async clickOnSaveEmailAddress(){
-   this.SaveEmail.click();
- }
-  
+   async validateEmailSectionDisplayed() {
+      await expect(this.vEmailSection).toBeVisible();
+   }
+   async clickOnAddNewEmailLink() {
+      await this.AddNewEmail.click();
+   }
+   async clickOnEmailEditButton() {
+      await this.EditEmail.click();
+   }
+   async clickOnEmailTypeArrow() {
+      await this.EmailTypeArrow.selectOption('Home');
+   }
+   async selectEmailType() {
+      await this.page.waitForTimeout(3000);
+      await this.EmailType.click();
+      await this.page.waitForTimeout(3000);
+   }
+   async enterEmailAddress(EmailAddress1) {
+      await this.EmailAddress.fill(EmailAddress1);
+   }
+   async clickOnSaveEmailAddress() {
+      this.SaveEmail.click();
+   }
+
    //9517 
-   async checkOptionHardRockNorthernIndianaInDisplayPropertyQuickOffer(){
+   async checkOptionHardRockNorthernIndianaInDisplayPropertyQuickOffer() {
       await this.CheckDisplayProperty1.click();
-}
-   async checkOptionUnityStoreInDisplayLocationQuickOfferSetupPage(){
+
+   }
+   async checkOptionUnityStoreInDisplayLocationQuickOfferSetupPage() {
       await this.CheckDisplayLocation1.click();
       await this.DisplayLocationDropdown.click();
-}
- async enterExpiredStartDate(StartDate){
-   await this.StartDate.fill(StartDate);
-}
- async enterExpiredEndDate(EndDate){
-     await this.EndDate.fill(EndDate);
- }
- async enterDisplayEndDate(DisplayEndDate){
-   await this.DisplayEndDate.fill(DisplayEndDate);
- }
- async clickOnExpandPlayerSearchIcon(){
-   await this.ExpandPlayerSearchIcon.click();
-}
-   async enterEventOfferNameInSearchBox(EventAndOfferName){
+   }
+   async enterExpiredStartDate(StartDate) {
+      await this.StartDate.fill(StartDate);
+   }
+   async enterExpiredEndDate(EndDate) {
+      await this.EndDate.fill(EndDate);
+   }
+   async enterDisplayEndDate(DisplayEndDate) {
+      await this.DisplayEndDate.fill(DisplayEndDate);
+   }
+   async clickOnExpandPlayerSearchIcon() {
+      await this.ExpandPlayerSearchIcon.click();
+   }
+   async enterEventOfferNameInSearchBox(EventAndOfferName) {
       await this.page.waitForTimeout(3000);
-   await this.EventAndOfferName.fill(EventAndOfferName);
-   await this.page.waitForTimeout(3000);
-}
-async clickOnSearchViewEventAndOffer(){
-   await this.SearchViewEventAndOffer.click();
-}
-async validateOfferCreatedNotDisplayed(){
-   await expect(this.vOfferNotDisplayed).toBeVisible();
-}
+      await this.EventAndOfferName.fill(EventAndOfferName);
+      await this.page.waitForTimeout(3000);
+   }
+   async clickOnSearchViewEventAndOffer() {
+      await this.SearchViewEventAndOffer.click();
+   }
+   async validateOfferCreatedNotDisplayed() {
+      await expect(this.vOfferNotDisplayed).toBeVisible();
+   }
    //UH_9512
-      
-<<<<<<< HEAD
 
-         //RET_589
-
-         async hoverOnCategory_Hoodies()    {
-            await this.page.waitForTimeout(3000);
-            await this.categoryHoodies.hover();
-         }
-         async clickOnSubCategory_MensHoodies()    {
-            await this.page.waitForTimeout(3000);
-            await this.SubCategoryMensHoodies.click();
-         }
-         async validatePLP()    {
-            await expect(this.pLPpage).toBeVisible();
-         }
-         async validateProductCountOnTopLeft()    {
-            await expect(this.productCount).toBeInVisible();
-         }
-         async clickProductImage()    {
-            await expect(this.productImage).toBeInVisible();
-         }
-         async clickProductNameLink()    {
-            await expect(this.productNameLink).toBeInVisible();
-         }
-         async vaidatePDPPage()    {
-            await expect(this.pdpPage).toBeInVisible();
-         }
-
-         //RET_663
-         async hoverOnCategoryPINS(){
-            await this.CategoryPINS.hover();
-         }
-         async clickOnSubCategoryOnlineExclusivePins(){
-            await this.SubCategoryOnlineExclusivePins.click();
-         }
-         async clickOnProductMessiLimitedEditionPin(){
-            await this.ProductMessiLimitedEditionPin.click();
-         }
-         async clickOnAddToBag(){
-            await this.AddToBag.click();
-         }
-         async clickOnMyBag(){
-            await this.MyBag.click();
-         }
-        async clickOnCheckOut(){
-         await this.page.waitForTimeout(3000);
-         await this.CheckOut.click();
-         await this.page.waitForTimeout(3000);
-         }
-        async validateCheckOutPageDisplayed(){
-            await expect(this.CheckOutPage).toBeVisible();
-         }
-        async enterEmailAddress(Email) {
-         await this.page.waitForTimeout(3000);
-            await this.emailAddress.fill(Email);
-            await this.page.waitForTimeout(3000);
-         }
-        async clickOnContinueToCheckOut(){
-            await this.ContinueCheckOut.click();
-         }
-          async validateCustomerInformationOnCheckOutPageAndEnterDetails(){
-            await expect(this.customerInformation).toBeVisible();
-          }
-         async enterFirstName(FirstName){
-            await this.FirstName.fill(FirstName);  
-         }
-         async enterLastName(LastName){
-            await this.LastName.fill(LastName);
-         }
-         async enterAddress1(Address1){
-            await this.Address1.fill(Address1);
-         }
-         async enterAddress2(Address2){
-            await this.Address2.fill(Address2);
-         }
-         async selectCountry(Country){
-           await this.Country.selectOption(Country);
-         }
-         async selectState(State){
-            await this.page.waitForTimeout(3000);
-            await this.State.selectOption(State);
-            await this.page.waitForTimeout(3000);
-         }
-         async selectStateToEdit(Stateedit){
-            
-            await this.page.waitForTimeout(2000);
-            await this.StateEdit.selectOption(Stateedit);
-         }
-
-         async enterState(state){
-            await this.state1.fill(state);
-         }
-         async enterCity(City){
-            await this.City.fill(City);
-         }
-         async enterPinCode(PinCode){
-            await this.PinCode.fill(PinCode);
-         }
-         async enterPhoneNumber(PhoneNumber){
-            await this.PhoneNumber.fill(PhoneNumber);
-           
-         }
-         //async checkOnCheckBox(){
-            //await this.page.waitForTimeout(2000);
-            //await this.CheckBox.click();
-            //await this.page.waitForTimeout(2000);
-         //}
-         async clickOnPurchaseTab(){
-            await this.page.waitForTimeout(1000);
-            await this.Purchase.click();
-         }
-
-         //RET_660
-         async clickOnNextPayment(){
-            await this.NextPayment.click();
-         }
-         async clickOnSameAsShippingAddressCheckBox(){
-            await this.page.waitForTimeout(2000);
-            await this.ShippingAddressCheckBox.click();
-            await this.page.waitForTimeout(2000);
-         }
-          
-       //RET_612
-       async validateShippingForm(){
-         await expect(this.ShippingForm).toBeVisible
-       }
-       async validatErrorMessageWhenMandatoryFieldsAreNotFilled(){
-         await this.page.waitForTimeout(2000);
-         await expect(this.ErrorMessage).toBeVisible();
-         await this.page.waitForTimeout(2000);
-       }
-       async validateErrorMessageWhenPhoneNumberIsNotBetween10to20Characters(){
-         await expect(this.ErrorInvalidPhone).toBeVisible();
-       }
-       async validateErrorMessageWhenInvalidZipCode(){
-         await expect(this.ErrorInvalidZipCode).toBeVisible();
-       }
-    
-
-      //RET_
-      async enterItemToSearch(ItemName) {
-        await this.itemSearchField.click();
-        await this.itemSearchField.fill(ItemName);
-        await this.itemSearchField.press('Enter');
-      }
-      async enterItemName(ItemName) {
-         await this.searchItemf.fill('nes');
-       }
-
-       async validateNoSearchResult(){
-         await expect(this.noSearchResultLabel).toBeVisible();
-       }
-       async clickOnSearchSuggestion(){
-         await this.searchSuggestion.click()
-       }
-       async validateSuggestedProductPDP(){
-         await expect(this.suggestedProductPDP).toBeVisible();
-       }
-
-    
-        
-
-     
-    
-    
-
-    //******************************************************************************************************************//
-    
-    //RET_1259
-    async clickOnSearchBox(){
-        await this.SearchBox.click();
-        await this.page.waitForTimeout(3000);
-      }
-    async enterItemToSearch(ItemName) {
-        await this.itemSearchField.click();
-        await this.itemSearchField.fill(ItemName);
-        await this.itemSearchField.press('Enter');
-        await this.page.waitForTimeout(4000);
-    }
-    async validatePLPResultDisplayed(){
-        await expect(this.vPLPResult).toBeVisible();
-    }
-    async validateGenderDisplayedOnPLP(){
-        await this.page.waitForTimeout(2000);
-        await expect(this.vGenderPLP).toBeVisible();
-        await this.page.waitForTimeout(2000);
-    }
-    async validateColorDisplayedOnPLP(){
-        await expect(this.vColorPLP).toBeVisible();
-    }
-    async validatePriceDisplayedOnPLP(){
-        await expect(this.vPricePLP).toBeVisible();
-    }
-    async validateCityDisplayedOnPLP(){
-        await expect(this.vCityPLP).toBeVisible();
-    }
-    async validateSizeDisplayedOnPLP(){
-        await expect(this.vSizePLP).toBeVisible();
-    }
-    async clickOnSizeFilterOnPLP() {
-        await this.page.waitForTimeout(4000);
-        await this.plpSizeFilter.click();
-        await this.page.waitForTimeout(4000);
-    }
-    async validateSizesArePresentOnPLP() {
-    
-        await expect(this.plpSizeXS).toBeVisible();
-        await expect(this.plpSizeS).toBeVisible();
-        await expect(this.plpSizeM).toBeVisible();
-        await expect(this.plpSizeL).toBeVisible();
-        await expect(this.plpSizeXL).toBeVisible();
-        await expect(this.plpSizeXXL).toBeVisible();
-        await expect(this.plpSizeXXXL).toBeVisible();
-    }
-    //RET_1260
-    async clickOnSizeSOnPLP(){
-    await this.plpSizeS.click();
-    }
-    async validateFilteredItemsAreDisplayed(){
-        await expect(this.vFilteredItems).toBeVisible();
-    }
-    //RET_1261
-    async clickOnProductMessiAdultFitNavyHoodie(){
-        await this.messiAdultFitNavyHoodie.click();
-    }
-    async validateAllSizeFiltersOnPDPScreen() {
-
-        await expect(this.pdpSizeS).toBeVisible();
-        await expect(this.pdpSizeM).toBeVisible();
-        await expect(this.pdpSizeL).toBeVisible();
-        await expect(this.pdpSizeXL).toBeVisible();
-        await expect(this.pdpSizeXXL).toBeVisible();
-    }
-    async validateProductDetailPage(){
-        await expect(this.ProductDetailPage).toBeVisible();
-      }
-      async clickOnSizePDPM(){
-         await this.page.waitForTimeout(3000);
-         await this.pdpSizeM.click();
-     }
-     async validateAvailabilityBelowQtyDisplayed(){
-         await expect(this.AvailabilityBelowQtyDisplayed).toBeVisible();
-     }
- 
-
-
-
- 
- 
-    
-    async clickItemRecommended()    {
-        await this.page.waitForTimeout(2000);
-        await this.itemRecomendation.click();
-    }
-    async clickOnPDPAddToBag() {
-        await this.pdpAddToBag.click();
-    }
-    
-    async ClickOnProductSearched(){       
-        await this.clickSelectProductPDP.click();
-    }
-    
-    async clickOnSizeFilterInPLP() {
-        await this.messiAdultFitNavyHoodie.click(); 
-    }
-        async clickOnSizeSInPDPScreen() {
-        await this.pdpSizeS.click();
-    }
-    async clickOnSizeSInPDPScreen() {
-        await this.pdpSizeS.click();
-    }
-    //RET_1286
-
-    async clickOnCategoryPINS(){
-        await this.CategoryPINS.hover();
-        await this.page.waitForTimeout(4000);
-    }
-    async clickOnSubCategory3DPINS() {
-        await this.SubCategory3DPINS.click();
-        await this.page.waitForTimeout(3000);
-    }
-    async validatehomeCategorySubcatogeryPathDisplayed(){
-        await expect(this.homeCategorySubcatogeryPathDisplayed).toBeVisible();
-    }
-    async clickOnProductPINS() {
-        await this.Product_NativeAmericanPin.first().click();
-    }
-         //RET_1172
-    
-    async clickOnMyBag(){
-        await this.MyBag.click();
-     }
-    async clickOnPayPal() {
-        await this.payPal.click();
-    }
-
-    async clickOnPayPal1() {
-        await this.payPal1.click();
-  }
-    //RET_1281
-
-    async clickOnSignInButton() {
-        await this.signInButton.click();
-    }
-    async validateUnityWebsiteDisplayed(){
-        await expect(this.unityWebsiteDisplayed).toBeVisible();
-    }
-    async enterEmailAddress() {
-        await this.page.waitForTimeout(3000);
-        await this.emailAddress.fill('test@yopmail.com')
-        await this.page.waitForTimeout(3000);
-    }
-    async enterPassWord() {
-        await this.passWord.fill('h7"j"9T%')
-    }
-    async clickOnLogin(){
-        await this.login.click();
-    }
-    async selectQuantitydropdown(itemQuantity){
-        await this.page.waitForTimeout(2000);
-        await this.quantity.selectOption(itemQuantity);
-        
-
-    } 
-    async validateYourBagDisplayed(){
-        await expect(this.MyBag).toBeVisible();
-        //await expect(this.yourBag).toBeVisible();
-        await this.page.waitForTimeout(2000);
-    }  
-    async clickOnCheckOut(){
-        await this.page.waitForTimeout(2000);
-        await this.CheckOut.click();
-    }
-    async validateCheckOutPageDisplayed(){
-        await expect(this.checkOutPage).toBeVisible();
-    }
-    async clickOnContinueToCheckOut(){
-        await this.ContinueToCheckOut.click();
-    }
-    async validateCustomerInformationOnCheckOutPage(){
-      //   await expect(this.CustomerInformation).toBeVisible();
-
-        await this.FirstName.fill('Johnson');
-        await this.LastName.fill('Smith');
-        await this.Address1.fill('657');
-        await this.Address2.fill('Avocado Ave.');
-        await this.page.waitForTimeout(3000);
-        await this.Country.selectOption({label :'United States'});
-        await this.page.waitForTimeout(2000);
-        await this.state.selectOption({label : 'Wisconsin'});
-        await this.page.waitForTimeout(2000);
-        await this.City.fill('Neenah');
-        await this.PinCode.fill('54956'); 
-        await this.PhoneNumber.fill('9798979897');
-    }
-
-    async clickOnNextPaymentButton() {
-        await this.page.waitForTimeout(2000);
-        await this.NextPayment.click();
-    }
-     async validateShippingandBillingDetails(){
-        await expect(this.ShippingandBilling).toBeVisible();
-        
-     }
-     async validateAmountToPay(){
-        await this.page.waitForTimeout(2000);
-        await expect(this.OrderSummary).toBeVisible(); 
-     }
-
-     async clickOnSameAsShippingAddressCheckBox(){
-        await this.page.waitForTimeout(2000);
-        await this.ShippingAddressCheckBox.click();
-        await this.page.waitForTimeout(3000);
-    }
-
-     //RET_1152
-
-     async enterPassWord() {
-        await this.passWord.fill('Password01@')
-     }
-
-     //RET_1261
-
-     
-    async validateAvailabilityBelowQtyDisplayed(){
-        await expect(this.AvailabilityBelowQtyDisplayed).toBeVisible();
-    }
-    async switchToPayPalFrame(){
-        const [newWindow] = await Promise.all([
-            this.page.waitForEvent("popup"),
-            this.page.waitForNavigation(),
-            this.page.locator("//button[@id='btnNext']").click(),
-        ]);
-        console.log(newWindow.url());
-      }
-
-       
-=======
-      async clickOnUSOptionInRegionQuickOfferPage(){
-        await this.RegionDropdownQuickOffer.click();
-        await this.RegionUS.click();
-      }
+   async clickOnUSOptionInRegionQuickOfferPage() {
+      await this.RegionDropdownQuickOffer.click();
+      await this.RegionUS.click();
+   }
    //UH_9521
-   async selecCardTierRestrictionLegendQuickOfferPage(){
+   async selecCardTierRestrictionLegendQuickOfferPage() {
       await this.CardTierRestrictionDropdownQuickOfferSetup.click();
-      await this.CardTierRestriction2.click();
->>>>>>> 17b43958f2e013606897d1885c0c62548a4bb81b
+      //await this.CardTierRestriction2.click();
    }
 
    //UH_9522
-   async selecCardTierRestrictionIconQuickOfferPage(){
+   async selecCardTierRestrictionIconQuickOfferPage() {
+      await this.page.waitForTimeout(2000);
+      await this.CardTierRestrictionDropdownQuickOfferSetup.click();
+      await this.page.waitForTimeout(2000);
       await this.CardTierRestrictionDropdownQuickOfferSetup.click();
       await this.CardTierRestriction3.click();
+
    }
    //UH_9523
-   async checkHotelOptionOfLobQuickOfferSetupPage(){
+   async checkHotelOptionOfLobQuickOfferSetupPage() {
       await this.CheckLobQuickOfferHotel.click()
    }
-   async checkHardRockAtlanticCityOptionDisplayPropertyQuickOffer(){
+   async checkHardRockAtlanticCityOptionDisplayPropertyQuickOffer() {
       await this.page.waitForTimeout(2000);
       await this.checkDisplayPropertyHardRockAtlanticCity.click();
    }
-   async checkHardRockNorthernIndianaOptionDisplayPropertyQuickOffer(){
+
+   async checkHardRockHardRockHollywoodOptionDisplayPropertyQuickOffer() {
+      await this.page.waitForTimeout(2000);
+      await this.checkDisplayPropertyHardRockHollywood.click();
+   }
+   async checkHardRockNorthernIndianaOptionDisplayPropertyQuickOffer() {
       await this.page.waitForTimeout(2000);
       await this.checkDisplayPropertyHardRockNorthernIndiana.click();
       await this.page.waitForTimeout(2000);
    }
-   async checkOptionOfDisplayLocationQuickOfferSetupPage(){
+   async checkOptionOfDisplayLocationQuickOfferSetupPage() {
       await this.page.waitForTimeout(2000);
       await this.checkLocationLocation71.click();
       await this.page.waitForTimeout(2000);
    }
    //UH_9524
-   async enterStartDateQuickOfferSetupPage(StartDate){
+   async enterStartDateQuickOfferSetupPage(StartDate) {
       await this.StartDateQuickOffer.fill(StartDate)
    }
-   async enterEndDateQuickOfferSetupPage(EndDate){
+   async enterEndDateQuickOfferSetupPage(EndDate) {
       await this.EndDateQuickOffer.fill(EndDate)
    }
-   
+
    //UH_9510
-   
-   async clickOnDeactiveForRecentlycreatedOffer(){
+   async clickOnDeactiveForRecentlycreatedOffer() {
       await this.DeactiveButton.click();
    }
-   async validateConfirmDeactivateOfferWindowDisplayed(){
+   async validateConfirmDeactivateOfferWindowDisplayed() {
       await expect(this.vConfirmDeactivatePopup).toBeVisible();
    }
-   async clickOnConfirmTab(){
+   async clickOnConfirmTab() {
       await this.ConfirmTab.click();
    }
-   async validateNotificationOfOfferDeactivated(){
+   async validateNotificationOfOfferDeactivated() {
       await expect(this.vOfferDeactivated).toBeVisible();
    }
-   async clickOnCloseDeactivePopUp(){
+   async clickOnCloseDeactivePopUp() {
       await this.CloseDeactivePopUp.click();
    }
-   async validateCreatedOfferNotDisplayed(){
+   async validateCreatedOfferNotDisplayed() {
       await expect(this.vOfferCreated).toBeVisible();
    }
    //UH_9516
-   async validateCopyButtonInQuickOfferSection(){
+   async validateCopyButtonInQuickOfferSection() {
       await expect(this.vCopyButtonQuickOffer).toBeVisible();
    }
-   async clickOnCopyButton(){
+   async clickOnCopyButton() {
       await this.vCopyButtonQuickOffer.click();
    }
-   async validateOfferInEditModeAppeared(){
+   async validateOfferInEditModeAppeared() {
       await expect(this.vOfferInEditModeCopy).toBeVisible();
    }
-   async editDisplayDescriptionInQuickOfferPage(DisplayDescription){
+   async editDisplayDescriptionInQuickOfferPage(DisplayDescription) {
       await this.DisplayDescription.fill(DisplayDescription);
    }
-   async editDisclaimerInQuickOfferPage(Disclaimer){
+   async editDisclaimerInQuickOfferPage(Disclaimer) {
       await this.Disclaimer.fill(Disclaimer);
    }
-   async validateNoFileSelectedInInviteeListSection(){
+   async validateNoFileSelectedInInviteeListSection() {
       await this.page.waitForTimeout(3000);
       await expect(this.vNoFileSelected).toBeVisible();
       await this.page.waitForTimeout(3000);
    }
-  
-      
+
+
    //UH_9509
-   async ValidateEditButtonInQuickOfferSectionForEachOfferLineDisplayed(){
+   async ValidateEditButtonInQuickOfferSectionForEachOfferLineDisplayed() {
       await expect(this.vEditButtonQuickOffer).toBeVisible();
    }
-   async clickOnEditButton1(){
+   async clickOnEditButton1() {
       await this.EditButton1.click()
    }
-   async validateOfferInEditModeDisplayed(){
+   async validateOfferInEditModeDisplayed() {
       await expect(this.vOfferInEditMode).toBeVisible();
    }
-   async clickOnOfferSetUp(){
+   async clickOnOfferSetUp() {
       await this.OfferSetUP.click();
    }
-   async validateLobIsNotEditable(){
+   async validateLobIsNotEditable() {
       await expect(this.vLobNotEditable).toBeVisible();
    }
-   async clickOnSaveAndClose(){
+   async clickOnSaveAndClose() {
       await this.SaveAndClose.click();
    }
    //UH_9511
-   async clickOnRegionDropdownInQuickOfferPage(){
+   async clickOnRegionDropdownInQuickOfferPage() {
       await this.page.waitForTimeout(3000);
       this.RegionDropdownQuickOffer.click();
       await this.page.waitForTimeout(3000);
       this.RegionDropdownQuickOffer.click();
    }
-   async uncheckOptionOfRegionQuickOfferSetupPage(){
+   async uncheckOptionOfRegionQuickOfferSetupPage() {
       this.UncheckRegionQuickOffer.click();
    }
    //UH_9508
-   async selecCardTierRestrictionStarQuickOfferPage(){
+   async selecCardTierRestrictionStarQuickOfferPage() {
       await this.page.waitForTimeout(3000);
       await this.CardTierRestrictionDropdownQuickOfferSetup.click();
       await this.page.waitForTimeout(3000);
-      await this.CardTierRestrictionDropdownQuickOfferSetup.click();
-      await this.page.waitForTimeout(4000);
-      await this.CardTierRestrictionDropdownQuickOfferSetup.click();
-      await this.page.waitForTimeout(4000);
       await this.CardTierRestriction.click();
+      await this.page.waitForTimeout(3000);
+
    }
    //UH_9507
-   async clickOnCardTierRestrictionDropdownQuickOfferSetupPage(){
-      await this.page.waitForTimeout(4000);
-      await this.CardTierRestrictionDropdownQuickOfferSetup.click();
-      await this.page.waitForTimeout(4000);
-      //await this.CardTierRestrictionDropdownQuickOfferSetup.click();
+
+   async selecCardTierRestrictionXQuickOfferPage() {
+   await this.page.keyboard.press('ArrowDown');
+   await this.page.keyboard.press('ArrowDown');
+   await this.page.keyboard.press('ArrowDown');
+   await this.page.keyboard.press('ArrowDown');
+   await this.page.keyboard.press('ArrowDown');
+   await this.page.keyboard.press('Enter');
+  
    }
-   async selecCardTierRestrictionXQuickOfferPage(){
-      await this.page.waitForTimeout(4000);
+   async clickOnCardTierRestrictionDropdownQuickOfferSetupPage() {
+      await this.page.waitForTimeout(3000);
       await this.CardTierRestrictionDropdownQuickOfferSetup.click();
-      await this.CardTierRestriction1.click();
-      await this.page.waitForTimeout(4000);
+      // await this.page.waitForTimeout(3000);
+      // await this.CardTierRestrictionDropdownQuickOfferSetup.click();
    }
-   async validateSummaryPage1Displayed(){
+   //async selecCardTierRestrictionXQuickOfferPage() {
+
+   //    await this.cardTierRestrictionTAB.click();
+   //    await this.page.waitForTimeout(3000);
+
+
+   //    await this.page.waitForTimeout(3000);
+   //    await this.CardTierRestrictionDropdownQuickOfferSetup.click();
+   //    await this.page.waitForTimeout(3000);
+   //    await this.CardTierRestrictionDropdownQuickOfferSetup.click();
+   //    await this.page.waitForTimeout(3000);
+   //    await this.CardTierRestrictionDropdownQuickOfferSetup.click();
+   //    //await this.CardTierRestrictionScrollDown.click();
+   //    await this.CardTierRestriction1.click();
+   //    await this.page.waitForTimeout(3000);
+   //    await this.CardTierRestrictionDropdownQuickOfferSetup.click();
+   // }
+   async validateSummaryPage1Displayed() {
       await this.page.waitForTimeout(3000);
       await expect(this.vSummaryPage1).toBeVisible();
    }
 
    //UH_9502
-async validateInLobCasinoOptionSelectedByDefault(){
-   await expect(this.vCasinoOptionLOBDropdown).toBeVisible();
-}
-//UH_9452
-async clickOnofferSetupPage(){
-   this.offerSetupPage.click();
-}
-   //UH_9462
-   async clickonLighteningIcon(){
-      await this.LighteningIcon.click();
+   async validateInLobCasinoOptionSelectedByDefault() {
+      await expect(this.vCasinoOptionLOBDropdown).toBeVisible();
    }
-   async validateAlertWindowShowsLegendwith0TierPoints(){
+   //UH_9452
+   async clickOnofferSetupPage() {
+      this.offerSetupPage.click();
+   }
+   //UH_9462
+   async clickonLighteningIcon() {
+      await this.page.waitForTimeout(4000);
+      await this.LighteningIcon.click();
+      await this.page.waitForTimeout(4000);
+   }
+   async validateAlertWindowShowsLegendwith0TierPoints() {
       await expect(this.AlertWindow).toBeVisible();
    }
-   async clickOnCloseAlert(){
+   async clickOnCloseAlert() {
       this.closeAlert.click();
    }
-  
-   async clickOnExpandSearchIcon(){
+
+   async clickOnExpandSearchIcon() {
       this.ExpandSearchIcon.click();
    }
-   async validateAlertWindowShowsLegendwithMoreThan0TierPoints(){
+   async validateAlertWindowShowsLegendwithMoreThan0TierPoints() {
       await expect(this.AlertWindow).toBeVisible();
    }
    //UH_9461
-   async clickOnPlayerTierWithTierMatch(){
+   async clickOnPlayerTierWithTierMatch() {
       await this.PlayerTierwithTierMatch.click();
    }
-   async validatePlayerTierWithTierMatchPopUpWindowOpens(){
+   async validatePlayerTierWithTierMatchPopUpWindowOpens() {
       await expect(this.vPopUpWindow).toBeVisible();
    }
-   async selectReason(Reason){
+   async selectReason(Reason) {
       await this.Reason.selectOption(Reason);
    }
-   async selectCompetitorCasino(Option){
+   async selectCompetitorCasino(Option) {
       await this.CompetitorCasino.selectOption(Option);
    }
-   async clickOnCancelButtonTierMatchWindow(){
+   async clickOnCancelButtonTierMatchWindow() {
       await this.page.waitForTimeout(4000);
       await this.CancelButtonTierMatchWindow.click();
       await this.page.waitForTimeout(4000);
    }
    //UH_9495
-   async selectVoidRadioButton(){
+   async selectVoidRadioButton() {
       await this.VoidRadioButton.click();
    }
-   async validateVoidConfirmationMessage(){
+   async validateVoidConfirmationMessage() {
       await expect(this.vVoidConfirmation).toBeVisible();
    }
-   async validateMessageCommentVoidedSuccessfully(){
+   async validateMessageCommentVoidedSuccessfully() {
       await expect(this.vCommentVoidedMessage).toBeVisible();
    }
-    //UH_9443
-    async clickOnCloseEventsAndOffersSuccessPopUp(){
+   //UH_9443
+   async clickOnCloseEventsAndOffersSuccessPopUp() {
       await this.closeSuccessPopup.click();
    }
-    async clickOnView1(){
+   async clickOnView1() {
       await this.view1.click();
    }
-    async clickOnAddMasterListItems(){
+   async clickOnAddMasterListItems() {
       await this.page.waitForTimeout(2000);
       await this.addmasterListItem.click();
       await this.page.waitForTimeout(2000);
-    }
-   async addMasterListItem1(prizeName,prizeCode,interDesc,unitCst,phyInvent){
+   }
+   async addMasterListItem1(prizeName, prizeCode, interDesc, unitCst, phyInvent) {
       await this.displayPrizeName.fill(prizeName)
       await this.prizeCode.fill(prizeCode)
       await this.internalDescription.fill(interDesc)
       await this.unitCost.fill(unitCst)
       await this.physicalInventory.fill(phyInvent)
+      //input[@id='ctl00_ContentPlaceHolder1_ctrlMasterListOfItem_wdgWarning_tmpl_btnPopupSubmit']
+      await this.page.waitForTimeout(2000);
       await this.saveMaster.click();
-      await this.page.waitForSelector('//option[contains(text(),"PrizeName1")]',{state:'visible'});
+      await this.page.waitForTimeout(2000)
+      await this.WarningPopupOK.click();
+      await this.page.waitForSelector('//option[contains(text(),"PrizeName1")]', { state: 'visible' });
       await this.selectPrize1.click();
       await this.addNewMasterItem.click();
       // await this.physicalInventory1.fill(phyInvent1);
       await this.addSaveMasterItemButton.click();
    }
-   async addMasterListItem11(prizeName,prizeCode,interDesc,unitCst,phyInvent,phyInvent1){
+   async addMasterListItem11(prizeName, prizeCode, interDesc, unitCst, phyInvent, phyInvent1) {
       await this.displayPrizeName.fill(prizeName)
       await this.prizeCode.fill(prizeCode)
       await this.internalDescription.fill(interDesc)
       await this.unitCost.fill(unitCst)
       await this.physicalInventory.fill(phyInvent)
       await this.saveMaster.click();
-      await this.page.waitForSelector('//option[contains(text(),"PrizeName1")]',{state:'visible'});
+      await this.page.waitForSelector('//option[contains(text(),"PrizeName1")]', { state: 'visible' });
       await this.selectPrize1.click();
       await this.addNewMasterItem.click();
       await this.physicalInventory1.fill(phyInvent1);
       await this.addSaveMasterItemButton.click();
    }
 
-   async EnterAttendanceCapacity(attendanceCapacity){
+   async EnterAttendanceCapacity(attendanceCapacity) {
       await this.attendanceRadioButton.click();
       await this.attendeeCapacityField.fill(attendanceCapacity)
    }
-   async clickOnSubmitForReviewButtonAndVerifyOfferIsSubmittedSuccessfully(){
+   async clickOnSubmitForReviewButtonAndVerifyOfferIsSubmittedSuccessfully() {
       await this.submitForReview.click();
       await expect(this.offerSubmittedSuccessfullyMessage).toBeVisible();
       await this.closeSuccessPopup.click();
@@ -2234,60 +1347,63 @@ async clickOnofferSetupPage(){
 
    //UH_9448
 
-   async addMasterListItem2(prizeName,prizeCode,interDesc,unitCst,phyInvent){
+   async addMasterListItem2(prizeName, prizeCode, interDesc, unitCst, phyInvent) {
 
       await this.displayPrizeName.fill(prizeName)
-      
+      await this.page.waitForTimeout(2000)
       await this.prizeCode.fill(prizeCode)
       await this.internalDescription.fill(interDesc)
       await this.unitCost.fill(unitCst)
       await this.physicalInventory.fill(phyInvent)
       await this.saveMaster.click();
-      await this.page.waitForSelector('//option[contains(text(),"PrizeName1")]',{state:'visible'});
-          
+      await this.page.waitForTimeout(2000)
+      await this.WarningPopupOK.click();
+      await this.page.waitForTimeout(2000)
+      //await this.page.waitForSelector('//option[contains(text(),"PrizeName1")]', { state: 'visible' });
+
    }
-   async addNewItem(phyInvent1){
+   async addNewItem(phyInvent1) {
       await this.page.waitForTimeout(2000);
       await this.addNewMasterItem.click();
       await this.physicalInventory1.fill(phyInvent1);
       await this.addSaveMasterItemButton.click();
    }
-   async clickOnPrize1(){
+   async clickOnPrize1() {
       await this.selectPrize1.click();
    }
-   async clickOnPrize2(){
+   async clickOnPrize2() {
       await this.selectPrize2.click();
    }
-   async clickOnPrize3(){
+   async clickOnPrize3() {
       await this.selectPrize3.click();
    }
-   async clickOnPrize4(){
+   async clickOnPrize4() {
       await this.selectPrize4.click();
    }
-   async clickOnPrize5(){
+   async clickOnPrize5() {
       await this.selectPrize5.click();
    }
-   async clickOnPrize6(){
+   async clickOnPrize6() {
       await this.selectPrize6.click();
    }
-   
-   async clickOnPrize7(){
+
+   async clickOnPrize7() {
       await this.selectPrize7.click();
    }
-   async clickOnPrize8(){
+   async clickOnPrize8() {
       await this.selectPrize8.click();
    }
-   async clickOnPrize9(){
+   async clickOnPrize9() {
       await this.selectPrize9.click();
    }
-   async clickOnPrize10(){
+   async clickOnPrize10() {
       await this.selectPrize10.click();
    }
-   async clickOnPrize11(){
+   async clickOnPrize11() {
       await this.selectPrize11.click();
    }
 
-   async config1(){
+   async config1() {
       await this.configIcon.click();
       await this.selectPrimaryPrize1.click();
       await this.selectMoveButton.click();
@@ -2336,16 +1452,22 @@ async clickOnofferSetupPage(){
       await this.update.click();
 
       await this.configLegend.click();
+      await this.page.waitForTimeout(500)
       await this.selectPrimaryPrize1.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(500)
       await this.selectPrimaryPrize2.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(500)
       await this.selectPrimaryPrize3.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(500)
       await this.selectPrimaryPrize4.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(500)
       await this.selectPrimaryPrize5.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(500)
       // await this.selectPrimaryPrize6.click();
       // await this.selectMoveButton.click();
       // await this.selectPrimaryPrize7.click();
@@ -2372,14 +1494,19 @@ async clickOnofferSetupPage(){
       // await this.selectMoveButton1.click();
       await this.selectBackUpPrize7.click();
       await this.selectMoveButton1.click();
+      await this.page.waitForTimeout(500)
       await this.selectBackUpPrize8.click();
       await this.selectMoveButton1.click();
+      await this.page.waitForTimeout(500)
       await this.selectBackUpPrize9.click();
       await this.selectMoveButton1.click();
+      await this.page.waitForTimeout(500)
       await this.selectBackUpPrize10.click();
       await this.selectMoveButton1.click();
+      await this.page.waitForTimeout(500)
       await this.selectBackUpPrize11.click();
       await this.selectMoveButton1.click();
+      await this.page.waitForTimeout(500)
       await this.update.click();
 
       await this.configStar.click();
@@ -2432,16 +1559,22 @@ async clickOnofferSetupPage(){
       await this.configXcard.click();
       await this.selectPrimaryPrize1.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(500)
       await this.selectPrimaryPrize2.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(500)
       await this.selectPrimaryPrize3.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(500)
       await this.selectPrimaryPrize4.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(500)
       await this.selectPrimaryPrize5.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(500)
       await this.selectPrimaryPrize6.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(500)
       // await this.selectPrimaryPrize7.click();
       // await this.selectMoveButton.click();
       // await this.selectPrimaryPrize8.click();
@@ -2466,100 +1599,108 @@ async clickOnofferSetupPage(){
       // await this.selectMoveButton1.click();
       await this.selectBackUpPrize7.click();
       await this.selectMoveButton1.click();
+      await this.page.waitForTimeout(500)
       await this.selectBackUpPrize8.click();
       await this.selectMoveButton1.click();
+      await this.page.waitForTimeout(500)
       await this.selectBackUpPrize9.click();
       await this.selectMoveButton1.click();
+      await this.page.waitForTimeout(500)
       await this.selectBackUpPrize10.click();
       await this.selectMoveButton1.click();
+      await this.page.waitForTimeout(500)
       await this.selectBackUpPrize11.click();
       await this.selectMoveButton1.click();
+      await this.page.waitForTimeout(500)
       await this.update.click();
-    
+
    }
 
    //UH_9492
-   async loginToApp(){
+   async loginToApp() {
       await this.username.fill('TU_LAB_HALO_NIN_ADM');
       await this.password.fill('Password01@$');
       await this.domain.selectOption('seminolehardrock.fl.local')
       await this.loginBtn.click()
    }
-   async clickOnOfferManagement(){
+   async clickOnOfferManagement() {
       await this.offerManagement.click();
    }
-   async clickOnManagecampaign(){
+   async clickOnManagecampaign() {
       await this.ManageCampaign.click();
    }
-   async clickOnSubmitCampaign(){
+   async clickOnSubmitCampaign() {
       await this.submitCampaign.click();
    }
-   async validateCampaignLabel(){
+   async validateCampaignLabel() {
       await expect(this.vCampaignLabel).toBeVisible()
    }
-   async clickOnViewcampaign(){
+   async clickOnViewcampaign() {
       await this.viewCampaign.click();
    }
-   async clickOnAddCampaign(){
+   async clickOnAddCampaign() {
+      await this.page.waitForTimeout(400);
       await this.addCampaign.click();
    }
-   async validateNewCampaignLabel(){
+   async validateNewCampaignLabel() {
       await expect(this.vNewCampaignLabel).toBeVisible()
    }
-   
-//UH_9451
 
-//async validateSelectedEventNotvisible(){
+   //UH_9451
+
+   //async validateSelectedEventNotvisible(){
    //await expect(this.playerEventAndOfferDashboard).toBeVisible()
    //await expect(this.vNewEventCreatedVisibilityOnPage).not.toBeVisible();
-//}
-async selectEventsAndOffersButtonOnPlayerDashBoard(){
-   await this.EventsAndOffersButtonOnPlayerDashBoard.click();
+   //}
+   async selectEventsAndOffersButtonOnPlayerDashBoard() {
+      await this.EventsAndOffersButtonOnPlayerDashBoard.click();
    }
- async validatePlayerEventsAndOffersPage(){
-   await expect(this.vPlayerEventsAndOffersPage).toBeVisible();
-}
-
-async clickOnInvitedFilter(){
-   await this.InvitedFilter.click();
+   async validatePlayerEventsAndOffersPage() {
+      await expect(this.vPlayerEventsAndOffersPage).toBeVisible();
    }
 
-async searchForEvent(EventName){
-   await this.SearchTabPlayerEvents.fill(EventName);
+   async clickOnInvitedFilter() {
+      await this.InvitedFilter.click();
+   }
 
-}
-async ValidateSelectedEventVisible(){
+   async searchForEvent(EventName) {
+      await this.SearchTabPlayerEvents.fill(EventName);
+
+   }
+   async ValidateSelectedEventVisible() {
       await expect(this.vNewEventCreatedVisibilityOnPage).toBeVisible();
    }
-async clickOnMoreLinkofEvent(){
-   await this.page.waitForTimeout(3000);
-   await this.MoreLinkofEvent.click();
-   await this.page.waitForTimeout(3000);
+   async clickOnMoreLinkofEvent() {
+      await this.page.waitForTimeout(3000);
+      await this.MoreLinkofEvent.click();
+      await this.page.waitForTimeout(3000);
    }
-async ValidateSelectedEventDetailsSectionPage(EventName){
-   await expect(this.vSelectedEventDetailsPage).toBeVisible(EventName);
+   async ValidateSelectedEventDetailsSectionPage(EventName) {
+      await expect(this.vSelectedEventDetailsPage).toBeVisible(EventName);
    }
-async ValidateBookNowButtonNotVisible(){
-   await expect(this.vBookNowButton).not.toBeVisible();
+   async ValidateBookNowButtonNotVisible() {
+      await expect(this.vBookNowButton).not.toBeVisible();
    }
-async ValidateUnInvitationCommentVisible(){
-   await expect(this.vUninvitedPatron).toBeVisible();
+   async ValidateUnInvitationCommentVisible() {
+      await expect(this.vUninvitedPatron).toBeVisible();
    }
 
 
-   
+
 
    //UH_9494
-   async clickOnReplyTab(){
+   async clickOnReplyTab() {
       await this.vReply.click()
    }
-   async validateReplyAddedSuccessfullyPopup(){
+   async validateReplyAddedSuccessfullyPopup() {
       await expect(this.vReplyAddedPopup).toBeVisible();
    }
-   async clickOnLeftArrowViewComment(){
+   async clickOnLeftArrowViewComment() {
+      await this.page.waitForTimeout(2000)
       await this.LeftArrowViewComment.click();
+      await this.page.waitForTimeout(2000)
    }
-   async validateTableDisplayedViewComment(){
+   async validateTableDisplayedViewComment() {
       await expect(this.vDisplayDateViewComment).toBeVisible();
       await expect(this.vCommentViewComment).toBeVisible();
       await expect(this.vUserNameViewComment).toBeVisible();
@@ -2567,54 +1708,54 @@ async ValidateUnInvitationCommentVisible(){
 
    }
    //UH_9467
-   async validateAddressSectionDisplayed(){
+   async validateAddressSectionDisplayed() {
       await expect(this.vAddress).toBeVisible();
    }
-   async clickOnAddNewAddress(){
+   async clickOnAddNewAddress() {
       await this.AddNewAddress.click();
    }
-   async selectAddressType(AddressType){
+   async selectAddressType(AddressType) {
       await this.AddressType.selectOption(AddressType);
    }
-   async enterAddress1(Address1){
+   async enterAddress1(Address1) {
       await this.Address1.fill(Address1);
    }
-   async enterAddress2(Address2){
+   async enterAddress2(Address2) {
       await this.Address2.fill(Address2);
    }
-   async enterCity(City){
+   async enterCity(City) {
       await this.City.fill(City);
    }
-   async selectCountry(Country){
+   async selectCountry(Country) {
       await this.Country.selectOption(Country);
    }
-   async selectState(State){
+   async selectState(State) {
       await this.State.selectOption(State);
    }
-   async enterZip(Zip){
+   async enterZip(Zip) {
       await this.Zip.fill(Zip);
    }
-   async clickOnSaveAddress(){
+   async clickOnSaveAddress() {
       await this.SaveAddress.click();
    }
-   
+
    //UH_9469
-   async clickOnAddNewPhone(){
+   async clickOnAddNewPhone() {
       await this.vAddNewPhone.click();
    }
-   async validatePhoneSectionDisplayed(){
+   async validatePhoneSectionDisplayed() {
       await expect(this.vPhoneSection).toBeVisible();
    }
-   async selectTypeInPhoneFields(PhoneType){
-   await this.PhoneType.selectOption(PhoneType);
+   async selectTypeInPhoneFields(PhoneType) {
+      await this.PhoneType.selectOption(PhoneType);
    }
-   async enterPhoneNumber(PhoneNumber){
+   async enterPhoneNumber(PhoneNumber) {
       await this.PhoneNumber.fill(PhoneNumber);
    }
-   async clickOnSavePhoneNumber(){
+   async clickOnSavePhoneNumber() {
       await this.SavePhoneNumber.click();
    }
-   async validateDuplicatePhoneNumberMessageIsDisplayed(){
+   async validateDuplicatePhoneNumberMessageIsDisplayed() {
       await expect(this.vDuplicatePhoneNumberMessage).toBeVisible();
    }
    // async validateEditDeleteAddNewPhoneTab(){
@@ -2624,58 +1765,58 @@ async ValidateUnInvitationCommentVisible(){
    // }
 
    //UH_9476
-   async clickOnTierHistoryTab(){
+   async clickOnTierHistoryTab() {
       await this.TierHistoryTab.click();
    }
-   async validateTierHistoryDetailsDisplayed(){
+   async validateTierHistoryDetailsDisplayed() {
       await expect(this.vTierHistoryDetails).toBeVisible();
    }
-   async validatePhoneNumberSaved(){
+   async validatePhoneNumberSaved() {
 
    }
    //UH_9497
-   async validateNoDataInDateRangeFields(){
+   async validateNoDataInDateRangeFields() {
       await expect(this.vSearchFrom).toBeVisible();
-      await expect(this.vSearchTo).toBeVisible(); 
+      await expect(this.vSearchTo).toBeVisible();
    }
-   async  validateValueAllByDefaultDisplayedInSourceDepartmentPropertyPriorityDropdownFields(){
+   async validateValueAllByDefaultDisplayedInSourceDepartmentPropertyPriorityDropdownFields() {
       await expect(this.vSource_1).toBeVisible();
       await expect(this.vDepartment_1).toBeVisible();
       await expect(this.vProperty_1).toBeVisible();
       await expect(this.vPriority_1).toBeVisible();
    }
-//UH_9453
-   async clickOnPlayerReservation(){
+   //UH_9453
+   async clickOnPlayerReservation() {
       await this.playerReservation.click();
    }
-   async enterPlayerReservationName(EventName){
+   async enterPlayerReservationName(EventName) {
       await this.playerReservationName.fill(EventName);
    }
-   async clickOnPlayerReservationSearch(){
+   async clickOnPlayerReservationSearch() {
       await this.playerReservationSearch.click();
    }
-   async clickOnPlayerDetailsLink(){
+   async clickOnPlayerDetailsLink() {
       await this.playerDetails.click();
    }
-   async clickOnPlayerReservationCanclelAndConfirm(){
-   await this.cancelPlayerReservation.click();
-   await this.confirmCancellation.click();
-}
-async reservationCancellationSuccessfullpopup(){
-await expect(this.vReservationCancelSuccessful).toBeVisible();
-}
-async closeReservationCancelationSuccessfulPopup(){
-   await this.closeCancellationSuccsessPopup.click();
-}
+   async clickOnPlayerReservationCanclelAndConfirm() {
+      await this.cancelPlayerReservation.click();
+      await this.confirmCancellation.click();
+   }
+   async reservationCancellationSuccessfullpopup() {
+      await expect(this.vReservationCancelSuccessful).toBeVisible();
+   }
+   async closeReservationCancelationSuccessfulPopup() {
+      await this.closeCancellationSuccsessPopup.click();
+   }
    //UH_9503
-   async checkOptionCafeOfLobQuickOfferSetupPage(){
+   async checkOptionCafeOfLobQuickOfferSetupPage() {
       await this.checkLobCafeQuickOfferSetUpPage.click();
    }
-   async selectOfferTypePartnerOffersQuickOfferPage(){
+   async selectOfferTypePartnerOffersQuickOfferPage() {
       await this.OfferTypePartnerOffersQuickOfferPage.click();
 
    }
-   async checkOptionHardRockCafeAtlantaDisplayPropertyQuickOffer(){
+   async checkOptionHardRockCafeAtlantaDisplayPropertyQuickOffer() {
       await this.DisplayPropertyDropdownQuickOffer.click();
       await this.page.waitForTimeout(4000);
       await this.DisplayPropertyDropdownQuickOffer.click();
@@ -2683,307 +1824,357 @@ async closeReservationCancelationSuccessfulPopup(){
       await this.page.waitForTimeout(4000);
       await this.DisplayPropertyDropdownQuickOffer.click();
    }
-   async checkOptionLocation67OfDisplayLocationQuickOfferSetupPage(){
+   async checkOptionLocation67OfDisplayLocationQuickOfferSetupPage() {
       await this.DisplayLocationDropdown.click();
       await this.page.waitForTimeout(4000);
       await this.Location67DisplayLocationQuickOffer.click();
       await this.DisplayLocationDropdown.click();
    }
-  
+
    //UH_9505
-   async clickOnAddNewQuickOffer(){
+   async clickOnAddNewQuickOffer() {
       await this.AddNewQuickOffer.click();
    }
-   async validateNewQuickOfferSetupPageDisplayed(){
+   async validateNewQuickOfferSetupPageDisplayed() {
       await expect(this.vNewQuickOfferSetupPage).toBeVisible();
    }
-   async clickOnLobDropdownQuickOfferPage(){
+   async clickOnLobDropdownQuickOfferPage() {
       await this.page.waitForTimeout(3000);
       await this.LobDropdownQuickOfferPage.click();
-      await this.page.waitForTimeout(3000);    
+      await this.page.waitForTimeout(3000);
    }
-   async uncheckOptionOfLobQuickOfferSetupPage(){
+   async uncheckOptionOfLobQuickOfferSetupPage() {
       await this.UncheckLobQuickOffer.click();
    }
-   async checkOptionOfLobQuickOfferSetupPage(){
-      await this.page.waitForTimeout(3000);
+   async checkOptionOfLobQuickOfferSetupPage() {
+      await this.page.waitForTimeout(4000);
       await this.CheckLobQuickOfferHotel.click();
-      await this.page.waitForTimeout(3000);
+      await this.page.waitForTimeout(4000);
    }
-   async clickOnOfferTypeDropdownQuickOfferPage(){
+   async clickOnOfferTypeDropdownQuickOfferPage() {
       await this.OfferTypeDropdownQuickOffer.click();
       await this.page.waitForTimeout(5000);
       await this.OfferTypeDropdownQuickOffer.click();
+      await this.page.waitForTimeout(5000);
    }
-   async clickOnOfferTypeDropdownWhenCasinoIsSelectedInQuickOfferPage(){
+   async clickOnOfferTypeDropdownWhenCasinoIsSelectedInQuickOfferPage() {
+      await this.page.waitForTimeout(4000);
       await this.OfferTypeDropdownQuickOffer.click();
-      await this.page.waitForTimeout(2000);
-    }
+      await this.page.waitForTimeout(4000);
+      await this.OfferTypeDropdownQuickOffer.click();
+      await this.page.waitForTimeout(4000);
+   }
 
-   async selectOfferTypeQuickOfferPage(){
+   async clickOnOfferTypeDropdownWhenHotelIsSelectedInQuickOfferPage() {
+      await this.page.waitForTimeout(4000);
+      await this.OfferTypeDropdownQuickOffer.click();
+      await this.page.waitForTimeout(4000);
+      await this.OfferTypeDropdownQuickOffer.click();
+      await this.page.waitForTimeout(4000);
+      await this.OfferTypeDropdownQuickOffer.click();
+      await this.page.waitForTimeout(4000);
+   }
+
+   async selectOfferTypeQuickOfferPage() {
+      await this.OfferTypeDropdownQuickOffer.click();
+      await this.page.waitForTimeout(4000);
+      //await this.OfferTypeDropdownQuickOffer.click();
+      await this.page.waitForTimeout(4000);
+      await this.OfferTypeQuickOfferValue.click();
+      await this.page.waitForTimeout(4000);
+   }
+   async clickOnDisplayPropertyDropdownQuickOfferSetupPage() {
+      await this.page.waitForTimeout(5000);
+      await this.DisplayPropertyDropdownQuickOffer.click();
+      await this.page.waitForTimeout(5000);
+   }
+   async checkOptionDisplayPropertyQuickOffer() {
+      await this.page.waitForTimeout(3000);
+      await this.CheckDisplayProperty.click();
+      await this.page.waitForTimeout(3000);
+   }
+   async clickOnDisplayLocationDropdown() {
+      await this.DisplayLocationDropdown.click();
+      await this.page.waitForTimeout(3000);
+      await this.DisplayLocationDropdown.click();
+   }
+   async checkOptionOfDisplayLocationQuickOfferSetupPage() {
+      await this.CheckDisplayLocation.click();
+      await this.DisplayLocationDropdown.click();
+   }
+   async enterDisplayName(Name) {
+      await this.page.waitForTimeout(3000);
+      await this.DisplayNameQuickOffer.fill(Name);
+      await this.page.waitForTimeout(3000);
+   }
+   async enterDisplayDescriptionInQuickOfferPage(Description) {
+      await this.DisplayDescription.fill(Description);
+   }
+   async enterDisclaimerInQuickOfferPage(Disclaimer) {
+      await this.page.waitForTimeout(3000);
+      await this.Disclaimer.fill(Disclaimer);
+      await this.page.waitForTimeout(3000);
+   }
+   async clickOnSaveAndNextStepQuickOfferPage() {
+      await this.SaveAndNextStepQuickOfferPage.click();
+   }
+   async validateSelectAFileButtonDisplayedInInviteeListSection() {
+      await this.page.waitForTimeout(3000);
+      await expect(this.vSelectAFileButton).toBeVisible();
+      await this.page.waitForTimeout(3000);
+   }
+   async validateUploadButtonDisplayedInInviteeListSection() {
+      await expect(this.vUploadButton).toBeVisible();
+   }
+   async clickOnSaveAndNextInvitationDetailsPage() {
+      await this.page.waitForTimeout(3000);
+      await this.SaveAndNextStepQuickOfferPage.click();
+      await this.page.waitForTimeout(3000);
+   }
+   async clickOnSubmitButton() {
+      await this.page.waitForTimeout(3000);
+      await this.SubmitButton.click();
+   }
+   async validateOfferSuccessfullySubmittedMessage() {
+      await expect(this.vOfferSubmittedMessage).toBeVisible();
+   }
+   async clickOnCloseSuccessPopUp() {
+      await this.page.waitForTimeout(3000);
+      await this.closeSuccessPopup.click();
+      await this.page.waitForTimeout(3000);
+   }
+   async enterOfferNameInSearchBox(OfferName) {
+      await this.page.waitForTimeout(5000);
+      await this.OfferSearch.fill(OfferName);
+   }
+   async validateOfferCreatedDisplayed() {
+      await this.page.waitForTimeout(3000);
+      await expect(this.vOfferCreated).toBeVisible();
+      await this.page.waitForTimeout(3000);
+   }
+
+   //UH_9506
+   async checkOptionOnlineOfLobQuickOfferSetupPage() {
+      await this.OnlineLobQuickOfferSetupPage.click();
+   }
+
+   async selectOfferTypeCasinoOnlineOptionSelectedQuickOfferPage() {
       await this.OfferTypeDropdownQuickOffer.click();
       await this.page.waitForTimeout(4000);
       await this.OfferTypeDropdownQuickOffer.click();
       await this.page.waitForTimeout(4000);
       await this.OfferTypeQuickOfferValue.click();
       await this.page.waitForTimeout(4000);
-    }
-   async clickOnDisplayPropertyDropdownQuickOfferSetupPage(){
-      await this.page.waitForTimeout(5000);
-      await this.DisplayPropertyDropdownQuickOffer.click();
-      await this.page.waitForTimeout(5000);
-   }
-   async checkOptionDisplayPropertyQuickOffer(){    
-      await this.page.waitForTimeout(3000); 
-      await this.CheckDisplayProperty.click();
-      await this.page.waitForTimeout(3000);
-    }
-    async clickOnDisplayLocationDropdown(){
-      await this.DisplayLocationDropdown.click();
-      await this.page.waitForTimeout(3000);
-      await this.DisplayLocationDropdown.click();
-    }
-    async checkOptionOfDisplayLocationQuickOfferSetupPage(){
-      await this.CheckDisplayLocation.click();
-      await this.DisplayLocationDropdown.click();
-    }
-    async enterDisplayName(Name){
-      await this.page.waitForTimeout(3000);
-      await this.DisplayNameQuickOffer.fill(Name);
-      await this.page.waitForTimeout(3000);
-    }
-    async enterDisplayDescriptionInQuickOfferPage(Description){
-      await this.DisplayDescription.fill(Description);
-    }
-    async enterDisclaimerInQuickOfferPage(Disclaimer){
-      await this.page.waitForTimeout(3000);
-      await this.Disclaimer.fill(Disclaimer);
-      await this.page.waitForTimeout(3000);
-    }
-    async clickOnSaveAndNextStepQuickOfferPage(){
-      await this.SaveAndNextStepQuickOfferPage.click();
-    }
-    async validateSelectAFileButtonDisplayedInInviteeListSection(){
-      await this.page.waitForTimeout(3000);
-      await expect(this.vSelectAFileButton).toBeVisible();
-      await this.page.waitForTimeout(3000);
-    }
-   async validateUploadButtonDisplayedInInviteeListSection(){
-      await expect(this.vUploadButton).toBeVisible();
-  }
-  async clickOnSaveAndNextInvitationDetailsPage(){
-      await this.page.waitForTimeout(3000);
-      await this.SaveAndNextStepQuickOfferPage.click();
-      await this.page.waitForTimeout(3000);
-   }
-   async clickOnSubmitButton(){
-      await this.page.waitForTimeout(3000);
-      await this.SubmitButton.click();
-   }
-   async validateOfferSuccessfullySubmittedMessage(){
-      await expect(this.vOfferSubmittedMessage).toBeVisible();
-   }
-   async clickOnCloseSuccessPopUp(){
-      await this.page.waitForTimeout(3000);
-      await this.closeSuccessPopup.click();
-      await this.page.waitForTimeout(3000);
-   }
-   async enterOfferNameInSearchBox(OfferName){
-      await this.page.waitForTimeout(5000);
-      await this.OfferSearch.fill(OfferName);
-   }
-   async validateOfferCreatedDisplayed(){
-      await this.page.waitForTimeout(3000);
-      await expect(this.vOfferCreated).toBeVisible();
    }
 
-   //UH_9506
-   async checkOptionOnlineOfLobQuickOfferSetupPage(){
-      await this.OnlineLobQuickOfferSetupPage.click();
-   }
-  
-      
+
    //UH_9444
-   async selectThreeDotsAfterCreatorColoumn(){
+   async selectThreeDotsAfterCreatorColoumn() {
       this.ThreeDots.click();
    }
-   async clickOnView(){
+   async clickOnView() {
       await this.View.click();
    }
-   async validateSummaryPageDisplayed(){
+   async validateSummaryPageDisplayed() {
       await expect(this.vSummaryPage).toBeVisible();
    }
-   async clickOnApprovedOfferTab(){
+   async clickOnApprovedOfferTab() {
       await this.ApprovedOfferTab.click();
    }
-   async validateOfferApprovedSuccessPopUp(){
+   async validateOfferApprovedSuccessPopUp() {
       await this.page.waitForTimeout(3000);
       await expect(this.vOfferApprovedPopup).toBeVisible();
    }
-   async clickOnCloseEventsAndOffersSuccessPopUp(){
+   async clickOnCloseEventsAndOffersSuccessPopUp() {
       await this.page.waitForTimeout(3000);
       await this.closeButtonOfferApprovedPopUP.click();
       await this.page.waitForTimeout(3000);
    }
-   
-   
-  //UH_9429
-   async clickOnNameColumn(){
+
+
+   //UH_9429
+   async clickOnNameColumn() {
       await this.Name.click();
    }
-   async validateOffersSortedInAscendingOrder(){
+   async validateOffersSortedInAscendingOrder() {
       await expect(this.Ascending).toBeVisible();
    }
-   async validateOffersSortedInDescendingOrder(){
+   async validateOffersSortedInDescendingOrder() {
+      await this.page.waitForTimeout(5000);
       await expect(this.Descending).toBeVisible();
+      await this.page.waitForTimeout(5000);
    }
-   async clickOnDescriptionColumn(){
+   async clickOnDescriptionColumn() {
       await this.DescriptionQuickOffer.click();
    }
-   async clickOnStartDateColumn(){
-      await this.page.waitForTimeout(3000);
+   async clickOnStartDateColumn() {
+      await this.page.waitForTimeout(5000);
       await this.StartDate1.click();
-      await this.page.waitForTimeout(3000);
+      await this.page.waitForTimeout(5000);
    }
-   async clickOnEndDateColumn(){
+   async clickOnEndDateColumn() {
       await this.page.waitForTimeout(3000);
       await this.EndDate1.click();
       await this.page.waitForTimeout(3000);
    }
-   async clickOnDisplayDateColumn(){
+   async clickOnDisplayDateColumn() {
       await this.DisplayDate.click();
    }
 
    //UH_9430
-   async clickOnEventsAndOffers(){
+   async clickOnEventsAndOffers() {
       await this.EventsAndOffers.click();
    }
-   async clickOnManageQuickOffers(){
+   async clickOnManageQuickOffers() {
       await this.ManageQuickOffers.click();
    }
-   async validateQuickOfferSetupPageWithActiveQuickOffersDisplayed(){
+   async validateQuickOfferSetupPageWithActiveQuickOffersDisplayed() {
       await expect(this.QuickOfferPage).toBeVisible();
    }
-   
+
    //UH_9431
-   async clickOnDropdown(){
+   async clickOnDropdown() {
       await this.Dropdown.click();
    }
-   async selectOptionFromViewDropdown(Option){
+   async selectOptionFromViewDropdown(Option) {
       await this.ViewQuickOffer.selectOption(Option);
    }
-   async clickOnSearchForQuickOffer(){
+   async clickOnSearchForQuickOffer() {
       await this.page.waitForTimeout(3000);
       await this.SearchQuickOffer.click();
       await this.page.waitForTimeout(5000);
    }
-   async validateExpiredQuickOffersDisplayed(){
+   async validateExpiredQuickOffersDisplayed() {
       await expect(this.vSelectedOffers).toBeVisible();
    }
-   async validateInactiveQuickOffersDisplayed(){
+   async validateInactiveQuickOffersDisplayed() {
       await expect(this.vSelectedOffers).toBeVisible();
    }
 
    //UH_9432
-   async selectFillOutQuickOfferFields(Name){
-    await this.OfferTypeQuickOffer1.click();
-    await this.selectEntertainmentQuickOffers.click();
+   async selectFillOutQuickOfferFields(Name) {
+      await this.OfferTypeQuickOffer1.click();
+      await this.selectEntertainmentQuickOffers.click();
 
-    await this.displayPropertyDropdownQuickOffer1.click();
-    await this.selectOptionDisplayPropertyQuickOffers.click();
+      await this.displayPropertyDropdownQuickOffer1.click();
+      await this.selectOptionDisplayPropertyQuickOffers.click();
 
-    await this.displayLocationQuickOffers1.click();
-    await this.selectOptionDisplayLocationQuickOffers1.click();
+      await this.displayLocationQuickOffers1.click();
+      await this.selectOptionDisplayLocationQuickOffers1.click();
 
-    await this.DisplayNameQuickOffer.fill(Name);
+      await this.DisplayNameQuickOffer.fill(Name);
 
-    await this.cardTierRestrictionQuickOffers.click();
-    await this.selectOptionCardTierRestrictionQuickOffer.click()
+      await this.cardTierRestrictionQuickOffers.click();
+      await this.selectOptionCardTierRestrictionQuickOffer.click()
 
-    await this.enterDisplayDescriptionInQuickOfferPage.fill('test');
-    await this.enterDisclaimerInQuickOfferPage.fill('Automation Testing');
+      await this.enterDisplayDescriptionInQuickOfferPage.fill('test');
+      await this.enterDisclaimerInQuickOfferPage.fill('Automation Testing');
 
    }
 
+   async validateOfferCreated2Displayed() {
+      await this.page.waitForTimeout(3000);
+      await expect(this.vOfferCreated2).toBeVisible();
+      await this.page.waitForTimeout(3000);
+   }
+   async validateOfferInEventsAndOfferCreatedDisplayed() {
+      await this.page.waitForTimeout(3000);
+      await expect(this.vOfferCreatedEventsOffer).toBeVisible();
+      await this.page.waitForTimeout(3000);
+   }
+   //UH_9433
+   async validateOfferCreated3Displayed() {
+      await this.page.waitForTimeout(5000);
+      await expect(this.vOfferCreated3).toBeVisible();
+      await this.page.waitForTimeout(5000);
+   }
    //UH_9437
-   async selectPropertyFromPropertyDropdown(Property){
+   async selectPropertyFromPropertyDropdown(Property) {
       await this.page.waitForTimeout(3000);
       await this.PropertyQuickOffer.selectOption(Property);
       await this.page.waitForTimeout(3000);
    }
-   async validateQuickOffersOfSelectedPropertyDisplayed(){
+   async validateQuickOffersOfSelectedPropertyDisplayed() {
       await expect(this.vSelectedOffers).toBeVisible();
    }
 
    //UH_9438
-   async clickOnManageEventsAndOffers(){
+   async clickOnManageEventsAndOffers() {
       await this.ManageEventsAndOffers.click();
-   } 
-   async validateEventsAndOfferPageDisplayed(){
+   }
+   async validateEventsAndOfferPageDisplayed() {
       await expect(this.vEventsAndOfferPage).toBeVisible();
    }
-   async enterOfferName(OfferName){
+   async enterOfferName(OfferName) {
       await this.OfferName.fill(OfferName);
    }
-   async clickOnSearchForEventsAndOffers(){
+   async clickOnSearchForEventsAndOffers() {
+      await this.page.waitForTimeout(3000);
       await this.SearchEventsOffers.click();
+      await this.page.waitForTimeout(3000);
    }
-   async validateOffersAccordingtoSearchCriteriaDisplayed(){
+   async clickOnSearchForEventsAndOffers1() {
+      await this.page.waitForTimeout(3000);
+      await this.SearchEventsOffers1.click();
+      await this.page.waitForTimeout(3000);
+   }
+   async validateOffersAccordingtoSearchCriteriaDisplayed() {
       await expect(this.vEventsAndOfferPage).toBeVisible();
    }
-   async clickOnClear(){
+   async clickOnClear() {
       await this.Clear.click();
    }
-   async enterFromDate(Date){
+   async enterFromDate(Date) {
       await this.FromDateEventSearch.fill(Date);
    }
-   async enterToDate(Date){
+   async enterToDate(Date) {
       await this.ToDateEventSearch.fill(Date);
    }
-   
+
    //UH_9439
-   async selectPropertyFromEventsAndOfferPropertyDropdown(Property){
+   async selectPropertyFromEventsAndOfferPropertyDropdown(Property) {
       await this.PropertyEventsAndOffers.selectOption(Property);
    }
 
    //UH_9440
-   async selectTypeFromEventsAndOfferTypeDropdown(Type){
+   async selectTypeFromEventsAndOfferTypeDropdown(Type) {
       await this.TypeEventsAndOffers.selectOption(Type);
    }
 
    //UH_9441
-   async validateActiveViewAndApprovedStateSelectedByDefault(){
+   async validateActiveViewAndApprovedStateSelectedByDefault() {
       await expect(this.vEventsAndOfferPage).toBeVisible();
    }
-   async selectViewFromEventsAndOfferViewDropdown(View){
+   async selectViewFromEventsAndOfferViewDropdown(View) {
       await this.ViewEventsAndOffers.selectOption(View);
    }
-   async selectStateFromEventsAndOfferStateDropdown(State){
+   async selectStateFromEventsAndOfferStateDropdown(State) {
       await this.StateEventsAndOffers.selectOption(State);
    }
 
    //UH_9442
-   async clickOnAddNewEventAndOffers(){
+   async clickOnAddNewEventAndOffers() {
       await this.AddNewEventAndOffers.click();
    }
-   async ValidateAddNewEventAndOffersPage(){
+   async ValidateAddNewEventAndOffersPage() {
       await expect(this.vAddNewEventAndOffers).toBeVisible();
    }
-   async SelectfillOutNewEventFields(eventName){
+   async SelectfillOutNewEventFields(eventName) {
+      await this.page.waitForTimeout(3000);
       await this.DisplayPropertyAddNewEvent.selectOption('Hard Rock Sacramento');
       await this.DisplayLocation.selectOption('Event Location 1');
       await this.page.waitForTimeout(3000);
       await this.DisplayName.fill(eventName);
       await this.DisplayDescription.fill('Test_Description');
-      //await this.DisplayCallToAction.selectOption('Online Booking');
-      await this.vStartDateEvent.fill('10/11/2024')
-      await expect (this.vStartDateEvent).toBeVisible();
+      //await this.DisplayCallToAction.selectOption('');
+      await this.vStartDateEvent.fill('08/11/2024')
+      await expect(this.vStartDateEvent).toBeVisible();
       // await expect (this.vEndDateEvent).Clear();
-      await this.vEndDateEvent.fill('10/19/2024');
+      await this.vEndDateEvent.fill('12/30/2025');
       const now = new Date();
-      const hours = String(now.getHours()).padStart(2,'0');
-      const minutes = String(now.getMinutes()).padStart(2,'0');
-      const formattedTime ='${hours}:${minutes}';
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const formattedTime = '${hours}:${minutes}';
       // await this.page.waitForTimeout(300000);
       // await page.fill(this.eventStartTime,formattedTime);
       // await this.eventStartTime.fill("12:00 AM");
@@ -2991,7 +2182,7 @@ async closeReservationCancelationSuccessfulPopup(){
       await expect(this.vDisplayStartDateEvent).toBeVisible();
       await expect(this.vDisplayEndDateEvent).toBeVisible();
    }
-   async SelectfillOutNewEventFields4(eventName){
+   async SelectfillOutNewEventFields4(eventName) {
       await this.DisplayPropertyAddNewEvent.selectOption('Hard Rock Sacramento');
       await this.DisplayLocation.selectOption('Event Location 1');
       await this.page.waitForTimeout(3000);
@@ -2999,17 +2190,17 @@ async closeReservationCancelationSuccessfulPopup(){
       await this.DisplayDescription.fill('Test_Description');
       let now = new Date();
       let now1 = new Date();
-      now.setMinutes(now.getMinutes()+1);
-      now1.setDate(now.getDate()+1)
-      let formatter1 = now1.toLocaleDateString('en-US',{year: 'numeric', month: '2-digit', day: '2-digit'});
-      let formatter = now.toLocaleDateString('en-US',{year: 'numeric', month: '2-digit', day: '2-digit'});
-      let timeFormatter = now.toLocaleTimeString('en-US',{hour: '2-digit',minute:'2-digit'})
-      console.log('Start date:',formatter);
-      console.log('Start date1:',formatter1);
-      console.log('Time Sec:',timeFormatter);
+      now.setMinutes(now.getMinutes() + 1);
+      now1.setDate(now.getDate() + 1)
+      let formatter1 = now1.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+      let formatter = now.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+      let timeFormatter = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+      console.log('Start date:', formatter);
+      console.log('Start date1:', formatter1);
+      console.log('Time Sec:', timeFormatter);
       await this.vStartDateEvent.fill(formatter)
-      await expect (this.vStartDateEvent).toBeVisible();
-      await this.vEndDateEvent.fill('12/30/2024');
+      await expect(this.vStartDateEvent).toBeVisible();
+      await this.vEndDateEvent.fill('12/30/2026');
       // await this.page.fill(page.locator('//input[@id="ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtStarttime"]'),formattedTime);
       await this.page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtStarttime']").fill(timeFormatter)
       await this.page.waitForTimeout(2000);
@@ -3019,23 +2210,24 @@ async closeReservationCancelationSuccessfulPopup(){
       await expect(this.vDisplayStartDateEvent).toBeVisible();
       await expect(this.vDisplayEndDateEvent).toBeVisible();
    }
-   async SelectfillOutNewEventFields1(eventName){
+   async SelectfillOutNewEventFields1(eventName) {
       await this.DisplayPropertyAddNewEvent.selectOption('Hard Rock Sacramento');
+      await this.page.waitForTimeout(3000);
       await this.DisplayLocation.selectOption('Event Location 1');
       await this.page.waitForTimeout(3000);
       await this.DisplayName.fill(eventName);
       await this.DisplayDescription.fill('Test_Description');
       //await this.DisplayCallToAction.selectOption('Online Booking');
-      await this.vStartDateEvent.fill('10/11/2024')
-      await expect (this.vStartDateEvent).toBeVisible();
+      await this.vStartDateEvent.fill('11/08/2024')
+      await expect(this.vStartDateEvent).toBeVisible();
       // await expect (this.vEndDateEvent).Clear();
-      await this.vEndDateEvent.fill('10/19/2024');
+      await this.vEndDateEvent.fill('12/30/2024');
       const currentDate = new Date();
-      currentDate.setMinutes(currentDate.getMinutes()+1);
-      const hours = String(currentDate.getHours()).padStart(2,'0');
-      const minutes = String(currentDate.getMinutes()).padStart(2,'0');
+      currentDate.setMinutes(currentDate.getMinutes() + 1);
+      const hours = String(currentDate.getHours()).padStart(2, '0');
+      const minutes = String(currentDate.getMinutes()).padStart(2, '0');
       const formattedTime = '${hours}:${minutes}';
-      console.log("formated time is "+formattedTime)
+      console.log("formated time is " + formattedTime)
       // await this.page.fill(page.locator('//input[@id="ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtStarttime"]'),formattedTime);
       await this.page.locator("//input[@id='ctl00_ContentPlaceHolder1_ctrlOfferSetup_txtStarttime']").click();
       await this.page.locator("//li[contains(text(),'11:30 AM')]").click()
@@ -3043,15 +2235,15 @@ async closeReservationCancelationSuccessfulPopup(){
       await expect(this.vDisplayStartDateEvent).toBeVisible();
       await expect(this.vDisplayEndDateEvent).toBeVisible();
    }
-   async validateBookNowButton(){
+   async validateBookNowButton() {
       // await this.page.waitForTimeout(6000);
       // await expect(this.bookNow).toBeVisible();
    }
-   async clickOnBookNowButton(){
+   async clickOnBookNowButton() {
       await this.page.waitForTimeout(4000);
       await this.bookNow.click();
    }
-   async selectCheckboxAndSendEmail(){
+   async selectCheckboxAndSendEmail() {
       await this.page.waitForTimeout(4000);
       await this.checkbox1.click();
       await this.page.waitForTimeout(4000);
@@ -3059,96 +2251,103 @@ async closeReservationCancelationSuccessfulPopup(){
       await this.page.waitForTimeout(4000);
       await this.okEmailSentSuccesfully.click();
    }
-   async clickOnPlayerInfo(){
+   async clickOnPlayerInfo() {
       await this.playerInfo.click();
    }
-   async clickSaveAndNextStep(){
+   async clickSaveAndNextStep() {
+      await this.page.waitForTimeout(3000);
       await this.SaveAndNextStep.click();
    }
-   async selectCheckInNo(){
+   async selectCheckInNo() {
       await this.page.locator("(//input[@value='No'])[1]").click();
    }
    //UH_9454
-   async clickOnCheckInButtonInEventCheckIn(){
+   async clickOnCheckInButtonInEventCheckIn() {
       await this.page.waitForTimeout(3000);
       await this.page.getByRole('button', { name: 'Check-In' }).click();
       await this.page.waitForTimeout(3000);
    }
-   async clickPaceReportButton(){
+   async clickPaceReportButton() {
       await this.PaceReport.click();
    }
-   async validatePaceReportPopupIsOpen(){
+   async validatePaceReportPopupIsOpen() {
       await expect(this.PaceReportPopup).toBeVisible();
    }
-   async closePaceReportPopup(){
+   async closePaceReportPopup() {
       await this.PaceReportPopup.click();
    }
-   async validateCheckInSuccessfulPopupAndClose(){
+   async validateCheckInSuccessfulPopupAndClose() {
       await this.page.waitForTimeout(3000);
       await expect(this.checkInSucessMessage).toBeVisible();
       await this.page.waitForTimeout(3000);
       await this.page.getByRole('button', { name: 'Close' }).click();
       await this.page.waitForTimeout(3000);
    }
-   async searchEventInCheckin(eventName){
+   async searchEventInCheckin(eventName) {
       await this.page.locator("//input[@placeholder='Event & Offer Name']").fill(eventName);
       await this.page.locator("//input[@id='ctl00_ContentPlaceHolder1_btnSearchClick']").click();
    }
-   async addPatronToEvent(){
+   async addPatronToEvent() {
       await this.addPlayerToEvent.click();
    }
-   async selectEventInCheckin(eventID){
-      const ele = "(//td[contains(text(),'"+eventID+"')])[1]";
+   async selectEventInCheckin(eventID) {
+      const ele = "(//td[contains(text(),'" + eventID + "')])[1]";
       await this.page.locator(ele).click();
    }
-   async enterPatronInEventCheckinAndSearch(PatronID){
+   async enterPatronInEventCheckinAndSearch(PatronID) {
       await this.page.locator("//input[@id='ctl00_ContentPlaceHolder1_txtSearchPatron']").fill(PatronID);
       await this.page.locator("//input[@id='ctl00_ContentPlaceHolder1_ImgSearchPatron']").click();
    }
-   async validatePatronWasNotInvitedPopup(){
+   async validatePatronWasNotInvitedPopup() {
       await expect(this.vPlayerNotInvitedPopup).toBeVisible();
    }
-   async validateOverridereasonApproverusernameApproverpassword(){
+   async validateOverridereasonApproverusernameApproverpassword() {
       await expect(this.voverRideReason).toBeVisible();
       await expect(this.vApproverUsername).toBeVisible();
       await expect(this.vApproverPassword).toBeVisible();
    }
-   async enterOverRideDetailsAndOverRide(Reason,Username,Password){
+   async enterOverRideDetailsAndOverRide(Reason, Username, Password) {
       await this.overrideReasonInput.fill(Reason);
       await this.overrideUsernameInput.fill(Username);
       await this.overridePasswordInput.fill(Password);
       await this.OverrideButton.click();
    }
-   async config(){
+   async config() {
       await this.configIcon.click();
+      await this.page.waitForTimeout(3000);
       await this.selectPrimaryPrize.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(3000);
       await this.update.click();
       await this.configLegend.click();
       await this.selectPrimaryPrize.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(3000);
       await this.update.click();
       await this.configStar.click();
       await this.selectPrimaryPrize.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(3000);
       await this.update.click();
       await this.configXcard.click();
       await this.selectPrimaryPrize.click();
       await this.selectMoveButton.click();
+      await this.page.waitForTimeout(3000);
       await this.update.click();
-    
+
    }
-   async clickOnCloseOfferApprovedEventsAndOffersSuccessPopUp(){
+   async clickOnCloseOfferApprovedEventsAndOffersSuccessPopUp() {
       await this.closeButtonOfferApprovedPopUP.click();
-    }
-    async clickOnCloseOfferSuccessPopup1(){
-    await this.closeButtonOfferApprovedPopUP.click();
-    }
+   }
+   async clickOnCloseOfferSuccessPopup1() {
+      await this.closeButtonOfferApprovedPopUP.click();
+   }
 
-    //UH_9456
+   //UH_9456
 
-    async config2(){
+   async config2() {
       await this.configIcon.click();
+      await this.page.waitForTimeout(3000);
       await this.maxNoOfAttendees.fill('2');
       await this.maxPrizeQuantity.fill("3")
       await this.selectPrimaryPrize1.click();
@@ -3162,6 +2361,7 @@ async closeReservationCancelationSuccessfulPopup(){
       await this.update.click();
 
       await this.configLegend.click();
+      await this.page.waitForTimeout(2000);
       await this.maxNoOfAttendees.fill('2');
       await this.maxPrizeQuantity.fill("3")
       await this.selectPrimaryPrize1.click();
@@ -3199,140 +2399,171 @@ async closeReservationCancelationSuccessfulPopup(){
       //await this.selectPrimaryPrize3.click();
       //await this.selectMoveButton.click();
       await this.update.click();
-      
-    }
 
-    async validateEventDetailsInPlayerTransaction(){
+   }
+
+   async validateEventDetailsInPlayerTransaction() {
       await expect(this.vValueAfter).toBeVisible();
-    }
+   }
 
-    async clickOnclosePlayerTransactionWindow(){
+   async clickOnclosePlayerTransactionWindow() {
       await this.closePlayerTransactionWindow.click();
-    }
-    async validateEventDetailsPageWithSuccessfullCheckin(){
-      await this.vResendConfirmation.toBeVisible();
-    }
+   }
+   async validateEventDetailsPageWithSuccessfullCheckin() {
+      await expect(this.vResendConfirmation).toBeVisible();
+   }
+
+
+
+   //9459
+
+   async clickOnNoneInAttendeeCapacity() {
+      await this.attendeeCapacityNoneRadioButton.click()
+   }
+
+   async config3() {
+      await this.configWalkin.click();
+      //await this.maxNoOfAttendees.fill('3');
+      await this.maxPrizeQuantity.fill("3")
+      await this.selectBackUpPrize1.click();
+      await this.selectMoveButton1.click();
+      await this.selectBackUpPrize2.click();
+      await this.selectMoveButton1.click();
+      await this.selectBackUpPrize3.click();
+      await this.selectMoveButton1.click();
+      await this.update.click();
+   }
+
    //UH_9445
-   async clickOnRejectOffer(){
+   async clickOnRejectOffer() {
       await this.RejectOffer.click();
    }
-   async validateRejectPopUp(){
+   async validateRejectPopUp() {
       await expect(this.RejectPopUp).toBeVisible();
    }
-   async rejectionReason(){
+   async rejectionReason() {
       await this.rejectReason.fill('Test');
    }
-   async clickOnRejectTab(){
+   async clickOnRejectTab() {
       await this.rejectTab.click();
    }
-   async validateEventAndOffersPage(){
+   async validateEventAndOffersPage() {
       await expect(this.EventsAndOffersPage).toBeVisible();
    }
-   async validateRejectedOffer(){
+   async validateRejectedOffer() {
       await expect(this.rejectedOffer).toBeVisible();
    }
 
    //UH_9446
-   async validateThisPatronHasNotBeenInvitedToTheEvent(){
+   async validateThisPatronHasNotBeenInvitedToTheEvent() {
       await expect(this.VOverRideMessage).toBeVisible();
-   }												
-   async clickOnEmployeeDashboard(){
+   }
+   async clickOnEmployeeDashboard() {
       await this.empDashboardButton.click()
    }
-   async clickOnViewEventsAndOffers(){
+   async clickOnViewEventsAndOffers() {
       await this.viewEventsAndOffers.click()
    }
-   async searchOfferFromViewEventsAndOffer(offerName){
+   async searchOfferFromViewEventsAndOffer(offerName) {
       await this.searchOfferInViewEventsAndOffer.fill(offerName)
-      await this.page.waitForTimeout(4000);
-      await this.searchOfferInEventsAndOffer.click()
-      await this.page.waitForTimeout(4000);
+      //await this.page.waitForTimeout(4000);
+      await this.searchOfferInEventsAndOffer.click();
+      //await this.searchOfferInEventsAndOffer.click({force:true});
+      //await this.page.locator("//tbody//tr//td//input[@id='btnSearchClick']").evalute(node => node.click());
+      //await this.page.waitForTimeout(4000);
    }
-   async clickOnMoreLink(){
+   async clickYesOnallowUnderTwentyOne() {
+      await this.YesRadio.click()
+   }
+   async clickOnMoreLink() {
       await this.moreInViewEventsAndOffer.click()
    }
    // async clickSelectAFileEventsAndOffers(){
    //    await this.SelectAFileEventsAndOffers.click()
    // }
-   
- 
+
+   async validateBookNowButtonNoVisible() {
+      await expect(this.vBookNowButton).not.toBeVisible();
+   }
+
+
 
    //9501
-   async validatePriorityDropdownField(){
-   await this.vPriority_1.click();
-   await page.selectOption('select#ddlSearchPriority',{index: '1'})
-   await page.selectOption('select#ddlSearchPriority',{index: '2'})
-   await page.selectOption('select#ddlSearchPriority',{index: '3'})
-   await page.selectOption('select#ddlSearchPriority',{index: '4'})
-   await page.selectOption('select#ddlSearchPriority',{index: '5'})
-   await page.selectOption('select#ddlSearchPriority',{index: '0'})
-}
-async selectHighComment(){
-   await this.vSearch_1.click();
-}
-async validateHighCommentsAreOnlyDisplayed(){
-   await expect(this.highComment).toBeVisible();
+   async validatePriorityDropdownField() {
+      await this.vPriority_1.click();
+      await page.selectOption('select#ddlSearchPriority', { index: '1' })
+      await page.selectOption('select#ddlSearchPriority', { index: '2' })
+      await page.selectOption('select#ddlSearchPriority', { index: '3' })
+      await page.selectOption('select#ddlSearchPriority', { index: '4' })
+      await page.selectOption('select#ddlSearchPriority', { index: '5' })
+      await page.selectOption('select#ddlSearchPriority', { index: '0' })
+   }
+   async selectHighComment() {
+      await this.vSearch_1.click();
+   }
+   async validateHighCommentsAreOnlyDisplayed() {
+      await expect(this.highComment).toBeVisible();
 
-}
+   }
 
-//UH_9460
-async enterJustification(Justification){
-   await this.Justification.fill(Justification);
-}
-async selectTier(Tier){
-   await this.Tier.selectOption(Tier);
-}
-async clickOnAdjustButtonTierMatchWindow(){
-   await this.Adjust.click();
-}
-async selectAuthorizationReason1(Reason){
-   await this.AuthorizationReason1.selectOption(Reason);
-}
+   //UH_9460
+   async enterJustification(Justification) {
+      await this.Justification.fill(Justification);
+   }
+   async selectTier(Tier) {
+      await this.Tier.selectOption(Tier);
+   }
+   async clickOnAdjustButtonTierMatchWindow() {
+      await this.Adjust.click();
+   }
+   async selectAuthorizationReason1(Reason) {
+      await this.AuthorizationReason1.selectOption(Reason);
+   }
 
 
 
-//UH_9463
+   //UH_9463
 
-async clickOnPlayerTierWithTierMatch(){
-   await this.PlayerTierwithTierMatch.click();
-}
-async validateTierPopUp(){
-   await expect(this.vTierPopUp).toBeVisible();
-}
-async SelectReason(){
-   await this.Reason_1.selectOption('Other');
-}
-async enterJustification(Justification){
-   await this.Justification.fill(Justification);
-}
-async SelectTier(){
-   await this.Tier.selectOption('Legend');
-}
-async clickOnAdjust(){
-   await this.Adjust.click();
-}
-async validateAuthorizePOpUp(){
-   await expect(this.vAuthorizePopUp).toBeVisible();
-}
-async Autorize(){
-   await this.Password_1.fill('Password01@$');
-   await this.Reason_2.selectOption('System Testing');
-   await this.Comment_2.fill('System Testing');
-   await this.Submit_2.click();
-}
-async clickOnPlayerTransactionLog(){
-   await this.PlayerTransactionLog.click();
-}
-async SelectTier_1(){
-   await this.Tier.selectOption('Icon');
-}
+   async clickOnPlayerTierWithTierMatch() {
+      await this.PlayerTierwithTierMatch.click();
+   }
+   async validateTierPopUp() {
+      await expect(this.vTierPopUp).toBeVisible();
+   }
+   async SelectReason() {
+      await this.Reason_1.selectOption('Other');
+   }
+   async enterJustification(Justification) {
+      await this.Justification.fill(Justification);
+   }
+   async SelectTier() {
+      await this.Tier.selectOption('Legend');
+   }
+   async clickOnAdjust() {
+      await this.Adjust.click();
+   }
+   async validateAuthorizePOpUp() {
+      await expect(this.vAuthorizePopUp).toBeVisible();
+   }
+   async Autorize() {
+      await this.Password_1.fill('Superstar@1099');
+      await this.Reason_2.selectOption('System Testing');
+      await this.Comment_2.fill('System Testing');
+      await this.Submit_2.click();
+   }
+   async clickOnPlayerTransactionLog() {
+      await this.PlayerTransactionLog.click();
+   }
+   async SelectTier_1() {
+      await this.Tier.selectOption('Icon');
+   }
 
    //UH_9465
-   async clickOnViewComment(){
+   async clickOnViewComment() {
       await this.ViewComment.click();
    }
-   
-   async validateViewCommentPopUp(){
+
+   async validateViewCommentPopUp() {
       await expect(this.vViewComment_PopUp).toBeVisible();
       await expect(this.vSource_1).toBeVisible();
       await expect(this.vDepartment_1).toBeVisible();
@@ -3352,70 +2583,71 @@ async SelectTier_1(){
       await expect(this.vproperty_2).toBeVisible();
 
    }
-   async clickOnAdd(){
+   async clickOnAdd() {
       await this.Add.click();
    }
-   async selectAddCommentOption1(){
-   // await this.page.waitForTimeout(3000);
-   // await this.Priority_3.click();
-   //await this.page.waitForTimeout(3000);
-   await this.Priority_3.selectOption('3-Medium');
-   await this.CommentDetails.fill('Testing');
-   await this.Save_1.click();
-   await this.Ok_1.click();
+   async selectAddCommentOption1() {
+      // await this.page.waitForTimeout(3000);
+      // await this.Priority_3.click();
+      //await this.page.waitForTimeout(3000);
+      await this.Priority_3.selectOption('3-Medium');
+      await this.CommentDetails.fill('Testing');
+      await this.Save_1.click();
+      await this.Ok_1.click();
    }
-   async clickOnComment(){
+   async clickOnComment() {
       await this.Comment.click();
    }
-   async validateReplyEditDeletSettleVoidButtonsDisplayed(){
+   async validateReplyEditDeletSettleVoidButtonsDisplayed() {
+      await this.page.waitForTimeout(3000);
       await expect(this.vReply).toBeVisible();
       await expect(this.vEdit).toBeVisible();
       await expect(this.vDelete).toBeVisible();
       await expect(this.vSettle_Void).toBeVisible();
    }
 
-   async clickOnDelete(){
+   async clickOnDelete() {
       await this.Delete.click();
    }
-   async validateDeletePopupoptions(){
+   async validateDeletePopupoptions() {
       await expect(this.vConfirm).toBeVisible();
       await expect(this.vCancel).toBeVisible();
    }
-   async clickOnCancel(){
+   async clickOnCancel() {
       await this.Cancel.click();
    }
-   async validateCommentPresence(){
+   async validateCommentPresence() {
       await expect(this.vComment_2).toBeVisible();
    }
-   async clickOnConfirm(){
+   async clickOnConfirm() {
       await this.Confirm.click();
    }
-   async enterAuthorizationDetails(EnterComment){
+   async enterAuthorizationDetails(EnterComment) {
       await this.Password.fill('Password01@$');
       await this.Reason_3.selectOption('System Testing');
       await this.AutComment1.fill(EnterComment);
       await this.Submit_3.click();
    }
-   async validateDeleteAcknowledgePopUp(){
+   async validateDeleteAcknowledgePopUp() {
       await expect(this.vDeletionPopUp).toBeVisible();
    }
-   async clickOnOk_1(){
+   async clickOnOk_1() {
       await this.Ok_1.click();
    }
-   async vDelPopUpClosed(){
+   async vDelPopUpClosed() {
       await expect(this.Ok_1).not.toBeVisible();
    }
-   async validateNoDataFound(){
+   async validateNoDataFound() {
       await expect(this.vNoData).toBeVisible()
-   
+
    }
-   async clickOnClose(){
+   async clickOnClose() {
       await this.Close.click();
    }
 
 
    //UH_9466
-   async selectAddCommentOption2(){
+   async selectAddCommentOption2() {
       await this.Priority.selectOption("2-High");
       await this.LimitToDepartment.selectOption("All");
       //await this.Global_AllProperties.click();
@@ -3424,23 +2656,23 @@ async SelectTier_1(){
       await this.CommentDetails.fill('Testing');
 
    }
-   async clickOnCancelAddCommentOption(){
+   async clickOnCancelAddCommentOption() {
       await this.cancelAddCommentOption.click();
    }
-   async clickOnSaveAddCommentOption(){
+   async clickOnSaveAddCommentOption() {
       await this.Save_1.click();
    }
-   async validateAddCommentPopUp(){
+   async validateAddCommentPopUp() {
       await expect(this.vAddCommentPopUp).toBeVisible();
    }
-   async clickOnOkl(){
+   async clickOnOkl() {
       await this.Ok_1.click();
    }
-   async validateCommentAddedSuccessfully(){
+   async validateCommentAddedSuccessfully() {
       await expect(this.Comment).toBeVisible();
    }
 
-   async selectAddCommentOption3(){
+   async selectAddCommentOption3() {
       await this.Priority.selectOption("2-High");
       await this.LimitToDepartment.selectOption("IT");
       await this.Global_AllProperties.click();
@@ -3451,130 +2683,133 @@ async SelectTier_1(){
       await this.CommentDetails.fill('Testing');
       await this.unCheckNever.click()
    }
-   async validateNewCommentAddedToCommentsTable(){
+   async validateNewCommentAddedToCommentsTable() {
       await this.page.waitForTimeout(3000);
       await expect(this.vNewCommentAdded).toBeVisible();
    }
-   async validateCommentDetailsSectionDisabled(){
+   async validateCommentDetailsSectionDisabled() {
       await expect(this.vCommentDetailsSection).toBeVisible();
    }
-   async validateCommentDetailsSectionEnabled(){
+   async validateCommentDetailsSectionEnabled() {
       await expect(this.vCommentDetailsSection).toBeVisible();
    }
-   async selectLimitToPropertyHardRockCincinnatiViewCommentPage(){
+   async selectLimitToPropertyHardRockCincinnatiViewCommentPage() {
+      await this.page.waitForTimeout(3000);
       await this.LimitToProperty1.click();
+      await this.page.waitForTimeout(3000);
+
    }
-   async selectNeverCheckboxIsNextToExpirationDate(){
+   async selectNeverCheckboxIsNextToExpirationDate() {
       await this.NeverCheckBox.click();
    }
-   async validateAlertPopUpMessageToEnterCommentDisplayed(){
+   async validateAlertPopUpMessageToEnterCommentDisplayed() {
       await expect(this.vAlertPopUpMessage).toBeVisible();
    }
-   async validateAddTabDisabled(){
+   async validateAddTabDisabled() {
       await expect(this.AddComment).toBeVisible();
    }
-   async enterExpirationDate1ViewCommentPage(){
+   async enterExpirationDate1ViewCommentPage() {
       let now1 = new Date();
-      now1.setDate(now1.getDate()+1)
-      let formatter1 = now1.toLocaleDateString('en-US',{year: 'numeric', month: '2-digit', day: '2-digit'});
-      console.log('Start date1:',formatter1);
+      now1.setDate(now1.getDate() + 1)
+      let formatter1 = now1.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+      console.log('Start date1:', formatter1);
       await this.ExpirationDateViewComment.fill(formatter1);
    }
-    //UH_9470
-    async clickOnCommPreferencesTab(){
+   //UH_9470
+   async clickOnCommPreferencesTab() {
       await this.CommPreferences.click();
    }
-   async clickOnContactInformationTab(){
+   async clickOnContactInformationTab() {
       await this.ContactInformation.click();
    }
-   async validateSocialMediaSectionDisplayed(){
+   async validateSocialMediaSectionDisplayed() {
       await expect(this.vSocialMedia).toBeVisible();
    }
-   async clickOnAddNewSocialMediaLink(){
+   async clickOnAddNewSocialMediaLink() {
       await this.AddNewSocialMedia.click();
    }
-   async clickOnDeleteSocialMedia(){
+   async clickOnDeleteSocialMedia() {
       await this.DeleteSocialMedia.click();
    }
-   async selectTypeInSocialMediaFields(Type){
+   async selectTypeInSocialMediaFields(Type) {
       await this.Type.selectOption(Type);
    }
-   async enterAccountName(AccountName){
+   async enterAccountName(AccountName) {
       await this.AccountName.fill(AccountName);
    }
-   async clickOnSaveSocialMedia(){
+   async clickOnSaveSocialMedia() {
       await this.SaveSocialMedia.click();
    }
-   async validateDetailsSavedAndDeleteAndEditButtonAndAddNewSocialMediaLinkDisplayed(){
+   async validateDetailsSavedAndDeleteAndEditButtonAndAddNewSocialMediaLinkDisplayed() {
       await expect(this.vDeleteSocialMedia).toBeVisible();
       await expect(this.vEditSocialMedia).toBeVisible();
    }
-  
-   
+
+
    //UH_9471
-   async clickOnSearch(){
+   async clickOnSearch() {
       await this.page.waitForTimeout(3000);
       await this.SearchPlayer.click();
       await this.page.waitForTimeout(3000);
 
    }
-   async clickOnPlayerFunction(){
+   async clickOnPlayerFunction() {
       await this.PlayerFunction.click();
    }
-   async clickOnPlayerTransactionLog(){
+   async clickOnPlayerTransactionLog() {
       await this.page.waitForTimeout(3000);
       await this.PlayerTransactionLog.click();
       await this.page.waitForTimeout(3000);
    }
-   async validatePlayerTransactionLogPopUp(){
-      await this.page.waitForTimeout(4000);
+   async validatePlayerTransactionLogPopUp() {
+      await this.page.waitForTimeout(10000);
       await expect(this.vTransactionDateTime).toBeVisible();
       await this.page.waitForTimeout(3000);
       await expect(this.vTransactionDescription).toBeVisible();
       await expect(this.vCreator).toBeVisible();
       await expect(this.vPropertyName).toBeVisible();
    }
-   async clickOnLeftArrow(){
+   async clickOnLeftArrow() {
       await this.page.waitForTimeout(3000);
       await this.LeftArrow.click();
       await this.page.waitForTimeout(3000);
    }
-   async validateTableDisplayed(){
+   async validateTableDisplayed() {
       await this.page.waitForTimeout(3000);
       await expect(this.vValueBefore).toBeVisible();
       await this.page.waitForTimeout(3000);
       await expect(this.vValueAfter).toBeVisible();
       await expect(this.vApprovedBy).toBeVisible();
    }
-   async clickOnClose(){
+   async clickOnClose() {
       await this.Close.click();
    }
 
    //UH_9472
 
-   async validatePlayerFunctionList(){
+   async validatePlayerFunctionList() {
       await expect(this.vPlayerfuncationList).toBeVisible();
    }
 
-   async CommentText(EnterComment){
+   async CommentText(EnterComment) {
       await this.Comment_1.fill(EnterComment)
    }
-   async SelectPriority(){
+   async SelectPriority() {
       await this.Priority.selectOption()
    }
 
-   async validateCommentSection(){
+   async validateCommentSection() {
       await expect(this.Priority).toBeVisible()
       await expect(this.LimitToDepartment).toBeVisible()
-     // await expect(this.LimitToProperty).toBeVisible()
+      // await expect(this.LimitToProperty).toBeVisible()
       await expect(this.Global_AllProperties).toBeVisible()
       await expect(this.CommentType).toBeVisible()
       await expect(this.ExpirationDate).toBeVisible()
       await expect(this.ChkBox_1).toBeVisible()
-      await expect(this.CommentBox).toBeVisible()      
-   }  
-   
-   async validateDefault(){
+      await expect(this.CommentBox).toBeVisible()
+   }
+
+   async validateDefault() {
 
       await expect(this.Priority).toBeVisible()
       await expect(this.CommentType).toBeVisible()
@@ -3582,7 +2817,7 @@ async SelectTier_1(){
       await expect(this.Global_AllProperties).toBeVisible()
    }
 
-   async SelectAllPriority(){
+   async SelectAllPriority() {
       await this.Priority.selectOption('1-Highest');
       await this.Priority.selectOption('2-High');
       await this.Priority.selectOption('3-Medium');
@@ -3590,7 +2825,7 @@ async SelectTier_1(){
       await this.Priority.selectOption('5-Lowest')
    }
 
-   async SelectDepartment(){
+   async SelectDepartment() {
       await this.Department.selectOption('All');
       //await this.Department.selectOption('Casino');
       //await this.Department.selectOption('Operations');
@@ -3598,7 +2833,7 @@ async SelectTier_1(){
       await this.Department.selectOption('IT');
    }
 
-   async selectCommentType(){
+   async selectCommentType() {
       await this.CommentType.selectOption('Compliment');
       await this.CommentType.selectOption('Customer Concerns');
       await this.CommentType.selectOption('Customer Request');
@@ -3606,64 +2841,66 @@ async SelectTier_1(){
       await this.CommentType.selectOption('User Comment');
 
    }
-   async selectAddCommentOption(){
+   async selectAddCommentOption() {
       await this.Save_1.click();
       await this.Ok_1.click();
    }
 
-   async clickOnClose(){
+   async clickOnClose() {
+      await this.page.waitForTimeout(3000);
       await this.Close.click();
+      await this.page.waitForTimeout(3000);
    }
-   async validateCommentAdded(){
+   async validateCommentAdded() {
       await expect(this.vComment_2).toBeVisible()
    }
-   async ValidateYellowIcon(){
+   async ValidateYellowIcon() {
       await expect(this.YellowIcon).toBeVisible()
    }
 
    //UH_9473
-   async clickOnLeftArrowUTL(){
+   async clickOnLeftArrowUTL() {
       await this.LeftArrowUTL.click();
    }
-   async validateTableDisplayedUTL(){
+   async validateTableDisplayedUTL() {
       await expect(this.vValueBeforeUTL).toBeVisible();
       await expect(this.vValueAfterUTL).toBeVisible();
       await expect(this.vApprovedByUTL).toBeVisible();
    }
-   async clickOnClearButton(){
+   async clickOnClearButton() {
       await this.vClearButton.click();
    }
-   async enterCorpProp(CorpProp){
+   async enterCorpProp(CorpProp) {
       await this.CorpProp.fill(CorpProp);
    }
 
-    //UH_9474
-    async clickOnUserTransactionLog(){
+   //UH_9474
+   async clickOnUserTransactionLog() {
       await this.UserTransactionLog.click();
    }
-   async validateUserTransactionLogPage(){
+   async validateUserTransactionLogPage() {
       await expect(this.vUserID).toBeVisible();
       await expect(this.vCorpProp).toBeVisible();
       await expect(this.vDateRange).toBeVisible();
       await expect(this.vClearButton).toBeVisible();
       await expect(this.vSearchButton).toBeVisible();
    }
-   async enterUserID(UserID){
+   async enterUserID(UserID) {
       await this.UserID.fill(UserID);
    }
-   async selectDateRangeUTL(DateRange){
+   async selectDateRangeUTL(DateRange) {
       await this.page.waitForTimeout(3000);
       await this.DateRangeUTL.selectOption(DateRange);
    }
-   async clickOnSearchUserTransactionLog(){
+   async clickOnSearchUserTransactionLog() {
       await this.vSearchButton.click();
    }
-   async validateTranscationDisplayed(){
+   async validateTranscationDisplayed() {
       await this.page.waitForTimeout(4000);
       await expect(this.vTransaction).toBeVisible();
       await this.page.waitForTimeout(4000);
    }
-   async validateTransactionTableInUserTransactionLogPage(){
+   async validateTransactionTableInUserTransactionLogPage() {
       await expect(this.vTransactionDateTimeUserTransactionLog).toBeVisible();
       await expect(this.vPlayerIdUserTransactionLog).toBeVisible();
       await expect(this.vTransaction).toBeVisible();
@@ -3671,477 +2908,490 @@ async SelectTier_1(){
       await expect(this.vCorpProp_1).toBeVisible();
    }
    //UH_9475
-   async clickOnAddCommentTab(){
+   async clickOnAddCommentTab() {
       await this.page.waitForTimeout(4000);
       this.AddComment.click();
       await this.page.waitForTimeout(4000);
    }
-   async selectPriorityAddComment(Priority){
+   async selectPriorityAddComment(Priority) {
       await this.page.waitForTimeout(4000);
       await this.PriorityViewComment.selectOption(Priority);
       await this.page.waitForTimeout(4000);
    }
-   async selectLimitToDepartment(LimitToDepartment){
+   async selectLimitToDepartment(LimitToDepartment) {
       await this.LimitToDepartmentViewComment.selectOption(LimitToDepartment);
    }
-   async enterText(Text){
+   async enterText(Text) {
       await this.EnterTextViewComment.fill(Text);
    }
-   async clickOnSaveViewComment(){
+   async clickOnSaveViewComment() {
       await this.SaveViewComment.click();
    }
-   async validateCommentAddedSuccessfullyPopup(){
+   async validateCommentAddedSuccessfullyPopup() {
       await expect(this.vCommentAddedPopup).toBeVisible();
    }
-   async clickOnOkMessagePopup(){
+   async clickOnOkMessagePopup() {
       await this.OkMessagePopUp.click();
    }
-   async selectComment(){
+   async selectComment() {
       await this.page.waitForTimeout(3000);
       await this.SelectComment.click();
    }
-   async clickOnEditButton(){
+   async clickOnEditButton() {
       await this.EditButton.click();
    }
-   async validateCommentInEditModeDisplayed(){
+   async validateCommentInEditModeDisplayed() {
       await expect(this.vEditModeComment).toBeVisible();
    }
-   async selectPriorityEditComment(Priority){
+   async selectPriorityEditComment(Priority) {
       await this.PriorityViewComment.selectOption(Priority);
    }
-   async selectLimitToDepartmentEditComment(LimitToDepartment){
+   async selectLimitToDepartmentEditComment(LimitToDepartment) {
       await this.LimitToDepartmentViewComment.selectOption(LimitToDepartment);
    }
-   async enterTextEditComment(Text){
+   async enterTextEditComment(Text) {
       await this.EnterTextViewComment.fill(Text);
    }
-   async clickOnSaveEditComment(){
+   async clickOnSaveEditComment() {
       await this.SaveViewComment.click();
    }
-   async validateCommentCommentUpdatedSuccessfully(){
+   async validateCommentCommentUpdatedSuccessfully() {
       await expect(this.vCommentUpdatedMessage).toBeVisible();
    }
-   async clickOnCloseComment(){
+   async clickOnCloseComment() {
       await this.CloseComment.click();
    }
-   async validateCommentTransactionDisplayed(){
+   async validateCommentTransactionDisplayed() {
       await this.page.waitForTimeout(4000);
       await expect(this.vCommentTransaction).toBeVisible();
       await this.page.waitForTimeout(3000);
    }
 
    //UH_9477
-   async clickOnTierCreditsEarningsTab(){
-      this.TierCreditsEarningsTab.click();
+   async clickOnTierCreditsEarningsTab() {
+      await this.TierCreditsEarningsTab.click();
    }
-   async clickOnArrowIconeInFrontOfDataRecord(){
-      this.ArrowIcone.click();
+   async clickOnArrowIconeInFrontOfDataRecord() {
+      await this.ArrowIcone.click();
    }
-   async validateRecordExpands(){
+   async validateRecordExpands() {
       await expect(this.vRecordExpand).toBeVisible();
    }
-   async validateDataDisplayedByDateTime(){
+   async validateDataDisplayedByDateTime() {
+      await this.page.waitForTimeout(9000);
       await expect(this.vDateTime).toBeVisible();
+      await this.page.waitForTimeout(4000);
    }
-   async validateDataDisplayedByProperty(){
+   async validateDataDisplayedByProperty() {
       await expect(this.vProperty1).toBeVisible();
    }
-   async validateDataDisplayedByTransactionType(){
+   async validateDataDisplayedByTransactionType() {
       await expect(this.vTransactionType).toBeVisible();
    }
-   async validateDataDisplayedByTierCredits(){
+   async validateDataDisplayedByTierCredits() {
       await expect(this.vTierCredits).toBeVisible();
    }
    //UH_9478
-   async clickOnUnityPointsEarningsTab(){
+   async clickOnUnityPointsEarningsTab() {
       await this.UnityPointsEarningsTab.click();
    }
-   async clickOnArrowIcone_1InFrontOfDataRecord(){
+   async clickOnArrowIcone_1InFrontOfDataRecord() {
       await this.ArrowIcone_1.click();
    }
-   async validateRecordExpands_1(){
+   async validateRecordExpands_1() {
       await this.page.waitForTimeout(3000);
       await expect(this.vRecordExpand_1).toBeVisible();
    }
-   async validateDataDisplayedByUnityPoints(){
+   async validateDataDisplayedByUnityPoints() {
       await expect(this.vUnityPoints).toBeVisible();
    }
-   async validateDataDisplayedByFlexRule(){
+   async validateDataDisplayedByFlexRule() {
       await expect(this.vFlexRule).toBeVisible();
    }
 
    //UH_9479
-   async clickOnDiscretionaryCompsTab(){
+   async clickOnDiscretionaryCompsTab() {
       await this.DiscretionaryCompsTab.click();
    }
-   async vIssuedDcomprecordsdisplays(){
+   async vIssuedDcomprecordsdisplays() {
       await expect(this.vIssuedDcompRecord).toBeVisible();
    }
-   async selectRecord(){
+   async selectRecord() {
       await this.vIssuedDcompRecord.click();
    }
-   async clickOnViewCompDetailsButton(){
+   async clickOnViewCompDetailsButton() {
       await this.ViewCompDetailsButton.click();
    }
-   async validateInPopupWindowViewCompDetailsDisplayed(){
+   async validateInPopupWindowViewCompDetailsDisplayed() {
       await expect(this.vViewCompDetails).toBeVisible();
    }
-   async clickOnXIconeInPopupWindow(){
+   async clickOnXIconeInPopupWindow() {
       await this.XIcone.click();
    }
-   
+
    //UH_9480
-   async clickOnIssueCompButton(){
+   async clickOnIssueCompButton() {
       await this.IssueCompButton.click();
    }
-   async validateIssueCompPopUpWindowOpen(){
+   async validateIssueCompPopUpWindowOpen() {
       await expect(this.vIssueCompPopUpWindow).toBeVisible();
    }
-   async validateDiscretionaryCompRadioButtonSelected(){
+   async validateDiscretionaryCompRadioButtonSelected() {
       await expect(this.vDiscretionaryCompRadioButton).toBeVisible();
    }
-   async selectCompType(CompType){
+   async selectCompType(CompType) {
       await this.CompType.selectOption(CompType);
    }
-   async selectCompItem(CompItem){
+   async selectCompItem(CompItem) {
       await this.CompItem.selectOption(CompItem);
    }
-   async enterCompCount(CompCount){
+   async enterCompCount(CompCount) {
       await this.CompCount.fill(CompCount);
    }
-   async validatTotalCompValueFieldAutoPopulated(){
+   async validatTotalCompValueFieldAutoPopulated() {
       await expect(this.vTotalCompValue).toBeVisible();
    }
-async validateCompAvailabilityFieldAutoPopulated(){
-   await expect(this.vCompAvailability).toBeVisible();
-}
-async validateCompsRemainingFieldAutoPopulated(){
-await expect(this.vCompsRemaining).toBeVisible();
-}
-async validateIssuedDateTodaysDate(){
-   await expect(this.vIssuedDate).toBeVisible();
-}
-async enterUserNameInAD(UserName){
-   await this.UserNameAD.fill(UserName);
-}
-async enterPasswordInAD(PassWord){
-   await this.PassWordAD.fill(PassWord);
-}
-async enterCommentInAD(Comment){
-   await this.CommentAD.fill(Comment);
-}
-async clickOnIssueCompButton1(){
-   await this.IssueCompButton1.click();
-}
-async validateIssueCompPopUpMessage(){
-   await expect(this.vIssueCompPopUpMessage).toBeVisible();
-}
-async clickOnProceedButton(){
-   await this.ProceedButton.click();
-}
-async enterCommentInIssueCompField(Comment){
-   await this.CommentIssueComp.fill(Comment);
-}
-async clickOnIssueCompButton2(){
-   await this.IssueCompButton2.click();
-}
+   async validateCompAvailabilityFieldAutoPopulated() {
+      await expect(this.vCompAvailability).toBeVisible();
+   }
+   async validateCompsRemainingFieldAutoPopulated() {
+      await expect(this.vCompsRemaining).toBeVisible();
+   }
+   async validateIssuedDateTodaysDate() {
+      await expect(this.vIssuedDate).toBeVisible();
+   }
+   async enterUserNameInAD(UserName) {
+      await this.page.waitForTimeout(4000);
+      await this.UserNameAD.fill(UserName);
+   }
+   async enterPasswordInAD(PassWord) {
+      await this.PassWordAD.fill(PassWord);
+   }
+    async enterCommentInAD(Comment) {
+       await this.CommentAD.fill(Comment);
+   }
+
+   async selectReasonA(Reason) {
+      await this.Reason.selectOption(Reason);
+   }
+   async clickOnIssueCompButton1() {
+      await this.page.waitForTimeout(2000);
+      await this.IssueCompButton1.click();
+   }
+   async validateIssueCompPopUpMessage() {
+      await expect(this.vIssueCompPopUpMessage).toBeVisible();
+   }
+   async clickOnProceedButton() {
+      await this.page.waitForTimeout(2000);
+      await this.ProceedButton.click();
+   }
+   async enterCommentInIssueCompField(Comment) {
+      await this.CommentIssueComp.fill(Comment);
+   }
+   async clickOnIssueCompButton2() {
+      await this.IssueCompButton2.click();
+   }
 
 
 
    //UH_9481
-   async clickOnPlayerFunctions(){
+   async clickOnPlayerFunctions() {
       await this.PlayerFunctions.click();
    }
-   async clickOnViewTierHistory(){
+   async clickOnViewTierHistory() {
       await this.ViewTierHistory.click();
    }
-   async validateViewTierHistoryWindowDisplayed(){
+   async validateViewTierHistoryWindowDisplayed() {
       await expect(this.ViewTierHistory).toBeVisible();
    }
-   async validateCurrentTierDisplayed(){
+   async validateCurrentTierDisplayed() {
       await this.page.waitForTimeout(3000);
       await expect(this.vCurrentTier1).toBeVisible();
       await this.page.waitForTimeout(3000);
    }
-   async validateTierCredits(){
+   async validateTierCredits() {
       await expect(this.vTierCredits1).toBeVisible();
    }
-   async validateNextTier1(){
+   async validateNextTier1() {
       await expect(this.vNextTier1).toBeVisible();
    }
-   async validateTierCreditsRequired1(){
+   async validateTierCreditsRequired1() {
       await expect(this.vTierCreditsRequired1).toBeVisible();
    }
-   async validateTierCreditsToEarnNextTier(){
+   async validateTierCreditsToEarnNextTier() {
       await expect(this.vTierCreditsToEarnNextTier).toBeVisible();
    }
-   async validateNextTierExpiration(){
+   async validateNextTierExpiration() {
       await expect(this.vNextTierExpiration).toBeVisible();
    }
-   async validateNextTierCreditsExpiration(){
+   async validateNextTierCreditsExpiration() {
       await expect(this.vNextTierCreditsExpiration).toBeVisible();
    }
-   async clickOnCancelButton(){
+   async clickOnCancelButton() {
       await this.CancelButton.click();
    }
 
    //UH_9482
-   async enterPlayerID(PlayerID){
-      await this.PlayerID.fill(PlayerID); 
+   async enterPlayerID(PlayerID) {
+      await this.PlayerID.fill(PlayerID);
    }
-   async clickOnSearchForPlayer(){
+   async clickOnSearchForPlayer() {
       await this.SearchPlayer.click();
    }
-   async selectClubInfoFromDropdown(){
-         await this.ClubInfo.selectOption('2');
+   async selectClubInfoFromDropdown() {
+      await this.ClubInfo.selectOption('2');
    }
-   async validateCurrentTierCreditCardPic(){
+   async validateCurrentTierCreditCardPic() {
       await expect(this.vCardPic).toBeVisible();
    }
-   async validateCurrentTier(){
+   async validateCurrentTier() {
+      await this.page.waitForTimeout(3000);
       await expect(this.vCurrentTier).toBeVisible();
+      await this.page.waitForTimeout(3000);
    }
-   async validateCurrentTireCredits(){
+   async validateCurrentTireCredits() {
+      await this.page.waitForTimeout(3000);
       await expect(this.vTireCredits).toBeVisible();
+      await this.page.waitForTimeout(3000);
    }
-   async validateNextTier(){
+   async validateNextTier() {
       await expect(this.vNextTier).toBeVisible();
    }
-   async validateTierCreditsRequired(){
+   async validateTierCreditsRequired() {
       await expect(this.vTierCreditsRequired).toBeVisible();
    }
-   async validateRequiredToNextTierCredits(){
+   async validateRequiredToNextTierCredits() {
       await expect(this.vRequiredToNextTierCredits).toBeVisible();
    }
-   
+
    //UH_9483
-   async validatePlayerNameDisplayed(){
+   async validatePlayerNameDisplayed() {
       await expect(this.vPlayerName).toBeVisible();
    }
-   async validatePlayerIdDisplayed(){
+   async validatePlayerIdDisplayed() {
       await expect(this.vPlayerId).toBeVisible();
    }
-   async validatePlayerTypeDisplayed(){
+   async validatePlayerTypeDisplayed() {
       await expect(this.vPlayerType).toBeVisible();
    }
-   async validateDobDisplayed(){
-      await expect(this.vDob).toBeVisible(); 
+   async validateDobDisplayed() {
+      await expect(this.vDob).toBeVisible();
    }
-   async validateMemberSinceDisplayed(){
+   async validateMemberSinceDisplayed() {
       await expect(this.vMemberSince).toBeVisible();
    }
-   async validateTierExpirationDisplayed(){
+   async validateTierExpirationDisplayed() {
       await expect(this.vTierExpiration).toBeVisible();
    }
-   async validateAccountTypeDisplayed(){
-      await expect(this.vAccountType).toBeVisible();  
+   async validateAccountTypeDisplayed() {
+      await expect(this.vAccountType).toBeVisible();
    }
-   async validatePredominentLocationDisplayed(){
+   async validatePredominentLocationDisplayed() {
       await expect(this.vPredominentLocation).toBeVisible();
    }
-   async validateShowLinksDisplayed(){
+   async validateShowLinksDisplayed() {
       await expect(this.vShowLinks).toBeVisible();
    }
-   async validateTierMatchIconDisplayed(){
+   async validateTierMatchIconDisplayed() {
       await expect(this.vTierMatchIcon).toBeVisible();
    }
-   async ClickOnActiveCheckBox(){
+   async ClickOnActiveCheckBox() {
       await expect(this.vActiveList).toBeVisible();
    }
-   
+
    //UH_9484
-   async clickOnTripTab(){
+   async clickOnTripTab() {
       await this.TripsTab.click();
    }
-   async validatePlayersTripPageDisplayed(){
+   async validatePlayersTripPageDisplayed() {
       await expect(this.vTripPage).toBeVisible();
    }
-   async validateTotalTripsInLifeToDateTripHistoryDisplayed(){
+   async validateTotalTripsInLifeToDateTripHistoryDisplayed() {
       await expect(this.vTotalTrips).toBeVisible();
    }
-   async validateTotalPropertiesInLifeToDateTripHistoryDisplayed(){
+   async validateTotalPropertiesInLifeToDateTripHistoryDisplayed() {
       await expect(this.vTotalTrips).toBeVisible();
    }
-   async validateStartDateInLifeToDateTripHistoryDisplayed(){
+   async validateStartDateInLifeToDateTripHistoryDisplayed() {
       await expect(this.vStartDate).toBeVisible();
    }
-   async validateEndDateInLifeToDateTripHistoryDisplayed(){
+   async validateEndDateInLifeToDateTripHistoryDisplayed() {
       await expect(this.vEndDate).toBeVisible();
    }
-   async validateDaysPlayedInLifeToDateTripHistoryDisplayed(){
+   async validateDaysPlayedInLifeToDateTripHistoryDisplayed() {
       await expect(this.vDaysPlayed).toBeVisible();
    }
-   async validateTheoWinInLifeToDateTripHistoryDisplayed(){
+   async validateTheoWinInLifeToDateTripHistoryDisplayed() {
       await expect(this.vTheoWin).toBeVisible();
    }
-   async validateActualWinInLifeToDateTripHistoryDisplayed(){
+   async validateActualWinInLifeToDateTripHistoryDisplayed() {
       await expect(this.vActualWin).toBeVisible();
    }
-   async validateIssuedInLifeToDateTripHistoryDisplayed(){
+   async validateIssuedInLifeToDateTripHistoryDisplayed() {
       await expect(this.vIssued).toBeVisible();
    }
-   async validateRedeemedInLifeToDateTripHistoryDisplayed(){
+   async validateRedeemedInLifeToDateTripHistoryDisplayed() {
       await expect(this.vRedeemed).toBeVisible();
    }
-   async validatePointsEarnedInLifeToDateTripHistoryDisplayed(){
+   async validatePointsEarnedInLifeToDateTripHistoryDisplayed() {
       await expect(this.vPointsEarned).toBeVisible();
    }
-   async validateTierCreditsEarnedInLifeToDateTripHistoryDisplayed(){
+   async validateTierCreditsEarnedInLifeToDateTripHistoryDisplayed() {
       await expect(this.vTierCreditsEarned).toBeVisible();
    }
-   async validateTripNumberInTripHistoryDisplayed(){
+   async validateTripNumberInTripHistoryDisplayed() {
       await this.page.waitForTimeout(3000);
       await expect(this.vTripNumber).toBeVisible();
    }
 
    //UH_9485
-   async clickOnConfiguration(){
+   async clickOnConfiguration() {
       await this.Configuration.click();
    }
-   async clickOnCoreSystemConfiguration(){
+   async clickOnCoreSystemConfiguration() {
       await this.CoreSystemConfiguration.click();
    }
-   async clickOnManageTripDefinition(){
+   async clickOnManageTripDefinition() {
       await this.ManageTripDefinition.click();
    }
-   async validateManageTripDefinitionPageDisplayed(){
+   async validateManageTripDefinitionPageDisplayed() {
       await expect(this.vManageTripDefinition).toBeVisible();
    }
-   async clickOnInActiveTab(){
+   async clickOnInActiveTab() {
       await this.InActiveTab.click();
    }
-   async selectTrip(){
+   async selectTrip() {
       await this.SelectTrip.click();
    }
-   async validateValueInTripNameDisplayed(){
+   async validateValueInTripNameDisplayed() {
       await expect(this.vTripName).toBeVisible();
    }
-   async validateValueInTripTypeDisplayed(){
+   async validateValueInTripTypeDisplayed() {
       await expect(this.vTripType).toBeVisible();
    }
-   async validateValueInTripDescriptionDisplayed(){
+   async validateValueInTripDescriptionDisplayed() {
       await expect(this.vTripDescription).toBeVisible();
    }
-   async validateValueInPropertyDisplayed(){
+   async validateValueInPropertyDisplayed() {
       await expect(this.vProperty).toBeVisible();
    }
-   async validateMaxOfDaysDisplayed(){
+   async validateMaxOfDaysDisplayed() {
       await expect(this.vMaxOfDays).toBeVisible();
    }
-   async validateInactivityDaysDisplayed(){
+   async validateInactivityDaysDisplayed() {
       await expect(this.vInactivityDays).toBeVisible();
    }
-   async validateSortOrderDisplayed(){
+   async validateSortOrderDisplayed() {
       await expect(this.vSortOrder).toBeVisible();
    }
-   async validateCompRedemptionInStartsATripDisplayed(){
+   async validateCompRedemptionInStartsATripDisplayed() {
       await expect(this.vCompRedemption).toBeVisible();
    }
-   async validateOfferRedemptionInStartsATripDisplayed(){
+   async validateOfferRedemptionInStartsATripDisplayed() {
       await expect(this.vOfferRedemption).toBeVisible();
    }
-   async validateRatingInStartsATripDisplayed(){
+   async validateRatingInStartsATripDisplayed() {
       await expect(this.vOfferRedemption).toBeVisible();
    }
-   async clickOnActiveCheckBox(){
+   async clickOnActiveCheckBox() {
       await this.ActiveCheckBox.click();
    }
-   async clickOnSave(){
+   async clickOnSave() {
       await this.Save.click();
    }
-   async validateTripUnderActiveListDisplayed(){
+   async validateTripUnderActiveListDisplayed() {
       await expect(this.vActiveList).toBeVisible();
    }
-   async clickOnActiveTab(){
+   async clickOnActiveTab() {
       await this.ActiveTab.click();
    }
-   async uncheckActiveCheckBox(){
+   async uncheckActiveCheckBox() {
       await this.ActiveTab.click();
    }
-   async playerFunctionsEventCheckin(){
+   async playerFunctionsEventCheckin() {
       await this.page.locator("//a[contains(text(),'Event Check-in')]").click();
    }
-   async enterEventAndOfferNameToSearch(EventName){
+   async enterEventAndOfferNameToSearch(EventName) {
       await this.page.locator("//input[@placeholder='Event & Offer Name']").fill('EventName')
    }
-   async validateNoResultFoundInEventCheckin(){
+   async validateNoResultFoundInEventCheckin() {
       await expect(this.noResultFoundEventCheckIn).toBeVisible();
    }
-   async validateTripUnderInActiveListDisplayed(){
+   async validateTripUnderInActiveListDisplayed() {
       await expect(this.vInActiveList).toBeVisible()
    }
 
    //UH_9486
-   async validateHideGraphInPlayerTripHistoryDisplayed(){
+   async validateHideGraphInPlayerTripHistoryDisplayed() {
       await expect(this.vHideGraphSetting).toBeVisible();
    }
-   async validateBuildGridDisplayInPlayerTripHistoryDisplayed(){
+   async validateBuildGridDisplayInPlayerTripHistoryDisplayed() {
       await expect(this.vBuildGridDisplay).toBeVisible();
    }
-   async validateSaveSearchSettingInPlayerTripHistoryDisplayed(){
+   async validateSaveSearchSettingInPlayerTripHistoryDisplayed() {
       await expect(this.vSaveSearchSetting).toBeVisible();
    }
-   async clickOnHideGraphSetting(){
+   async clickOnHideGraphSetting() {
       await this.vHideGraphSetting.click();
    }
-   async clickOnExpandGraphSetting(){
+   async clickOnExpandGraphSetting() {
       await this.page.waitForTimeout(3000);
       await this.vExpandGraphSetting.click();
    }
-   async validateHideGraphSettinghidedExpandGraphSettingDisplayed(){
-      await expect(this.vExpandGraphSetting).toBeVisible();  
+   async validateHideGraphSettinghidedExpandGraphSettingDisplayed() {
+      await expect(this.vExpandGraphSetting).toBeVisible();
    }
-   async clickOnBuildGridDiplay(){
+   async clickOnBuildGridDiplay() {
       await this.vBuildGridDisplay.click();
    }
-   async validateGridDisplayedWithTripNumber(){
+   async validateGridDisplayedWithTripNumber() {
       await expect(this.vTripNumber).toBeVisible();
    }
-   async validateGridDisplayedWithFromColoumn(){
+   async validateGridDisplayedWithFromColoumn() {
       await this.page.waitForTimeout(3000);
       await expect(this.vFrom).toBeVisible();
    }
-   async validateGideDisplayedWithToColoum(){
+   async validateGideDisplayedWithToColoum() {
       await expect(this.vTo).toBeVisible();
    }
-   async selectDateRange(DateRange){
+   async selectDateRange(DateRange) {
       await this.page.waitForTimeout(3000);
       await this.DateRange.selectOption(DateRange);
       await this.page.waitForTimeout(3000);
    }
-   async clickOnProperty(){
+   async clickOnProperty() {
       await this.page.waitForTimeout(4000);
       await this.Property1.click();
       await this.page.waitForTimeout(4000);
    }
-   async selectRatingType(RatingType){
+   async selectRatingType(RatingType) {
       await this.page.waitForTimeout(4000);
       await this.RatingType.selectOption(RatingType);
       await this.page.waitForTimeout(4000);
    }
-   async clickOnSaveSearchSetting(){
+   async clickOnSaveSearchSetting() {
       await this.SaveSearchSetting.click();
    }
-   async validateUserTripGraphWidowOpened(){
+   async validateUserTripGraphWidowOpened() {
       await this.page.waitForTimeout(3000);
-   await expect(this.vUserTripGraphWindow).toBeVisible();
+      await expect(this.vUserTripGraphWindow).toBeVisible();
    }
-   async clickOnOk(){
+   async clickOnOk() {
       await this.Ok.click();
    }
-   async validateSearchSettingSaved(){
+   async validateSearchSettingSaved() {
       await expect(this.vSearchSettingSaved).toBeVisible();
    }
 
    //UH_9490
 
-   async validateConfirmationPopup(){
+   async validateConfirmationPopup() {
       await expect(this.DelConfirmPopUP).toBeVisible();
    }
-   async validateCommentDeleted(){
+   async validateCommentDeleted() {
       await expect(this.Comment).not.toBeVisible();
    }
-   async ValidateCommentInPlayerTransactionLog(){
+   async ValidateCommentInPlayerTransactionLog() {
       await this.PlayerFunction.click();
       await this.PlayerTransactionLog.click();
       await expect(this.vTransactionDateTime).toBeVisible();
@@ -4153,97 +3403,152 @@ async clickOnIssueCompButton2(){
       await expect(this.vValueAfter).toBeVisible();
       await expect(this.vApprovedBy).toBeVisible();
    }
-   async selectAuthorizationReasonForDelete(Reason){
+   async selectAuthorizationReasonForDelete(Reason) {
       await this.AuthorizationReasonDelete.selectOption(Reason);
    }
    //UH_9491
-   async validatePlayerDashboardDisplayed(){
+   async validatePlayerDashboardDisplayed() {
       await expect(this.vPlayerDashboard).toBeVisible();
    }
-   async clickOnTripsTab(){
+   async clickOnTripsTab() {
       await this.Trips.click();
    }
-   async validateTripHistoryDisplayed(){
+   async validateTripHistoryDisplayed() {
       await this.page.waitForTimeout(3000);
       await expect(this.vTripHistory).toBeVisible();
       await this.page.waitForTimeout(3000);
    }
-   async validateLifeToDateTripHistoryDisplayed(){
+   async validateLifeToDateTripHistoryDisplayed() {
       await expect(this.vLifeToTripHistory).toBeVisible();
    }
-   async validatePlayerTripHistoryDisplayed(){
+   async validatePlayerTripHistoryDisplayed() {
       await expect(this.vPlayerTripHistory).toBeVisible();
    }
-   async validateTripHistoryHasTripNumber(){
+   async validateTripHistoryHasTripNumber() {
       await expect(this.vTripNumber).toBeVisible();
    }
-   async clickOnTripNumberLink(){
+   async clickOnTripNumberLink() {
       await this.vTripNumber.click();
    }
-   async validateRatingIDDataDisplayed(){
+   async validateRatingIDDataDisplayed() {
       await expect(this.vRatingID).toBeVisible();
    }
 
    //UH_9493
-   async selectSettleVoidButton(){
+   async selectSettleVoidButton() {
+      await this.page.waitForTimeout(3000)
       await this.vSettle_Void.click();
    }
-   async validateDialogBoxWithSettleVoidCommentDisplayed(){
+   async validateDialogBoxWithSettleVoidCommentDisplayed() {
       await expect(this.SettleVoidCommentDB).toBeVisible();
    }
-   async selectSettleRadioButton(){
+   async selectSettleRadioButton() {
       await this.SettleRadioButton.click();
    }
-   async enterComment(Comment){
+   async enterComment(Comment) {
       await this.EnterComment.fill(Comment);
    }
-   async clickOnSubmit(){
+   async clickOnSubmit() {
       await this.Submit.click();
    }
-   async validateConfirmationMessage(){
+   async validateConfirmationMessage() {
       await expect(this.vConfirmation).toBeVisible();
    }
-   async clickOnConfirm1(){
+   async clickOnConfirm1() {
       await this.Confirm1.click();
    }
-   async validateAuthorizationBox(){
+   async validateAuthorizationBox() {
       await expect(this.vAuthorizationBox).toBeVisible();
    }
-   async enterPassword(Password){
+   async enterPassword(Password) {
       await this.Password.fill(Password);
    }
-   async selectAuthorizationReason(Reason){
+   async selectAuthorizationReason(Reason) {
       await this.page.waitForTimeout(3000);
       await this.AuthorizationReason.selectOption(Reason);
       await this.page.waitForTimeout(3000);
    }
-   async enterAuthorizationComment(Comment){
+   async enterAuthorizationComment(Comment) {
       await this.AutComment1.fill(Comment);
    }
-   async clickOnAutSubmit(){
+   async clickOnAutSubmit() {
       await this.AutSubmit.click();
    }
-   async SelectAFile(){
-      await this.page.locator('#ctl00_ContentPlaceHolder1_ctrlInvitationDetails_flUpload').setInputFiles("C:\\Users\\Sheldon.dcosta\\Desktop\\HR_Automation\\HARDROCK_RETAL\\RU_RETAIL - June42024\\HALo_7Acct_Automation.csv");
+   // async SelectAFile() {
+   //    await this.page.locator('#ctl00_ContentPlaceHolder1_ctrlInvitationDetails_flUpload').setInputFiles("C:\\Users\\Sheldon.dcosta\\Desktop\\HR_Automation\\HARDROCK_RETAL\\RU_RETAIL - June42024\\HALo_7Acct_Automation.csv");
+   //    await this.page.locator('#ctl00_ContentPlaceHolder1_ctrlInvitationDetails_btnInvitationUpload').click();
+   //    // const fileUploadSuccessMessage = await this.page.locator('//span[contains(text(),"Invitations processed successfully!")]');
+   //    await this.page.waitForTimeout(5000);
+   //    //await this.page.waitForSelector('//span[contains(text(),"Invitations processed successfully!")]',{state:'visible'});
+   //    await this.page.waitForTimeout(5000);
+   // }
+
+   async SelectAFile() {
+      await this.page.locator('#ctl00_ContentPlaceHolder1_ctrlInvitationDetails_flUpload').setInputFiles("C:\\Users\\Sheldon.dcosta\\OneDrive - shrss.com\\Desktop\\Backup_ForSystemUpdate\\HR_Automation\\HARDROCK_RETAL\\HARDROCK-QA\\HALo_7Acct_Automation.csv");
       await this.page.locator('#ctl00_ContentPlaceHolder1_ctrlInvitationDetails_btnInvitationUpload').click();
       // const fileUploadSuccessMessage = await this.page.locator('//span[contains(text(),"Invitations processed successfully!")]');
-      await this.page.waitForTimeout(3000);
+      await this.page.waitForTimeout(5000);
       //await this.page.waitForSelector('//span[contains(text(),"Invitations processed successfully!")]',{state:'visible'});
-      await this.page.waitForTimeout(3000);
+      await this.page.waitForTimeout(5000);
    }
-   async validateMessageCommentSettledSuccessfully(){
+   // async SelectAFile1() {
+   //    await this.page.locator('#ctl00_ContentPlaceHolder1_ctrlInvitationDetails_flUpload').setInputFiles("C:\\Users\\Sheldon.dcosta\\Desktop\\HR_Automation\\HARDROCK_RETAL\\RU_RETAIL - June42024 - UAT\\HALo_7Acct_Automation.csv");
+   //    await this.page.locator('#ctl00_ContentPlaceHolder1_ctrlInvitationDetails_btnInvitationUpload').click();
+   //    // const fileUploadSuccessMessage = await this.page.locator('//span[contains(text(),"Invitations processed successfully!")]');
+   //    await this.page.waitForTimeout(5000);
+   //    await this.page.waitForSelector('//span[contains(text(),"Invitations processed successfully!")]',{state:'visible'});
+   //    await this.page.waitForTimeout(5000);
+   // } 
+   async SelectAFile1() {
+      await this.page.locator('#ctl00_ContentPlaceHolder1_ctrlInvitationDetails_flUpload').setInputFiles("C:\\Users\\Sheldon.dcosta\\OneDrive - shrss.com\\Desktop\\Backup_ForSystemUpdate\\HR_Automation\\HARDROCK_RETAL\\HARDROCK-QA\\HALo_7Acct_Automation.csv");
+      await this.page.locator('#ctl00_ContentPlaceHolder1_ctrlInvitationDetails_btnInvitationUpload').click();
+      // const fileUploadSuccessMessage = await this.page.locator('//span[contains(text(),"Invitations processed successfully!")]');
+      await this.page.waitForTimeout(5000);
+      await this.page.waitForSelector('//span[contains(text(),"Invitations processed successfully!")]', { state: 'visible' });
+      await this.page.waitForTimeout(5000);
+   }
+
+   async validateMessageCommentSettledSuccessfully() {
+      await this.page.waitForTimeout(4000);
       await expect(this.vCommentSettledMessage).toBeVisible();
+      await this.page.waitForTimeout(4000);
    }
-   async clickOnViewSettledVoidedButton(){
+   async clickOnViewSettledVoidedButton() {
       await this.vViewSettled_Voided.click();
    }
-   async validateviewSettledVoidedCommentsDisplayed(){
+   async validateviewSettledVoidedCommentsDisplayed() {
       await this.page.waitForTimeout(3000);
       await expect(this.vviewSettledVoidedComments).toBeVisible();
    }
 
    //9504
-   async validateActiveOptionSelectedInViewDropdownByDefault(){
+   async validateActiveOptionSelectedInViewDropdownByDefault() {
       await expect(this.ViewQuickOffer).toBeVisible();
    }
+
+
+
+   //Demo-Function
+   async EnterPlayeridXY() {
+      await this.PlayeridXY.fill('950098676');
+   }
+   async clickOnSearchTabXY() {
+      await this.SearchTabXY.click();
+   }
+   async CloseConsentPopupXY() {
+      await this.ConsentPopupXY.click();
+   }
+   async NavigateToPlayerFunctionXY() {
+      await this.PlayerFunctionXY.click();
+   }
+   async ClickOnViewCommentXY() {
+      await this.XYViewComment.click();
+   }
+   async CloseCommentPopupXY() {
+      await this.XYCommentPopup.click();
+   }
+   async ClickOnLogoutXY() {
+      await this.XYLogOut.click();
+   }
+
 }

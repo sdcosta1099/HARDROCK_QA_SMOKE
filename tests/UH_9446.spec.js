@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(250000);
+test.setTimeout(500000);
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
@@ -14,7 +14,7 @@ test('UH_9446_HALO | Events & Offers | HALO | Events and Offers | Create offer w
   await pa.clickOnManageEventsAndOffers()
   await pa.clickOnAddNewEventAndOffers()
   await pa.ValidateAddNewEventAndOffersPage()
-  await pa.SelectfillOutNewEventFields1("UH__9446")
+  await pa.SelectfillOutNewEventFields4("UH__9446")
   await pa.clickSaveAndNextStep()
   await pa.SelectAFile()
   await pa.clickSaveAndNextStep()

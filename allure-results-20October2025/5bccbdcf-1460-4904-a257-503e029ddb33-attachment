@@ -1,0 +1,1292 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - text: HALO 25.9.1
+      - text: Logged in as TU_LAB_HALO_NIN_ADM
+      - img "HR Casino, Northern Indiana" [ref=e7]
+    - link "Logout" [ref=e9] [cursor=pointer]:
+      - /url: javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$lnkLogout", "", false, "", "SessionOut.aspx", false, true))
+      - img "Logout" [ref=e10]
+  - generic [ref=e12]:
+    - list [ref=e15]:
+      - listitem [ref=e16]:
+        - link "Player Functions" [ref=e17] [cursor=pointer]:
+          - /url: javascript:toggle1("1000010","sub_nav_1000010","1000010");
+      - listitem [ref=e18]:
+        - link "Configuration" [ref=e19] [cursor=pointer]:
+          - /url: javascript:toggle1("1000000","sub_nav_1000000","1000010");
+      - listitem [ref=e20]:
+        - link "Administration" [ref=e21] [cursor=pointer]:
+          - /url: javascript:toggle1("1000002","sub_nav_1000002","1000010");
+    - generic [ref=e22]:
+      - table [ref=e25]:
+        - rowgroup [ref=e26]:
+          - row "PLAYER SEARCH - 807879484 - Lindsay Partridge Go To Employee Dashboard 0" [ref=e27]:
+            - cell "PLAYER SEARCH" [ref=e28]
+            - cell "- 807879484 - Lindsay Partridge" [ref=e29]
+            - cell "Go To Employee Dashboard" [ref=e30]:
+              - link "Go To Employee Dashboard" [ref=e31] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkToEmployeeDashboard','')
+                - img [ref=e32]
+            - cell [ref=e34]:
+              - link "Expand Search" [ref=e35] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkSearchSVG','')
+                - img [ref=e36]
+            - cell "0" [ref=e39]:
+              - generic "Show Notification" [ref=e41]
+              - generic:
+                - generic: "0"
+      - table [ref=e45]:
+        - rowgroup [ref=e46]:
+          - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e47]:
+            - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e48]:
+              - table [ref=e49]:
+                - rowgroup [ref=e50]:
+                  - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e51]:
+                    - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e52]:
+                      - generic [ref=e53]: Player Info
+                      - generic [ref=e54]: Transactions
+                      - generic [ref=e55]: Trips
+                      - generic [ref=e56]: Tier History
+                      - generic [ref=e57]: Tier Credits Earnings
+                      - generic [ref=e58]: Offers
+                      - generic [ref=e59]: Unity Points Earnings
+                      - generic [ref=e60]: Earnings
+                      - generic [ref=e61]: Running Balances
+                      - generic [ref=e62]: Promotions
+                      - generic [ref=e63]: Pending Earnings
+                      - generic [ref=e64]: Earnings
+                      - generic [ref=e65]: Overflow Earnings
+                      - generic [ref=e66]: Contact Information
+                      - generic [ref=e67]: Discretionary Comps
+                      - generic [ref=e68]: Discounts
+                      - generic [ref=e69]: Gaming Activity
+                      - generic [ref=e70]: Events & Offers
+                      - generic [ref=e71]: Free Play Rewards
+                      - generic [ref=e72]: Reservations
+                      - generic [ref=e73]: Comm Preferences
+                      - generic [ref=e74]: Consent Management
+                      - generic [ref=e75]: Discreet
+                  - row [ref=e76]:
+                    - cell [ref=e77]:
+                      - iframe [active] [ref=e78]:
+                        - table [ref=f1e3]:
+                          - rowgroup [ref=f1e4]:
+                            - 'row "Life to Date Trip History Trip History Total Trips: 2 Total Properties: 1 Start Date: 2023-03-16 End Date: 2023-06-20 Days Played: 2 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00 Trip Number: 2 Property: HR Casino, Northern Indiana Start Date: 2023-06-20 End Date: 2023-06-20 Days Played: 1 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00 Trip Number: 1 Property: HR Casino, Northern Indiana Start Date: 2023-03-16 End Date: 2023-03-16 Days Played: 1 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00 Last First 1" [ref=f1e5]':
+                              - 'cell "Life to Date Trip History Trip History Total Trips: 2 Total Properties: 1 Start Date: 2023-03-16 End Date: 2023-06-20 Days Played: 2 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00 Trip Number: 2 Property: HR Casino, Northern Indiana Start Date: 2023-06-20 End Date: 2023-06-20 Days Played: 1 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00 Trip Number: 1 Property: HR Casino, Northern Indiana Start Date: 2023-03-16 End Date: 2023-03-16 Days Played: 1 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00 Last First 1" [ref=f1e6]':
+                                - generic [ref=f1e7]:
+                                  - generic [ref=f1e8]:
+                                    - strong [ref=f1e10]: Life to Date Trip History
+                                    - strong [ref=f1e12]: Trip History
+                                  - table [ref=f1e14]:
+                                    - rowgroup [ref=f1e15]:
+                                      - 'row "Total Trips: 2 Total Properties: 1 Start Date: 2023-03-16 End Date: 2023-06-20 Days Played: 2 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00" [ref=f1e16]':
+                                        - 'cell "Total Trips: 2 Total Properties: 1 Start Date: 2023-03-16 End Date: 2023-06-20 Days Played: 2 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00" [ref=f1e17]':
+                                          - table [ref=f1e18]:
+                                            - rowgroup [ref=f1e19]:
+                                              - 'row "Total Trips: 2 Total Properties: 1 Start Date: 2023-03-16 End Date: 2023-06-20 Days Played: 2 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00" [ref=f1e20]':
+                                                - 'cell "Total Trips: 2 Total Properties: 1 Start Date: 2023-03-16 End Date: 2023-06-20 Days Played: 2 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00" [ref=f1e21]':
+                                                  - generic [ref=f1e22]: "Total Trips:"
+                                                  - text: "2"
+                                                  - generic [ref=f1e23]: "Total Properties:"
+                                                  - text: "1"
+                                                  - generic [ref=f1e24]: "Start Date:"
+                                                  - text: 2023-03-16
+                                                  - generic [ref=f1e25]: "End Date:"
+                                                  - text: 2023-06-20
+                                                  - generic [ref=f1e26]: "Days Played:"
+                                                  - text: "2"
+                                                  - generic [ref=f1e27]: "Theo Win:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e28]: "Adj Theo Win:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e29]: "Actual Win:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e30]: "Issued:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e31]: "Redeemed:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e32]: "Points Earned:"
+                                                  - text: "0.00"
+                                                  - generic [ref=f1e33]: "Tier Credits Earned:"
+                                                  - text: "0.00"
+                                  - table [ref=f1e35]:
+                                    - rowgroup [ref=f1e36]:
+                                      - 'row "Trip Number: 2 Property: HR Casino, Northern Indiana Start Date: 2023-06-20 End Date: 2023-06-20 Days Played: 1 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00 Trip Number: 1 Property: HR Casino, Northern Indiana Start Date: 2023-03-16 End Date: 2023-03-16 Days Played: 1 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00" [ref=f1e37]':
+                                        - 'cell "Trip Number: 2 Property: HR Casino, Northern Indiana Start Date: 2023-06-20 End Date: 2023-06-20 Days Played: 1 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00 Trip Number: 1 Property: HR Casino, Northern Indiana Start Date: 2023-03-16 End Date: 2023-03-16 Days Played: 1 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00" [ref=f1e38]':
+                                          - table [ref=f1e39]:
+                                            - rowgroup [ref=f1e40]:
+                                              - 'row "Trip Number: 2 Property: HR Casino, Northern Indiana Start Date: 2023-06-20 End Date: 2023-06-20 Days Played: 1 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00 Trip Number: 1 Property: HR Casino, Northern Indiana Start Date: 2023-03-16 End Date: 2023-03-16 Days Played: 1 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00" [ref=f1e41]':
+                                                - 'cell "Trip Number: 2 Property: HR Casino, Northern Indiana Start Date: 2023-06-20 End Date: 2023-06-20 Days Played: 1 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00" [ref=f1e42]':
+                                                  - link "Trip Number:" [active] [ref=f1e43] [cursor=pointer]:
+                                                    - /url: javascript:__doPostBack('lvTrip$ctrl0$ctl01$btnSelect','')
+                                                  - text: "2"
+                                                  - generic [ref=f1e44]: "Property:"
+                                                  - generic [ref=f1e45]: HR Casino, Northern Indiana
+                                                  - generic [ref=f1e46]: "Start Date:"
+                                                  - text: 2023-06-20
+                                                  - generic [ref=f1e47]: "End Date:"
+                                                  - text: 2023-06-20
+                                                  - generic [ref=f1e48]: "Days Played:"
+                                                  - text: "1"
+                                                  - generic [ref=f1e49]: "Theo Win:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e50]: "Adj Theo Win:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e51]: "Actual Win:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e52]: "Issued:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e53]: "Redeemed:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e54]: "Points Earned:"
+                                                  - text: "0.00"
+                                                  - generic [ref=f1e55]: "Tier Credits Earned:"
+                                                  - text: "0.00"
+                                                - 'cell "Trip Number: 1 Property: HR Casino, Northern Indiana Start Date: 2023-03-16 End Date: 2023-03-16 Days Played: 1 Theo Win: $0.00 Adj Theo Win: $0.00 Actual Win: $0.00 Issued: $0.00 Redeemed: $0.00 Points Earned: 0.00 Tier Credits Earned: 0.00" [ref=f1e58]':
+                                                  - link "Trip Number:" [ref=f1e59] [cursor=pointer]:
+                                                    - /url: javascript:__doPostBack('lvTrip$ctrl0$ctl03$btnSelect','')
+                                                  - text: "1"
+                                                  - generic [ref=f1e60]: "Property:"
+                                                  - generic [ref=f1e61]: HR Casino, Northern Indiana
+                                                  - generic [ref=f1e62]: "Start Date:"
+                                                  - text: 2023-03-16
+                                                  - generic [ref=f1e63]: "End Date:"
+                                                  - text: 2023-03-16
+                                                  - generic [ref=f1e64]: "Days Played:"
+                                                  - text: "1"
+                                                  - generic [ref=f1e65]: "Theo Win:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e66]: "Adj Theo Win:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e67]: "Actual Win:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e68]: "Issued:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e69]: "Redeemed:"
+                                                  - text: $0.00
+                                                  - generic [ref=f1e70]: "Points Earned:"
+                                                  - text: "0.00"
+                                                  - generic [ref=f1e71]: "Tier Credits Earned:"
+                                                  - text: "0.00"
+                                      - row "Last First 1" [ref=f1e74]:
+                                        - cell "Last First 1" [ref=f1e75]:
+                                          - generic [ref=f1e76]:
+                                            - generic [ref=f1e77]: Last
+                                            - generic [ref=f1e78]: First
+                                            - text: "1"
+                            - row [ref=f1e79]:
+                              - cell [ref=f1e80]:
+                                - generic [ref=f1e82]:
+                                  - generic [ref=f1e83]: PLAYER TRIP HISTORY
+                                  - generic [ref=f1e85] [cursor=pointer]: Hide Graph Setting
+                                  - generic [ref=f1e86]:
+                                    - generic [ref=f1e88]:
+                                      - generic [ref=f1e89]:
+                                        - text: Date Range
+                                        - combobox [ref=f1e90]:
+                                          - option "Past Month"
+                                          - option "Past 2 Months"
+                                          - option "Past 3 Months"
+                                          - option "Past 6 Months"
+                                          - option "Past Year"
+                                          - option "Past 2 Years" [selected]
+                                          - option "Custom Date Range"
+                                      - generic [ref=f1e91]:
+                                        - text: Property
+                                        - table [ref=f1e93]:
+                                          - rowgroup [ref=f1e94]:
+                                            - row "All Properties" [ref=f1e95]:
+                                              - cell "All Properties" [ref=f1e96]:
+                                                - checkbox "All Properties" [checked] [ref=f1e97]
+                                                - text: All Properties
+                                            - row "Atlantic City" [ref=f1e98]:
+                                              - cell "Atlantic City" [ref=f1e99]:
+                                                - checkbox "Atlantic City" [ref=f1e100]
+                                                - text: Atlantic City
+                                            - row "Austin Office" [ref=f1e101]:
+                                              - cell "Austin Office" [ref=f1e102]:
+                                                - checkbox "Austin Office" [ref=f1e103]
+                                                - text: Austin Office
+                                            - row "Bristol" [ref=f1e104]:
+                                              - cell "Bristol" [ref=f1e105]:
+                                                - checkbox "Bristol" [ref=f1e106]
+                                                - text: Bristol
+                                            - row "Cincinnati" [ref=f1e107]:
+                                              - cell "Cincinnati" [ref=f1e108]:
+                                                - checkbox "Cincinnati" [ref=f1e109]
+                                                - text: Cincinnati
+                                            - row "Hard Rock Bet" [ref=f1e110]:
+                                              - cell "Hard Rock Bet" [ref=f1e111]:
+                                                - checkbox "Hard Rock Bet" [checked] [ref=f1e112]
+                                                - text: Hard Rock Bet
+                                            - row "Hard Rock Bet - Online - OLD" [ref=f1e113]:
+                                              - cell "Hard Rock Bet - Online - OLD" [ref=f1e114]:
+                                                - checkbox "Hard Rock Bet - Online - OLD" [checked] [ref=f1e115]
+                                                - text: Hard Rock Bet - Online - OLD
+                                            - row "Hard Rock Bet - Retail - OLD" [ref=f1e116]:
+                                              - cell "Hard Rock Bet - Retail - OLD" [ref=f1e117]:
+                                                - checkbox "Hard Rock Bet - Retail - OLD" [checked] [ref=f1e118]
+                                                - text: Hard Rock Bet - Retail - OLD
+                                            - row "Hard Rock Cafe Amsterdam - PropName" [ref=f1e119]:
+                                              - cell "Hard Rock Cafe Amsterdam - PropName" [ref=f1e120]:
+                                                - checkbox "Hard Rock Cafe Amsterdam - PropName" [ref=f1e121]
+                                                - text: Hard Rock Cafe Amsterdam - PropName
+                                            - row "Hard Rock Cafe Antwerp" [ref=f1e122]:
+                                              - cell "Hard Rock Cafe Antwerp" [ref=f1e123]:
+                                                - checkbox "Hard Rock Cafe Antwerp" [ref=f1e124]
+                                                - text: Hard Rock Cafe Antwerp
+                                            - row "Hard Rock Cafe Asuncion" [ref=f1e125]:
+                                              - cell "Hard Rock Cafe Asuncion" [ref=f1e126]:
+                                                - checkbox "Hard Rock Cafe Asuncion" [checked] [ref=f1e127]
+                                                - text: Hard Rock Cafe Asuncion
+                                            - row "Hard Rock Cafe Athens" [ref=f1e128]:
+                                              - cell "Hard Rock Cafe Athens" [ref=f1e129]:
+                                                - checkbox "Hard Rock Cafe Athens" [checked] [ref=f1e130]
+                                                - text: Hard Rock Cafe Athens
+                                            - row "Hard Rock Cafe Atlanta" [ref=f1e131]:
+                                              - cell "Hard Rock Cafe Atlanta" [ref=f1e132]:
+                                                - checkbox "Hard Rock Cafe Atlanta" [ref=f1e133]
+                                                - text: Hard Rock Cafe Atlanta
+                                            - row "Hard Rock Cafe Ayia Napa" [ref=f1e134]:
+                                              - cell "Hard Rock Cafe Ayia Napa" [ref=f1e135]:
+                                                - checkbox "Hard Rock Cafe Ayia Napa" [ref=f1e136]
+                                                - text: Hard Rock Cafe Ayia Napa
+                                            - row "Hard Rock Cafe Baku" [ref=f1e137]:
+                                              - cell "Hard Rock Cafe Baku" [ref=f1e138]:
+                                                - checkbox "Hard Rock Cafe Baku" [ref=f1e139]
+                                                - text: Hard Rock Cafe Baku
+                                            - row "Hard Rock Cafe Baltimore" [ref=f1e140]:
+                                              - cell "Hard Rock Cafe Baltimore" [ref=f1e141]:
+                                                - checkbox "Hard Rock Cafe Baltimore" [ref=f1e142]
+                                                - text: Hard Rock Cafe Baltimore
+                                            - row "Hard Rock Cafe Bangkok" [ref=f1e143]:
+                                              - cell "Hard Rock Cafe Bangkok" [ref=f1e144]:
+                                                - checkbox "Hard Rock Cafe Bangkok" [ref=f1e145]
+                                                - text: Hard Rock Cafe Bangkok
+                                            - row "Hard Rock Cafe Barcelona" [ref=f1e146]:
+                                              - cell "Hard Rock Cafe Barcelona" [ref=f1e147]:
+                                                - checkbox "Hard Rock Cafe Barcelona" [ref=f1e148]
+                                                - text: Hard Rock Cafe Barcelona
+                                            - row "Hard Rock Cafe Bengaluru" [ref=f1e149]:
+                                              - cell "Hard Rock Cafe Bengaluru" [ref=f1e150]:
+                                                - checkbox "Hard Rock Cafe Bengaluru" [ref=f1e151]
+                                                - text: Hard Rock Cafe Bengaluru
+                                            - row "Hard Rock Cafe Berlin" [ref=f1e152]:
+                                              - cell "Hard Rock Cafe Berlin" [ref=f1e153]:
+                                                - checkbox "Hard Rock Cafe Berlin" [ref=f1e154]
+                                                - text: Hard Rock Cafe Berlin
+                                            - row "Hard Rock Cafe Bogota" [ref=f1e155]:
+                                              - cell "Hard Rock Cafe Bogota" [ref=f1e156]:
+                                                - checkbox "Hard Rock Cafe Bogota" [ref=f1e157]
+                                                - text: Hard Rock Cafe Bogota
+                                            - row "Hard Rock Cafe Boston" [ref=f1e158]:
+                                              - cell "Hard Rock Cafe Boston" [ref=f1e159]:
+                                                - checkbox "Hard Rock Cafe Boston" [checked] [ref=f1e160]
+                                                - text: Hard Rock Cafe Boston
+                                            - row "Hard Rock Cafe Brussels" [ref=f1e161]:
+                                              - cell "Hard Rock Cafe Brussels" [ref=f1e162]:
+                                                - checkbox "Hard Rock Cafe Brussels" [ref=f1e163]
+                                                - text: Hard Rock Cafe Brussels
+                                            - row "Hard Rock Cafe Bucharest" [ref=f1e164]:
+                                              - cell "Hard Rock Cafe Bucharest" [ref=f1e165]:
+                                                - checkbox "Hard Rock Cafe Bucharest" [ref=f1e166]
+                                                - text: Hard Rock Cafe Bucharest
+                                            - row "Hard Rock Cafe Budapest" [ref=f1e167]:
+                                              - cell "Hard Rock Cafe Budapest" [ref=f1e168]:
+                                                - checkbox "Hard Rock Cafe Budapest" [ref=f1e169]
+                                                - text: Hard Rock Cafe Budapest
+                                            - row "Hard Rock Cafe Buenos Aires" [ref=f1e170]:
+                                              - cell "Hard Rock Cafe Buenos Aires" [ref=f1e171]:
+                                                - checkbox "Hard Rock Cafe Buenos Aires" [ref=f1e172]
+                                                - text: Hard Rock Cafe Buenos Aires
+                                            - row "Hard Rock Cafe Buenos Aires Aeroparque" [ref=f1e173]:
+                                              - cell "Hard Rock Cafe Buenos Aires Aeroparque" [ref=f1e174]:
+                                                - checkbox "Hard Rock Cafe Buenos Aires Aeroparque" [ref=f1e175]
+                                                - text: Hard Rock Cafe Buenos Aires Aeroparque
+                                            - row "Hard Rock Cafe Cabo San Lucas" [ref=f1e176]:
+                                              - cell "Hard Rock Cafe Cabo San Lucas" [ref=f1e177]:
+                                                - checkbox "Hard Rock Cafe Cabo San Lucas" [ref=f1e178]
+                                                - text: Hard Rock Cafe Cabo San Lucas
+                                            - row "Hard Rock Cafe Cancun" [ref=f1e179]:
+                                              - cell "Hard Rock Cafe Cancun" [ref=f1e180]:
+                                                - checkbox "Hard Rock Cafe Cancun" [ref=f1e181]
+                                                - text: Hard Rock Cafe Cancun
+                                            - row "Hard Rock Cafe Cape Town" [ref=f1e182]:
+                                              - cell "Hard Rock Cafe Cape Town" [ref=f1e183]:
+                                                - checkbox "Hard Rock Cafe Cape Town" [ref=f1e184]
+                                                - text: Hard Rock Cafe Cape Town
+                                            - row "Hard Rock Cafe Cartagena" [ref=f1e185]:
+                                              - cell "Hard Rock Cafe Cartagena" [ref=f1e186]:
+                                                - checkbox "Hard Rock Cafe Cartagena" [ref=f1e187]
+                                                - text: Hard Rock Cafe Cartagena
+                                            - row "Hard Rock Cafe Chandigarh" [ref=f1e188]:
+                                              - cell "Hard Rock Cafe Chandigarh" [ref=f1e189]:
+                                                - checkbox "Hard Rock Cafe Chandigarh" [ref=f1e190]
+                                                - text: Hard Rock Cafe Chandigarh
+                                            - row "Hard Rock Cafe Chiang Mai" [ref=f1e191]:
+                                              - cell "Hard Rock Cafe Chiang Mai" [ref=f1e192]:
+                                                - checkbox "Hard Rock Cafe Chiang Mai" [ref=f1e193]
+                                                - text: Hard Rock Cafe Chiang Mai
+                                            - row "Hard Rock Cafe Chicago" [ref=f1e194]:
+                                              - cell "Hard Rock Cafe Chicago" [ref=f1e195]:
+                                                - checkbox "Hard Rock Cafe Chicago" [ref=f1e196]
+                                                - text: Hard Rock Cafe Chicago
+                                            - row "Hard Rock Cafe Cologne" [ref=f1e197]:
+                                              - cell "Hard Rock Cafe Cologne" [ref=f1e198]:
+                                                - checkbox "Hard Rock Cafe Cologne" [ref=f1e199]
+                                                - text: Hard Rock Cafe Cologne
+                                            - row "Hard Rock Cafe Copenhagen" [ref=f1e200]:
+                                              - cell "Hard Rock Cafe Copenhagen" [ref=f1e201]:
+                                                - checkbox "Hard Rock Cafe Copenhagen" [ref=f1e202]
+                                                - text: Hard Rock Cafe Copenhagen
+                                            - row "Hard Rock Cafe Cozumel" [ref=f1e203]:
+                                              - cell "Hard Rock Cafe Cozumel" [ref=f1e204]:
+                                                - checkbox "Hard Rock Cafe Cozumel" [ref=f1e205]
+                                                - text: Hard Rock Cafe Cozumel
+                                            - row "Hard Rock Cafe Denver" [ref=f1e206]:
+                                              - cell "Hard Rock Cafe Denver" [ref=f1e207]:
+                                                - checkbox "Hard Rock Cafe Denver" [ref=f1e208]
+                                                - text: Hard Rock Cafe Denver
+                                            - row "Hard Rock Cafe Dubai" [ref=f1e209]:
+                                              - cell "Hard Rock Cafe Dubai" [ref=f1e210]:
+                                                - checkbox "Hard Rock Cafe Dubai" [ref=f1e211]
+                                                - text: Hard Rock Cafe Dubai
+                                            - row "Hard Rock Cafe Dubai Airport" [ref=f1e212]:
+                                              - cell "Hard Rock Cafe Dubai Airport" [ref=f1e213]:
+                                                - checkbox "Hard Rock Cafe Dubai Airport" [ref=f1e214]
+                                                - text: Hard Rock Cafe Dubai Airport
+                                            - row "Hard Rock Cafe Dublin" [ref=f1e215]:
+                                              - cell "Hard Rock Cafe Dublin" [ref=f1e216]:
+                                                - checkbox "Hard Rock Cafe Dublin" [ref=f1e217]
+                                                - text: Hard Rock Cafe Dublin
+                                            - row "Hard Rock Cafe Edinburgh" [ref=f1e218]:
+                                              - cell "Hard Rock Cafe Edinburgh" [ref=f1e219]:
+                                                - checkbox "Hard Rock Cafe Edinburgh" [ref=f1e220]
+                                                - text: Hard Rock Cafe Edinburgh
+                                            - row "Hard Rock Cafe Ezeiza Airport" [ref=f1e221]:
+                                              - cell "Hard Rock Cafe Ezeiza Airport" [ref=f1e222]:
+                                                - checkbox "Hard Rock Cafe Ezeiza Airport" [ref=f1e223]
+                                                - text: Hard Rock Cafe Ezeiza Airport
+                                            - row "Hard Rock Cafe Florence" [ref=f1e224]:
+                                              - cell "Hard Rock Cafe Florence" [ref=f1e225]:
+                                                - checkbox "Hard Rock Cafe Florence" [ref=f1e226]
+                                                - text: Hard Rock Cafe Florence
+                                            - row "Hard Rock Cafe Fortaleza" [ref=f1e227]:
+                                              - cell "Hard Rock Cafe Fortaleza" [ref=f1e228]:
+                                                - checkbox "Hard Rock Cafe Fortaleza" [ref=f1e229]
+                                                - text: Hard Rock Cafe Fortaleza
+                                            - row "Hard Rock Cafe Gdansk" [ref=f1e230]:
+                                              - cell "Hard Rock Cafe Gdansk" [ref=f1e231]:
+                                                - checkbox "Hard Rock Cafe Gdansk" [ref=f1e232]
+                                                - text: Hard Rock Cafe Gdansk
+                                            - row "Hard Rock Cafe Glasgow" [ref=f1e233]:
+                                              - cell "Hard Rock Cafe Glasgow" [ref=f1e234]:
+                                                - checkbox "Hard Rock Cafe Glasgow" [ref=f1e235]
+                                                - text: Hard Rock Cafe Glasgow
+                                            - row "Hard Rock Cafe Gothenburg" [ref=f1e236]:
+                                              - cell "Hard Rock Cafe Gothenburg" [ref=f1e237]:
+                                                - checkbox "Hard Rock Cafe Gothenburg" [ref=f1e238]
+                                                - text: Hard Rock Cafe Gothenburg
+                                            - row "Hard Rock Cafe Gramado" [ref=f1e239]:
+                                              - cell "Hard Rock Cafe Gramado" [ref=f1e240]:
+                                                - checkbox "Hard Rock Cafe Gramado" [ref=f1e241]
+                                                - text: Hard Rock Cafe Gramado
+                                            - row "Hard Rock Cafe Gran Canaria" [ref=f1e242]:
+                                              - cell "Hard Rock Cafe Gran Canaria" [ref=f1e243]:
+                                                - checkbox "Hard Rock Cafe Gran Canaria" [ref=f1e244]
+                                                - text: Hard Rock Cafe Gran Canaria
+                                            - row "Hard Rock Cafe Guwahati" [ref=f1e245]:
+                                              - cell "Hard Rock Cafe Guwahati" [ref=f1e246]:
+                                                - checkbox "Hard Rock Cafe Guwahati" [ref=f1e247]
+                                                - text: Hard Rock Cafe Guwahati
+                                            - row "Hard Rock Cafe Hamburg" [ref=f1e248]:
+                                              - cell "Hard Rock Cafe Hamburg" [ref=f1e249]:
+                                                - checkbox "Hard Rock Cafe Hamburg" [ref=f1e250]
+                                                - text: Hard Rock Cafe Hamburg
+                                            - row "Hard Rock Cafe Helsinki" [ref=f1e251]:
+                                              - cell "Hard Rock Cafe Helsinki" [ref=f1e252]:
+                                                - checkbox "Hard Rock Cafe Helsinki" [ref=f1e253]
+                                                - text: Hard Rock Cafe Helsinki
+                                            - row "Hard Rock Cafe Ho Chi Minh City" [ref=f1e254]:
+                                              - cell "Hard Rock Cafe Ho Chi Minh City" [ref=f1e255]:
+                                                - checkbox "Hard Rock Cafe Ho Chi Minh City" [ref=f1e256]
+                                                - text: Hard Rock Cafe Ho Chi Minh City
+                                            - row "Hard Rock Cafe Hollywood Blvd, Los Angeles" [ref=f1e257]:
+                                              - cell "Hard Rock Cafe Hollywood Blvd, Los Angeles" [ref=f1e258]:
+                                                - checkbox "Hard Rock Cafe Hollywood Blvd, Los Angeles" [ref=f1e259]
+                                                - text: Hard Rock Cafe Hollywood Blvd, Los Angeles
+                                            - row "Hard Rock Cafe Honolulu" [ref=f1e260]:
+                                              - cell "Hard Rock Cafe Honolulu" [ref=f1e261]:
+                                                - checkbox "Hard Rock Cafe Honolulu" [ref=f1e262]
+                                                - text: Hard Rock Cafe Honolulu
+                                            - row "Hard Rock Cafe Houston Airport" [ref=f1e263]:
+                                              - cell "Hard Rock Cafe Houston Airport" [ref=f1e264]:
+                                                - checkbox "Hard Rock Cafe Houston Airport" [ref=f1e265]
+                                                - text: Hard Rock Cafe Houston Airport
+                                            - row "Hard Rock Cafe Hurghada" [ref=f1e266]:
+                                              - cell "Hard Rock Cafe Hurghada" [ref=f1e267]:
+                                                - checkbox "Hard Rock Cafe Hurghada" [ref=f1e268]
+                                                - text: Hard Rock Cafe Hurghada
+                                            - row "Hard Rock Cafe Hyderabad" [ref=f1e269]:
+                                              - cell "Hard Rock Cafe Hyderabad" [ref=f1e270]:
+                                                - checkbox "Hard Rock Cafe Hyderabad" [ref=f1e271]
+                                                - text: Hard Rock Cafe Hyderabad
+                                            - row "Hard Rock Cafe Ibiza" [ref=f1e272]:
+                                              - cell "Hard Rock Cafe Ibiza" [ref=f1e273]:
+                                                - checkbox "Hard Rock Cafe Ibiza" [ref=f1e274]
+                                                - text: Hard Rock Cafe Ibiza
+                                            - row "Hard Rock Cafe Innsbruck" [ref=f1e275]:
+                                              - cell "Hard Rock Cafe Innsbruck" [ref=f1e276]:
+                                                - checkbox "Hard Rock Cafe Innsbruck" [ref=f1e277]
+                                                - text: Hard Rock Cafe Innsbruck
+                                            - row "Hard Rock Cafe Jakarta" [ref=f1e278]:
+                                              - cell "Hard Rock Cafe Jakarta" [ref=f1e279]:
+                                                - checkbox "Hard Rock Cafe Jakarta" [ref=f1e280]
+                                                - text: Hard Rock Cafe Jakarta
+                                            - row "Hard Rock Cafe Johannesburg" [ref=f1e281]:
+                                              - cell "Hard Rock Cafe Johannesburg" [ref=f1e282]:
+                                                - checkbox "Hard Rock Cafe Johannesburg" [ref=f1e283]
+                                                - text: Hard Rock Cafe Johannesburg
+                                            - row "Hard Rock Cafe Key West" [ref=f1e284]:
+                                              - cell "Hard Rock Cafe Key West" [ref=f1e285]:
+                                                - checkbox "Hard Rock Cafe Key West" [ref=f1e286]
+                                                - text: Hard Rock Cafe Key West
+                                            - row "Hard Rock Cafe Koh Samui" [ref=f1e287]:
+                                              - cell "Hard Rock Cafe Koh Samui" [ref=f1e288]:
+                                                - checkbox "Hard Rock Cafe Koh Samui" [ref=f1e289]
+                                                - text: Hard Rock Cafe Koh Samui
+                                            - row "Hard Rock Cafe Kolkata" [ref=f1e290]:
+                                              - cell "Hard Rock Cafe Kolkata" [ref=f1e291]:
+                                                - checkbox "Hard Rock Cafe Kolkata" [ref=f1e292]
+                                                - text: Hard Rock Cafe Kolkata
+                                            - row "Hard Rock Cafe Krakow" [ref=f1e293]:
+                                              - cell "Hard Rock Cafe Krakow" [ref=f1e294]:
+                                                - checkbox "Hard Rock Cafe Krakow" [ref=f1e295]
+                                                - text: Hard Rock Cafe Krakow
+                                            - row "Hard Rock Cafe Kuala Lumpur" [ref=f1e296]:
+                                              - cell "Hard Rock Cafe Kuala Lumpur" [ref=f1e297]:
+                                                - checkbox "Hard Rock Cafe Kuala Lumpur" [ref=f1e298]
+                                                - text: Hard Rock Cafe Kuala Lumpur
+                                            - row "Hard Rock Cafe Lagos" [ref=f1e299]:
+                                              - cell "Hard Rock Cafe Lagos" [ref=f1e300]:
+                                                - checkbox "Hard Rock Cafe Lagos" [ref=f1e301]
+                                                - text: Hard Rock Cafe Lagos
+                                            - row "Hard Rock Cafe Las Vegas" [ref=f1e302]:
+                                              - cell "Hard Rock Cafe Las Vegas" [ref=f1e303]:
+                                                - checkbox "Hard Rock Cafe Las Vegas" [ref=f1e304]
+                                                - text: Hard Rock Cafe Las Vegas
+                                            - row "Hard Rock Cafe Lisbon" [ref=f1e305]:
+                                              - cell "Hard Rock Cafe Lisbon" [ref=f1e306]:
+                                                - checkbox "Hard Rock Cafe Lisbon" [ref=f1e307]
+                                                - text: Hard Rock Cafe Lisbon
+                                            - row "Hard Rock Cafe London" [ref=f1e308]:
+                                              - cell "Hard Rock Cafe London" [ref=f1e309]:
+                                                - checkbox "Hard Rock Cafe London" [ref=f1e310]
+                                                - text: Hard Rock Cafe London
+                                            - row "Hard Rock Cafe London Oxford Street" [ref=f1e311]:
+                                              - cell "Hard Rock Cafe London Oxford Street" [ref=f1e312]:
+                                                - checkbox "Hard Rock Cafe London Oxford Street" [ref=f1e313]
+                                                - text: Hard Rock Cafe London Oxford Street
+                                            - row "Hard Rock Cafe London Picadilly Circus" [ref=f1e314]:
+                                              - cell "Hard Rock Cafe London Picadilly Circus" [ref=f1e315]:
+                                                - checkbox "Hard Rock Cafe London Picadilly Circus" [ref=f1e316]
+                                                - text: Hard Rock Cafe London Picadilly Circus
+                                            - row "Hard Rock Cafe Lyon" [ref=f1e317]:
+                                              - cell "Hard Rock Cafe Lyon" [ref=f1e318]:
+                                                - checkbox "Hard Rock Cafe Lyon" [ref=f1e319]
+                                                - text: Hard Rock Cafe Lyon
+                                            - row "Hard Rock Cafe Madrid" [ref=f1e320]:
+                                              - cell "Hard Rock Cafe Madrid" [ref=f1e321]:
+                                                - checkbox "Hard Rock Cafe Madrid" [ref=f1e322]
+                                                - text: Hard Rock Cafe Madrid
+                                            - row "Hard Rock Cafe Makati" [ref=f1e323]:
+                                              - cell "Hard Rock Cafe Makati" [ref=f1e324]:
+                                                - checkbox "Hard Rock Cafe Makati" [ref=f1e325]
+                                                - text: Hard Rock Cafe Makati
+                                            - row "Hard Rock Cafe Malaga" [ref=f1e326]:
+                                              - cell "Hard Rock Cafe Malaga" [ref=f1e327]:
+                                                - checkbox "Hard Rock Cafe Malaga" [ref=f1e328]
+                                                - text: Hard Rock Cafe Malaga
+                                            - row "Hard Rock Cafe Mallorca" [ref=f1e329]:
+                                              - cell "Hard Rock Cafe Mallorca" [ref=f1e330]:
+                                                - checkbox "Hard Rock Cafe Mallorca" [ref=f1e331]
+                                                - text: Hard Rock Cafe Mallorca
+                                            - row "Hard Rock Cafe Managua" [ref=f1e332]:
+                                              - cell "Hard Rock Cafe Managua" [ref=f1e333]:
+                                                - checkbox "Hard Rock Cafe Managua" [ref=f1e334]
+                                                - text: Hard Rock Cafe Managua
+                                            - row "Hard Rock Cafe Manchester" [ref=f1e335]:
+                                              - cell "Hard Rock Cafe Manchester" [ref=f1e336]:
+                                                - checkbox "Hard Rock Cafe Manchester" [ref=f1e337]
+                                                - text: Hard Rock Cafe Manchester
+                                            - row "Hard Rock Cafe Manila" [ref=f1e338]:
+                                              - cell "Hard Rock Cafe Manila" [ref=f1e339]:
+                                                - checkbox "Hard Rock Cafe Manila" [ref=f1e340]
+                                                - text: Hard Rock Cafe Manila
+                                            - row "Hard Rock Cafe Margarita" [ref=f1e341]:
+                                              - cell "Hard Rock Cafe Margarita" [ref=f1e342]:
+                                                - checkbox "Hard Rock Cafe Margarita" [ref=f1e343]
+                                                - text: Hard Rock Cafe Margarita
+                                            - row "Hard Rock Cafe Melaka" [ref=f1e344]:
+                                              - cell "Hard Rock Cafe Melaka" [ref=f1e345]:
+                                                - checkbox "Hard Rock Cafe Melaka" [ref=f1e346]
+                                                - text: Hard Rock Cafe Melaka
+                                            - row "Hard Rock Cafe Memphis" [ref=f1e347]:
+                                              - cell "Hard Rock Cafe Memphis" [ref=f1e348]:
+                                                - checkbox "Hard Rock Cafe Memphis" [ref=f1e349]
+                                                - text: Hard Rock Cafe Memphis
+                                            - row "Hard Rock Cafe Miami" [ref=f1e350]:
+                                              - cell "Hard Rock Cafe Miami" [ref=f1e351]:
+                                                - checkbox "Hard Rock Cafe Miami" [ref=f1e352]
+                                                - text: Hard Rock Cafe Miami
+                                            - row "Hard Rock Cafe Montego Bay" [ref=f1e353]:
+                                              - cell "Hard Rock Cafe Montego Bay" [ref=f1e354]:
+                                                - checkbox "Hard Rock Cafe Montego Bay" [ref=f1e355]
+                                                - text: Hard Rock Cafe Montego Bay
+                                            - row "Hard Rock Cafe Montevideo" [ref=f1e356]:
+                                              - cell "Hard Rock Cafe Montevideo" [ref=f1e357]:
+                                                - checkbox "Hard Rock Cafe Montevideo" [ref=f1e358]
+                                                - text: Hard Rock Cafe Montevideo
+                                            - row "Hard Rock Cafe Moscow" [ref=f1e359]:
+                                              - cell "Hard Rock Cafe Moscow" [ref=f1e360]:
+                                                - checkbox "Hard Rock Cafe Moscow" [ref=f1e361]
+                                                - text: Hard Rock Cafe Moscow
+                                            - row "Hard Rock Cafe Myrtle Beach" [ref=f1e362]:
+                                              - cell "Hard Rock Cafe Myrtle Beach" [ref=f1e363]:
+                                                - checkbox "Hard Rock Cafe Myrtle Beach" [ref=f1e364]
+                                                - text: Hard Rock Cafe Myrtle Beach
+                                            - row "Hard Rock Cafe Nashville" [ref=f1e365]:
+                                              - cell "Hard Rock Cafe Nashville" [ref=f1e366]:
+                                                - checkbox "Hard Rock Cafe Nashville" [ref=f1e367]
+                                                - text: Hard Rock Cafe Nashville
+                                            - row "Hard Rock Cafe New Orleans" [ref=f1e368]:
+                                              - cell "Hard Rock Cafe New Orleans" [ref=f1e369]:
+                                                - checkbox "Hard Rock Cafe New Orleans" [ref=f1e370]
+                                                - text: Hard Rock Cafe New Orleans
+                                            - row "Hard Rock Cafe New York" [ref=f1e371]:
+                                              - cell "Hard Rock Cafe New York" [ref=f1e372]:
+                                                - checkbox "Hard Rock Cafe New York" [ref=f1e373]
+                                                - text: Hard Rock Cafe New York
+                                            - row "Hard Rock Cafe Newcastle" [ref=f1e374]:
+                                              - cell "Hard Rock Cafe Newcastle" [ref=f1e375]:
+                                                - checkbox "Hard Rock Cafe Newcastle" [ref=f1e376]
+                                                - text: Hard Rock Cafe Newcastle
+                                            - row "Hard Rock Cafe Niagara Falls Canada" [ref=f1e377]:
+                                              - cell "Hard Rock Cafe Niagara Falls Canada" [ref=f1e378]:
+                                                - checkbox "Hard Rock Cafe Niagara Falls Canada" [ref=f1e379]
+                                                - text: Hard Rock Cafe Niagara Falls Canada
+                                            - row "Hard Rock Cafe Niagara Falls USA" [ref=f1e380]:
+                                              - cell "Hard Rock Cafe Niagara Falls USA" [ref=f1e381]:
+                                                - checkbox "Hard Rock Cafe Niagara Falls USA" [ref=f1e382]
+                                                - text: Hard Rock Cafe Niagara Falls USA
+                                            - row "Hard Rock Cafe Nice" [ref=f1e383]:
+                                              - cell "Hard Rock Cafe Nice" [ref=f1e384]:
+                                                - checkbox "Hard Rock Cafe Nice" [ref=f1e385]
+                                                - text: Hard Rock Cafe Nice
+                                            - row "Hard Rock Cafe Orlando" [ref=f1e386]:
+                                              - cell "Hard Rock Cafe Orlando" [ref=f1e387]:
+                                                - checkbox "Hard Rock Cafe Orlando" [ref=f1e388]
+                                                - text: Hard Rock Cafe Orlando
+                                            - row "Hard Rock Cafe Osaka" [ref=f1e389]:
+                                              - cell "Hard Rock Cafe Osaka" [ref=f1e390]:
+                                                - checkbox "Hard Rock Cafe Osaka" [ref=f1e391]
+                                                - text: Hard Rock Cafe Osaka
+                                            - row "Hard Rock Cafe Osaka Universal" [ref=f1e392]:
+                                              - cell "Hard Rock Cafe Osaka Universal" [ref=f1e393]:
+                                                - checkbox "Hard Rock Cafe Osaka Universal" [ref=f1e394]
+                                                - text: Hard Rock Cafe Osaka Universal
+                                            - row "Hard Rock Cafe Oslo" [ref=f1e395]:
+                                              - cell "Hard Rock Cafe Oslo" [ref=f1e396]:
+                                                - checkbox "Hard Rock Cafe Oslo" [ref=f1e397]
+                                                - text: Hard Rock Cafe Oslo
+                                            - row "Hard Rock Café Palermo" [ref=f1e398]:
+                                              - cell "Hard Rock Café Palermo" [ref=f1e399]:
+                                                - checkbox "Hard Rock Café Palermo" [ref=f1e400]
+                                                - text: Hard Rock Café Palermo
+                                            - row "Hard Rock Cafe Paris" [ref=f1e401]:
+                                              - cell "Hard Rock Cafe Paris" [ref=f1e402]:
+                                                - checkbox "Hard Rock Cafe Paris" [ref=f1e403]
+                                                - text: Hard Rock Cafe Paris
+                                            - row "Hard Rock Cafe Pattaya" [ref=f1e404]:
+                                              - cell "Hard Rock Cafe Pattaya" [ref=f1e405]:
+                                                - checkbox "Hard Rock Cafe Pattaya" [ref=f1e406]
+                                                - text: Hard Rock Cafe Pattaya
+                                            - row "Hard Rock Cafe Philadelphia" [ref=f1e407]:
+                                              - cell "Hard Rock Cafe Philadelphia" [ref=f1e408]:
+                                                - checkbox "Hard Rock Cafe Philadelphia" [ref=f1e409]
+                                                - text: Hard Rock Cafe Philadelphia
+                                            - row "Hard Rock Cafe Phnom Penh" [ref=f1e410]:
+                                              - cell "Hard Rock Cafe Phnom Penh" [ref=f1e411]:
+                                                - checkbox "Hard Rock Cafe Phnom Penh" [ref=f1e412]
+                                                - text: Hard Rock Cafe Phnom Penh
+                                            - row "Hard Rock Cafe Phuket" [ref=f1e413]:
+                                              - cell "Hard Rock Cafe Phuket" [ref=f1e414]:
+                                                - checkbox "Hard Rock Cafe Phuket" [ref=f1e415]
+                                                - text: Hard Rock Cafe Phuket
+                                            - row "Hard Rock Cafe Pigeon Forge" [ref=f1e416]:
+                                              - cell "Hard Rock Cafe Pigeon Forge" [ref=f1e417]:
+                                                - checkbox "Hard Rock Cafe Pigeon Forge" [ref=f1e418]
+                                                - text: Hard Rock Cafe Pigeon Forge
+                                            - row "Hard Rock Cafe Pittsburgh" [ref=f1e419]:
+                                              - cell "Hard Rock Cafe Pittsburgh" [ref=f1e420]:
+                                                - checkbox "Hard Rock Cafe Pittsburgh" [ref=f1e421]
+                                                - text: Hard Rock Cafe Pittsburgh
+                                            - row "Hard Rock Cafe Playa del Carmen" [ref=f1e422]:
+                                              - cell "Hard Rock Cafe Playa del Carmen" [ref=f1e423]:
+                                                - checkbox "Hard Rock Cafe Playa del Carmen" [ref=f1e424]
+                                                - text: Hard Rock Cafe Playa del Carmen
+                                            - row "Hard Rock Cafe Podgorica" [ref=f1e425]:
+                                              - cell "Hard Rock Cafe Podgorica" [ref=f1e426]:
+                                                - checkbox "Hard Rock Cafe Podgorica" [ref=f1e427]
+                                                - text: Hard Rock Cafe Podgorica
+                                            - row "Hard Rock Cafe Ponce" [ref=f1e428]:
+                                              - cell "Hard Rock Cafe Ponce" [ref=f1e429]:
+                                                - checkbox "Hard Rock Cafe Ponce" [ref=f1e430]
+                                                - text: Hard Rock Cafe Ponce
+                                            - row "Hard Rock Cafe Port El Kantaoui" [ref=f1e431]:
+                                              - cell "Hard Rock Cafe Port El Kantaoui" [ref=f1e432]:
+                                                - checkbox "Hard Rock Cafe Port El Kantaoui" [ref=f1e433]
+                                                - text: Hard Rock Cafe Port El Kantaoui
+                                            - row "Hard Rock Cafe Porto" [ref=f1e434]:
+                                              - cell "Hard Rock Cafe Porto" [ref=f1e435]:
+                                                - checkbox "Hard Rock Cafe Porto" [ref=f1e436]
+                                                - text: Hard Rock Cafe Porto
+                                            - row "Hard Rock Cafe Prague" [ref=f1e437]:
+                                              - cell "Hard Rock Cafe Prague" [ref=f1e438]:
+                                                - checkbox "Hard Rock Cafe Prague" [ref=f1e439]
+                                                - text: Hard Rock Cafe Prague
+                                            - row "Hard Rock Cafe Pretoria" [ref=f1e440]:
+                                              - cell "Hard Rock Cafe Pretoria" [ref=f1e441]:
+                                                - checkbox "Hard Rock Cafe Pretoria" [ref=f1e442]
+                                                - text: Hard Rock Cafe Pretoria
+                                            - row "Hard Rock Cafe Puerto Madero" [ref=f1e443]:
+                                              - cell "Hard Rock Cafe Puerto Madero" [ref=f1e444]:
+                                                - checkbox "Hard Rock Cafe Puerto Madero" [ref=f1e445]
+                                                - text: Hard Rock Cafe Puerto Madero
+                                            - row "Hard Rock Cafe Punta Cana" [ref=f1e446]:
+                                              - cell "Hard Rock Cafe Punta Cana" [ref=f1e447]:
+                                                - checkbox "Hard Rock Cafe Punta Cana" [ref=f1e448]
+                                                - text: Hard Rock Cafe Punta Cana
+                                            - row "Hard Rock Cafe Reykjavik" [ref=f1e449]:
+                                              - cell "Hard Rock Cafe Reykjavik" [ref=f1e450]:
+                                                - checkbox "Hard Rock Cafe Reykjavik" [ref=f1e451]
+                                                - text: Hard Rock Cafe Reykjavik
+                                            - row "Hard Rock Cafe Rome" [ref=f1e452]:
+                                              - cell "Hard Rock Cafe Rome" [ref=f1e453]:
+                                                - checkbox "Hard Rock Cafe Rome" [ref=f1e454]
+                                                - text: Hard Rock Cafe Rome
+                                            - row "Hard Rock Cafe Saipan" [ref=f1e455]:
+                                              - cell "Hard Rock Cafe Saipan" [ref=f1e456]:
+                                                - checkbox "Hard Rock Cafe Saipan" [ref=f1e457]
+                                                - text: Hard Rock Cafe Saipan
+                                            - row "Hard Rock Cafe San Antonio" [ref=f1e458]:
+                                              - cell "Hard Rock Cafe San Antonio" [ref=f1e459]:
+                                                - checkbox "Hard Rock Cafe San Antonio" [ref=f1e460]
+                                                - text: Hard Rock Cafe San Antonio
+                                            - row "Hard Rock Cafe San Francisco" [ref=f1e461]:
+                                              - cell "Hard Rock Cafe San Francisco" [ref=f1e462]:
+                                                - checkbox "Hard Rock Cafe San Francisco" [ref=f1e463]
+                                                - text: Hard Rock Cafe San Francisco
+                                            - row "Hard Rock Cafe Santa Cruz" [ref=f1e464]:
+                                              - cell "Hard Rock Cafe Santa Cruz" [ref=f1e465]:
+                                                - checkbox "Hard Rock Cafe Santa Cruz" [ref=f1e466]
+                                                - text: Hard Rock Cafe Santa Cruz
+                                            - row "Hard Rock Cafe Santo Domingo" [ref=f1e467]:
+                                              - cell "Hard Rock Cafe Santo Domingo" [ref=f1e468]:
+                                                - checkbox "Hard Rock Cafe Santo Domingo" [ref=f1e469]
+                                                - text: Hard Rock Cafe Santo Domingo
+                                            - row "Hard Rock Cafe Seattle" [ref=f1e470]:
+                                              - cell "Hard Rock Cafe Seattle" [ref=f1e471]:
+                                                - checkbox "Hard Rock Cafe Seattle" [ref=f1e472]
+                                                - text: Hard Rock Cafe Seattle
+                                            - row "Hard Rock Cafe Seville" [ref=f1e473]:
+                                              - cell "Hard Rock Cafe Seville" [ref=f1e474]:
+                                                - checkbox "Hard Rock Cafe Seville" [ref=f1e475]
+                                                - text: Hard Rock Cafe Seville
+                                            - row "Hard Rock Cafe Sharm El Sheikh" [ref=f1e476]:
+                                              - cell "Hard Rock Cafe Sharm El Sheikh" [ref=f1e477]:
+                                                - checkbox "Hard Rock Cafe Sharm El Sheikh" [ref=f1e478]
+                                                - text: Hard Rock Cafe Sharm El Sheikh
+                                            - row "Hard Rock Cafe Singapore" [ref=f1e479]:
+                                              - cell "Hard Rock Cafe Singapore" [ref=f1e480]:
+                                                - checkbox "Hard Rock Cafe Singapore" [ref=f1e481]
+                                                - text: Hard Rock Cafe Singapore
+                                            - row "Hard Rock Cafe St Petersburg" [ref=f1e482]:
+                                              - cell "Hard Rock Cafe St Petersburg" [ref=f1e483]:
+                                                - checkbox "Hard Rock Cafe St Petersburg" [ref=f1e484]
+                                                - text: Hard Rock Cafe St Petersburg
+                                            - row "Hard Rock Cafe Stockholm" [ref=f1e485]:
+                                              - cell "Hard Rock Cafe Stockholm" [ref=f1e486]:
+                                                - checkbox "Hard Rock Cafe Stockholm" [ref=f1e487]
+                                                - text: Hard Rock Cafe Stockholm
+                                            - row "Hard Rock Cafe Surfers Paradise" [ref=f1e488]:
+                                              - cell "Hard Rock Cafe Surfers Paradise" [ref=f1e489]:
+                                                - checkbox "Hard Rock Cafe Surfers Paradise" [ref=f1e490]
+                                                - text: Hard Rock Cafe Surfers Paradise
+                                            - row "Hard Rock Cafe Sydney" [ref=f1e491]:
+                                              - cell "Hard Rock Cafe Sydney" [ref=f1e492]:
+                                                - checkbox "Hard Rock Cafe Sydney" [ref=f1e493]
+                                                - text: Hard Rock Cafe Sydney
+                                            - row "Hard Rock Cafe Tampa Airport" [ref=f1e494]:
+                                              - cell "Hard Rock Cafe Tampa Airport" [ref=f1e495]:
+                                                - checkbox "Hard Rock Cafe Tampa Airport" [ref=f1e496]
+                                                - text: Hard Rock Cafe Tampa Airport
+                                            - row "Hard Rock Cafe Tbilisi" [ref=f1e497]:
+                                              - cell "Hard Rock Cafe Tbilisi" [ref=f1e498]:
+                                                - checkbox "Hard Rock Cafe Tbilisi" [ref=f1e499]
+                                                - text: Hard Rock Cafe Tbilisi
+                                            - row "Hard Rock Cafe Tenerife" [ref=f1e500]:
+                                              - cell "Hard Rock Cafe Tenerife" [ref=f1e501]:
+                                                - checkbox "Hard Rock Cafe Tenerife" [ref=f1e502]
+                                                - text: Hard Rock Cafe Tenerife
+                                            - row "Hard Rock Cafe Tianjin" [ref=f1e503]:
+                                              - cell "Hard Rock Cafe Tianjin" [ref=f1e504]:
+                                                - checkbox "Hard Rock Cafe Tianjin" [ref=f1e505]
+                                                - text: Hard Rock Cafe Tianjin
+                                            - row "Hard Rock Cafe Tokyo Roppongi" [ref=f1e506]:
+                                              - cell "Hard Rock Cafe Tokyo Roppongi" [ref=f1e507]:
+                                                - checkbox "Hard Rock Cafe Tokyo Roppongi" [ref=f1e508]
+                                                - text: Hard Rock Cafe Tokyo Roppongi
+                                            - row "Hard Rock Cafe Tokyo Uyeno Eki" [ref=f1e509]:
+                                              - cell "Hard Rock Cafe Tokyo Uyeno Eki" [ref=f1e510]:
+                                                - checkbox "Hard Rock Cafe Tokyo Uyeno Eki" [ref=f1e511]
+                                                - text: Hard Rock Cafe Tokyo Uyeno Eki
+                                            - row "Hard Rock Cafe Ulaanbaatar" [ref=f1e512]:
+                                              - cell "Hard Rock Cafe Ulaanbaatar" [ref=f1e513]:
+                                                - checkbox "Hard Rock Cafe Ulaanbaatar" [ref=f1e514]
+                                                - text: Hard Rock Cafe Ulaanbaatar
+                                            - row "Hard Rock Cafe Ushuaia" [ref=f1e515]:
+                                              - cell "Hard Rock Cafe Ushuaia" [ref=f1e516]:
+                                                - checkbox "Hard Rock Cafe Ushuaia" [ref=f1e517]
+                                                - text: Hard Rock Cafe Ushuaia
+                                            - row "Hard Rock Cafe Valencia" [ref=f1e518]:
+                                              - cell "Hard Rock Cafe Valencia" [ref=f1e519]:
+                                                - checkbox "Hard Rock Cafe Valencia" [ref=f1e520]
+                                                - text: Hard Rock Cafe Valencia
+                                            - row "Hard Rock Cafe Venice" [ref=f1e521]:
+                                              - cell "Hard Rock Cafe Venice" [ref=f1e522]:
+                                                - checkbox "Hard Rock Cafe Venice" [ref=f1e523]
+                                                - text: Hard Rock Cafe Venice
+                                            - row "Hard Rock Cafe Vienna" [ref=f1e524]:
+                                              - cell "Hard Rock Cafe Vienna" [ref=f1e525]:
+                                                - checkbox "Hard Rock Cafe Vienna" [ref=f1e526]
+                                                - text: Hard Rock Cafe Vienna
+                                            - row "Hard Rock Cafe Warsaw" [ref=f1e527]:
+                                              - cell "Hard Rock Cafe Warsaw" [ref=f1e528]:
+                                                - checkbox "Hard Rock Cafe Warsaw" [ref=f1e529]
+                                                - text: Hard Rock Cafe Warsaw
+                                            - row "Hard Rock Cafe Washington DC" [ref=f1e530]:
+                                              - cell "Hard Rock Cafe Washington DC" [ref=f1e531]:
+                                                - checkbox "Hard Rock Cafe Washington DC" [ref=f1e532]
+                                                - text: Hard Rock Cafe Washington DC
+                                            - row "Hard Rock Cafe Wroclaw" [ref=f1e533]:
+                                              - cell "Hard Rock Cafe Wroclaw" [ref=f1e534]:
+                                                - checkbox "Hard Rock Cafe Wroclaw" [ref=f1e535]
+                                                - text: Hard Rock Cafe Wroclaw
+                                            - row "Hard Rock Cafe Yokohama" [ref=f1e536]:
+                                              - cell "Hard Rock Cafe Yokohama" [ref=f1e537]:
+                                                - checkbox "Hard Rock Cafe Yokohama" [ref=f1e538]
+                                                - text: Hard Rock Cafe Yokohama
+                                            - row "Hard Rock Cafe, Andorra" [ref=f1e539]:
+                                              - cell "Hard Rock Cafe, Andorra" [ref=f1e540]:
+                                                - checkbox "Hard Rock Cafe, Andorra" [ref=f1e541]
+                                                - text: Hard Rock Cafe, Andorra
+                                            - row "Hard Rock Cafe, Angkor" [ref=f1e542]:
+                                              - cell "Hard Rock Cafe, Angkor" [ref=f1e543]:
+                                                - checkbox "Hard Rock Cafe, Angkor" [ref=f1e544]
+                                                - text: Hard Rock Cafe, Angkor
+                                            - row "Hard Rock Cafe, Bali" [ref=f1e545]:
+                                              - cell "Hard Rock Cafe, Bali" [ref=f1e546]:
+                                                - checkbox "Hard Rock Cafe, Bali" [ref=f1e547]
+                                                - text: Hard Rock Cafe, Bali
+                                            - row "Hard Rock Cafe, Bengaluru Whitefield" [ref=f1e548]:
+                                              - cell "Hard Rock Cafe, Bengaluru Whitefield" [ref=f1e549]:
+                                                - checkbox "Hard Rock Cafe, Bengaluru Whitefield" [ref=f1e550]
+                                                - text: Hard Rock Cafe, Bengaluru Whitefield
+                                            - row "Hard Rock Cafe, Cayman Islands" [ref=f1e551]:
+                                              - cell "Hard Rock Cafe, Cayman Islands" [ref=f1e552]:
+                                                - checkbox "Hard Rock Cafe, Cayman Islands" [ref=f1e553]
+                                                - text: Hard Rock Cafe, Cayman Islands
+                                            - row "Hard Rock Cafe, Curitiba" [ref=f1e554]:
+                                              - cell "Hard Rock Cafe, Curitiba" [ref=f1e555]:
+                                                - checkbox "Hard Rock Cafe, Curitiba" [ref=f1e556]
+                                                - text: Hard Rock Cafe, Curitiba
+                                            - row "Hard Rock Cafe, Foxwoods" [ref=f1e557]:
+                                              - cell "Hard Rock Cafe, Foxwoods" [ref=f1e558]:
+                                                - checkbox "Hard Rock Cafe, Foxwoods" [ref=f1e559]
+                                                - text: Hard Rock Cafe, Foxwoods
+                                            - row "Hard Rock Cafe, Guam" [ref=f1e560]:
+                                              - cell "Hard Rock Cafe, Guam" [ref=f1e561]:
+                                                - checkbox "Hard Rock Cafe, Guam" [ref=f1e562]
+                                                - text: Hard Rock Cafe, Guam
+                                            - row "Hard Rock Cafe, Guyana" [ref=f1e563]:
+                                              - cell "Hard Rock Cafe, Guyana" [ref=f1e564]:
+                                                - checkbox "Hard Rock Cafe, Guyana" [ref=f1e565]
+                                                - text: Hard Rock Cafe, Guyana
+                                            - row "Hard Rock Cafe, Kathmandu" [ref=f1e566]:
+                                              - cell "Hard Rock Cafe, Kathmandu" [ref=f1e567]:
+                                                - checkbox "Hard Rock Cafe, Kathmandu" [ref=f1e568]
+                                                - text: Hard Rock Cafe, Kathmandu
+                                            - row "Hard Rock Cafe, Maldives" [ref=f1e569]:
+                                              - cell "Hard Rock Cafe, Maldives" [ref=f1e570]:
+                                                - checkbox "Hard Rock Cafe, Maldives" [ref=f1e571]
+                                                - text: Hard Rock Cafe, Maldives
+                                            - row "Hard Rock Cafe, Malta Airport" [ref=f1e572]:
+                                              - cell "Hard Rock Cafe, Malta Airport" [ref=f1e573]:
+                                                - checkbox "Hard Rock Cafe, Malta Airport" [ref=f1e574]
+                                                - text: Hard Rock Cafe, Malta Airport
+                                            - row "Hard Rock Cafe, Munich" [ref=f1e575]:
+                                              - cell "Hard Rock Cafe, Munich" [ref=f1e576]:
+                                                - checkbox "Hard Rock Cafe, Munich" [ref=f1e577]
+                                                - text: Hard Rock Cafe, Munich
+                                            - row "Hard Rock Cafe, Nabq" [ref=f1e578]:
+                                              - cell "Hard Rock Cafe, Nabq" [ref=f1e579]:
+                                                - checkbox "Hard Rock Cafe, Nabq" [ref=f1e580]
+                                                - text: Hard Rock Cafe, Nabq
+                                            - row "Hard Rock Cafe, Northern Indiana" [ref=f1e581]:
+                                              - cell "Hard Rock Cafe, Northern Indiana" [ref=f1e582]:
+                                                - checkbox "Hard Rock Cafe, Northern Indiana" [ref=f1e583]
+                                                - text: Hard Rock Cafe, Northern Indiana
+                                            - row "Hard Rock Cafe, Panama" [ref=f1e584]:
+                                              - cell "Hard Rock Cafe, Panama" [ref=f1e585]:
+                                                - checkbox "Hard Rock Cafe, Panama" [ref=f1e586]
+                                                - text: Hard Rock Cafe, Panama
+                                            - row "Hard Rock Cafe, Penang" [ref=f1e587]:
+                                              - cell "Hard Rock Cafe, Penang" [ref=f1e588]:
+                                                - checkbox "Hard Rock Cafe, Penang" [ref=f1e589]
+                                                - text: Hard Rock Cafe, Penang
+                                            - row "Hard Rock Cafe, Ribeirao Preto" [ref=f1e590]:
+                                              - cell "Hard Rock Cafe, Ribeirao Preto" [ref=f1e591]:
+                                                - checkbox "Hard Rock Cafe, Ribeirao Preto" [ref=f1e592]
+                                                - text: Hard Rock Cafe, Ribeirao Preto
+                                            - row "Hard Rock Cafe, Sacramento" [ref=f1e593]:
+                                              - cell "Hard Rock Cafe, Sacramento" [ref=f1e594]:
+                                                - checkbox "Hard Rock Cafe, Sacramento" [ref=f1e595]
+                                                - text: Hard Rock Cafe, Sacramento
+                                            - row "Hard Rock Cafe, San Jose" [ref=f1e596]:
+                                              - cell "Hard Rock Cafe, San Jose" [ref=f1e597]:
+                                                - checkbox "Hard Rock Cafe, San Jose" [ref=f1e598]
+                                                - text: Hard Rock Cafe, San Jose
+                                            - row "Hard Rock Cafe, Santiago" [ref=f1e599]:
+                                              - cell "Hard Rock Cafe, Santiago" [ref=f1e600]:
+                                                - checkbox "Hard Rock Cafe, Santiago" [ref=f1e601]
+                                                - text: Hard Rock Cafe, Santiago
+                                            - row "Hard Rock Cafe, Sentosa" [ref=f1e602]:
+                                              - cell "Hard Rock Cafe, Sentosa" [ref=f1e603]:
+                                                - checkbox "Hard Rock Cafe, Sentosa" [ref=f1e604]
+                                                - text: Hard Rock Cafe, Sentosa
+                                            - row "Hard Rock Cafe, Shenzhen" [ref=f1e605]:
+                                              - cell "Hard Rock Cafe, Shenzhen" [ref=f1e606]:
+                                                - checkbox "Hard Rock Cafe, Shenzhen" [ref=f1e607]
+                                                - text: Hard Rock Cafe, Shenzhen
+                                            - row "Hard Rock Cafe, St Maarten" [ref=f1e608]:
+                                              - cell "Hard Rock Cafe, St Maarten" [ref=f1e609]:
+                                                - checkbox "Hard Rock Cafe, St Maarten" [ref=f1e610]
+                                                - text: Hard Rock Cafe, St Maarten
+                                            - row "Hard Rock Cafe, Sun City" [ref=f1e611]:
+                                              - cell "Hard Rock Cafe, Sun City" [ref=f1e612]:
+                                                - checkbox "Hard Rock Cafe, Sun City" [ref=f1e613]
+                                                - text: Hard Rock Cafe, Sun City
+                                            - row "Hard Rock Cafe, Valletta Malta" [ref=f1e614]:
+                                              - cell "Hard Rock Cafe, Valletta Malta" [ref=f1e615]:
+                                                - checkbox "Hard Rock Cafe, Valletta Malta" [ref=f1e616]
+                                                - text: Hard Rock Cafe, Valletta Malta
+                                            - row "Hard Rock Cafe, Yankee Stadium" [ref=f1e617]:
+                                              - cell "Hard Rock Cafe, Yankee Stadium" [ref=f1e618]:
+                                                - checkbox "Hard Rock Cafe, Yankee Stadium" [ref=f1e619]
+                                                - text: Hard Rock Cafe, Yankee Stadium
+                                            - row "Hard Rock Casino Ottawa" [ref=f1e620]:
+                                              - cell "Hard Rock Casino Ottawa" [ref=f1e621]:
+                                                - checkbox "Hard Rock Casino Ottawa" [ref=f1e622]
+                                                - text: Hard Rock Casino Ottawa
+                                            - row "Hard Rock Casino Rockford" [ref=f1e623]:
+                                              - cell "Hard Rock Casino Rockford" [ref=f1e624]:
+                                                - checkbox "Hard Rock Casino Rockford" [ref=f1e625]
+                                                - text: Hard Rock Casino Rockford
+                                            - row "Hard Rock Casino, Lake Tahoe" [ref=f1e626]:
+                                              - cell "Hard Rock Casino, Lake Tahoe" [ref=f1e627]:
+                                                - checkbox "Hard Rock Casino, Lake Tahoe" [ref=f1e628]
+                                                - text: Hard Rock Casino, Lake Tahoe
+                                            - row "Hard Rock Casino, Sioux City" [ref=f1e629]:
+                                              - cell "Hard Rock Casino, Sioux City" [ref=f1e630]:
+                                                - checkbox "Hard Rock Casino, Sioux City" [ref=f1e631]
+                                                - text: Hard Rock Casino, Sioux City
+                                            - row "Hard Rock Casino, Vancouver" [ref=f1e632]:
+                                              - cell "Hard Rock Casino, Vancouver" [ref=f1e633]:
+                                                - checkbox "Hard Rock Casino, Vancouver" [ref=f1e634]
+                                                - text: Hard Rock Casino, Vancouver
+                                            - row "Hard Rock Cincinnati" [ref=f1e635]:
+                                              - cell "Hard Rock Cincinnati" [ref=f1e636]:
+                                                - checkbox "Hard Rock Cincinnati" [ref=f1e637]
+                                                - text: Hard Rock Cincinnati
+                                            - row "Hard Rock Hotel & Casino Tejon" [ref=f1e638]:
+                                              - cell "Hard Rock Hotel & Casino Tejon" [ref=f1e639]:
+                                                - checkbox "Hard Rock Hotel & Casino Tejon" [ref=f1e640]
+                                                - text: Hard Rock Hotel & Casino Tejon
+                                            - row "Hard Rock Hotel Amsterdam American" [ref=f1e641]:
+                                              - cell "Hard Rock Hotel Amsterdam American" [ref=f1e642]:
+                                                - checkbox "Hard Rock Hotel Amsterdam American" [ref=f1e643]
+                                                - text: Hard Rock Hotel Amsterdam American
+                                            - row "Hard Rock Hotel Budapest" [ref=f1e644]:
+                                              - cell "Hard Rock Hotel Budapest" [ref=f1e645]:
+                                                - checkbox "Hard Rock Hotel Budapest" [ref=f1e646]
+                                                - text: Hard Rock Hotel Budapest
+                                            - row "Hard Rock Hotel Cancun" [ref=f1e647]:
+                                              - cell "Hard Rock Hotel Cancun" [ref=f1e648]:
+                                                - checkbox "Hard Rock Hotel Cancun" [ref=f1e649]
+                                                - text: Hard Rock Hotel Cancun
+                                            - row "Hard Rock Hotel Dalian" [ref=f1e650]:
+                                              - cell "Hard Rock Hotel Dalian" [ref=f1e651]:
+                                                - checkbox "Hard Rock Hotel Dalian" [ref=f1e652]
+                                                - text: Hard Rock Hotel Dalian
+                                            - row "Hard Rock Hotel Davos" [ref=f1e653]:
+                                              - cell "Hard Rock Hotel Davos" [ref=f1e654]:
+                                                - checkbox "Hard Rock Hotel Davos" [ref=f1e655]
+                                                - text: Hard Rock Hotel Davos
+                                            - row "Hard Rock Hotel Desaru Coast" [ref=f1e656]:
+                                              - cell "Hard Rock Hotel Desaru Coast" [ref=f1e657]:
+                                                - checkbox "Hard Rock Hotel Desaru Coast" [ref=f1e658]
+                                                - text: Hard Rock Hotel Desaru Coast
+                                            - row "Hard Rock Hotel Dublin" [ref=f1e659]:
+                                              - cell "Hard Rock Hotel Dublin" [ref=f1e660]:
+                                                - checkbox "Hard Rock Hotel Dublin" [checked] [ref=f1e661]
+                                                - text: Hard Rock Hotel Dublin
+                                            - row "Hard Rock Hotel Goa" [ref=f1e662]:
+                                              - cell "Hard Rock Hotel Goa" [ref=f1e663]:
+                                                - checkbox "Hard Rock Hotel Goa" [checked] [ref=f1e664]
+                                                - text: Hard Rock Hotel Goa
+                                            - row "Hard Rock Hotel Guadalajara" [ref=f1e665]:
+                                              - cell "Hard Rock Hotel Guadalajara" [ref=f1e666]:
+                                                - checkbox "Hard Rock Hotel Guadalajara" [ref=f1e667]
+                                                - text: Hard Rock Hotel Guadalajara
+                                            - row "Hard Rock Hotel Hollywood" [ref=f1e668]:
+                                              - cell "Hard Rock Hotel Hollywood" [ref=f1e669]:
+                                                - checkbox "Hard Rock Hotel Hollywood" [checked] [ref=f1e670]
+                                                - text: Hard Rock Hotel Hollywood
+                                            - row "Hard Rock Hotel Ibiza" [ref=f1e671]:
+                                              - cell "Hard Rock Hotel Ibiza" [ref=f1e672]:
+                                                - checkbox "Hard Rock Hotel Ibiza" [ref=f1e673]
+                                                - text: Hard Rock Hotel Ibiza
+                                            - row "Hard Rock Hotel London" [ref=f1e674]:
+                                              - cell "Hard Rock Hotel London" [ref=f1e675]:
+                                                - checkbox "Hard Rock Hotel London" [ref=f1e676]
+                                                - text: Hard Rock Hotel London
+                                            - row "Hard Rock Hotel London Ontario" [ref=f1e677]:
+                                              - cell "Hard Rock Hotel London Ontario" [ref=f1e678]:
+                                                - checkbox "Hard Rock Hotel London Ontario" [ref=f1e679]
+                                                - text: Hard Rock Hotel London Ontario
+                                            - row "Hard Rock Hotel Madrid" [ref=f1e680]:
+                                              - cell "Hard Rock Hotel Madrid" [ref=f1e681]:
+                                                - checkbox "Hard Rock Hotel Madrid" [ref=f1e682]
+                                                - text: Hard Rock Hotel Madrid
+                                            - row "Hard Rock Hotel New York" [ref=f1e683]:
+                                              - cell "Hard Rock Hotel New York" [ref=f1e684]:
+                                                - checkbox "Hard Rock Hotel New York" [ref=f1e685]
+                                                - text: Hard Rock Hotel New York
+                                            - row "Hard Rock Hotel Orlando" [ref=f1e686]:
+                                              - cell "Hard Rock Hotel Orlando" [ref=f1e687]:
+                                                - checkbox "Hard Rock Hotel Orlando" [ref=f1e688]
+                                                - text: Hard Rock Hotel Orlando
+                                            - row "Hard Rock Hotel Pattaya" [ref=f1e689]:
+                                              - cell "Hard Rock Hotel Pattaya" [ref=f1e690]:
+                                                - checkbox "Hard Rock Hotel Pattaya" [ref=f1e691]
+                                                - text: Hard Rock Hotel Pattaya
+                                            - row "Hard Rock Hotel Penang" [ref=f1e692]:
+                                              - cell "Hard Rock Hotel Penang" [ref=f1e693]:
+                                                - checkbox "Hard Rock Hotel Penang" [ref=f1e694]
+                                                - text: Hard Rock Hotel Penang
+                                            - row "Hard Rock Hotel Riviera Maya" [ref=f1e695]:
+                                              - cell "Hard Rock Hotel Riviera Maya" [ref=f1e696]:
+                                                - checkbox "Hard Rock Hotel Riviera Maya" [ref=f1e697]
+                                                - text: Hard Rock Hotel Riviera Maya
+                                            - row "Hard Rock Hotel Shenzhen" [ref=f1e698]:
+                                              - cell "Hard Rock Hotel Shenzhen" [ref=f1e699]:
+                                                - checkbox "Hard Rock Hotel Shenzhen" [ref=f1e700]
+                                                - text: Hard Rock Hotel Shenzhen
+                                            - row "Hard Rock Hotel Tenerife" [ref=f1e701]:
+                                              - cell "Hard Rock Hotel Tenerife" [ref=f1e702]:
+                                                - checkbox "Hard Rock Hotel Tenerife" [ref=f1e703]
+                                                - text: Hard Rock Hotel Tenerife
+                                            - row "Hard Rock Hotel, Atlantic City" [ref=f1e704]:
+                                              - cell "Hard Rock Hotel, Atlantic City" [ref=f1e705]:
+                                                - checkbox "Hard Rock Hotel, Atlantic City" [ref=f1e706]
+                                                - text: Hard Rock Hotel, Atlantic City
+                                            - row "Hard Rock Hotel, Bali" [ref=f1e707]:
+                                              - cell "Hard Rock Hotel, Bali" [ref=f1e708]:
+                                                - checkbox "Hard Rock Hotel, Bali" [ref=f1e709]
+                                                - text: Hard Rock Hotel, Bali
+                                            - row "Hard Rock Hotel, Biloxi" [ref=f1e710]:
+                                              - cell "Hard Rock Hotel, Biloxi" [ref=f1e711]:
+                                                - checkbox "Hard Rock Hotel, Biloxi" [ref=f1e712]
+                                                - text: Hard Rock Hotel, Biloxi
+                                            - row "Hard Rock Hotel, Daytona Beach" [ref=f1e713]:
+                                              - cell "Hard Rock Hotel, Daytona Beach" [ref=f1e714]:
+                                                - checkbox "Hard Rock Hotel, Daytona Beach" [ref=f1e715]
+                                                - text: Hard Rock Hotel, Daytona Beach
+                                            - row "Hard Rock Hotel, Los Cabos" [ref=f1e716]:
+                                              - cell "Hard Rock Hotel, Los Cabos" [ref=f1e717]:
+                                                - checkbox "Hard Rock Hotel, Los Cabos" [ref=f1e718]
+                                                - text: Hard Rock Hotel, Los Cabos
+                                            - row "Hard Rock Hotel, Maldives" [ref=f1e719]:
+                                              - cell "Hard Rock Hotel, Maldives" [ref=f1e720]:
+                                                - checkbox "Hard Rock Hotel, Maldives" [ref=f1e721]
+                                                - text: Hard Rock Hotel, Maldives
+                                            - row "Hard Rock Hotel, Panama Megapolis" [ref=f1e722]:
+                                              - cell "Hard Rock Hotel, Panama Megapolis" [ref=f1e723]:
+                                                - checkbox "Hard Rock Hotel, Panama Megapolis" [ref=f1e724]
+                                                - text: Hard Rock Hotel, Panama Megapolis
+                                            - row "Hard Rock Hotel, Sacramento" [ref=f1e725]:
+                                              - cell "Hard Rock Hotel, Sacramento" [ref=f1e726]:
+                                                - checkbox "Hard Rock Hotel, Sacramento" [ref=f1e727]
+                                                - text: Hard Rock Hotel, Sacramento
+                                            - row "Hard Rock Hotel, Singapore" [ref=f1e728]:
+                                              - cell "Hard Rock Hotel, Singapore" [ref=f1e729]:
+                                                - checkbox "Hard Rock Hotel, Singapore" [ref=f1e730]
+                                                - text: Hard Rock Hotel, Singapore
+                                            - row "Hard Rock Hotel, Tampa" [ref=f1e731]:
+                                              - cell "Hard Rock Hotel, Tampa" [ref=f1e732]:
+                                                - checkbox "Hard Rock Hotel, Tampa" [ref=f1e733]
+                                                - text: Hard Rock Hotel, Tampa
+                                            - row "Hard Rock Hotel, Tulsa" [ref=f1e734]:
+                                              - cell "Hard Rock Hotel, Tulsa" [ref=f1e735]:
+                                                - checkbox "Hard Rock Hotel, Tulsa" [ref=f1e736]
+                                                - text: Hard Rock Hotel, Tulsa
+                                            - row "Hard Rock Hotel, Vallarta" [ref=f1e737]:
+                                              - cell "Hard Rock Hotel, Vallarta" [ref=f1e738]:
+                                                - checkbox "Hard Rock Hotel, Vallarta" [ref=f1e739]
+                                                - text: Hard Rock Hotel, Vallarta
+                                            - row "Hard Rock Jackpot Planet" [ref=f1e740]:
+                                              - cell "Hard Rock Jackpot Planet" [ref=f1e741]:
+                                                - checkbox "Hard Rock Jackpot Planet" [ref=f1e742]
+                                                - text: Hard Rock Jackpot Planet
+                                            - row "Hard Rock Punta Cana" [ref=f1e743]:
+                                              - cell "Hard Rock Punta Cana" [ref=f1e744]:
+                                                - checkbox "Hard Rock Punta Cana" [ref=f1e745]
+                                                - text: Hard Rock Punta Cana
+                                            - row "Hard Rock Shop Johannesburg Airport" [ref=f1e746]:
+                                              - cell "Hard Rock Shop Johannesburg Airport" [ref=f1e747]:
+                                                - checkbox "Hard Rock Shop Johannesburg Airport" [ref=f1e748]
+                                                - text: Hard Rock Shop Johannesburg Airport
+                                            - row "Hard Rock Shop Ottawa" [ref=f1e749]:
+                                              - cell "Hard Rock Shop Ottawa" [ref=f1e750]:
+                                                - checkbox "Hard Rock Shop Ottawa" [ref=f1e751]
+                                                - text: Hard Rock Shop Ottawa
+                                            - row "Hard Rock Sportsbook" [ref=f1e752]:
+                                              - cell "Hard Rock Sportsbook" [ref=f1e753]:
+                                                - checkbox "Hard Rock Sportsbook" [ref=f1e754]
+                                                - text: Hard Rock Sportsbook
+                                            - row "Hard Rock St Kitts" [ref=f1e755]:
+                                              - cell "Hard Rock St Kitts" [ref=f1e756]:
+                                                - checkbox "Hard Rock St Kitts" [ref=f1e757]
+                                                - text: Hard Rock St Kitts
+                                            - row "Hollywood Hard Rock" [ref=f1e758]:
+                                              - cell "Hollywood Hard Rock" [ref=f1e759]:
+                                                - checkbox "Hollywood Hard Rock" [ref=f1e760]
+                                                - text: Hollywood Hard Rock
+                                            - row "HR Casino, Atlantic City" [ref=f1e761]:
+                                              - cell "HR Casino, Atlantic City" [ref=f1e762]:
+                                                - checkbox "HR Casino, Atlantic City" [ref=f1e763]
+                                                - text: HR Casino, Atlantic City
+                                            - row "HR Casino, Hollywood" [ref=f1e764]:
+                                              - cell "HR Casino, Hollywood" [ref=f1e765]:
+                                                - checkbox "HR Casino, Hollywood" [ref=f1e766]
+                                                - text: HR Casino, Hollywood
+                                            - row "HR Casino, Northern Indiana" [ref=f1e767]:
+                                              - cell "HR Casino, Northern Indiana" [ref=f1e768]:
+                                                - checkbox "HR Casino, Northern Indiana" [ref=f1e769]
+                                                - text: HR Casino, Northern Indiana
+                                            - row "HR Casino, Punta Cana" [ref=f1e770]:
+                                              - cell "HR Casino, Punta Cana" [ref=f1e771]:
+                                                - checkbox "HR Casino, Punta Cana" [ref=f1e772]
+                                                - text: HR Casino, Punta Cana
+                                            - row "HR Casino, Sacramento" [ref=f1e773]:
+                                              - cell "HR Casino, Sacramento" [ref=f1e774]:
+                                                - checkbox "HR Casino, Sacramento" [ref=f1e775]
+                                                - text: HR Casino, Sacramento
+                                            - row "HR Casino, Tampa" [ref=f1e776]:
+                                              - cell "HR Casino, Tampa" [ref=f1e777]:
+                                                - checkbox "HR Casino, Tampa" [ref=f1e778]
+                                                - text: HR Casino, Tampa
+                                            - row "HRB - Online Casino" [ref=f1e779]:
+                                              - cell "HRB - Online Casino" [ref=f1e780]:
+                                                - checkbox "HRB - Online Casino" [ref=f1e781]
+                                                - text: HRB - Online Casino
+                                            - row "HRB - Online Sportsbook" [ref=f1e782]:
+                                              - cell "HRB - Online Sportsbook" [ref=f1e783]:
+                                                - checkbox "HRB - Online Sportsbook" [ref=f1e784]
+                                                - text: HRB - Online Sportsbook
+                                            - row "Kaama Games" [ref=f1e785]:
+                                              - cell "Kaama Games" [ref=f1e786]:
+                                                - checkbox "Kaama Games" [ref=f1e787]
+                                                - text: Kaama Games
+                                            - row "Neverland Casino By Hard Rock" [ref=f1e788]:
+                                              - cell "Neverland Casino By Hard Rock" [ref=f1e789]:
+                                                - checkbox "Neverland Casino By Hard Rock" [ref=f1e790]
+                                                - text: Neverland Casino By Hard Rock
+                                            - row "Peppermill" [ref=f1e791]:
+                                              - cell "Peppermill" [ref=f1e792]:
+                                                - checkbox "Peppermill" [ref=f1e793]
+                                                - text: Peppermill
+                                            - row "Reverb by Hard Rock Hamburg" [ref=f1e794]:
+                                              - cell "Reverb by Hard Rock Hamburg" [ref=f1e795]:
+                                                - checkbox "Reverb by Hard Rock Hamburg" [ref=f1e796]
+                                                - text: Reverb by Hard Rock Hamburg
+                                            - row "Reverb Hotel by Hard Rock, Downtown Atlanta" [ref=f1e797]:
+                                              - cell "Reverb Hotel by Hard Rock, Downtown Atlanta" [ref=f1e798]:
+                                                - checkbox "Reverb Hotel by Hard Rock, Downtown Atlanta" [ref=f1e799]
+                                                - text: Reverb Hotel by Hard Rock, Downtown Atlanta
+                                            - row "Rock Shop Phuket" [ref=f1e800]:
+                                              - cell "Rock Shop Phuket" [ref=f1e801]:
+                                                - checkbox "Rock Shop Phuket" [checked] [ref=f1e802]
+                                                - text: Rock Shop Phuket
+                                            - row "Rock Shop, Online" [ref=f1e803]:
+                                              - cell "Rock Shop, Online" [ref=f1e804]:
+                                                - checkbox "Rock Shop, Online" [checked] [ref=f1e805]
+                                                - text: Rock Shop, Online
+                                            - row "Seminole Brighton" [ref=f1e806]:
+                                              - cell "Seminole Brighton" [ref=f1e807]:
+                                                - checkbox "Seminole Brighton" [ref=f1e808]
+                                                - text: Seminole Brighton
+                                            - row "Seminole Classic" [ref=f1e809]:
+                                              - cell "Seminole Classic" [ref=f1e810]:
+                                                - checkbox "Seminole Classic" [ref=f1e811]
+                                                - text: Seminole Classic
+                                            - row "Seminole Coconut Creek" [ref=f1e812]:
+                                              - cell "Seminole Coconut Creek" [ref=f1e813]:
+                                                - checkbox "Seminole Coconut Creek" [ref=f1e814]
+                                                - text: Seminole Coconut Creek
+                                            - row "Seminole Hotel Immokalee" [ref=f1e815]:
+                                              - cell "Seminole Hotel Immokalee" [ref=f1e816]:
+                                                - checkbox "Seminole Hotel Immokalee" [ref=f1e817]
+                                                - text: Seminole Hotel Immokalee
+                                            - row "Seminole Immokalee" [ref=f1e818]:
+                                              - cell "Seminole Immokalee" [ref=f1e819]:
+                                                - checkbox "Seminole Immokalee" [ref=f1e820]
+                                                - text: Seminole Immokalee
+                                            - row "Seminole Sports Book" [ref=f1e821]:
+                                              - cell "Seminole Sports Book" [ref=f1e822]:
+                                                - checkbox "Seminole Sports Book" [ref=f1e823]
+                                                - text: Seminole Sports Book
+                                            - row "SG Casino, Brighton" [ref=f1e824]:
+                                              - cell "SG Casino, Brighton" [ref=f1e825]:
+                                                - checkbox "SG Casino, Brighton" [ref=f1e826]
+                                                - text: SG Casino, Brighton
+                                            - row "SG Casino, Classic" [ref=f1e827]:
+                                              - cell "SG Casino, Classic" [ref=f1e828]:
+                                                - checkbox "SG Casino, Classic" [ref=f1e829]
+                                                - text: SG Casino, Classic
+                                            - row "SG Casino, Coconut Creek" [ref=f1e830]:
+                                              - cell "SG Casino, Coconut Creek" [ref=f1e831]:
+                                                - checkbox "SG Casino, Coconut Creek" [ref=f1e832]
+                                                - text: SG Casino, Coconut Creek
+                                            - row "SG Casino, Immokalee" [ref=f1e833]:
+                                              - cell "SG Casino, Immokalee" [ref=f1e834]:
+                                                - checkbox "SG Casino, Immokalee" [ref=f1e835]
+                                                - text: SG Casino, Immokalee
+                                            - row "Tampa Hard Rock" [ref=f1e836]:
+                                              - cell "Tampa Hard Rock" [ref=f1e837]:
+                                                - checkbox "Tampa Hard Rock" [ref=f1e838]
+                                                - text: Tampa Hard Rock
+                                            - row "The Mirage Casino" [ref=f1e839]:
+                                              - cell "The Mirage Casino" [ref=f1e840]:
+                                                - checkbox "The Mirage Casino" [ref=f1e841]
+                                                - text: The Mirage Casino
+                                            - row "Twin Arrows" [ref=f1e842]:
+                                              - cell "Twin Arrows" [ref=f1e843]:
+                                                - checkbox "Twin Arrows" [ref=f1e844]
+                                                - text: Twin Arrows
+                                      - generic [ref=f1e845]:
+                                        - text: Rating Type
+                                        - combobox [ref=f1e847]:
+                                          - option "All" [selected]
+                                          - option "Non Gaming"
+                                          - option "Other"
+                                          - option "Slot"
+                                          - option "Table"
+                                    - generic [ref=f1e848]:
+                                      - generic [ref=f1e849]:
+                                        - checkbox "# of Days Played" [ref=f1e850]
+                                        - text: "# of Days Played"
+                                      - generic [ref=f1e851]:
+                                        - checkbox "# of Trips" [ref=f1e852]
+                                        - text: "# of Trips"
+                                      - generic [ref=f1e853]:
+                                        - checkbox "Average Daily Theo" [ref=f1e854]
+                                        - text: Average Daily Theo
+                                      - generic [ref=f1e855]:
+                                        - checkbox "Average Pit Daily Theo" [ref=f1e856]
+                                        - text: Average Pit Daily Theo
+                                      - generic [ref=f1e857]:
+                                        - checkbox "Average Slot Actual" [ref=f1e858]
+                                        - text: Average Slot Actual
+                                      - generic [ref=f1e859]:
+                                        - checkbox "Average Slot Daily Theo" [ref=f1e860]
+                                        - text: Average Slot Daily Theo
+                                      - generic [ref=f1e861]:
+                                        - checkbox "Card Score" [ref=f1e862]
+                                        - text: Card Score
+                                      - generic [ref=f1e863]:
+                                        - checkbox "Discretionary Comps" [ref=f1e864]
+                                        - text: Discretionary Comps
+                                      - generic [ref=f1e865]:
+                                        - checkbox "Non-Gaming Points Earned" [ref=f1e866]
+                                        - text: Non-Gaming Points Earned
+                                      - generic [ref=f1e867]:
+                                        - checkbox "Non-Gaming Points Redeemed" [ref=f1e868]
+                                        - text: Non-Gaming Points Redeemed
+                                      - generic [ref=f1e869]:
+                                        - checkbox "Non-Gaming Spend" [ref=f1e870]
+                                        - text: Non-Gaming Spend
+                                      - generic [ref=f1e871]:
+                                        - checkbox "Offer Redeemed" [ref=f1e872]
+                                        - text: Offer Redeemed
+                                      - generic [ref=f1e873]:
+                                        - checkbox "Other Points Earned" [ref=f1e874]
+                                        - text: Other Points Earned
+                                      - generic [ref=f1e875]:
+                                        - checkbox "Other Points Redeemed" [ref=f1e876]
+                                        - text: Other Points Redeemed
+                                      - generic [ref=f1e877]:
+                                        - checkbox "Slot Points Earned" [ref=f1e878]
+                                        - text: Slot Points Earned
+                                      - generic [ref=f1e879]:
+                                        - checkbox "Slot Points Redeemed" [ref=f1e880]
+                                        - text: Slot Points Redeemed
+                                      - generic [ref=f1e881]:
+                                        - checkbox "Total Actual" [ref=f1e882]
+                                        - text: Total Actual
+                                      - generic [ref=f1e883]:
+                                        - checkbox "Total Coin In" [ref=f1e884]
+                                        - text: Total Coin In
+                                      - generic [ref=f1e885]:
+                                        - checkbox "Total Other Actual" [ref=f1e886]
+                                        - text: Total Other Actual
+                                      - generic [ref=f1e887]:
+                                        - checkbox "Total Other Theo" [ref=f1e888]
+                                        - text: Total Other Theo
+                                      - generic [ref=f1e889]:
+                                        - checkbox "Total Pit Actual" [ref=f1e890]
+                                        - text: Total Pit Actual
+                                      - generic [ref=f1e891]:
+                                        - checkbox "Total Pit Theo" [ref=f1e892]
+                                        - text: Total Pit Theo
+                                      - generic [ref=f1e893]:
+                                        - checkbox "Total Pit Time Played" [ref=f1e894]
+                                        - text: Total Pit Time Played
+                                      - generic [ref=f1e895]:
+                                        - checkbox "Total Slot Theo" [ref=f1e896]
+                                        - text: Total Slot Theo
+                                      - generic [ref=f1e897]:
+                                        - checkbox "Total Slots Time Played" [ref=f1e898]
+                                        - text: Total Slots Time Played
+                                      - generic [ref=f1e899]:
+                                        - checkbox "Total Theo" [ref=f1e900]
+                                        - text: Total Theo
+                                    - generic [ref=f1e901]:
+                                      - button "Build Grid Display" [ref=f1e902] [cursor=pointer]
+                                      - button "Save Search Settings" [ref=f1e903] [cursor=pointer]
+```

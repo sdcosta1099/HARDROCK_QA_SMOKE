@@ -1,0 +1,307 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - text: HALO 25.8.1
+      - text: Logged in as TU_LAB_HALO_NIN_ADM
+      - img "HR Casino, Northern Indiana" [ref=e7]
+    - link "Logout" [ref=e9] [cursor=pointer]:
+      - /url: javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$lnkLogout", "", false, "", "SessionOut.aspx", false, true))
+      - img "Logout" [ref=e10]
+  - generic [ref=e12]:
+    - list [ref=e15]:
+      - listitem [ref=e16]:
+        - link "Player Functions" [ref=e17] [cursor=pointer]:
+          - /url: javascript:toggle1("1000010","sub_nav_1000010","1000010");
+      - listitem [ref=e18]:
+        - link "Configuration" [ref=e19] [cursor=pointer]:
+          - /url: javascript:toggle1("1000000","sub_nav_1000000","1000010");
+      - listitem [ref=e20]:
+        - link "Administration" [ref=e21] [cursor=pointer]:
+          - /url: javascript:toggle1("1000002","sub_nav_1000002","1000010");
+    - generic [ref=e22]:
+      - table [ref=e25]:
+        - rowgroup [ref=e26]:
+          - row "PLAYER SEARCH - 660302931 - 770281158 - CHARLES BAUGH Go To Employee Dashboard 0" [ref=e27]:
+            - cell "PLAYER SEARCH" [ref=e28]
+            - cell "- 660302931 - 770281158 - CHARLES BAUGH" [ref=e29]
+            - cell "Go To Employee Dashboard" [ref=e30]:
+              - link "Go To Employee Dashboard" [ref=e31] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkToEmployeeDashboard','')
+                - img [ref=e32]
+            - cell [ref=e34]:
+              - link "Expand Search" [ref=e35] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$lnkSearchSVG','')
+                - img [ref=e36]
+            - cell "0" [ref=e39]:
+              - generic "Show Notification" [ref=e41]
+              - generic:
+                - generic: "0"
+      - table [ref=e45]:
+        - rowgroup [ref=e46]:
+          - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e47]:
+            - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e48]:
+              - table [ref=e49]:
+                - rowgroup [ref=e50]:
+                  - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e51]:
+                    - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet" [ref=e52]:
+                      - generic [ref=e53]: Player Info
+                      - generic [ref=e54]: Transactions
+                      - generic [ref=e55]: Trips
+                      - generic [ref=e56]: Tier History
+                      - generic [ref=e57]: Tier Credits Earnings
+                      - generic [ref=e58]: Offers
+                      - generic [ref=e59]: Unity Points Earnings
+                      - generic [ref=e60]: Earnings
+                      - generic [ref=e61]: Running Balances
+                      - generic [ref=e62]: Promotions
+                      - generic [ref=e63]: Pending Earnings
+                      - generic [ref=e64]: Earnings
+                      - generic [ref=e65]: Overflow Earnings
+                      - generic [ref=e66]: Contact Information
+                      - generic [ref=e67]: Discretionary Comps
+                      - generic [ref=e68]: Discounts
+                      - generic [ref=e69]: Gaming Activity
+                      - generic [ref=e70]: Events & Offers
+                      - generic [ref=e71]: Free Play Rewards
+                      - generic [ref=e72]: Reservations
+                      - generic [ref=e73]: Comm Preferences
+                      - generic [ref=e74]: Consent Management
+                      - generic [ref=e75]: Discreet
+                  - row [ref=e76]:
+                    - cell [ref=e77]:
+                      - iframe [ref=e78]:
+                        - generic [ref=f1e4]:
+                          - table [ref=f1e7]:
+                            - rowgroup [ref=f1e11]:
+                              - row:
+                                - cell
+                              - row [ref=f1e12]:
+                                - cell [ref=f1e13]:
+                                  - table [ref=f1e14]:
+                                    - rowgroup [ref=f1e15]:
+                                      - row "Date Unity Points Filter Not Applied Filter Not Applied" [ref=f1e16]:
+                                        - cell "Date Unity Points Filter Not Applied Filter Not Applied" [ref=f1e17]:
+                                          - table [ref=f1e19]:
+                                            - rowgroup [ref=f1e20]:
+                                              - row "Date Unity Points" [ref=f1e21]:
+                                                - cell [ref=f1e22]
+                                                - cell "Date" [ref=f1e23]
+                                                - cell "Unity Points" [ref=f1e24]
+                                              - row "Filter Not Applied Filter Not Applied" [ref=f1e25]:
+                                                - cell [ref=f1e26]
+                                                - cell "Filter Not Applied" [ref=f1e27]:
+                                                  - button "Filter Not Applied" [ref=f1e28]:
+                                                    - img "Filter Not Applied" [ref=f1e29]
+                                                - cell "Filter Not Applied" [ref=f1e30]:
+                                                  - button "Filter Not Applied" [ref=f1e31]:
+                                                    - img "Filter Not Applied" [ref=f1e32]
+                                    - rowgroup [ref=f1e33]:
+                                      - row [ref=f1e34]:
+                                        - cell [ref=f1e35]:
+                                          - table [ref=f1e37]:
+                                            - rowgroup [ref=f1e38]:
+                                              - row:
+                                                - cell
+                                                - cell
+                                                - cell
+                                              - row "Expand Row 08/14/2025 650.00" [ref=f1e39]:
+                                                - cell "Expand Row" [ref=f1e40]:
+                                                  - img "Expand Row" [ref=f1e41] [cursor=pointer]
+                                                - cell "08/14/2025" [ref=f1e42]
+                                                - cell "650.00" [ref=f1e43]
+                                              - row "Collapse Row 06/19/2025 -5,294.60" [ref=f1e44]:
+                                                - cell "Collapse Row" [ref=f1e45]:
+                                                  - img "Collapse Row" [ref=f1e46] [cursor=pointer]
+                                                - cell "06/19/2025" [ref=f1e47]
+                                                - cell "-5,294.60" [ref=f1e48]
+                                              - row "Date/Time Property Transaction Type Unity Points Flex Rule Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied 6/19/2025 4:02:38 AM Seminole Sports Book Expiration -3,010.00 6/19/2025 4:02:38 AM Hard Rock Bet - Retail - OLD Expiration -9.32 6/19/2025 4:02:38 AM Hard Rock Cafe Amsterdam - PropName Expiration -466.44 6/19/2025 4:02:38 AM HR Casino, Hollywood Expiration -24.00 6/19/2025 4:02:38 AM SG Casino, Immokalee Expiration -788.85 6/19/2025 4:02:38 AM HR Casino, Northern Indiana Expiration -105.00 6/19/2025 4:02:38 AM Hollywood Hard Rock Expiration -891.00 1" [ref=f1e49]:
+                                                - cell "Date/Time Property Transaction Type Unity Points Flex Rule Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied 6/19/2025 4:02:38 AM Seminole Sports Book Expiration -3,010.00 6/19/2025 4:02:38 AM Hard Rock Bet - Retail - OLD Expiration -9.32 6/19/2025 4:02:38 AM Hard Rock Cafe Amsterdam - PropName Expiration -466.44 6/19/2025 4:02:38 AM HR Casino, Hollywood Expiration -24.00 6/19/2025 4:02:38 AM SG Casino, Immokalee Expiration -788.85 6/19/2025 4:02:38 AM HR Casino, Northern Indiana Expiration -105.00 6/19/2025 4:02:38 AM Hollywood Hard Rock Expiration -891.00 1" [ref=f1e50]:
+                                                  - table [ref=f1e53]:
+                                                    - rowgroup [ref=f1e54]:
+                                                      - row:
+                                                        - cell
+                                                      - row "Date/Time Property Transaction Type Unity Points Flex Rule Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied 6/19/2025 4:02:38 AM Seminole Sports Book Expiration -3,010.00 6/19/2025 4:02:38 AM Hard Rock Bet - Retail - OLD Expiration -9.32 6/19/2025 4:02:38 AM Hard Rock Cafe Amsterdam - PropName Expiration -466.44 6/19/2025 4:02:38 AM HR Casino, Hollywood Expiration -24.00 6/19/2025 4:02:38 AM SG Casino, Immokalee Expiration -788.85 6/19/2025 4:02:38 AM HR Casino, Northern Indiana Expiration -105.00 6/19/2025 4:02:38 AM Hollywood Hard Rock Expiration -891.00" [ref=f1e55]:
+                                                        - cell "Date/Time Property Transaction Type Unity Points Flex Rule Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied 6/19/2025 4:02:38 AM Seminole Sports Book Expiration -3,010.00 6/19/2025 4:02:38 AM Hard Rock Bet - Retail - OLD Expiration -9.32 6/19/2025 4:02:38 AM Hard Rock Cafe Amsterdam - PropName Expiration -466.44 6/19/2025 4:02:38 AM HR Casino, Hollywood Expiration -24.00 6/19/2025 4:02:38 AM SG Casino, Immokalee Expiration -788.85 6/19/2025 4:02:38 AM HR Casino, Northern Indiana Expiration -105.00 6/19/2025 4:02:38 AM Hollywood Hard Rock Expiration -891.00" [ref=f1e56]:
+                                                          - table [ref=f1e57]:
+                                                            - rowgroup [ref=f1e58]:
+                                                              - row "Date/Time Property Transaction Type Unity Points Flex Rule Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied" [ref=f1e59]:
+                                                                - cell "Date/Time Property Transaction Type Unity Points Flex Rule Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied" [ref=f1e60]:
+                                                                  - table [ref=f1e62]:
+                                                                    - rowgroup [ref=f1e63]:
+                                                                      - row "Date/Time Property Transaction Type Unity Points Flex Rule" [ref=f1e64]:
+                                                                        - cell "Date/Time" [ref=f1e65]
+                                                                        - cell "Property" [ref=f1e66]
+                                                                        - cell "Transaction Type" [ref=f1e67]
+                                                                        - cell "Unity Points" [ref=f1e68]
+                                                                        - cell "Flex Rule" [ref=f1e69]
+                                                                      - row "Filter Not Applied Filter Not Applied Filter Not Applied Filter Not Applied" [ref=f1e70]:
+                                                                        - cell [ref=f1e71] [cursor=pointer]
+                                                                        - cell "Filter Not Applied" [ref=f1e72]:
+                                                                          - button "Filter Not Applied" [ref=f1e73]:
+                                                                            - img "Filter Not Applied" [ref=f1e74]
+                                                                        - cell "Filter Not Applied" [ref=f1e75]:
+                                                                          - button "Filter Not Applied" [ref=f1e76]:
+                                                                            - img "Filter Not Applied" [ref=f1e77]
+                                                                        - cell "Filter Not Applied" [ref=f1e78]:
+                                                                          - button "Filter Not Applied" [ref=f1e79]:
+                                                                            - img "Filter Not Applied" [ref=f1e80]
+                                                                        - cell "Filter Not Applied" [ref=f1e81]:
+                                                                          - button "Filter Not Applied" [ref=f1e82]:
+                                                                            - img "Filter Not Applied" [ref=f1e83]
+                                                            - rowgroup [ref=f1e84]:
+                                                              - row "6/19/2025 4:02:38 AM Seminole Sports Book Expiration -3,010.00 6/19/2025 4:02:38 AM Hard Rock Bet - Retail - OLD Expiration -9.32 6/19/2025 4:02:38 AM Hard Rock Cafe Amsterdam - PropName Expiration -466.44 6/19/2025 4:02:38 AM HR Casino, Hollywood Expiration -24.00 6/19/2025 4:02:38 AM SG Casino, Immokalee Expiration -788.85 6/19/2025 4:02:38 AM HR Casino, Northern Indiana Expiration -105.00 6/19/2025 4:02:38 AM Hollywood Hard Rock Expiration -891.00" [ref=f1e85]:
+                                                                - cell "6/19/2025 4:02:38 AM Seminole Sports Book Expiration -3,010.00 6/19/2025 4:02:38 AM Hard Rock Bet - Retail - OLD Expiration -9.32 6/19/2025 4:02:38 AM Hard Rock Cafe Amsterdam - PropName Expiration -466.44 6/19/2025 4:02:38 AM HR Casino, Hollywood Expiration -24.00 6/19/2025 4:02:38 AM SG Casino, Immokalee Expiration -788.85 6/19/2025 4:02:38 AM HR Casino, Northern Indiana Expiration -105.00 6/19/2025 4:02:38 AM Hollywood Hard Rock Expiration -891.00" [ref=f1e86]:
+                                                                  - table [ref=f1e88]:
+                                                                    - rowgroup [ref=f1e89]:
+                                                                      - row:
+                                                                        - cell
+                                                                        - cell
+                                                                        - cell
+                                                                        - cell
+                                                                        - cell
+                                                                      - row "6/19/2025 4:02:38 AM Seminole Sports Book Expiration -3,010.00" [ref=f1e90]:
+                                                                        - cell "6/19/2025 4:02:38 AM" [ref=f1e91] [cursor=pointer]
+                                                                        - cell "Seminole Sports Book" [ref=f1e92]
+                                                                        - cell "Expiration" [ref=f1e93]
+                                                                        - cell "-3,010.00" [ref=f1e94]
+                                                                        - cell [ref=f1e95]
+                                                                      - row "6/19/2025 4:02:38 AM Hard Rock Bet - Retail - OLD Expiration -9.32" [ref=f1e96]:
+                                                                        - cell "6/19/2025 4:02:38 AM" [ref=f1e97] [cursor=pointer]
+                                                                        - cell "Hard Rock Bet - Retail - OLD" [ref=f1e98]
+                                                                        - cell "Expiration" [ref=f1e99]
+                                                                        - cell "-9.32" [ref=f1e100]
+                                                                        - cell [ref=f1e101]
+                                                                      - row "6/19/2025 4:02:38 AM Hard Rock Cafe Amsterdam - PropName Expiration -466.44" [ref=f1e102]:
+                                                                        - cell "6/19/2025 4:02:38 AM" [ref=f1e103] [cursor=pointer]
+                                                                        - cell "Hard Rock Cafe Amsterdam - PropName" [ref=f1e104]
+                                                                        - cell "Expiration" [ref=f1e105]
+                                                                        - cell "-466.44" [ref=f1e106]
+                                                                        - cell [ref=f1e107]
+                                                                      - row "6/19/2025 4:02:38 AM HR Casino, Hollywood Expiration -24.00" [ref=f1e108]:
+                                                                        - cell "6/19/2025 4:02:38 AM" [ref=f1e109] [cursor=pointer]
+                                                                        - cell "HR Casino, Hollywood" [ref=f1e110]
+                                                                        - cell "Expiration" [ref=f1e111]
+                                                                        - cell "-24.00" [ref=f1e112]
+                                                                        - cell [ref=f1e113]
+                                                                      - row "6/19/2025 4:02:38 AM SG Casino, Immokalee Expiration -788.85" [ref=f1e114]:
+                                                                        - cell "6/19/2025 4:02:38 AM" [ref=f1e115] [cursor=pointer]
+                                                                        - cell "SG Casino, Immokalee" [ref=f1e116]
+                                                                        - cell "Expiration" [ref=f1e117]
+                                                                        - cell "-788.85" [ref=f1e118]
+                                                                        - cell [ref=f1e119]
+                                                                      - row "6/19/2025 4:02:38 AM HR Casino, Northern Indiana Expiration -105.00" [ref=f1e120]:
+                                                                        - cell "6/19/2025 4:02:38 AM" [ref=f1e121] [cursor=pointer]
+                                                                        - cell "HR Casino, Northern Indiana" [ref=f1e122]
+                                                                        - cell "Expiration" [ref=f1e123]
+                                                                        - cell "-105.00" [ref=f1e124]
+                                                                        - cell [ref=f1e125]
+                                                                      - row "6/19/2025 4:02:38 AM Hollywood Hard Rock Expiration -891.00" [ref=f1e126]:
+                                                                        - cell "6/19/2025 4:02:38 AM" [ref=f1e127] [cursor=pointer]
+                                                                        - cell "Hollywood Hard Rock" [ref=f1e128]
+                                                                        - cell "Expiration" [ref=f1e129]
+                                                                        - cell "-891.00" [ref=f1e130]
+                                                                        - cell [ref=f1e131]
+                                                            - rowgroup
+                                                      - row "1" [ref=f1e132]:
+                                                        - cell "1" [ref=f1e133]:
+                                                          - generic [ref=f1e134]: "1"
+                                              - row "Expand Row 12/02/2024 50.00" [ref=f1e135]:
+                                                - cell "Expand Row" [ref=f1e136]:
+                                                  - img "Expand Row" [ref=f1e137] [cursor=pointer]
+                                                - cell "12/02/2024" [ref=f1e138]
+                                                - cell "50.00" [ref=f1e139]
+                                              - row "Expand Row 12/01/2024 55.00" [ref=f1e140]:
+                                                - cell "Expand Row" [ref=f1e141]:
+                                                  - img "Expand Row" [ref=f1e142] [cursor=pointer]
+                                                - cell "12/01/2024" [ref=f1e143]
+                                                - cell "55.00" [ref=f1e144]
+                                              - row "Expand Row 11/29/2024 16.00" [ref=f1e145]:
+                                                - cell "Expand Row" [ref=f1e146]:
+                                                  - img "Expand Row" [ref=f1e147] [cursor=pointer]
+                                                - cell "11/29/2024" [ref=f1e148]
+                                                - cell "16.00" [ref=f1e149]
+                                              - row "Expand Row 11/27/2024 8.00" [ref=f1e150]:
+                                                - cell "Expand Row" [ref=f1e151]:
+                                                  - img "Expand Row" [ref=f1e152] [cursor=pointer]
+                                                - cell "11/27/2024" [ref=f1e153]
+                                                - cell "8.00" [ref=f1e154]
+                                              - row "Expand Row 08/26/2024 891.00" [ref=f1e155]:
+                                                - cell "Expand Row" [ref=f1e156]:
+                                                  - img "Expand Row" [ref=f1e157] [cursor=pointer]
+                                                - cell "08/26/2024" [ref=f1e158]
+                                                - cell "891.00" [ref=f1e159]
+                                              - row "Expand Row 05/05/2024 -20.00" [ref=f1e160]:
+                                                - cell "Expand Row" [ref=f1e161]:
+                                                  - img "Expand Row" [ref=f1e162] [cursor=pointer]
+                                                - cell "05/05/2024" [ref=f1e163]
+                                                - cell "-20.00" [ref=f1e164]
+                                              - row "Expand Row 04/15/2024 -1.17" [ref=f1e165]:
+                                                - cell "Expand Row" [ref=f1e166]:
+                                                  - img "Expand Row" [ref=f1e167] [cursor=pointer]
+                                                - cell "04/15/2024" [ref=f1e168]
+                                                - cell "-1.17" [ref=f1e169]
+                                              - row "Expand Row 04/09/2024 19.32" [ref=f1e170]:
+                                                - cell "Expand Row" [ref=f1e171]:
+                                                  - img "Expand Row" [ref=f1e172] [cursor=pointer]
+                                                - cell "04/09/2024" [ref=f1e173]
+                                                - cell "19.32" [ref=f1e174]
+                                              - row "Expand Row 12/11/2023 1.00" [ref=f1e175]:
+                                                - cell "Expand Row" [ref=f1e176]:
+                                                  - img "Expand Row" [ref=f1e177] [cursor=pointer]
+                                                - cell "12/11/2023" [ref=f1e178]
+                                                - cell "1.00" [ref=f1e179]
+                                              - row "Expand Row 12/09/2023 76.99" [ref=f1e180]:
+                                                - cell "Expand Row" [ref=f1e181]:
+                                                  - img "Expand Row" [ref=f1e182] [cursor=pointer]
+                                                - cell "12/09/2023" [ref=f1e183]
+                                                - cell "76.99" [ref=f1e184]
+                                              - row "Expand Row 12/07/2023 466.43" [ref=f1e185]:
+                                                - cell "Expand Row" [ref=f1e186]:
+                                                  - img "Expand Row" [ref=f1e187] [cursor=pointer]
+                                                - cell "12/07/2023" [ref=f1e188]
+                                                - cell "466.43" [ref=f1e189]
+                                              - row "Expand Row 11/30/2023 322.66" [ref=f1e190]:
+                                                - cell "Expand Row" [ref=f1e191]:
+                                                  - img "Expand Row" [ref=f1e192] [cursor=pointer]
+                                                - cell "11/30/2023" [ref=f1e193]
+                                                - cell "322.66" [ref=f1e194]
+                                              - row "Expand Row 11/27/2023 2.73" [ref=f1e195]:
+                                                - cell "Expand Row" [ref=f1e196]:
+                                                  - img "Expand Row" [ref=f1e197] [cursor=pointer]
+                                                - cell "11/27/2023" [ref=f1e198]
+                                                - cell "2.73" [ref=f1e199]
+                                              - row "Expand Row 10/20/2023 951.60" [ref=f1e200]:
+                                                - cell "Expand Row" [ref=f1e201]:
+                                                  - img "Expand Row" [ref=f1e202] [cursor=pointer]
+                                                - cell "10/20/2023" [ref=f1e203]
+                                                - cell "951.60" [ref=f1e204]
+                                              - row "Expand Row 09/30/2023 -440.80" [ref=f1e205]:
+                                                - cell "Expand Row" [ref=f1e206]:
+                                                  - img "Expand Row" [ref=f1e207] [cursor=pointer]
+                                                - cell "09/30/2023" [ref=f1e208]
+                                                - cell "-440.80" [ref=f1e209]
+                                              - row "Expand Row 09/29/2023 -707,201.61" [ref=f1e210]:
+                                                - cell "Expand Row" [ref=f1e211]:
+                                                  - img "Expand Row" [ref=f1e212] [cursor=pointer]
+                                                - cell "09/29/2023" [ref=f1e213]
+                                                - cell "-707,201.61" [ref=f1e214]
+                                              - row "Expand Row 09/25/2023 1,338.00" [ref=f1e215]:
+                                                - cell "Expand Row" [ref=f1e216]:
+                                                  - img "Expand Row" [ref=f1e217] [cursor=pointer]
+                                                - cell "09/25/2023" [ref=f1e218]
+                                                - cell "1,338.00" [ref=f1e219]
+                                              - row "Expand Row 01/03/2023 0.00" [ref=f1e220]:
+                                                - cell "Expand Row" [ref=f1e221]:
+                                                  - img "Expand Row" [ref=f1e222] [cursor=pointer]
+                                                - cell "01/03/2023" [ref=f1e223]
+                                                - cell "0.00" [ref=f1e224]
+                                    - rowgroup
+                                - cell [ref=f1e225]
+                              - row "1 2 3" [ref=f1e228]:
+                                - cell "1 2 3" [ref=f1e229]:
+                                  - generic [ref=f1e230]: 1 2 3
+                          - button "View Details" [disabled] [ref=f1e231]
+```

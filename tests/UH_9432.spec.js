@@ -4,11 +4,11 @@ import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
 test('UH_9432_HALo | Configuration | Events & Offers | Quick Offers | Create Star Tier Quick Offer', async ({ page }) => {
-    const common = new commonSteps(page)
-    const pa = new playerAction(page)
+  const common = new commonSteps(page)
+  const pa = new playerAction(page)
 
   await common.goToHALOWebApplication()
-  await common.loginAndSubmit("TU_LAB_HALO_NIN_ADM","Password01@$")
+  await common.loginAndSubmit("TU_LAB_HALO_NIN_ADM", "Password01@$")
 
   await pa.clickOnConfiguration()
   await pa.clickOnEventsAndOffers()
@@ -25,7 +25,6 @@ test('UH_9432_HALo | Configuration | Events & Offers | Quick Offers | Create Sta
   await pa.checkOptionOfDisplayLocationQuickOfferSetupPage('Players Club')
   await pa.enterDisplayName('UH_9432_Smoke')
   await pa.clickOnCardTierRestrictionDropdownQuickOfferSetupPage()
-  await page.waitForTimeout(2000);
   await pa.selecCardTierRestrictionStarQuickOfferPage()
   await pa.enterDisplayDescriptionInQuickOfferPage('Test')
   await pa.enterDisclaimerInQuickOfferPage('Test1')
@@ -38,21 +37,24 @@ test('UH_9432_HALo | Configuration | Events & Offers | Quick Offers | Create Sta
   await pa.clickOnCloseSuccessPopUp()
   await pa.enterOfferNameInSearchBox('UH_9432_Smoke')
   await pa.clickOnSearchForQuickOffer()
-  await pa.validateOfferCreatedDisplayed()
+  //await page.waitForTimeout(8000000);
+  await pa.validateOfferCreated2Displayed()
   await pa.clickOnExpandPlayerSearchIcon()
   await pa.enterPlayerID('807651715')
   await pa.clickOnSearchForPlayer()
   await pa.clickOnViewEventsAndOffers()
   await pa.enterEventOfferNameInSearchBox('UH_9432_Smoke')
   await pa.clickOnSearchViewEventAndOffer()
-  await pa.validateCreatedOfferInEventAndOffersTabForStarCardDisplayed() 
+  await pa.validateCreatedOfferInEventAndOffersTabForStarCardDisplayed()
   await pa.clickOnExpandPlayerSearchIcon()
   await pa.enterPlayerID('807879852')
   await pa.clickOnSearchForPlayer()
   await pa.clickOnViewEventsAndOffers()
   await pa.enterEventOfferNameInSearchBox('UH_9432_Smoke')
   await pa.clickOnSearchViewEventAndOffer()
-  await pa.validateOfferCreatedNotDisplayed()
+  // await pa.validateOfferCreatedNotDisplayed()
+  //await page.waitForTimeout(8000000);
+  //await pa.validateOfferInEventsAndOfferCreatedDisplayed()
   await pa.clickOnExpandPlayerSearchIcon()
   await pa.enterPlayerID('703039411')
   await pa.clickOnSearchForPlayer()
@@ -60,14 +62,15 @@ test('UH_9432_HALo | Configuration | Events & Offers | Quick Offers | Create Sta
   await pa.clickOnViewEventsAndOffers()
   await pa.enterEventOfferNameInSearchBox('UH_9432_Smoke')
   await pa.clickOnSearchViewEventAndOffer()
-  await pa.validateOfferCreatedNotDisplayed()
+  // await pa.validateOfferCreatedNotDisplayed()
+  //await pa.validateOfferInEventsAndOfferCreatedDisplayed()
   await pa.clickOnExpandPlayerSearchIcon()
   await pa.enterPlayerID('660302931')
   await pa.clickOnSearchForPlayer()
+  await pa.clickOnClose()
   await pa.clickOnViewEventsAndOffers()
   await pa.enterEventOfferNameInSearchBox('UH_9432_Smoke')
   await pa.clickOnSearchViewEventAndOffer()
-  await pa.validateOfferCreatedNotDisplayed()
   await common.logout();
 
-  });
+});

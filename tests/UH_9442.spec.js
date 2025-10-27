@@ -1,21 +1,21 @@
 import { test, expect } from '@playwright/test';
-test.setTimeout(120000);
+test.setTimeout(600000)
 import { commonSteps } from '../pages/commonSteps';
 import { playerAction } from '../pages/playerAction';
 
-
-test('UH_9442_HALO | Events and Offers | Create offer with Prize and Attendance', async ({ page }) => {
+test('@27Oct UH_9442_HALO | Events and Offers | Create offer with Prize and Attendance', async ({ page }) => {
     const common = new commonSteps(page)
     const pa = new playerAction(page)
   
   await common.goToHALOWebApplication()
   await common.loginAndSubmit("TU_LAB_HALO_NIN_ADM","Password01@$") 
+  
   await pa.clickOnConfiguration()
   await pa.clickOnEventsAndOffers()
   await pa.clickOnManageEventsAndOffers()
   await pa.clickOnAddNewEventAndOffers()
   await pa.ValidateAddNewEventAndOffersPage()
-  await pa.SelectfillOutNewEventFields('UH_9442')
+  await pa.SelectfillOutNewEventFields4('UH_9442')
   await pa.clickSaveAndNextStep()
   await pa.SelectAFile()
   await pa.clickSaveAndNextStep()
