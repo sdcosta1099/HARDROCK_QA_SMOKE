@@ -5,8 +5,8 @@
             "EnvSelection": "QA",
             "QA" : "https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx",
             "PROD" : "https://sg24-hawbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx",
-            "UAT" : "",
-            "SMOKE" : ""
+            "UAT" : "use your UAT URL here",
+            "SMOKE" : "use your SMOKE URL here"
 } ,
 "Credentials":{
     "QAuserName": "TU_LAB_HALO_NIN_ADM",
