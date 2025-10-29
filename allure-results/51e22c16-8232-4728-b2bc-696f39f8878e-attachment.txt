@@ -1,0 +1,10 @@
+------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------
+Environment selected =  QA
+Using QA Environment URL:https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx 
+User is log to Halo QA ADMIN Env
+PlayerID found = 807879791
+User on Comm Preference page
+Account setting Tab not found
+Account is Disable
+Account is Anable
+log Out Btn not available

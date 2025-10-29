@@ -1,0 +1,48 @@
+------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------
+Environment selected =  QA
+Using QA Environment URL:https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx 
+User is log to Halo QA ADMIN Env
+PlayerID found = 807879790
+User on Comm Preference page
+User on Account Setting
+All text element from account setting page are validated
+Account is NOT UNlocked
+Unlock Account link is NOT clickable 
+Unlock account Message is not Avaialble 
+locator.click: Target page, context or browser has been closed
+    at playerFunctionsSteps.clickPlayerFunctions_Tab (C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\testSteps\playerFunctionsSteps.js:114:44)
+    at C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\accountSettingTestCases\UH10478TestCase.spec.js:23:23 {
+  [Symbol(step)]: {
+    stepId: 'pw:api@35',
+    location: {
+      file: 'C:\\Automation\\OldHello\\Regression_QA\\HaloOldUI - QA\\testSteps\\playerFunctionsSteps.js',
+      line: 114,
+      column: 44,
+      function: 'playerFunctionsSteps.clickPlayerFunctions_Tab'
+    },
+    category: 'pw:api',
+    title: "locator.getByRole('link', { name: 'Player Functions' }).click",
+    apiName: 'locator.click',
+    params: {
+      selector: 'internal:role=link[name="Player Functions"i]',
+      strict: true,
+      timeout: 5000
+    },
+    wallTime: 1761749423591,
+    laxParent: true,
+    boxedStack: undefined,
+    steps: [],
+    complete: [Function: complete],
+    endWallTime: 1761749423593,
+    error: {
+      message: 'Error: locator.click: Target page, context or browser has been closed',
+      stack: 'Error: locator.click: Target page, context or browser has been closed\n' +
+        '    at playerFunctionsSteps.clickPlayerFunctions_Tab (C:\\Automation\\OldHello\\Regression_QA\\HaloOldUI - QA\\testSteps\\playerFunctionsSteps.js:114:44)\n' +
+        '    at C:\\Automation\\OldHello\\Regression_QA\\HaloOldUI - QA\\tests\\accountSettingTestCases\\UH10478TestCase.spec.js:23:23'
+    }
+  }
+}
+player Function Tab not visible
+Player Transaction Tab not available
+Account Not Created
+log Out Btn not available
