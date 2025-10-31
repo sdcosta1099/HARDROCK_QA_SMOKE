@@ -17,6 +17,6 @@ test('UH-10477 HALO | Online Account Settings | Locked an Online Account', async
     //steps to lock an account find an account that is unlock to lock 
     // Lock account in CMP and validate in Halo
     //await expect.soft(searchPlayerID.accountSettings_tab).toHaveText('Account Locked');
-    await searchPlayerID.validateAccountNOTLocked_Status()
+    await searchPlayerID.validateAccountLocked_Status()
     await gblFuntSteps.logOut()
   });

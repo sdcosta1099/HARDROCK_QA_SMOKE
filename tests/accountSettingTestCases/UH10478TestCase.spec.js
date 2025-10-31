@@ -20,6 +20,7 @@ test('UH10478 HALO | Online Account Settings | Unlock an Online Account', async 
    // await page.pause()
     await searchPlayerID.clickUnlockAccount_link()
     await searchPlayerID.clickCloseUnlockAccount_MessagePopUp()
+    //validate account is unlocaked
     await plyFunction.clickPlayerFunctions_Tab()
     await plyFunction.clickplayerTransactionLog_Tab()
     await plyFunction.clickPlayerTransactionLog_FisrtEntry()

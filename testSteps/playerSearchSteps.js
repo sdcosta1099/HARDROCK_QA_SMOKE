@@ -754,6 +754,7 @@ async clickResendActivation_link(){
    async clickResetPassword_link(){
     try{
         await this.page.waitForTimeout(5000)
+        await expect.soft(this.resetPassword_link).toBeVisible()
         await this.resetPassword_link.click()
         console.log('Reset password link Clickable')
     }catch(e){
