@@ -821,7 +821,6 @@ async clickResendActivation_link(){
         }catch(e){
             console.log('some or all Text element content are not available')
         }
-   
    }
 
 
@@ -836,8 +835,6 @@ async clickResendActivation_link(){
    
    }
 
-
-   
 
    async clickUnlockAccount_link(){
     try{
