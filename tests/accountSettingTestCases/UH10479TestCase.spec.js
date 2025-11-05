@@ -16,7 +16,13 @@ test('UH10479 HALO | Online Account Settings | Disable an Online Account', async
     await searchPlayerID.searchPlayerID(testData.AccountSettingTestData.UH10479)
     await searchPlayerID.clickCommPreferences_btn()
     await searchPlayerID.clickAccountSettings_tab()
-    await searchPlayerID.validateAnableAccount_link()
+    await searchPlayerID.validateAccountDisable_link()
+    await searchPlayerID.clickAccountDisable_link()
+    
+    // await plyFunction.clickPlayerFunctions_Tab()
+    // await plyFunction.clickplayerTransactionLog_Tab()
+    // await plyFunction.clickPlayerTransactionLog_FisrtEntry('Online account disabled')
+    // reset the account to disable byt next automation run 
     await searchPlayerID.clickAnableAccount_Link()
     await gblFuntSteps.logOut()
 

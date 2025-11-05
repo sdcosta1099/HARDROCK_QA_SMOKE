@@ -10,13 +10,11 @@ test('UH16549  HALO | Online Account Settings | Resend Create Password Email for
     const searchPlayerID= new playerSearchSteps(page)
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
-    await searchPlayerID.searchPlayerID(testData.AccountSettingTestData.UH10480)
+    await searchPlayerID.searchPlayerID(testData.AccountSettingTestData.UH16549)
     await searchPlayerID.clickCommPreferences_btn()
     await searchPlayerID.clickAccountSettings_tab()
-
-    await searchPlayerID.clickResetPassword_link()
-    await searchPlayerID.clickResetPassword_popUpSend()
-     
+    await searchPlayerID.clickResendCreatePassword_Email()
+    await searchPlayerID.validateAccountSettingTextCOntent()
     await gblFuntSteps.logOut()
 
   });

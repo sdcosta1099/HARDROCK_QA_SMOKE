@@ -13,6 +13,7 @@ test('UH10486 HALO | Online Account Settings | Activate online account  on behal
     await searchPlayerID.searchPlayerID(testData.AccountSettingTestData.UH10486)
     await searchPlayerID.clickCommPreferences_btn()
     await searchPlayerID.clickAccountSettings_tab()
+    await searchPlayerID.validateResendActivation_link()
     await searchPlayerID.clickActivateOnlineAccount_link()
     //data to activate online account 
     console.log('online account activated, add data to activate online account')

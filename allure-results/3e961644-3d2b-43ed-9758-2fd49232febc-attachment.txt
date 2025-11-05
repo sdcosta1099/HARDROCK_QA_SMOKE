@@ -1,0 +1,33 @@
+OfferName = QA-Automation-UH9661-5213
+------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------
+Environment selected =  QA
+Using QA Environment URL:https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx 
+User is log to Halo QA ADMIN Env
+Adding New Offer Page
+Add New Offer Page completed 
+Start Offer Set Up Page  
+User is on Configuration Tab
+User is on Event and OfferTab
+User on Manage Event And Offer page
+Add New Offer Button Available 
+Offer Date Displays: Tue Nov 04 2025 13:42:45 GMT-0500 (Eastern Standard Time)
+Offer Date Displays: Wed Nov 05 2025 13:42:45 GMT-0500 (Eastern Standard Time)
+Description Displayed as expected
+Disclaimner Entered as expected
+URL displayed as expected: https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx
+Save and Next Button Available
+Display call to action field selected :NO
+Start Invitation Details Page
+File upload terminated as expected
+Invitation Details Page Completed
+Save and Next Button Available
+On Master Item of List Page
+Item from list: Beer
+Save and Next Button Available
+Master List Of Item Page Completed
+On Attendee Capacity Page
+Save and Next Button Available
+Atendee page with Capacity = NO Completed
+Start Segment page
+Configure 2 items
+Segment Page not Available

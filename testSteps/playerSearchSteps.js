@@ -58,7 +58,10 @@ exports.playerSearchSteps= class  playerSearchSteps{
         this.onlineAccountSettings=page.frameLocator('#ifrContent').getByRole('cell', { name: 'Online Account Settings', exact: true }).locator('div')
         this.onlineAccountCreated_link=page.frameLocator('#ifrContent').getByRole('cell', { name: 'Online Account Created', exact: true }).locator('div')
         this.accountActivated_link=page.frameLocator('#ifrContent').getByRole('cell', { name: 'Account Activated', exact: true }).locator('div')
-        this.accountNotlocked_Status= page.locator('#grdOnlineAccountSettings_it0_3_lblDisplayText')
+       // this.accountNotlocked_Status= page.locator('#grdOnlineAccountSettings_it0_3_lblDisplayText')
+       this.accountNotlocked_Status=page.frameLocator('#ifrContent').getByText('Account Not Locked')
+       
+      // page.frameLocator('#ifrContent').getByRole('link', { name: 'Account Not Locked' })
         this.accountLocked_Status= page.locator('#grdOnlineAccountSettings_it0_3_lblDisplayText')
         
         //this.resetPassword_link=page.frameLocator('#ifrContent').getByRole('cell', { name: 'Reset Password', exact: true }).locator('div')
@@ -67,11 +70,21 @@ exports.playerSearchSteps= class  playerSearchSteps{
 
         this.accountNotLock_link=page.frameLocator('#ifrContent').getByRole('cell', { name: 'Account Not Locked', exact: true }).locator('div')
         this.deleteAccount_link=page.frameLocator('#ifrContent').getByRole('cell', { name: 'Delete Account', exact: true }).locator('div')
-        this.disableAccount_link=page.frameLocator('#ifrContent').getByRole('cell', { name: 'Disable Account', exact: true }).locator('div')
-        this.enableAccount_link=page.frameLocator('#ifrContent').getByRole('cell', { name: 'Enable Account', exact: true }).locator('div')
+       // this.disableAccount_link=page.frameLocator('#ifrContent').getByRole('cell', { name: 'Disable Account', exact: true }).locator('div')
+        this.disableAccount_link=page.frameLocator('#ifrContent').getByRole('link', { name: 'Disable Account' })
+
+
+        //this.enableAccount_link=page.frameLocator('#ifrContent').getByRole('cell', { name: 'Enable Account', exact: true }).locator('div')
+        this.enableAccount_link = page.frameLocator('#ifrContent').getByRole('link', { name: 'Enable Account' })
+
+
         this.unlockAccount_link=page.frameLocator('#ifrContent').getByRole('cell', { name: 'Unlock Account', exact: true }).locator('div')
         this.resetPassword_PopUSend=page.frameLocator('#ifrContent').getByRole('button', { name: 'Send' })
         this.closeUnlockAccount_Message=page.frameLocator('#ifrContent').getByRole('cell', { name: 'Close', exact: true }).locator('div')
+        this.disableAccount_PopUP= page.frameLocator('#ifrContent').getByRole('button', { name: 'Disable' })
+        this.anableAccount_PopUP= page.frameLocator('#ifrContent').getByRole('button', { name: 'Enable' })
+        this.closeDisableAccount_Popup= page.frameLocator('#ifrContent').getByRole('button', { name: 'Close' })
+        this.closeAnableAccount_PopUp = page.frameLocator('#ifrContent').getByRole('button', { name: 'Close' })
 
         
         this.resetPassword_PopUMessage=page.frameLocator('#ifrContent').getByRole('button', { name: 'Close' })
@@ -79,7 +92,7 @@ exports.playerSearchSteps= class  playerSearchSteps{
 
         this.activateOnlineAccount_link = page.frameLocator('#ifrContent').getByRole('cell', { name: 'Activate Online Account', exact: true }).locator('div')
         this.resendActivation_link = page.frameLocator('#ifrContent').getByRole('cell', { name: 'Resend Activation Link', exact: true }).locator('div')
-   
+        this.resendCreatePassword_Email = page.frameLocator('#ifrContent').getByRole('cell', { name: 'Resend Create Password Email', exact: true }).locator('div')
       //////////////////////////////////////ISSUE COMP Validation Amount Object Repository ////////////////////////////////////////////////////
         
         this.enterUserID_Txt= 
@@ -296,6 +309,7 @@ exports.playerSearchSteps= class  playerSearchSteps{
         
     }catch{
         console.log('CLOSE All Email Link Resent Pop Up NOT Present')
+        throw e;
     }
 
  }
@@ -603,6 +617,7 @@ async searchPlayerID(playerID ){
        console.log('PlayerID found = ' +playerID)
     }catch(e){
         console.log('PlayerID NOT found')
+        throw e
     }
 
  }
@@ -628,7 +643,22 @@ async searchPlayerID(playerID ){
 
          }catch(e){
             console.log('Comm Preference page Tab not found')
+            throw e
         }
+    }
+
+    async clickCommPreferences_btn_NegativeScenario(){
+        //try{
+
+      //  await this.commPreferences_btn.click()
+        await expect(this.commPreferences_btn).not.toBeVisible()
+        //await expect(commPreferences_btn).toHaveCount(0);
+       // console.log('User on Comm Preference page')
+
+        // }catch(e){
+            console.log('Comm Preference Tab not found as expected on NON ADMIN Page ')
+           // throw e
+       // }
     }
 
 
@@ -640,6 +670,7 @@ async searchPlayerID(playerID ){
                 console.log('User on Account Setting')
         }catch(e){
             console.log('Account setting Tab not found')
+            throw e
         }
        
     }
@@ -672,9 +703,11 @@ async clickActivateOnlineAccount_link(){
     try{
 
         await this.activateOnlineAccount_link.click()
+
         console.log('online account activated as expected')
     }catch(e){
         console.log('Activate Online account Link not visible')
+        throw e
     }
 
 }
@@ -687,6 +720,7 @@ async clickResendActivation_link(){
 
     }catch(e){
         console.log('resend activation Link not Visible')
+        throw e;
     }
 }
  
@@ -697,6 +731,7 @@ async clickResendActivation_link(){
 
     }catch(e){
         console.log('Account Anable Link is NOT Present')
+        throw e
     }
     
    }
@@ -705,10 +740,15 @@ async clickResendActivation_link(){
 
     try{
          await this.enableAccount_link.click()
-        console.log('Enable as expected')
+         await this.anableAccount_PopUP.click()
+         await this.closeAnableAccount_PopUp.click()
+        //  await page.frameLocator('#ifrContent').getByRole('button', { name: 'Enable' }).click();
+        //  await page.frameLocator('#ifrContent').getByRole('button', { name: 'Close' }).click();
+        console.log('Enable account as expected')
 
     }catch(e){
         console.log('Enable Account Link is NOT Present disable')
+        throw e
     }
 
    }
@@ -716,12 +756,19 @@ async clickResendActivation_link(){
 
    async clickAccountDisable_link (){
     try{
-         expect(await this.page(disableAccount_link).toHaveText('Disable Account'))
+        
           await this.disableAccount_link.click()
+          await this.disableAccount_PopUP.click()
+          await this.closeDisableAccount_Popup.click()
+         
+        //   await page.frameLocator('#ifrContent').getByRole('button', { name: 'Disable' }).click();
+        //   await page.frameLocator('#ifrContent').getByRole('button', { name: 'Close' }).click();
           console.log('Account is Disable as expected')
+        //  await this.page.pause()
 
     }catch(e){
-        console.log('Account is Anable')
+        console.log('Disbale Account link is not available')
+        throw e
     }
     
    }
@@ -729,11 +776,13 @@ async clickResendActivation_link(){
    async validateAccountDisable_link(){
 
      try{
-        expect(this.page.toHaveTitle('Enable Account'))
-        console.log('Account is Enable as expected')
+
+        await expect(this.disableAccount_link).toHaveText('Disable Account')
+        console.log('Account Disable link is present as expected')
 
         }catch(e){
-            console.log('Account is Disable')
+            console.log('Account Disable link is not Present')
+            throw e;
         }
    }
    
@@ -746,6 +795,7 @@ async clickResendActivation_link(){
         console.log('Reset passowrd link available')
     }catch(e){
         console.log('Reset passord link not NOT Available')
+        throw e;
     }
 
    }
@@ -756,9 +806,12 @@ async clickResendActivation_link(){
         await this.page.waitForTimeout(5000)
         await expect.soft(this.resetPassword_link).toBeVisible()
         await this.resetPassword_link.click()
+        await this.resetPassword_PopUSend.click()
+        await this.resetPassword_PopUMessage.click()
         console.log('Reset password link Clickable')
     }catch(e){
         console.log('Reset password link NOT clickable')
+        throw e
     }
 
    }
@@ -769,6 +822,7 @@ async clickResendActivation_link(){
         console.log('Reset password Pop Up Clickable')
     }catch(e){
         console.log('Reset password Pop Up NOT clickable')
+        throw e;
     }
 
    }
@@ -780,8 +834,10 @@ async clickResendActivation_link(){
         console.log('CLose Resend password messgae link')
          }catch(e){
        console.log('Account is not Disable')
+       throw e;
          } 
     }
+    
 
    
 
@@ -806,6 +862,7 @@ async clickResendActivation_link(){
         console.log('Account Setting links clickable')
         }catch(e){
             console.log('Account Setting links NOT clickable')
+            throw e;
         }
     }
 
@@ -820,9 +877,22 @@ async clickResendActivation_link(){
         console.log('All text element from account setting page are validated')  
         }catch(e){
             console.log('some or all Text element content are not available')
+            throw e;
         }
    }
 
+   async validateResendActivation_link(){
+    try{
+        await expect(this.onlineAccountSettings).toHaveText('Online Account Settings')
+        await expect(this.onlineAccountCreated_link).toHaveText('Online Account Created')
+        await expect(this.activateOnlineAccount_link).toHaveText('activate online Account link')
+        await expect(this.resendActivation_link).toHaveText('Resend activation link')
+        console.log('Activation Link Resent As Expected')  
+        }catch(e){
+            console.log('Activation Link is not Available')
+            throw e;
+        }
+   }
 
    async validateAccountDisableTextCOntent(){
     try{
@@ -831,6 +901,7 @@ async clickResendActivation_link(){
         console.log('Account is Disbale')  
     }catch(e){
         console.log('Account is NOT Disbale')
+        throw e;
     }
    
    }
@@ -843,18 +914,19 @@ async clickResendActivation_link(){
         console.log('Unlock Account link is cliackable ')  
     }catch(e){
         console.log('Unlock Account link is NOT clickable ')
+        throw e;
     }
    
    }
 
    async validateAccountNOTLocked_Status(){
     try{
+      // await expect(this.accountNotlocked_Status).getByText('Account Not Locked').toBeVisible()
        await expect(this.accountNotlocked_Status).toContainText('Account Not Locked')
-       await expect(this.accountNotlocked_Status).getByText('Account Not Locked').toBeVisible()
-
         console.log('Account is NOT Locked as expected')
     }catch(e){
         console.log('Account is NOT Locked Link is not available ')
+        throw e;
     }
    }
 
@@ -868,6 +940,7 @@ async clickResendActivation_link(){
         console.log('Account is Locked as expected')
     }catch(e){
         console.log('Account is Lock Link is not available ')
+        throw e;
     }
    }
 
@@ -879,19 +952,38 @@ async clickResendActivation_link(){
         console.log('Unlock Account Message is closed')  
     }catch(e){
         console.log('Unlock account Message is not Avaialble ')
+        throw e;
+      }
+
     }
    
-   }
+   
 
    async validateUnlockAccount_link(){
     try{
          
         await expect(this.unlockAccount_link).toHaveText('Unlock Account')
-        console.log('Account is Unlocked')  
-    }catch(e){
-        console.log('Account is NOT UNlocked')
-    }
-   
+        console.log('Account is locked as expected')  
+        }catch(e){
+            console.log('UNlocked Account link is not Available')
+            throw e;
+        }
+        
+   }
+
+    
+   async clickResendCreatePassword_Email(){
+    try{
+         
+        await expect(this.resendCreatePassword_Email).toHaveText('Resend Create Password Email')
+        await this.resendCreatePassword_Email.click()
+
+        console.log('Resend Create Password Email as expected')  
+        }catch(e){
+            console.log('Resend Create Password Email is not Available')
+            throw e;
+        }
+        
    }
 
 

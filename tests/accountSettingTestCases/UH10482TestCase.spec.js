@@ -16,11 +16,12 @@ test('UH10482 HALO | Online Account Settings | Resend Activation Link email for 
     await searchPlayerID.searchPlayerID(testData.AccountSettingTestData.UH10482)
     await searchPlayerID.clickCommPreferences_btn()
     await searchPlayerID.clickAccountSettings_tab()
-    await searchPlayerID.validateAccountSettingTextCOntent()
-    await searchPlayerID.clickResendActivation_link()
+    await searchPlayerID.validateResendActivation_link()
+    await searchPlayerID.clickResendActivation_link.click()
     await plyFunction.clickPlayerFunctions_Tab()
     await plyFunction.clickplayerTransactionLog_Tab()
-    
+    await searchPlayerID.validateResendAllVerificationEmailVerbiage_Link() 
+     
     await gblFuntSteps.logOut()
 
   });

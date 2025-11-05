@@ -116,6 +116,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         }catch(e){
             console.log(e)
             console.log('player Function Tab not visible')
+            throw e
         }
         
     }
@@ -321,12 +322,12 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
     }
 
 
-    async  clickPlayerTransactionLog_FisrtEntry(){
+    async  clickPlayerTransactionLog_FisrtEntry(textInFirstRow){
             
         try{
             await this.playerTransactionLog_FisrtEntry.click()
-            await expect.page.toHaveText('Account created ')
-            console.log()
+            await expect.page.toHaveText(textInFirstRow)
+            console.log('Text in First Row ' +textInFirstRow +' Displaye as expected')
              
         }catch(e){
             console.log('Account Not Created')

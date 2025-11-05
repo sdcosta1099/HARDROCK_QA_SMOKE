@@ -23,6 +23,6 @@ test('UH10478 HALO | Online Account Settings | Unlock an Online Account', async 
     //validate account is unlocaked
     await plyFunction.clickPlayerFunctions_Tab()
     await plyFunction.clickplayerTransactionLog_Tab()
-    await plyFunction.clickPlayerTransactionLog_FisrtEntry()
+    await plyFunction.clickPlayerTransactionLog_FisrtEntry('account Locked')
     await gblFuntSteps.logOut()
   });

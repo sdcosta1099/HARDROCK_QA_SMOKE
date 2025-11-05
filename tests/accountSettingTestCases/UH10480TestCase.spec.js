@@ -15,6 +15,7 @@ test('UH10480 HALO | Online Account Settings | Enable an Online Account', async 
     await searchPlayerID.clickAccountSettings_tab()
     await searchPlayerID.validateAccountDisable_link()
     await searchPlayerID.clickAccountDisable_link()
+    await searchPlayerID.clickAnableAccount_Link()
     await gblFuntSteps.logOut()
 
   });
