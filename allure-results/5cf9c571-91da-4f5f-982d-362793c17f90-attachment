@@ -1,0 +1,323 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UH-9493 HALO | Patron Dashboard | Player Function | Comments | Settle Comment
+- Location: C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\commentTestCases\UH9493TestCases.spec.js:7:5
+
+# Error details
+
+```
+TimeoutError: locator.click: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'LAWS', exact: true }).first()
+    - locator resolved to <td>LAWS</td>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div id="maskLocal"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div id="maskLocal"></div> intercepts pointer events
+  - retrying click action
+    - waiting 100ms
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  - retrying click action
+    - waiting 100ms
+    - waiting for element to be visible, enabled and stable
+  - element was detached from the DOM, retrying
+
+    at playerFunctionsSteps.clickCommentFirstRow_Tab (C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\testSteps\playerFunctionsSteps.js:149:49)
+    at C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\commentTestCases\UH9493TestCases.spec.js:23:30
+```
+
+# Page snapshot
+
+```yaml
+- text: HALO 25.9.1 Logged in as TU_LAB_HALO_NIN_ADM
+- img "HR Casino, Northern Indiana"
+- link "Logout":
+  - img "Logout"
+- list:
+  - listitem:
+    - link "Player Functions"
+    - list:
+      - listitem:
+        - link "User Transaction Log"
+      - listitem:
+        - link "Enroll Player"
+      - listitem:
+        - link "Edit Patron Data"
+      - listitem: View Comment
+      - listitem: View Tier History
+      - listitem: Adjust Player Tier Credits
+      - listitem: Property Play Popup
+      - listitem: Adjust Bucket Value
+      - listitem:
+        - link "Merge"
+      - listitem: Guest Information Sync
+      - listitem: Push Player Enrollment
+      - listitem: Link Player
+      - listitem: Unlink Player
+      - listitem: Reset Pin
+      - listitem: Change PIN
+      - listitem: Manage Player Interests & Preferences
+      - listitem: Player Transaction Log
+      - listitem: Balance Transfer Logs
+      - listitem: Player Tier With Tier Match
+      - listitem: Manual Line Of Business Adjustment
+      - listitem:
+        - link "Event Check-in"
+      - listitem:
+        - link "Credit & Front Money Account Updates"
+      - listitem:
+        - link "Redeem Prizes"
+      - listitem:
+        - link "Manage Redeemed Prizes"
+      - listitem: Visit Appeasement
+  - listitem:
+    - link "Configuration"
+  - listitem:
+    - link "Administration"
+- table:
+  - rowgroup:
+    - row "PLAYER SEARCH - 807881502 - Lance Klusener Go To Employee Dashboard 0":
+      - cell "PLAYER SEARCH"
+      - cell "- 807881502 - Lance Klusener"
+      - cell "Go To Employee Dashboard":
+        - link "Go To Employee Dashboard":
+          - img
+      - cell:
+        - link "Expand Search":
+          - img
+      - cell "0"
+- table:
+  - rowgroup:
+    - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+      - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+        - table:
+          - rowgroup:
+            - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+              - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet"
+            - row:
+              - cell
+- text: Comments for Lance Klusener - 807881502 Close
+```
+
+# Test source
+
+```ts
+   49 |
+   50 |
+   51 |          
+   52 |         
+   53 |         this.addComment_Txt= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'txtComment' })
+   54 |         this.saveComment_tab = page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Save' });
+   55 |         
+   56 |         const { chromium } = require('playwright');
+   57 |
+   58 | // (async () => {
+   59 | //   const browser = await chromium.launch({
+   60 | //     headless: false
+   61 | //   });
+   62 | //   const context = await browser.newContext();
+   63 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true }).first().click();
+   64 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Add' }).click();
+   65 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View Settled/Voided' }).click();
+   66 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View All' }).click();
+   67 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'CMP', exact: true }).first().click();
+   68 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Reply' }).click();
+   69 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
+   70 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'CMP', exact: true }).first().click();
+   71 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Edit' }).click();
+   72 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
+   73 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS' }).nth(3).click();
+   74 | //   await page.fpage.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Settle/Void' })rameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Delete' }).click();
+   75 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
+   76 | //   await .click();
+   77 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
+   78 |
+   79 | //   // ---------------------
+   80 | //   await context.close();
+   81 | //   await browser.close();
+   82 |         //this.playerTransactionLog_Arrow= page.getText()
+   83 |          this.playerTransactionLog_FisrtEntry = page.frameLocator('iframe[name="FramePopUp3"]').getByRole('cell', { name: 'Online account unlocked', exact: true });
+   84 |          this.playerTransactionLog_FisrtEntryDataValidation = page.frameLocator('iframe[name="FramePopUp3"]') 
+   85 |         /////////////////////////////Line Of Business Object Repository/////////////////////////////////////////////////
+   86 |         this.LineOfBusiness_Tab = page.getByText('Manual Line Of Business')
+   87 |
+   88 |         ////////////////////// visit Appeasement Object Repo//////////////////////
+   89 |         this.visitAppeasement_Tab= page.getByText('Visit Appeasement');
+   90 |         this.uniqueLocationVisited = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Unique Locations Visited :' })
+   91 |         this.locationVisited = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Locations Visited (Lifetime) :' })
+   92 |         this.hotelVisited = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Hotel Visits :' })
+   93 |         this.locationName = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Location Name', exact: true }) 
+   94 |         this.totalVisits = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Total Visits', exact: true })
+   95 |         this.firstVisitDate = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'First Visit Date', exact: true })
+   96 |         this.lastVisitDate = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Last Visit Date', exact: true })
+   97 |         this.visitVerified =  page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Verified', exact: true })
+   98 |
+   99 |
+  100 |
+  101 |         //this.closeVisitAppeasement_Tab = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Close' })
+  102 |         this.closeVisitAppeasement_Tab =   page.getByText('Close')
+  103 |
+  104 |
+  105 |
+  106 | //////////////////////////////Functions and Methods for Player FUnction ////////////////////////
+  107 |          
+  108 |     }
+  109 |
+  110 |     async clickPlayerFunctions_Tab(){
+  111 |         try{
+  112 |
+  113 |             await this.playerFunctions_Tab.click({timeout:5000}) 
+  114 |             console.log('User on player Function Tab')
+  115 |         }catch(e){
+  116 |             console.log(e)
+  117 |             console.log('player Function Tab not visible')
+  118 |             throw e
+  119 |         }
+  120 |         
+  121 |     }
+  122 |
+  123 |     //////////////////////////////Functions and Methods for Player FUnction tab and Comment tab ////////////////////////
+  124 |
+  125 |     async clickViewComment_Tab(){
+  126 |         try{
+  127 |             await this.viewComment_Tab.click()
+  128 |             console.log('User on comment tab  ')
+  129 |         }catch(e){
+  130 |             console.log('View comment tab Not visible ')
+  131 |             throw e
+  132 |         }
+  133 |
+  134 |     }
+  135 |
+  136 |     async clickViewAllComment_Tab(){
+  137 |         try{
+  138 |             await this.viewAllComment_Tab.click()
+  139 |             console.log('User on View All comment tab  ')
+  140 |         }catch(e){
+  141 |             console.log('View Al comment tab Not visible ')
+  142 |             throw e
+  143 |         }
+  144 |
+  145 |     }
+  146 |
+  147 |     async clickCommentFirstRow_Tab(){
+  148 |         try{
+> 149 |          await this.CommentFirstRow_Tab.first().click({timeout:5000})
+      |                                                 ^ TimeoutError: locator.click: Timeout 5000ms exceeded.
+  150 |             console.log('Comment First Row tab Opens')
+  151 |         }catch(e){
+  152 |             console.log('Comment First Row Tab Not visible ')
+  153 |             throw e
+  154 |         }
+  155 |
+  156 |     }
+  157 |     
+  158 |
+  159 |     async clickEditComment_Tab(){
+  160 |         try{
+  161 |             await this.editComment_tab.click()
+  162 |
+  163 |             console.log('User Edited comment ')
+  164 |         }catch(e){
+  165 |             console.log('Edit comment tab not visible ')
+  166 |             throw e
+  167 |         }
+  168 |
+  169 |
+  170 |     }
+  171 |
+  172 |     async clickAddComment_Tab(){
+  173 |
+  174 |         try{
+  175 |             await this.addComment_tab.click()
+  176 |
+  177 |             console.log('User Added comment')
+  178 |         }catch(e){
+  179 |             console.log('Add comment tab not visible ')
+  180 |             throw e
+  181 |         }
+  182 |
+  183 |     }
+  184 |
+  185 |
+  186 |     async clickAddComment_Txt(){
+  187 |         try{ 
+  188 |         const commentData= testData.scriptingData.comment
+  189 |         await this.addComment_tab.click()
+  190 |         await this.addComment_Txt.fill(commentData)
+  191 |         console.log('Comment Added as expected')
+  192 |         }catch(e){
+  193 |             console.log('Comment Field Not visible')
+  194 |             throw e
+  195 |         }
+  196 |     }
+  197 |
+  198 |     
+  199 |      
+  200 |
+  201 |     async clickviewSettledVoided_tab(){
+  202 |         try{
+  203 |             await this.viewSettledVoidedComment_tab.click({timeout:5000})
+  204 |
+  205 |             console.log('User Viewed, Settle Voided Comments  ')
+  206 |         }catch(e){
+  207 |             console.log('View comment tab not visible ')
+  208 |             throw e
+  209 |         }
+  210 |
+  211 |     }
+  212 |
+  213 |     async clickCancellComment_tab(){
+  214 |         try{
+  215 |             await this.cancelComment_Tab.click()
+  216 |
+  217 |             console.log(' Comments Cancel ')
+  218 |         }catch(e){
+  219 |             console.log('Cancel COmment Not Visible')
+  220 |             throw e
+  221 |         }
+  222 |
+  223 |     }
+  224 |     
+  225 |     async clickReplyComment_Tab(){
+  226 |         try{
+  227 |             await this.replyComment_Tab.click()
+  228 |
+  229 |             console.log('Reply Comment')
+  230 |         }catch(e){
+  231 |             console.log('Reply Comment not visible ')
+  232 |             throw e
+  233 |         }
+  234 |
+  235 |     }
+  236 |     
+  237 |     async validateCommentPopUp_Header_Present(){
+  238 |         try{
+  239 |             console.log('Start Validation for Comment Pop Up Header  ')
+  240 |             if (this.closeCommentPopUp_Header.toBeVisible()){
+  241 |                        closeCommentPopUp_Header.click()
+  242 |                        console.log('Comment Pop Up Header Close')
+  243 |             }else{
+  244 |                 console.log('Message comment not visible')
+  245 |             }
+  246 |         }catch(e){
+  247 |             console.log('Comment Pop Up Header Not Availbale')
+  248 |             throw e
+  249 |         }
+```

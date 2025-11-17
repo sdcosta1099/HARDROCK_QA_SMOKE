@@ -19,6 +19,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.playerFunctions_Tab =page.getByRole('link', { name: 'Player Functions' })
         this.playerTransactionLog_Tab= page.getByText('Player Transaction Log')
         this.closePopUpPlayerTransactionLog= page.getByText('Close')
+        this.logTransactionDescription = page.getByText('Close') //Player Comment - Settled in HALO
         /////chcik in objects 
         this.eventCheckIn= page.getByText('Event Check-in')
         this.eventOfferName_Txt= page.locator('#ctl00_ContentPlaceHolder1_txtEventOffer')
@@ -29,10 +30,10 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
         /////Objects for Comments                          
         this.viewComment_Tab =page.getByText('View Comment');
-        this.editComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'Test Comment Edit_1705000060137', exact: true })
+        //this.editComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'Test Comment Edit_1705000060137', exact: true })
         this.addComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Add' });
-        //this.viewSettledVoidedComment_tab=  page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View Settled/Voided' })
-        this.viewSettledVoidedComment_tab= page.locator('.btnCommentSettleVoid')
+        this.viewSettledVoidedComment_tab=  page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View Settled/Voided' })
+        //this.viewSettledVoidedComment_tab= page.locator('.btnCommentSettleVoid')
         this.closeCommentPopUp_Message=  page.getByText('Close')
         this.closeCommentPopUp_Header= page.locator('#popupheaderEnhancedComments')
         this.cancelComment_Tab=page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' })
@@ -40,18 +41,34 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.replyComment_Tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Reply' })
         this.editComment_Tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Edit' })
         this.settleVoidComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Settle/Void' })
+       this.txtSettleVoidComment= page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#txtSettleVoidComment')
         this.CommentFirstRow_Tab =page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true })
                                 //page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true })
 
-        this.clickSubmit_SettleVoidComment_Btn= page.locator('.btnSettleVoidSubmit')
-        this.clickCancel_SettleVoidComment_Btn= page.locator('.btnSettleVoidCancel')
-        this.clickConfirm_SettleVoidComment_Btn= page.locator('.btnSettleVoidConfirm')
-
-
-         
+        // this.clickSubmit_SettleVoidComment_Btn= page.locator('.btnSettleVoidSubmit')
+        // this.clickCancel_SettleVoidComment_Btn= page.locator('.btnSettleVoidCancel')
+        // this.clickConfirm_SettleVoidComment_Btn= page.locator('.btnSettleVoidConfirm')
         
+ 
+        this.clickSubmit_SettleVoidComment_Btn= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Submit' })
+        this.clickCancel_SettleVoidComment_Btn= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Cancel' })
+        this.clickConfirm_SettleVoidComment_Btn=page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Confirm' })
+
         this.addComment_Txt= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'txtComment' })
         this.saveComment_tab = page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Save' });
+
+        this.authorizationPassword= page.locator('#TxtAuthorisationPwd')
+        //page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#TxtAuthorisationPwd')
+        this.authorizationReason= page.locator('#ddlSettleVoidCommentReason')
+        //this.authorizationSubmit= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Submit' })
+       // this.authorizationComments= page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#txtAuthorisationComment')
+       this.authorizationComments= page.locator('#TxtAuthComment')
+       this.authorizationSubmit=page.locator('#btnPopupSubmit')
+       this.authorizationCancel=page.locator('#btnPopupCancel')
+
+        this.authorizationOK= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Ok' })
+        this.authorizationClosePopUp=  page.getByText('Close')
+    
         
         const { chromium } = require('playwright');
 
@@ -98,7 +115,6 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
 
 
-
         //this.closeVisitAppeasement_Tab = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Close' })
         this.closeVisitAppeasement_Tab =   page.getByText('Close')
 
@@ -129,16 +145,66 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             console.log('User on comment tab  ')
         }catch(e){
             console.log('View comment tab Not visible ')
+            throw e
+        }
+
+    }
+    async clickSettleVoidComment_tab(){
+        try{
+            await this.settleVoidComment_tab.click()
+            await this.txtSettleVoidComment.fill(testData.scriptingData.comment)
+            await this.clickSubmit_SettleVoidComment_Btn.click() 
+            await this.clickConfirm_SettleVoidComment_Btn.click()
+            console.log('Settle VOid comment tab opens as expected')
+        }catch(e){
+            console.log('Settle VOid comment tab Not visible ')
+            throw e
+        }
+
+    }
+
+     
+    async validateAuthorizationComments(){
+        try{
+            await this.authorizationPassword.fill(testData.Credentials.QApassword)
+            await this.authorizationReason.selectOption('System Testing')
+            await this.authorizationComments.fill(testData.scriptingData.comment)
+            await this.authorizationSubmit.click()
+            await this.authorizationOK.click()
+            await this.authorizationClosePopUp.click()
+            console.log('Comments Authorize as expected')
+        }catch(e){
+            console.log('Comment Authorization tab Not visible ')
+            throw e
+        }
+
+    }
+
+
+
+    async validateCommentTab_Elements(){
+        try{
+            await  expect(this.settleVoidComment_tab).toBeVisible()
+            await  expect(this.editComment_Tab).toBeVisible()
+            await  expect(this.replyComment_Tab).toBeVisible()
+            await  expect(this.viewSettledVoidedComment_tab).toBeVisible()
+            await  expect(this.addComment_tab).toBeVisible()
+            await  expect(this.editComment_Tab).toBeVisible()
+            console.log('All Comment Tab Elements are present as expected  ')
+        }catch(e){
+            console.log('Comment Tab Elements are NOT Displyed on Comment Pop Up')
+            throw e
         }
 
     }
 
     async clickViewAllComment_Tab(){
         try{
-            await this.viewAllComment_Tab.click()
+            await this.viewComment_Tab.click()
             console.log('User on View All comment tab  ')
         }catch(e){
             console.log('View Al comment tab Not visible ')
+            throw e
         }
 
     }
@@ -149,6 +215,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             console.log('Comment First Row tab Opens')
         }catch(e){
             console.log('Comment First Row Tab Not visible ')
+            throw e
         }
 
     }
@@ -161,6 +228,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             console.log('User Edited comment ')
         }catch(e){
             console.log('Edit comment tab not visible ')
+            throw e
         }
 
 
@@ -174,6 +242,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             console.log('User Added comment')
         }catch(e){
             console.log('Add comment tab not visible ')
+            throw e
         }
 
     }
@@ -187,6 +256,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         console.log('Comment Added as expected')
         }catch(e){
             console.log('Comment Field Not visible')
+            throw e
         }
     }
 
@@ -200,6 +270,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             console.log('User Viewed, Settle Voided Comments  ')
         }catch(e){
             console.log('View comment tab not visible ')
+            throw e
         }
 
     }
@@ -211,6 +282,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             console.log(' Comments Cancel ')
         }catch(e){
             console.log('Cancel COmment Not Visible')
+            throw e
         }
 
     }
@@ -222,6 +294,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             console.log('Reply Comment')
         }catch(e){
             console.log('Reply Comment not visible ')
+            throw e
         }
 
     }
@@ -237,6 +310,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             }
         }catch(e){
             console.log('Comment Pop Up Header Not Availbale')
+            throw e
         }
     }
 
@@ -253,6 +327,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
     //         }
     //     }catch(e){
     //         console.log('Comment Pop Up Header Not Availbale')
+    //         throw e
     //     }
     // }
 
@@ -266,6 +341,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             console.log('Comment Pop Up Message Close')
         }catch(e){
             console.log('Comment Pop Up Message Not Availbale')
+            throw e
         }
     }
      
@@ -278,6 +354,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         console.log('Comment Saved as expected')
         }catch(e){
             console.log('Save tab  Not visible')
+            throw e
         }
     }
 
@@ -291,6 +368,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
                   console.log('Line Of business tab Opens')
             }catch(e){
                 console.log('Line Of business tab Not Available')
+                throw e
             }
         }
     
@@ -301,10 +379,27 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             
         try{
             await this.playerTransactionLog_Tab.click()
-
             console.log('Player Transaction Tab Opens')
         }catch(e){
             console.log('Player Transaction Tab not available')
+            throw e
+        }
+    }
+
+    async validateComment_PlayerTransactionLog(){
+            
+        try{
+            await this.playerTransactionLog_Tab.click()
+            await this.CommentFirstRow_Tab.first().click({timeout:5000})
+
+            await this.closePopUpPlayerTransactionLog.click({timeout:3000})
+            await this.page.pause()
+            await expect(this.logTransactionDescription).toHaveText('Player Comment - Settled in HALO')
+        
+            console.log('All comment validated as expected on Player Transaction Tab')
+        }catch(e){
+            console.log('Player Transaction Tab not available')
+            throw e
         }
     }
 
@@ -318,6 +413,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             console.log('Player Transaction Pop UP CLose  ')
         }catch(e){
             console.log('Player Transaction Pop Up not Available')
+            throw e
         }
     }
 
@@ -331,6 +427,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
              
         }catch(e){
             console.log('Account Not Created')
+            throw e
         }
     }
     
@@ -344,6 +441,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             console.log('Espected Data: ' +data)
         }catch(e){
             console.log('Player Transaction first entry Data NOT able to be validated')
+            throw e
         }
     }
 
@@ -356,6 +454,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             console.log('visit Appeasement Page Opens as expected')
         }catch(e){
             console.log('visit Appeasement Page NOT Available')
+            throw e
         }
 
     }
@@ -384,7 +483,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
         }catch(e){
             console.log('Visit Appeasement functions are NOT VALIDATED')
-
+            throw e
         }
        
                   
@@ -413,6 +512,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             console.log('Vist appeasements added as expected')
         }catch(e){
             console.log('Vist appeasements NOT ABLE TO add')
+            throw e
         }
 
 
@@ -428,6 +528,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             console.log('Number of Vist appeasements added validated as expected')
         }catch(e){
             console.log('User is not able to validate Visits appeasements')
+            throw e
         }
 
 
@@ -442,6 +543,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         }catch{
 
             console.log(' Event Check In tab Not Displayed')
+            throw e
         }
 
     }

@@ -736,7 +736,9 @@ exports.configurationSteps= class configurationSteps{
         try{
                 console.log('Start Offer Set Up Page  ')
                 await this.displayProperty_DropDown.selectOption({label:'Hard Rock Hollywood'})
-                await this.displayLocation_DropDown.selectOption({value:'28'})
+               // await this.page.pause()
+                await this.displayLocation_DropDown.selectOption({value:'27'},{timeout:50000})
+                //await this.displayLocation_DropDown.selectOption({label:'Casino Floor'})
                 await this.displayName_Txt.fill(offerName)
                 
                 const  offerStartDate = this.getNextDate(1)

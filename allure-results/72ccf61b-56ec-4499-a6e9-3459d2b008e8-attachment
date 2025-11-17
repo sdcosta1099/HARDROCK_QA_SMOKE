@@ -1,0 +1,271 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UH10484  HALO | Online Account Settings | Online account settings for a Patron with an Online account but not yet Activated
+- Location: C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\accountSettingTestCases\UH10484TestCase.spec.js:6:5
+
+# Error details
+
+```
+Error: Timed out 5000ms waiting for expect(locator).toHaveText(expected)
+
+Locator: locator('#ifrContent').contentFrame().getByRole('cell', { name: 'Activate Online Account', exact: true }).locator('div')
+Expected string: "activate online Account link"
+Received: <element(s) not found>
+Call log:
+  - expect.toHaveText with timeout 5000ms
+  - waiting for locator('#ifrContent').contentFrame().getByRole('cell', { name: 'Activate Online Account', exact: true }).locator('div')
+
+    at playerSearchSteps.validateResendActivation_link (C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\testSteps\playerSearchSteps.js:888:55)
+    at C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\accountSettingTestCases\UH10484TestCase.spec.js:16:5
+```
+
+# Page snapshot
+
+```yaml
+- text: HALO 25.9.1 Logged in as TU_LAB_HALO_NIN_ADM
+- img "HR Casino, Northern Indiana"
+- link "Logout":
+  - img "Logout"
+- list:
+  - listitem:
+    - link "Player Functions"
+  - listitem:
+    - link "Configuration"
+  - listitem:
+    - link "Administration"
+- table:
+  - rowgroup:
+    - row "PLAYER SEARCH - 807879790 - Nick Nicholls Go To Employee Dashboard 0":
+      - cell "PLAYER SEARCH"
+      - cell "- 807879790 - Nick Nicholls"
+      - cell "Go To Employee Dashboard":
+        - link "Go To Employee Dashboard":
+          - img
+      - cell:
+        - link "Expand Search":
+          - img
+      - cell "0"
+- table:
+  - rowgroup:
+    - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+      - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+        - table:
+          - rowgroup:
+            - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+              - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet"
+            - row:
+              - cell
+```
+
+# Test source
+
+```ts
+  788 |    
+  789 |
+  790 |
+  791 |    async validateResetPassword_link(){
+  792 |     try{
+  793 |         expect(this.page.toHaveTitle('Reset Password'))
+  794 |         
+  795 |         console.log('Reset passowrd link available')
+  796 |     }catch(e){
+  797 |         console.log('Reset passord link not NOT Available')
+  798 |         throw e;
+  799 |     }
+  800 |
+  801 |    }
+  802 |
+  803 |
+  804 |    async clickResetPassword_link(){
+  805 |     try{
+  806 |         await this.page.waitForTimeout(5000)
+  807 |         await expect.soft(this.resetPassword_link).toBeVisible()
+  808 |         await this.resetPassword_link.click()
+  809 |         await this.resetPassword_PopUSend.click()
+  810 |         await this.resetPassword_PopUMessage.click()
+  811 |         console.log('Reset password link Clickable')
+  812 |     }catch(e){
+  813 |         console.log('Reset password link NOT clickable')
+  814 |         throw e
+  815 |     }
+  816 |
+  817 |    }
+  818 |
+  819 |    async clickResetPassword_popUpSend(){
+  820 |     try{
+  821 |         await this.resetPassword_PopUSend.click()
+  822 |         console.log('Reset password Pop Up Clickable')
+  823 |     }catch(e){
+  824 |         console.log('Reset password Pop Up NOT clickable')
+  825 |         throw e;
+  826 |     }
+  827 |
+  828 |    }
+  829 |
+  830 |
+  831 |   async clickResetPassword_message(txt_message){
+  832 |         try{
+  833 |         await this.resetPassword_PopUMessage.click()
+  834 |         console.log('CLose Resend password messgae link')
+  835 |          }catch(e){
+  836 |        console.log('Account is not Disable')
+  837 |        throw e;
+  838 |          } 
+  839 |     }
+  840 |     
+  841 |
+  842 |    
+  843 |
+  844 |    async goToAccountSettingTab(playerID){
+  845 |     await this.playerID_textBox.click()
+  846 |     await this.playerID_textBox.fill(playerID)
+  847 |     await this.search_btn.click()
+  848 |     await this.commPreferences_btn.click()
+  849 |     await this.accountSettings_tab.click()
+  850 |     console.log('User on Account Setting page')
+  851 |
+  852 |    }
+  853 |
+  854 |
+  855 |
+  856 |    async validateAccountSettingLinks(){
+  857 |     try{
+  858 |     await this.clickOnlineAccountCreated_link.click()
+  859 |     await this.clickResetPassword_link.click()
+  860 |     await this.clickResetPassword_message()
+  861 |     await this.clickResetPassword_popUpSend()
+  862 |         console.log('Account Setting links clickable')
+  863 |         }catch(e){
+  864 |             console.log('Account Setting links NOT clickable')
+  865 |             throw e;
+  866 |         }
+  867 |     }
+  868 |
+  869 |    async validateAccountSettingTextCOntent(){
+  870 |     try{
+  871 |         await expect(this.onlineAccountSettings).toHaveText('Online Account Settings')
+  872 |         await expect(this.onlineAccountCreated_link).toHaveText('Online Account Created')
+  873 |         await expect(this.accountActivated_link).toHaveText('Account Activated')
+  874 |         await expect(this.resetPassword_link).toHaveText('Reset Password')
+  875 |         await expect(this.accountNotLock_link).toHaveText('Account Not Locked')
+  876 |         await expect(this.disableAccount_link).toHaveText('Disable Account')
+  877 |         console.log('All text element from account setting page are validated')  
+  878 |         }catch(e){
+  879 |             console.log('some or all Text element content are not available')
+  880 |             throw e;
+  881 |         }
+  882 |    }
+  883 |
+  884 |    async validateResendActivation_link(){
+  885 |     try{
+  886 |         await expect(this.onlineAccountSettings).toHaveText('Online Account Settings')
+  887 |         await expect(this.onlineAccountCreated_link).toHaveText('Online Account Created')
+> 888 |         await expect(this.activateOnlineAccount_link).toHaveText('activate online Account link')
+      |                                                       ^ Error: Timed out 5000ms waiting for expect(locator).toHaveText(expected)
+  889 |         await expect(this.resendActivation_link).toHaveText('Resend activation link')
+  890 |         console.log('Activation Link Resent As Expected')  
+  891 |         }catch(e){
+  892 |             console.log('Activation Link is not Available')
+  893 |             throw e;
+  894 |         }
+  895 |    }
+  896 |
+  897 |    async validateAccountDisableTextCOntent(){
+  898 |     try{
+  899 |          
+  900 |         await expect(this.disableAccount_link).toHaveText('Disable Account')
+  901 |         console.log('Account is Disbale')  
+  902 |     }catch(e){
+  903 |         console.log('Account is NOT Disbale')
+  904 |         throw e;
+  905 |     }
+  906 |    
+  907 |    }
+  908 |
+  909 |
+  910 |    async clickUnlockAccount_link(){
+  911 |     try{
+  912 |          
+  913 |          await this.unlockAccount_link.click()
+  914 |         console.log('Unlock Account link is cliackable ')  
+  915 |     }catch(e){
+  916 |         console.log('Unlock Account link is NOT clickable ')
+  917 |         throw e;
+  918 |     }
+  919 |    
+  920 |    }
+  921 |
+  922 |    async validateAccountNOTLocked_Status(){
+  923 |     try{
+  924 |       // await expect(this.accountNotlocked_Status).getByText('Account Not Locked').toBeVisible()
+  925 |        await expect(this.accountNotlocked_Status).toContainText('Account Not Locked')
+  926 |         console.log('Account is NOT Locked as expected')
+  927 |     }catch(e){
+  928 |         console.log('Account is NOT Locked Link is not available ')
+  929 |         throw e;
+  930 |     }
+  931 |    }
+  932 |
+  933 |    accountLock_Status
+  934 |
+  935 |    async validateAccountLocked_Status(){
+  936 |     try{
+  937 |
+  938 |        await expect(this.accountLocked_Status).toHaveText('Account Locked')
+  939 |
+  940 |         console.log('Account is Locked as expected')
+  941 |     }catch(e){
+  942 |         console.log('Account is Lock Link is not available ')
+  943 |         throw e;
+  944 |     }
+  945 |    }
+  946 |
+  947 |     
+  948 |    async   clickCloseUnlockAccount_MessagePopUp(){
+  949 |     try{
+  950 |          
+  951 |          await this.closeUnlockAccount_Message.click()
+  952 |         console.log('Unlock Account Message is closed')  
+  953 |     }catch(e){
+  954 |         console.log('Unlock account Message is not Avaialble ')
+  955 |         throw e;
+  956 |       }
+  957 |
+  958 |     }
+  959 |    
+  960 |    
+  961 |
+  962 |    async validateUnlockAccount_link(){
+  963 |     try{
+  964 |          
+  965 |         await expect(this.unlockAccount_link).toHaveText('Unlock Account')
+  966 |         console.log('Account is locked as expected')  
+  967 |         }catch(e){
+  968 |             console.log('UNlocked Account link is not Available')
+  969 |             throw e;
+  970 |         }
+  971 |         
+  972 |    }
+  973 |
+  974 |     
+  975 |    async clickResendCreatePassword_Email(){
+  976 |     try{
+  977 |          
+  978 |         await expect(this.resendCreatePassword_Email).toHaveText('Resend Create Password Email')
+  979 |         await this.resendCreatePassword_Email.click()
+  980 |
+  981 |         console.log('Resend Create Password Email as expected')  
+  982 |         }catch(e){
+  983 |             console.log('Resend Create Password Email is not Available')
+  984 |             throw e;
+  985 |         }
+  986 |         
+  987 |    }
+  988 |
+```

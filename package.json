@@ -8,17 +8,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.41.1",
+    "@playwright/test": "^1.51.1",
     "@types/node": "^20.11.0",
     "allure-playwright": "^2.11.1"
   },
-
-  "overrides": {
-    "rimraf": "^4.0.0"
-  }, 
-
   "overrides": {
     "glob": "9.0.0"
   }
-
 }

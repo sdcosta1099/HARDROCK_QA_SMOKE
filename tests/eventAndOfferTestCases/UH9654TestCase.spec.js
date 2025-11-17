@@ -7,7 +7,7 @@ const testData= JSON.parse(JSON.stringify(require("../../testData.json")))
 
 test('UH-9654 HALO | Events and Offers | Create offer with Prize and Attendance', async ({ page }) => {
      
-
+   //test.setTimeout(120000);
     const gblFuntSteps = new globalFUnctionSteps(page)
     const searchPlayerID= new playerSearchSteps(page)
     const configSteps = new configurationSteps(page)
@@ -19,7 +19,6 @@ test('UH-9654 HALO | Events and Offers | Create offer with Prize and Attendance'
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
     
-  
     // //go to Add new Offer steps
     await configSteps.goToAddNewOfferPage()
     await configSteps.goToOfferSetUpPage(offerName, 'NO')

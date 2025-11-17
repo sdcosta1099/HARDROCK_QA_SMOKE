@@ -1,0 +1,48 @@
+------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------
+Environment selected =  QA
+Using QA Environment URL:https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx 
+User is log to Halo QA ADMIN Env
+PlayerID found = 807879818
+User on player Function Tab
+View comment tab Not visible 
+Add comment tab not visible 
+Comment Field Not visible
+locator.click: Target page, context or browser has been closed
+    at playerFunctionsSteps.clickPlayerFunctions_Tab (C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\testSteps\playerFunctionsSteps.js:114:44)
+    at C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\commentTestCases\UH9496TestCases.spec.js:21:30 {
+  [Symbol(step)]: {
+    stepId: 'pw:api@27',
+    location: {
+      file: 'C:\\Automation\\OldHello\\Regression_QA\\HaloOldUI - QA\\testSteps\\playerFunctionsSteps.js',
+      line: 114,
+      column: 44,
+      function: 'playerFunctionsSteps.clickPlayerFunctions_Tab'
+    },
+    category: 'pw:api',
+    title: "locator.getByRole('link', { name: 'Player Functions' }).click",
+    apiName: 'locator.click',
+    params: {
+      selector: 'internal:role=link[name="Player Functions"i]',
+      strict: true,
+      timeout: 5000
+    },
+    boxedStack: undefined,
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [TestInfoImpl],
+      _stepId: 'pw:api@27'
+    },
+    complete: [Function: complete],
+    endWallTime: 1762529089875,
+    error: {
+      message: 'Error: locator.click: Target page, context or browser has been closed',
+      stack: 'Error: locator.click: Target page, context or browser has been closed\n' +
+        '    at playerFunctionsSteps.clickPlayerFunctions_Tab (C:\\Automation\\OldHello\\Regression_QA\\HaloOldUI - QA\\testSteps\\playerFunctionsSteps.js:114:44)\n' +
+        '    at C:\\Automation\\OldHello\\Regression_QA\\HaloOldUI - QA\\tests\\commentTestCases\\UH9496TestCases.spec.js:21:30',
+      cause: undefined
+    }
+  }
+}
+player Function Tab not visible

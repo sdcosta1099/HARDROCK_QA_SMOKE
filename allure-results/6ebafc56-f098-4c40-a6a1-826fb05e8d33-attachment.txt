@@ -1,0 +1,79 @@
+OfferName = QA-Automation-UH-9895-4420
+------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------
+Environment selected =  QA
+Using QA Environment URL:https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx 
+User is log to Halo QA ADMIN Env
+Adding New Offer Page
+Add New Offer Page completed 
+Start Offer Set Up Page  
+User is on Configuration Tab
+User is on Event and OfferTab
+User on Manage Event And Offer page
+Add New Offer Button Available 
+Offer Date Displays: Fri Nov 14 2025 11:34:23 GMT-0500 (Eastern Standard Time)
+Offer Date Displays: Sat Nov 15 2025 11:34:23 GMT-0500 (Eastern Standard Time)
+Description Displayed as expected
+Disclaimner Entered as expected
+URL displayed as expected: https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx
+Save and Next Button Available
+Display call to action field selected :NO
+Start Invitation Details Page
+Invitation Details Page not available
+On Master Item of List Page
+Master Item of List Page is not available
+On Attendee Capacity Page
+Save and Next Button Available
+Atendee page with Capacity = NO Completed
+Start Segment page
+Segment Page Completed
+On Checkin Page
+Internal Attachment Page not Available
+On Internal Attachment Page
+Internal Attachment Page not Available
+Scroll element not visible
+Summary Page not Available
+approving QA-Automation-UH-9895-4420 offer
+offer QA-Automation-UH-9895-4420 not found to be Approved
+Deactivating offer: QA-Automation-UH-9895-4420
+Halo Employee Dashboard Not Available
+Halo Employee Dashboard Not Available
+Offer: QA-Automation-UH-9895-4420 Not Found to Be Deactivated
+locator.click: Target page, context or browser has been closed
+    at configurationSteps.deactivateOffer (C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\testSteps\configurationSteps.js:1027:49)
+    at C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\checkin\UH9895TestCase.spec.js:35:23 {
+  [Symbol(step)]: {
+    stepId: 'pw:api@40',
+    location: {
+      file: 'C:\\Automation\\OldHello\\Regression_QA\\HaloOldUI - QA\\testSteps\\configurationSteps.js',
+      line: 1027,
+      column: 49,
+      function: 'configurationSteps.deactivateOffer'
+    },
+    category: 'pw:api',
+    title: "locator.getByRole('button', { name: 'Events & Offers Search' }).click",
+    apiName: 'locator.click',
+    params: {
+      selector: 'internal:role=button[name="Events & Offers Search"i]',
+      strict: true,
+      setTimeout: 3000
+    },
+    boxedStack: undefined,
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [TestInfoImpl],
+      _stepId: 'pw:api@40'
+    },
+    complete: [Function: complete],
+    endWallTime: 1763051685984,
+    error: {
+      message: 'Error: locator.click: Target page, context or browser has been closed',
+      stack: 'Error: locator.click: Target page, context or browser has been closed\n' +
+        '    at configurationSteps.deactivateOffer (C:\\Automation\\OldHello\\Regression_QA\\HaloOldUI - QA\\testSteps\\configurationSteps.js:1027:49)\n' +
+        '    at C:\\Automation\\OldHello\\Regression_QA\\HaloOldUI - QA\\tests\\checkin\\UH9895TestCase.spec.js:35:23',
+      cause: undefined
+    }
+  }
+}
+log Out Btn not available
