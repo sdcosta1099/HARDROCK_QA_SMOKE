@@ -16,13 +16,18 @@ test('UH-9496 Expiration Comment validation', async ({ page }) => {
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH9496)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
-    await playerFunctionPage.clickAddComment_Tab()
-    await playerFunctionPage.clickAddComment_Txt()
-    await playerFunctionPage.clickPlayerFunctions_Tab()
-    await playerFunctionPage.clickplayerTransactionLog_Tab()
 
     await playerFunctionPage.clickAddComment_Tab()
-    await playerFunctionPage.ClickClosePopUpPlayerTransactionLog()
+    await playerFunctionPage.clickAddComment_Txt()
+    await playerFunctionPage.validateCommentsDetails()
+    await playerFunctionPage.validateCommentTab_Elements()
+
+   // await playerFunctionPage.clickPlayerTransactionsLog_Tab()
+    await playerFunctionPage.validateComment_PlayerTransactionLog()  
+
+    //await playerFunctionPage.validateCommentTab_Elements()
+    // await playerFunctionPage.clickPlayerTransactionsLog_Tab()
+    // await playerFunctionPage.validateComment_PlayerTransactionLog() 
     await  gblFuntSteps.logOut()
      
     //await page.pause()

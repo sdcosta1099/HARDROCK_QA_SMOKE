@@ -22,7 +22,8 @@ test('UH-9493 HALO | Patron Dashboard | Player Function | View Comments | Settle
     await playerFunctionPage.clickSettleVoidComment_tab()
     await playerFunctionPage.validateAuthorizationComments()
    // await playerFunctionPage.clickCloseCommentPopUp_Message()
-    await playerFunctionPage.validateComment_PlayerTransactionLog()
+    await playerFunctionPage.clickPlayerFunctions_Tab()
+    //await playerFunctionPage.validateComment_PlayerTransactionLog()
     await gblFuntSteps.logOut()
 })
 
