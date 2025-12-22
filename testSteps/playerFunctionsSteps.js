@@ -15,11 +15,21 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
         this.page=page
         /////Object for Player Function///////////////////////////////
-        //this.playerFunctions_Tab = page.frameLocator('iframe[name="FramePopUp7"]').getByRole('link', { name: 'Player Functions' }) 
+        this.playerFunctions_TabPT = page.frameLocator('iframe[name="FramePopUp7"]').getByRole('link', { name: 'Player Functions' }) 
         this.playerFunctions_Tab =page.getByRole('link', { name: 'Player Functions' })
         this.playerTransactionLog_Tab= page.getByText('Player Transaction Log')
         this.closePopUpPlayerTransactionLog= page.getByText('Close')
+
+
         this.logTransactionDescription = page.getByText('Close') //Player Comment - Settled in HALO
+        this.logTransactionDateTime = page.locator('iframe[name="FramePopUp3"]').contentFrame().getByRole('cell', { name: 'Transaction Date/Time', exact: true })
+        this.logTransactionDescription= page.locator('iframe[name="FramePopUp3"]').contentFrame().getByRole('cell', { name: 'Transaction Description', exact: true })
+        this.logTransactionComment= 
+        this.logTransactionCreator= page.locator('iframe[name="FramePopUp3"]').contentFrame().getByRole('cell', { name: 'Creator', exact: true })
+        this.logTransactionCreatorAdmin=  page.locator('iframe[name="FramePopUp3"]').contentFrame().getByRole('cell', { name: 'TU_LAB_HALO_NIN_ADM' }).nth(2)
+        this.logTransactionPropertyName= page.locator('iframe[name="FramePopUp3"]').contentFrame().getByRole('cell', { name: 'Property Name', exact: true })
+        
+
         /////chcik in objects 
         this.eventCheckIn= page.getByText('Event Check-in')
         this.eventOfferName_Txt= page.locator('#ctl00_ContentPlaceHolder1_txtEventOffer')
@@ -33,17 +43,21 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         //this.editComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'Test Comment Edit_1705000060137', exact: true })
         this.addComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Add' });
         this.viewSettledVoidedComment_tab=  page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View Settled/Voided' })
+        this.CommentHeaderExpirationDate= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Expiration Date', exact: true })
         //this.viewSettledVoidedComment_tab= page.locator('.btnCommentSettleVoid')
         this.closeCommentPopUp_Message=  page.getByText('Close')
         this.closeCommentPopUp_Header= page.locator('#popupheaderEnhancedComments')
+        //page.getByText('Close')
         this.cancelComment_Tab=page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' })
         this.viewAllComment_Tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View All' })
         this.replyComment_Tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Reply' })
         this.editComment_Tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Edit' })
         this.settleVoidComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Settle/Void' })
-       this.txtSettleVoidComment= page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#txtSettleVoidComment')
-        this.CommentFirstRow_Tab =page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true })
-                                //page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true })
+        this.txtSettleVoidComment= page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#txtSettleVoidComment')  
+        this.CommentFirstRow_Tab = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'TU_LAB_HALO_NIN_ADM', exact: true })
+        this.PlayerTransactionCommentFirstRow_Tab = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Player Comment - Settled in HALO', exact: true })
+        //page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true })
+        //page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true })
 
         // this.clickSubmit_SettleVoidComment_Btn= page.locator('.btnSettleVoidSubmit')
         // this.clickCancel_SettleVoidComment_Btn= page.locator('.btnSettleVoidCancel')
@@ -54,9 +68,61 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.clickCancel_SettleVoidComment_Btn= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Cancel' })
         this.clickConfirm_SettleVoidComment_Btn=page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Confirm' })
 
-        this.addComment_Txt= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'txtComment' })
+        //this.addComment_Txt= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'txtComment' })
+        this.addComment_Txt= page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#txtComment')
         this.saveComment_tab = page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Save' });
+        this.saveOkComment = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Ok' })
 
+        this.CommentHeaderSource= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Source', exact: true })
+        this.CommentHeaderDepartment= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Department', exact: true })
+        this.CommentHeaderPriority= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Priority', exact: true })
+        this.CommentHeaderProperty= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Property', exact: true })
+        this.CommentHeaderSearchFrom= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Search From', exact: true })
+        this.CommentHeaderSearchTo= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Search To', exact: true })
+        this.CommentHeaderSearch_Btn= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Search' })
+
+          page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#lblSearchSource') ;
+          page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#lblSearchDepartment') ;
+          page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#lblSearchProperty') ;
+          page.locator('iframe[name="FramePopUp7"]').contentFrame().getByText('Search From') ;
+          page.locator('iframe[name="FramePopUp7"]').contentFrame().getByText('Search To') ;
+          page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#lblSearchPriority') ;
+
+        this.displayDateCommentHeader = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Display Date', exact: true })
+
+        this.currentDate = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: '11/17/2025', exact: true })
+        this.commentHeader = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Comment', exact: true })
+        this.commentUserID= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'TU_LAB_HALO_NIN_ADM', exact: true }).nth(9)
+        this.commentUserName = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'UserName', exact: true })
+        this.closeCommentFrame = page.getByText('Close')
+       this.closeCommentPopupheader3 =   page.locator('#popupheader3').getByText('Close');
+
+
+       
+        //#popupheader3  or    popupheaderEnhancedComments
+
+
+        // await page.goto('https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/PlayerDashBoard.aspx?UPlayerId=807881503%20%20%20&PlayerId=9875666');
+        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Display Date', exact: true }).click();
+        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Comment', exact: true }).click();
+        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('[id="x\\:1558101725\\.21\\:adr\\:0\\:tag\\:\\:chlGCnt\\:0\\:exp\\:False"] > td:nth-child(5)').click();
+        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#whdgActiveComments_ctl00').getByRole('cell', { name: 'Priority', exact: true }).click();
+        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#whdgActiveComments_ctl00').getByRole('cell', { name: 'Source', exact: true }).click();
+        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('[id="x\\:1558101725\\.21\\:adr\\:0\\:tag\\:\\:chlGCnt\\:0\\:exp\\:False"] > td:nth-child(8)').click();
+        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'UserName', exact: true }).click();
+        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('[id="x\\:1558101725\\.21\\:adr\\:0\\:tag\\:\\:chlGCnt\\:0\\:exp\\:False"] > td:nth-child(9)').click();
+        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#whdgActiveComments_ctl00').getByRole('cell', { name: 'Property', exact: true }).click();
+        // await page.getByText('Close').click();
+
+      
+
+
+
+
+
+
+         
+         
         this.authorizationPassword= page.locator('#TxtAuthorisationPwd')
         //page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#TxtAuthorisationPwd')
         this.authorizationReason= page.locator('#ddlSettleVoidCommentReason')
@@ -68,9 +134,10 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
         this.authorizationOK= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Ok' })
         this.authorizationClosePopUp=  page.getByText('Close')
+        this.CommentPriority= page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#ddlCommentPriority')
     
         
-        const { chromium } = require('playwright');
+        
 
 // (async () => {
 //   const browser = await chromium.launch({
@@ -126,29 +193,62 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
     async clickPlayerFunctions_Tab(){
         try{
-
-            await this.playerFunctions_Tab.click({timeout:5000}) 
+            await this.playerFunctions_Tab.click() 
             console.log('User on player Function Tab')
         }catch(e){
-            console.log(e)
             console.log('player Function Tab not visible')
             throw e
         }
         
     }
 
+
+    async clickPlayerTransactionsLog_Tab(){
+        try{
+
+            await this.playerTransactionLog_Tab.click() 
+            console.log('User on player Transaction Log  Tab')
+        }catch(e){
+            console.log('player Transaction Log  Tab not visible')
+            throw e
+        }
+        
+    }
+
+     
+
+
+    async clickPlayerFunctions_TabPT(){
+        try{
+
+            await this.playerFunctions_TabPT.click() 
+            console.log('User on player Function Tab  PT')
+        }catch(e){
+            console.log('player Function Tab not visible PT')
+            throw e
+        }
+        
+    }
+
+
+
+
+
     //////////////////////////////Functions and Methods for Player FUnction tab and Comment tab ////////////////////////
 
+   
     async clickViewComment_Tab(){
         try{
             await this.viewComment_Tab.click()
-            console.log('User on comment tab  ')
+            console.log('User on View comment tab  ')
         }catch(e){
             console.log('View comment tab Not visible ')
             throw e
         }
 
     }
+
+
     async clickSettleVoidComment_tab(){
         try{
             await this.settleVoidComment_tab.click()
@@ -184,12 +284,20 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
     async validateCommentTab_Elements(){
         try{
-            await  expect(this.settleVoidComment_tab).toBeVisible()
-            await  expect(this.editComment_Tab).toBeVisible()
-            await  expect(this.replyComment_Tab).toBeVisible()
-            await  expect(this.viewSettledVoidedComment_tab).toBeVisible()
-            await  expect(this.addComment_tab).toBeVisible()
-            await  expect(this.editComment_Tab).toBeVisible()
+
+            await this.settleVoidComment_tab.highlight({timeout:3000})
+            await this.editComment_Tab.highlight({timeout:3000})
+            await this.replyComment_Tab.highlight({timeout:3000})
+            await this.viewSettledVoidedComment_tab.highlight({timeout:3000})
+            await this.addComment_tab.highlight()
+            await this.CommentHeaderExpirationDate.highlight({timeout:3000}) 
+            
+            // const expirationDate= testData.CommentTestAccounts.CommentExpirationDate
+            // await expect(this.CommentHeaderExpirationDate).toHaveText(expirationDate)
+
+             console.log('Expiration Date Field is Present on Comment Tab as expected ')
+           //  await  this.validateCommentExpiration()
+                 
             console.log('All Comment Tab Elements are present as expected  ')
         }catch(e){
             console.log('Comment Tab Elements are NOT Displyed on Comment Pop Up')
@@ -197,6 +305,29 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         }
 
     }
+
+    async validateCommentExpiration(){
+
+        try{
+            const today = new Date();
+            const todayDate= today.toLocaleDateString()
+            await this.CommentHeaderExpirationDate.highlight({timeout:3000}) 
+            if( todayDate < this.CommentHeaderExpirationDate){
+                console.log('Comment is Active as Expiration Date is greater than today date: ' +todayDate)
+            }else if(todayDate >= this.CommentHeaderExpirationDate){
+                console.log('Comment is Expired as Expiration Date is less than or equal to today date: ' +todayDate)
+            }
+
+            const expirationDate= testData.CommentTestAccounts.CommentExpirationDate
+            await expect(this.CommentHeaderExpirationDate).toHaveText(expirationDate)
+            console.log('Comment Expiration Date: ' +expirationDate+ ' is Validated as expected ')
+        }catch(e){
+            console.log('Comment Expiration Date NOT Validated ')
+            throw e
+        }
+    }
+
+
 
     async clickViewAllComment_Tab(){
         try{
@@ -211,7 +342,9 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
     async clickCommentFirstRow_Tab(){
         try{
-         await this.CommentFirstRow_Tab.first().click({timeout:5000})
+            //await this.page.pause()this wil change base on test comments entered in the commwent sections 
+           
+            await this.CommentFirstRow_Tab.first().click({timeout:5000})
             console.log('Comment First Row tab Opens')
         }catch(e){
             console.log('Comment First Row Tab Not visible ')
@@ -250,8 +383,9 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
     async clickAddComment_Txt(){
         try{ 
-        const commentData= testData.scriptingData.comment
-        await this.addComment_tab.click()
+        const commentData= testData.Comments.CommentsText
+       // await this.addComment_tab.click()
+        await this.addComment_Txt.click()
         await this.addComment_Txt.fill(commentData)
         console.log('Comment Added as expected')
         }catch(e){
@@ -259,13 +393,63 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             throw e
         }
     }
+    //testData.Credentials.QAuserName
 
-    
+    async addCommentDetails(){
+        try{
+          //await this.playerFunctions_Tab.click({timeout:5000}) 
+        //  await this.viewComment_Tab.click()
+          await this.addComment_tab.click({timeout:5000})
+          await this.CommentPriority.click()    
+          await this.CommentPriority.selectOption('3')
+          await this.addComment_Txt.click()
+          await this.addComment_Txt.fill(testData.Comments.CommentsText)
+          await this.saveComment_tab.click()
+          await this.saveOkComment.click()
+          await this.closeCommentPopUp_Header.click()
+
+            console.log('Comment Added as expected')
+
+        }catch(e){
+
+            console.log('Comment NOT Added')
+            throw e 
+
+        }
+      
+    }
+
+
+    async validateCommentsDetails(){
+        try{
+            const today = new Date();
+            const todayDate= today.toLocaleDateString()
+            console.log('Comment Date is : ' +todayDate)
+           await this.displayDateCommentHeader.highlight()
+          // const currentDate =  page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name:  todayDate, exact: true })
+           
+            const creatorAdmin= testData.Credentials.QAuserName
+            await this.commentHeader.highlight()
+            await this.commentUserID.highlight()
+            await this.commentUserName.highlight()
+            await expect(this.commentUserID).toHaveText(creatorAdmin)
+            console.log('Comment added by Admin:  '+creatorAdmin , ' is Validated as expected')
+            await expect(this.commentHeader).toHaveText('Comment') 
+            await this.closeCommentFrame.click()
+
+            console.log('Comment Details Validated as expected')
+        }catch(e){
+            console.log('Comments details not Present on the page')
+            throw e
+        }
+
+    }
      
 
     async clickviewSettledVoided_tab(){
         try{
             await this.viewSettledVoidedComment_tab.click({timeout:5000})
+            await this.closeCommentFrame.click()
 
             console.log('User Viewed, Settle Voided Comments  ')
         }catch(e){
@@ -303,7 +487,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         try{
             console.log('Start Validation for Comment Pop Up Header  ')
             if (this.closeCommentPopUp_Header.toBeVisible()){
-                       closeCommentPopUp_Header.click()
+                       this.closeCommentPopUp_Header.click()
                        console.log('Comment Pop Up Header Close')
             }else{
                 console.log('Message comment not visible')
@@ -349,11 +533,32 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
     async clickSaveComment_tab(){
         try{ 
          
-        await this.saveComment_tab.click
+        await this.saveComment_tab.click()
          
         console.log('Comment Saved as expected')
         }catch(e){
             console.log('Save tab  Not visible')
+            throw e
+        }
+    }
+
+
+    async validateCommentsFilter_Elements(){
+        try{
+
+            await this.CommentHeaderSource.highlight({timeout:3000}) 
+            await this.CommentHeaderDepartment.highlight({timeout:3000}) 
+            await this.CommentHeaderPriority.highlight({timeout:3000})
+            await this.CommentHeaderProperty.highlight({timeout:3000})
+
+            await this.CommentHeaderSearchFrom.highlight({timeout:3000})
+            await this.CommentHeaderSearchTo.highlight({timeout:3000})
+            await this.CommentHeaderSearch_Btn.highlight({timeout:3000})
+
+           
+            console.log('All Comment Filter Elements are present as expected  ')
+        }catch(e){
+            console.log('Comment Filter Elements are NOT Displyed on Comment Pop Up')
             throw e
         }
     }
@@ -389,14 +594,17 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
     async validateComment_PlayerTransactionLog(){
             
         try{
-            await this.playerTransactionLog_Tab.click()
-            await this.CommentFirstRow_Tab.first().click({timeout:5000})
 
-            await this.closePopUpPlayerTransactionLog.click({timeout:3000})
-            await this.page.pause()
-            await expect(this.logTransactionDescription).toHaveText('Player Comment - Settled in HALO')
-        
-            console.log('All comment validated as expected on Player Transaction Tab')
+            const creatorAdmin= testData.Credentials.QAuserName
+            await expect(this.logTransactionDateTime).toHaveText('Transaction Date/Time')
+            await expect(this.logTransactionDescription).toHaveText('Transaction Description')
+            //await expect(this.logTransactionComment).toContainText('Player Comment')
+            await expect(this.logTransactionCreator).toHaveText('Creator')
+            await expect(this.logTransactionCreatorAdmin).toHaveText(creatorAdmin) 
+            console.log('Comment Creator Admin: ' +creatorAdmin)
+            await expect(this.logTransactionPropertyName).toHaveText('Property Name')
+            console.log('All comment validated as expected on Player Transaction Tab')        
+            await this.closeCommentPopupheader3.click({timeout:2500})  
         }catch(e){
             console.log('Player Transaction Tab not available')
             throw e

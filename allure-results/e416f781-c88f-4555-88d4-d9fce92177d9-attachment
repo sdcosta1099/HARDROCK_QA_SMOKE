@@ -1,0 +1,290 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UH-9670 HALO | Events & Offers | Offer Creation: Create offer with single attendee & multiple items with max qty greater than 1
+- Location: C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\eventAndOfferTestCases\UH9670TestCase.spec.js:8:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for locator('#ctl00_ContentPlaceHolder1_ctrlSegments_wdgManageOfferSegment_it7_1_lnkConfigure')
+
+    at C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\eventAndOfferTestCases\UH9670TestCase.spec.js:33:108
+```
+
+# Page snapshot
+
+```yaml
+- text: HALO 25.10.2 Logged in as TU_LAB_HALO_NIN_ADM
+- img "HR Casino, Northern Indiana"
+- link "Logout":
+  - img "Logout"
+- list:
+  - listitem:
+    - link "Player Functions"
+  - listitem:
+    - link "Configuration"
+  - listitem:
+    - link "Administration"
+- table:
+  - rowgroup:
+    - row "PLAYER SEARCH Go To Employee Dashboard 0":
+      - cell "PLAYER SEARCH"
+      - cell
+      - cell "Go To Employee Dashboard":
+        - link "Go To Employee Dashboard":
+          - img
+      - cell:
+        - link "Expand Search":
+          - img
+      - cell "0"
+- text: Add
+- strong: Offer Setup
+- table:
+  - rowgroup:
+    - row:
+      - cell
+      - cell
+      - cell
+    - row "- Display Locations is required. - Offer Display Name is required. - Start Time cannot be a Time prior to the current Time - Display Description is required.":
+      - cell "- Display Locations is required. - Offer Display Name is required. - Start Time cannot be a Time prior to the current Time - Display Description is required."
+    - row "LOB Casino Region North America Offer Type Special Event":
+      - cell "LOB Casino":
+        - text: LOB
+        - table:
+          - rowgroup:
+            - row "Casino":
+              - cell "Casino":
+                - textbox: Casino
+              - cell
+      - cell "Region North America":
+        - text: Region
+        - table:
+          - rowgroup:
+            - row "North America":
+              - cell "North America":
+                - textbox: North America
+              - cell
+      - cell "Offer Type Special Event":
+        - text: Offer Type
+        - table:
+          - rowgroup:
+            - row "Special Event":
+              - cell "Special Event":
+                - textbox: Special Event
+              - cell
+    - row "Single Property and Location":
+      - cell "Single Property and Location":
+        - checkbox "Single Property and Location" [checked]
+        - text: Single Property and Location
+    - row "Display Property Hard Rock Hollywood Display Locations Select":
+      - cell "Display Property Hard Rock Hollywood":
+        - text: Display Property
+        - combobox:
+          - option "Hard Rock Atlantic City"
+          - option "Hard Rock Hollywood" [selected]
+          - option "Hard Rock Lake Tahoe"
+          - option "Hard Rock Northern Indiana"
+          - option "Hard Rock Ottawa"
+          - option "Hard Rock Rockford"
+          - option "Hard Rock Sacramento"
+          - option "Hard Rock Sioux City"
+          - option "Hard Rock Tampa"
+          - option "Hard Rock Vancouver"
+          - option "Seminole Brighton"
+          - option "Seminole Classic"
+          - option "Seminole Coconut Creek"
+          - option "Seminole Immokalee"
+      - cell "Display Locations Select":
+        - text: Display Locations
+        - combobox:
+          - option "Select" [selected]
+          - option "Casino Floor"
+          - option "Visit Any Slot Machine"
+          - option "Player's Club"
+          - option "Ballroom"
+          - option "Hard Rock Live"
+          - option "Plum Lounge"
+          - option "Hotel Lobby"
+          - option "L Bar"
+          - option "See Description"
+          - option "Pit 2"
+    - row "Display Name":
+      - cell "Display Name":
+        - text: Display Name
+        - textbox "Enter a display name"
+    - row "Start Date 12/16/2025 Start Time 12:00 PM  Time Zone EST End Date 12/16/2025 End Time 11:59 PM  Time Zone EST":
+      - cell "Start Date 12/16/2025 Start Time 12:00 PM  Time Zone EST End Date 12/16/2025 End Time 11:59 PM  Time Zone EST":
+        - table:
+          - rowgroup:
+            - row "Start Date 12/16/2025 Start Time 12:00 PM  Time Zone EST":
+              - cell "Start Date 12/16/2025":
+                - text: Start Date
+                - textbox: 12/16/2025
+                - img
+              - cell "Start Time 12:00 PM ":
+                - text: Start Time
+                - textbox: 12:00 PM
+                - text: 
+              - cell "Time Zone EST":
+                - text: Time Zone
+                - textbox [disabled]: EST
+            - row "End Date 12/16/2025 End Time 11:59 PM  Time Zone EST":
+              - cell "End Date 12/16/2025":
+                - text: End Date
+                - textbox: 12/16/2025
+                - img
+              - cell "End Time 11:59 PM ":
+                - text: End Time
+                - textbox: 11:59 PM
+                - text: 
+              - cell "Time Zone EST":
+                - text: Time Zone
+                - textbox [disabled]: EST
+    - row "Display Description":
+      - cell "Display Description":
+        - text: Display Description
+        - textbox
+    - row "Disclaimer":
+      - cell "Disclaimer":
+        - text: Disclaimer
+        - textbox
+    - row "Display URL":
+      - cell "Display URL":
+        - text: Display URL
+        - textbox "Website link for additional offer details"
+    - 'row "Display Offer Online Display Display Start Date 11/25/2025 # of days prior 21 Spin Up Spin Down Display End Date 12/16/2025"':
+      - 'cell "Display Offer Online Display Display Start Date 11/25/2025 # of days prior 21 Spin Up Spin Down Display End Date 12/16/2025"':
+        - table:
+          - rowgroup:
+            - 'row "Display Offer Online Display Display Start Date 11/25/2025 # of days prior 21 Spin Up Spin Down Display End Date 12/16/2025"':
+              - cell "Display Offer Online Display":
+                - text: Display Offer Online
+                - table:
+                  - rowgroup:
+                    - row "Display":
+                      - cell "Display":
+                        - textbox: Display
+                      - cell
+              - cell "Display Start Date 11/25/2025":
+                - text: Display Start Date
+                - textbox: 11/25/2025
+                - img
+              - cell "# of days prior 21 Spin Up Spin Down":
+                - text: "# of days prior"
+                - table "21":
+                  - rowgroup:
+                    - row "21 Spin Up Spin Down":
+                      - cell "21":
+                        - textbox "21"
+                      - cell "Spin Up Spin Down":
+                        - table:
+                          - rowgroup:
+                            - row "Spin Up":
+                              - cell "Spin Up":
+                                - img "Spin Up"
+                            - row "Spin Down":
+                              - cell "Spin Down":
+                                - img "Spin Down"
+              - cell "Display End Date 12/16/2025":
+                - text: Display End Date
+                - textbox: 12/16/2025
+                - img
+    - row "Display Call to Action No Booking Required Exclusive Spotlight No":
+      - cell "Display Call to Action No Booking Required":
+        - text: Display Call to Action
+        - table:
+          - rowgroup:
+            - row "No Booking Required":
+              - cell "No Booking Required":
+                - textbox: No Booking Required
+              - cell
+      - cell "Exclusive Spotlight No":
+        - text: Exclusive Spotlight
+        - table:
+          - rowgroup:
+            - row "No":
+              - cell "No":
+                - textbox: "No"
+              - cell
+    - row
+- heading "Offer Creation Process" [level=2]
+- list: Offer Setup Invitation Details Master List Of Items Attendee Capacity Segments Check-in Internal Attachment Summary
+- button "Back to Listing"
+- button "Save & Next Step"
+- button "Save & Close"
+```
+
+# Test source
+
+```ts
+   1 | import{test, expert} from '@playwright/test';
+   2 | import{globalFUnctionSteps}from '../../testSteps/gobalFunctionsSteps'
+   3 | import{playerSearchSteps}from '../../testSteps/playerSearchSteps'
+   4 | import { configurationSteps } from '../../testSteps/configurationSteps';
+   5 | import { config } from 'process';
+   6 | const testData= JSON.parse(JSON.stringify(require("../../testData.json")))
+   7 |
+   8 | test('UH-9670 HALO | Events & Offers | Offer Creation: Create offer with single attendee & multiple items with max qty greater than 1', async ({ page }) => {
+   9 |      
+  10 |     test.setTimeout(120000);
+  11 |   
+  12 |     const gblFuntSteps = new globalFUnctionSteps(page)
+  13 |     const searchPlayerID= new playerSearchSteps(page)
+  14 |     const configSteps = new configurationSteps(page)
+  15 |
+  16 |       //generate random Offer name
+  17 |     const offerName = gblFuntSteps.randomName('UH9670')
+  18 |     const invitationFilePath = 'dataFiles/resources/config/CSVs_Uploading/Inviteelist-TestSegment1.csv'
+  19 |     //login steps
+  20 |     await gblFuntSteps.gotoQALoginPage()
+  21 |     await gblFuntSteps.loginAdminQA()
+  22 |    
+  23 |     
+  24 |      // //go to Add new Offer steps
+  25 |      await configSteps.goToAddNewOfferPage()
+  26 |      await configSteps.goToOfferSetUpPage(offerName, 'NO')
+  27 |      await configSteps.goToInvitationPage(invitationFilePath)
+  28 |      await configSteps.goToMasterItemListPage(1)
+  29 |      await configSteps.goToAttendeeCapacityPage('NO', 1)
+  30 |      
+  31 |      // await page.pause()
+  32 |     // await configSteps.goToSegmentsPage(1,2,3)
+> 33 |     await page.locator('#ctl00_ContentPlaceHolder1_ctrlSegments_wdgManageOfferSegment_it7_1_lnkConfigure').click();
+     |                                                                                                            ^ Error: locator.click: Test timeout of 120000ms exceeded.
+  34 |     await page.locator('#ctl00_ContentPlaceHolder1_ctrlSegments_txtDefaultPrizeQuantity').fill('1')
+  35 |     await page.locator('#ctl00_ContentPlaceHolder1_ctrlSegments_txtMaxPrizeQuantity').fill('2')
+  36 |     await page.waitForTimeout(3000)
+  37 |     const btnAddAllPrimaryPrize =   page.locator('#ctl00_ContentPlaceHolder1_ctrlSegments_btnAddAllPrimaryPrize') 
+  38 |     await btnAddAllPrimaryPrize.click()
+  39 |     await page.waitForTimeout(5000)
+  40 |     await page.getByRole('button', { name: 'Update' }).click();
+  41 |     await page.waitForTimeout(3000)
+  42 |     await page.getByRole('button', { name: 'Save & Next Step' }).click();
+  43 |
+  44 |
+  45 |      await configSteps.goToCheckInPage('YES','NO')
+  46 |     // await configSteps.goToInternalAttachmentsPage()
+  47 |     await page.getByRole('button', { name: 'Save & Next Step' }).click({timeout:3000});
+  48 |     await configSteps.goToSummaryPafePage()
+  49 |     await page.getByRole('button', { name: 'Submit for Review' }).click()
+  50 |       // expect(  this.validateSuccessOfferSubmited_PopUp).toHaveText('The offer has been submitted successfully!')
+  51 |       page.getByRole('button', { name: 'Close' })
+  52 |      
+  53 |      
+  54 |      
+  55 |      
+  56 |      await configSteps.checkInEventAndOffer(offerName)
+  57 |      await configSteps.approvedOpenOffer(offerName)
+  58 |      await configSteps.deactivateOffer(offerName)
+  59 |
+  60 |     await gblFuntSteps.logOut()
+  61 |   })
+```

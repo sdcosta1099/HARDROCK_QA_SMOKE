@@ -16,11 +16,10 @@ test('UH-9494 Reply Comment', async ({ page }) => {
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH9494)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
-    await playerFunctionPage.clickAddComment_Tab() 
-    await playerFunctionPage.clickAddComment_Txt()
-    await playerFunctionPage.clickSaveComment_tab()
-    await playerFunctionPage.clickCloseCommentPopUp_Message()
+    await playerFunctionPage.addCommentDetails()
+    await playerFunctionPage.validateCommentsDetails()
+    
     await gblFuntSteps.logOut()
-    //await page.pause()
+    
 })
 

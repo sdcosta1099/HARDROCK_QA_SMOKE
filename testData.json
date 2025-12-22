@@ -17,7 +17,8 @@
 } ,
 
 "Comments":{
-"testCase#":"Comments Type"
+    "testCase#":"Comments Type",
+    "CommentsText":"QA Automation Comments  Test"
 
 },
 
@@ -101,9 +102,9 @@
 
         "CommentTestAccounts":{
             "UH9493":"807881503",
-            "UH9494":"807879818",
-            "UH9495":"660302931",
-            "UH9496":"807879818",
+            "UH9494":"807881503",
+            "UH9495":"807881356",
+            "UH9496":"807881503",
             "UH9497":"807879818",
             "UH9498":"660302931",
             "UH9501":"807879818",
@@ -125,7 +126,8 @@
             "UH16781":"807879790",
             "UH16782":"807881369",
             "UH16784":"807881371",
-            "commentData":"QA Test Comment Data"
+            "commentData":"QA Test Comment Data",
+            "CommentExpirationDate":"Expiration Date" 
         },
 
         "CompValidationTestAccounts":{

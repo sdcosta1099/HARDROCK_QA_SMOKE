@@ -17,9 +17,9 @@ test('UH-9495 Patron Dashboard | Player Function | Comments | Void Comment', asy
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
     await playerFunctionPage.clickCommentFirstRow_Tab()
-    await playerFunctionPage.clickPlayerFunctions_Tab()
-    await playerFunctionPage.clickplayerTransactionLog_Tab()
-    await playerFunctionPage.ClickClosePopUpPlayerTransactionLog()
+    await playerFunctionPage.validateCommentTab_Elements()
+    await playerFunctionPage.clickPlayerTransactionsLog_Tab()
+    await playerFunctionPage.validateComment_PlayerTransactionLog()  
     await  gblFuntSteps.logOut()
      
     //await page.pause()

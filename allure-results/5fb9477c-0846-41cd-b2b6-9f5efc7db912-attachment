@@ -1,0 +1,306 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UH-9495 Patron Dashboard | Player Function | Comments | Void Comment
+- Location: C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\commentTestCases\UH9495TestCases.spec.js:7:5
+
+# Error details
+
+```
+Error: Timed out 5000ms waiting for expect(locator).toHaveText(expected)
+
+Locator: locator('iframe[name="FramePopUp3"]').contentFrame().getByRole('cell', { name: 'TU_LAB_HALO_NIN_ADM' }).nth(2)
+Expected string: "TU_LAB_HALO_NIN_ADM"
+Received: <element(s) not found>
+Call log:
+  - expect.toHaveText with timeout 5000ms
+  - waiting for locator('iframe[name="FramePopUp3"]').contentFrame().getByRole('cell', { name: 'TU_LAB_HALO_NIN_ADM' }).nth(2)
+
+    at playerFunctionsSteps.validateComment_PlayerTransactionLog (C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\testSteps\playerFunctionsSteps.js:547:59)
+    at C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\commentTestCases\UH9495TestCases.spec.js:22:5
+```
+
+# Page snapshot
+
+```yaml
+- text: HALO 25.10.2 Logged in as TU_LAB_HALO_NIN_ADM
+- img "HR Casino, Northern Indiana"
+- link "Logout":
+  - img "Logout"
+- list:
+  - listitem:
+    - link "Player Functions"
+    - list:
+      - listitem:
+        - link "User Transaction Log"
+      - listitem:
+        - link "Enroll Player"
+      - listitem:
+        - link "Edit Patron Data"
+      - listitem: View Comment
+      - listitem: View Tier History
+      - listitem: Adjust Player Tier Credits
+      - listitem: Property Play Popup
+      - listitem: Adjust Bucket Value
+      - listitem:
+        - link "Merge"
+      - listitem: Guest Information Sync
+      - listitem: Push Player Enrollment
+      - listitem: Link Player
+      - listitem: Unlink Player
+      - listitem: Reset Pin
+      - listitem: Change PIN
+      - listitem: Manage Player Interests & Preferences
+      - listitem: Player Transaction Log
+      - listitem: Balance Transfer Logs
+      - listitem: Player Tier With Tier Match
+      - listitem: Manual Line Of Business Adjustment
+      - listitem:
+        - link "Event Check-in"
+      - listitem:
+        - link "Credit & Front Money Account Updates"
+      - listitem:
+        - link "Redeem Prizes"
+      - listitem:
+        - link "Manage Redeemed Prizes"
+      - listitem: Visit Appeasement
+  - listitem:
+    - link "Configuration"
+  - listitem:
+    - link "Administration"
+- table:
+  - rowgroup:
+    - row "PLAYER SEARCH - 807881356 - Rikki Mayor Go To Employee Dashboard 0":
+      - cell "PLAYER SEARCH"
+      - cell "- 807881356 - Rikki Mayor"
+      - cell "Go To Employee Dashboard":
+        - link "Go To Employee Dashboard":
+          - img
+      - cell:
+        - link "Expand Search":
+          - img
+      - cell "0"
+- table:
+  - rowgroup:
+    - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+      - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+        - table:
+          - rowgroup:
+            - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+              - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet"
+            - row:
+              - cell
+- text: Player Transaction Log - 807881356 Close
+```
+
+# Test source
+
+```ts
+  447 |         }
+  448 |
+  449 |     }
+  450 |     
+  451 |     async validateCommentPopUp_Header_Present(){
+  452 |         try{
+  453 |             console.log('Start Validation for Comment Pop Up Header  ')
+  454 |             if (this.closeCommentPopUp_Header.toBeVisible()){
+  455 |                        this.closeCommentPopUp_Header.click()
+  456 |                        console.log('Comment Pop Up Header Close')
+  457 |             }else{
+  458 |                 console.log('Message comment not visible')
+  459 |             }
+  460 |         }catch(e){
+  461 |             console.log('Comment Pop Up Header Not Availbale')
+  462 |             throw e
+  463 |         }
+  464 |     }
+  465 |
+  466 |
+  467 |
+  468 |     // async closeCommentPopUp_Header(){
+  469 |     //     try{
+  470 |     //         console.log('Start Validation for Comment Pop Up Header  ')
+  471 |     //         if (this.closeCommentPopUp_Header.toBeVisible()){
+  472 |     //                    closeCommentPopUp_Header.click()
+  473 |     //                    console.log('Comment Pop Up Header Close')
+  474 |     //         }else{
+  475 |     //             console.log('Message comment not visible')
+  476 |     //         }
+  477 |     //     }catch(e){
+  478 |     //         console.log('Comment Pop Up Header Not Availbale')
+  479 |     //         throw e
+  480 |     //     }
+  481 |     // }
+  482 |
+  483 |
+  484 |
+  485 |
+  486 |     async clickCloseCommentPopUp_Message(){
+  487 |         try{
+  488 |             await this.closeCommentPopUp_Message.click()
+  489 |
+  490 |             console.log('Comment Pop Up Message Close')
+  491 |         }catch(e){
+  492 |             console.log('Comment Pop Up Message Not Availbale')
+  493 |             throw e
+  494 |         }
+  495 |     }
+  496 |      
+  497 |
+  498 |     async clickSaveComment_tab(){
+  499 |         try{ 
+  500 |          
+  501 |         await this.saveComment_tab.click()
+  502 |          
+  503 |         console.log('Comment Saved as expected')
+  504 |         }catch(e){
+  505 |             console.log('Save tab  Not visible')
+  506 |             throw e
+  507 |         }
+  508 |     }
+  509 |
+  510 |     /////////////////////////Functional Methods for Line Of Business Page //////////////////////////////////////////////////////////
+  511 |
+  512 |
+  513 |             async clickLineOfBusiness_Tab(){
+  514 |                 
+  515 |             try{
+  516 |                 await this.LineOfBusiness_Tab.click()
+  517 |                   console.log('Line Of business tab Opens')
+  518 |             }catch(e){
+  519 |                 console.log('Line Of business tab Not Available')
+  520 |                 throw e
+  521 |             }
+  522 |         }
+  523 |     
+  524 | ///////////////////////////////////////////Functional Methods for Player Tansactions Log page ////////////////////////////////////
+  525 |        
+  526 |
+  527 |         async clickplayerTransactionLog_Tab(){
+  528 |             
+  529 |         try{
+  530 |             await this.playerTransactionLog_Tab.click()
+  531 |             console.log('Player Transaction Tab Opens')
+  532 |         }catch(e){
+  533 |             console.log('Player Transaction Tab not available')
+  534 |             throw e
+  535 |         }
+  536 |     }
+  537 |
+  538 |     async validateComment_PlayerTransactionLog(){
+  539 |             
+  540 |         try{
+  541 |
+  542 |             const creatorAdmin= testData.Credentials.QAuserName
+  543 |             await expect(this.logTransactionDateTime).toHaveText('Transaction Date/Time')
+  544 |             await expect(this.logTransactionDescription).toHaveText('Transaction Description')
+  545 |             //await expect(this.logTransactionComment).toContainText('Player Comment')
+  546 |             await expect(this.logTransactionCreator).toHaveText('Creator')
+> 547 |             await expect(this.logTransactionCreatorAdmin).toHaveText(creatorAdmin) 
+      |                                                           ^ Error: Timed out 5000ms waiting for expect(locator).toHaveText(expected)
+  548 |             console.log('Comment Creator Admin: ' +creatorAdmin)
+  549 |             await expect(this.logTransactionPropertyName).toHaveText('Property Name')
+  550 |             console.log('All comment validated as expected on Player Transaction Tab')        
+  551 |             await this.closeCommentPopupheader3.click({timeout:2500})  
+  552 |         }catch(e){
+  553 |             console.log('Player Transaction Tab not available')
+  554 |             throw e
+  555 |         }
+  556 |     }
+  557 |
+  558 |     
+  559 |
+  560 |
+  561 |     async ClickClosePopUpPlayerTransactionLog(){
+  562 |             
+  563 |         try{
+  564 |             await this.closePopUpPlayerTransactionLog.click()
+  565 |             console.log('Player Transaction Pop UP CLose  ')
+  566 |         }catch(e){
+  567 |             console.log('Player Transaction Pop Up not Available')
+  568 |             throw e
+  569 |         }
+  570 |     }
+  571 |
+  572 |
+  573 |     async  clickPlayerTransactionLog_FisrtEntry(textInFirstRow){
+  574 |             
+  575 |         try{
+  576 |             await this.playerTransactionLog_FisrtEntry.click()
+  577 |             await expect.page.toHaveText(textInFirstRow)
+  578 |             console.log('Text in First Row ' +textInFirstRow +' Displaye as expected')
+  579 |              
+  580 |         }catch(e){
+  581 |             console.log('Account Not Created')
+  582 |             throw e
+  583 |         }
+  584 |     }
+  585 |     
+  586 |
+  587 |     async  clickPlayerTransactionLog_FisrtEntryDataValidation(data){
+  588 |             
+  589 |         try{
+  590 |             await this.playerTransactionLog_FisrtEntryDataValidation.click()
+  591 |             await expect.page.toHaveText(data)
+  592 |             console.log(data + ':  Player Transaction first entry Data Validated as expected')
+  593 |             console.log('Espected Data: ' +data)
+  594 |         }catch(e){
+  595 |             console.log('Player Transaction first entry Data NOT able to be validated')
+  596 |             throw e
+  597 |         }
+  598 |     }
+  599 |
+  600 |
+  601 |     /////////////////////////// Visit Appeasement Functions and Method /////////////////////////////////
+  602 |     async clickVisitAppeasement_Tab(){
+  603 |
+  604 |         try{
+  605 |             await this.visitAppeasement_Tab.click()
+  606 |             console.log('visit Appeasement Page Opens as expected')
+  607 |         }catch(e){
+  608 |             console.log('visit Appeasement Page NOT Available')
+  609 |             throw e
+  610 |         }
+  611 |
+  612 |     }
+  613 |
+  614 |     async validateVisitAppeasementPage(){
+  615 |         try{
+  616 |           //  await this.page.pause()
+  617 |             await this.uniqueLocationVisited.highlight()
+  618 |             await expect(this.uniqueLocationVisited).toBeVisible()      
+  619 |             console.log('Unique location Visited displays as expected')  
+  620 |             await this.locationVisited.highlight()
+  621 |             await expect(this.locationVisited).toBeVisible() 
+  622 |             console.log('location Visited Lifetime displays as expected')
+  623 |             await this.hotelVisited.highlight()
+  624 |             await expect(this.hotelVisited).toBeVisible()
+  625 |             console.log('Hotel Visited displays as expected')
+  626 |             //await this.page.pause()
+  627 |             await this.locationName.highlight()
+  628 |             await this.totalVisits.highlight()
+  629 |             await this.firstVisitDate.highlight()
+  630 |             await this.lastVisitDate.highlight()
+  631 |             await this.visitVerified.highlight()
+  632 |             console.log('Visit Appeasement functions: Location Name, Total Visits, First Visit Date, Last Visit Date, and Verified Visits display as expected')
+  633 |             
+  634 |             await this.closeVisitAppeasement_Tab.click()
+  635 |
+  636 |         }catch(e){
+  637 |             console.log('Visit Appeasement functions are NOT VALIDATED')
+  638 |             throw e
+  639 |         }
+  640 |        
+  641 |                   
+  642 |     }
+  643 |
+  644 |
+  645 |     async addVisits(){
+  646 |         try{
+  647 |
+```
