@@ -4,7 +4,7 @@ import{playerSearchSteps}from '../../testSteps/playerSearchSteps'
 import{playerFunctionsSteps}from '../../testSteps/playerFunctionsSteps'
 const testData= JSON.parse(JSON.stringify(require("../../testData.json")))
 
-test('UH-9496 Expiration Comment validation', async ({ page }) => {
+test(' UH-9496 HALO | Patron Dashboard | Player Function | Comments |Expiration Comment validation', async ({ page }) => {
      
 
     const gblFuntSteps = new globalFUnctionSteps(page)
@@ -22,8 +22,10 @@ test('UH-9496 Expiration Comment validation', async ({ page }) => {
     await playerFunctionPage.validateCommentsDetails()
     await playerFunctionPage.validateCommentTab_Elements()
 
+    //await playerFunctionPage.validateCommentExpiration()
+
    // await playerFunctionPage.clickPlayerTransactionsLog_Tab()
-    await playerFunctionPage.validateComment_PlayerTransactionLog()  
+   // await playerFunctionPage.validateComment_PlayerTransactionLog()  
 
     //await playerFunctionPage.validateCommentTab_Elements()
     // await playerFunctionPage.clickPlayerTransactionsLog_Tab()

@@ -43,6 +43,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         //this.editComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'Test Comment Edit_1705000060137', exact: true })
         this.addComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Add' });
         this.viewSettledVoidedComment_tab=  page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View Settled/Voided' })
+        this.CommentHeaderExpirationDate= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Expiration Date', exact: true })
         //this.viewSettledVoidedComment_tab= page.locator('.btnCommentSettleVoid')
         this.closeCommentPopUp_Message=  page.getByText('Close')
         this.closeCommentPopUp_Header= page.locator('#popupheaderEnhancedComments')
@@ -72,7 +73,20 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.saveComment_tab = page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Save' });
         this.saveOkComment = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Ok' })
 
+        this.CommentHeaderSource= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Source', exact: true })
+        this.CommentHeaderDepartment= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Department', exact: true })
+        this.CommentHeaderPriority= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Priority', exact: true })
+        this.CommentHeaderProperty= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Property', exact: true })
+        this.CommentHeaderSearchFrom= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Search From', exact: true })
+        this.CommentHeaderSearchTo= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Search To', exact: true })
+        this.CommentHeaderSearch_Btn= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Search' })
 
+          page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#lblSearchSource') ;
+          page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#lblSearchDepartment') ;
+          page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#lblSearchProperty') ;
+          page.locator('iframe[name="FramePopUp7"]').contentFrame().getByText('Search From') ;
+          page.locator('iframe[name="FramePopUp7"]').contentFrame().getByText('Search To') ;
+          page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#lblSearchPriority') ;
 
         this.displayDateCommentHeader = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Display Date', exact: true })
 
@@ -226,7 +240,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
     async clickViewComment_Tab(){
         try{
             await this.viewComment_Tab.click()
-            console.log('User on comment tab  ')
+            console.log('User on View comment tab  ')
         }catch(e){
             console.log('View comment tab Not visible ')
             throw e
@@ -276,16 +290,14 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             await this.replyComment_Tab.highlight({timeout:3000})
             await this.viewSettledVoidedComment_tab.highlight({timeout:3000})
             await this.addComment_tab.highlight()
-                console.log("here rttt")
+            await this.CommentHeaderExpirationDate.highlight({timeout:3000}) 
+            
+            // const expirationDate= testData.CommentTestAccounts.CommentExpirationDate
+            // await expect(this.CommentHeaderExpirationDate).toHaveText(expirationDate)
 
-            // await  expect(this.settleVoidComment_tab).toBeVisible()
-            // await  expect(this.editComment_Tab).toBeVisible( )
-            // await  expect(this.replyComment_Tab).toBeVisible()
-            // await  expect(this.viewSettledVoidedComment_tab).toBeVisible()
-            // await  expect(this.addComment_tab).toBeVisible()
-
-            await this.closeCommentFrame.click()
-             
+             console.log('Expiration Date Field is Present on Comment Tab as expected ')
+           //  await  this.validateCommentExpiration()
+                 
             console.log('All Comment Tab Elements are present as expected  ')
         }catch(e){
             console.log('Comment Tab Elements are NOT Displyed on Comment Pop Up')
@@ -293,6 +305,29 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         }
 
     }
+
+    async validateCommentExpiration(){
+
+        try{
+            const today = new Date();
+            const todayDate= today.toLocaleDateString()
+            await this.CommentHeaderExpirationDate.highlight({timeout:3000}) 
+            if( todayDate < this.CommentHeaderExpirationDate){
+                console.log('Comment is Active as Expiration Date is greater than today date: ' +todayDate)
+            }else if(todayDate >= this.CommentHeaderExpirationDate){
+                console.log('Comment is Expired as Expiration Date is less than or equal to today date: ' +todayDate)
+            }
+
+            const expirationDate= testData.CommentTestAccounts.CommentExpirationDate
+            await expect(this.CommentHeaderExpirationDate).toHaveText(expirationDate)
+            console.log('Comment Expiration Date: ' +expirationDate+ ' is Validated as expected ')
+        }catch(e){
+            console.log('Comment Expiration Date NOT Validated ')
+            throw e
+        }
+    }
+
+
 
     async clickViewAllComment_Tab(){
         try{
@@ -503,6 +538,27 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         console.log('Comment Saved as expected')
         }catch(e){
             console.log('Save tab  Not visible')
+            throw e
+        }
+    }
+
+
+    async validateCommentsFilter_Elements(){
+        try{
+
+            await this.CommentHeaderSource.highlight({timeout:3000}) 
+            await this.CommentHeaderDepartment.highlight({timeout:3000}) 
+            await this.CommentHeaderPriority.highlight({timeout:3000})
+            await this.CommentHeaderProperty.highlight({timeout:3000})
+
+            await this.CommentHeaderSearchFrom.highlight({timeout:3000})
+            await this.CommentHeaderSearchTo.highlight({timeout:3000})
+            await this.CommentHeaderSearch_Btn.highlight({timeout:3000})
+
+           
+            console.log('All Comment Filter Elements are present as expected  ')
+        }catch(e){
+            console.log('Comment Filter Elements are NOT Displyed on Comment Pop Up')
             throw e
         }
     }

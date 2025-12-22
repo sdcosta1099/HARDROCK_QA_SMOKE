@@ -126,7 +126,8 @@
             "UH16781":"807879790",
             "UH16782":"807881369",
             "UH16784":"807881371",
-            "commentData":"QA Test Comment Data"
+            "commentData":"QA Test Comment Data",
+            "CommentExpirationDate":"Expiration Date" 
         },
 
         "CompValidationTestAccounts":{

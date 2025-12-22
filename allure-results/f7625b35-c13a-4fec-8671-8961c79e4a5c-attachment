@@ -1,0 +1,359 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UH-16775 Halo | Create/Add New Comment Never check box selected on Expired Date
+- Location: C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\commentTestCases\UH16775TestCases.spec.js:7:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByText('View Comment')
+    - locator resolved to <a onclick="launchWindowEnhancedComments('#dialogEnhancedComments','ViewEnhancedComments.aspx?Child=1000072','Comments for Audrey  Grey  - 807879426   ','8564227')">View Comment</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <iframe width="100%" height="100%" scrolling="no" frameborder="0" name="FramePopUp7" id="ctl00_FramePopUp7" src="ViewEnhancedComments.aspx?Child=0&PlayerId=1"></iframe> from <div id="dialogEnhancedComments" class="windowEnhancedComments">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <iframe width="100%" height="100%" scrolling="no" frameborder="0" name="FramePopUp7" id="ctl00_FramePopUp7" src="ViewEnhancedComments.aspx?Child=0&PlayerId=1"></iframe> from <div id="dialogEnhancedComments" class="windowEnhancedComments">…</div> subtree intercepts pointer events
+  2 × retrying click action
+      - waiting 100ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div id="mask">↵        </div> intercepts pointer events
+  10 × retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <iframe width="100%" height="100%" scrolling="no" frameborder="0" name="FramePopUp7" id="ctl00_FramePopUp7" src="ViewEnhancedComments.aspx?Child=0&PlayerId=1"></iframe> from <div id="dialogEnhancedComments" class="windowEnhancedComments">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <iframe width="100%" height="100%" scrolling="no" frameborder="0" name="FramePopUp7" id="ctl00_FramePopUp7" src="ViewEnhancedComments.aspx?Child=0&PlayerId=1"></iframe> from <div id="dialogEnhancedComments" class="windowEnhancedComments">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div id="mask">↵        </div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div id="mask">↵        </div> intercepts pointer events
+  2 × retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <iframe width="100%" height="100%" scrolling="no" frameborder="0" name="FramePopUp7" id="ctl00_FramePopUp7" src="ViewEnhancedComments.aspx?Child=0&PlayerId=1"></iframe> from <div id="dialogEnhancedComments" class="windowEnhancedComments">…</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+
+    at playerFunctionsSteps.clickViewComment_Tab (C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\testSteps\playerFunctionsSteps.js:228:40)
+    at C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\commentTestCases\UH16775TestCases.spec.js:18:30
+```
+
+# Page snapshot
+
+```yaml
+- text: HALO 25.9.2 Logged in as TU_LAB_HALO_NIN_ADM
+- img "HR Casino, Northern Indiana"
+- link "Logout":
+  - img "Logout"
+- list:
+  - listitem:
+    - link "Player Functions"
+    - list:
+      - listitem:
+        - link "User Transaction Log"
+      - listitem:
+        - link "Enroll Player"
+      - listitem:
+        - link "Edit Patron Data"
+      - listitem: View Comment
+      - listitem: View Tier History
+      - listitem: Adjust Player Tier Credits
+      - listitem: Property Play Popup
+      - listitem: Adjust Bucket Value
+      - listitem:
+        - link "Merge"
+      - listitem: Guest Information Sync
+      - listitem: Push Player Enrollment
+      - listitem: Link Player
+      - listitem: Unlink Player
+      - listitem: Reset Pin
+      - listitem: Change PIN
+      - listitem: Manage Player Interests & Preferences
+      - listitem: Player Transaction Log
+      - listitem: Balance Transfer Logs
+      - listitem: Player Tier With Tier Match
+      - listitem: Manual Line Of Business Adjustment
+      - listitem:
+        - link "Event Check-in"
+      - listitem:
+        - link "Credit & Front Money Account Updates"
+      - listitem:
+        - link "Redeem Prizes"
+      - listitem:
+        - link "Manage Redeemed Prizes"
+      - listitem: Visit Appeasement
+  - listitem:
+    - link "Configuration"
+  - listitem:
+    - link "Administration"
+- table:
+  - rowgroup:
+    - row "PLAYER SEARCH - 807879426 - Audrey Grey Go To Employee Dashboard 0":
+      - cell "PLAYER SEARCH"
+      - cell "- 807879426 - Audrey Grey"
+      - cell "Go To Employee Dashboard":
+        - link "Go To Employee Dashboard":
+          - img
+      - cell:
+        - link "Expand Search":
+          - img
+      - cell "0"
+- table:
+  - rowgroup:
+    - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+      - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+        - table:
+          - rowgroup:
+            - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+              - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet"
+            - row:
+              - cell
+- text: Comments for Audrey Grey - 807879426 Close
+```
+
+# Test source
+
+```ts
+  128 | // (async () => {
+  129 | //   const browser = await chromium.launch({
+  130 | //     headless: false
+  131 | //   });
+  132 | //   const context = await browser.newContext();
+  133 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true }).first().click();
+  134 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Add' }).click();
+  135 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View Settled/Voided' }).click();
+  136 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View All' }).click();
+  137 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'CMP', exact: true }).first().click();
+  138 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Reply' }).click();
+  139 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
+  140 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'CMP', exact: true }).first().click();
+  141 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Edit' }).click();
+  142 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
+  143 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS' }).nth(3).click();
+  144 | //   await page.fpage.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Settle/Void' })rameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Delete' }).click();
+  145 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
+  146 | //   await .click();
+  147 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
+  148 |
+  149 | //   // ---------------------
+  150 | //   await context.close();
+  151 | //   await browser.close();
+  152 |         //this.playerTransactionLog_Arrow= page.getText()
+  153 |          this.playerTransactionLog_FisrtEntry = page.frameLocator('iframe[name="FramePopUp3"]').getByRole('cell', { name: 'Online account unlocked', exact: true });
+  154 |          this.playerTransactionLog_FisrtEntryDataValidation = page.frameLocator('iframe[name="FramePopUp3"]') 
+  155 |         /////////////////////////////Line Of Business Object Repository/////////////////////////////////////////////////
+  156 |         this.LineOfBusiness_Tab = page.getByText('Manual Line Of Business')
+  157 |
+  158 |         ////////////////////// visit Appeasement Object Repo//////////////////////
+  159 |         this.visitAppeasement_Tab= page.getByText('Visit Appeasement');
+  160 |         this.uniqueLocationVisited = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Unique Locations Visited :' })
+  161 |         this.locationVisited = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Locations Visited (Lifetime) :' })
+  162 |         this.hotelVisited = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Hotel Visits :' })
+  163 |         this.locationName = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Location Name', exact: true }) 
+  164 |         this.totalVisits = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Total Visits', exact: true })
+  165 |         this.firstVisitDate = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'First Visit Date', exact: true })
+  166 |         this.lastVisitDate = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Last Visit Date', exact: true })
+  167 |         this.visitVerified =  page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Verified', exact: true })
+  168 |
+  169 |
+  170 |
+  171 |         //this.closeVisitAppeasement_Tab = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Close' })
+  172 |         this.closeVisitAppeasement_Tab =   page.getByText('Close')
+  173 |
+  174 |
+  175 |
+  176 | //////////////////////////////Functions and Methods for Player FUnction ////////////////////////
+  177 |          
+  178 |     }
+  179 |
+  180 |     async clickPlayerFunctions_Tab(){
+  181 |         try{
+  182 |             await this.playerFunctions_Tab.click() 
+  183 |             console.log('User on player Function Tab')
+  184 |         }catch(e){
+  185 |             console.log('player Function Tab not visible')
+  186 |             throw e
+  187 |         }
+  188 |         
+  189 |     }
+  190 |
+  191 |
+  192 |     async clickPlayerTransactionsLog_Tab(){
+  193 |         try{
+  194 |
+  195 |             await this.playerTransactionLog_Tab.click() 
+  196 |             console.log('User on player Transaction Log  Tab')
+  197 |         }catch(e){
+  198 |             console.log('player Transaction Log  Tab not visible')
+  199 |             throw e
+  200 |         }
+  201 |         
+  202 |     }
+  203 |
+  204 |      
+  205 |
+  206 |
+  207 |     async clickPlayerFunctions_TabPT(){
+  208 |         try{
+  209 |
+  210 |             await this.playerFunctions_TabPT.click() 
+  211 |             console.log('User on player Function Tab  PT')
+  212 |         }catch(e){
+  213 |             console.log('player Function Tab not visible PT')
+  214 |             throw e
+  215 |         }
+  216 |         
+  217 |     }
+  218 |
+  219 |
+  220 |
+  221 |
+  222 |
+  223 |     //////////////////////////////Functions and Methods for Player FUnction tab and Comment tab ////////////////////////
+  224 |
+  225 |    
+  226 |     async clickViewComment_Tab(){
+  227 |         try{
+> 228 |             await this.viewComment_Tab.click()
+      |                                        ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  229 |             console.log('User on comment tab  ')
+  230 |         }catch(e){
+  231 |             console.log('View comment tab Not visible ')
+  232 |             throw e
+  233 |         }
+  234 |
+  235 |     }
+  236 |
+  237 |
+  238 |     async clickSettleVoidComment_tab(){
+  239 |         try{
+  240 |             await this.settleVoidComment_tab.click()
+  241 |             await this.txtSettleVoidComment.fill(testData.scriptingData.comment)
+  242 |             await this.clickSubmit_SettleVoidComment_Btn.click() 
+  243 |             await this.clickConfirm_SettleVoidComment_Btn.click()
+  244 |             console.log('Settle VOid comment tab opens as expected')
+  245 |         }catch(e){
+  246 |             console.log('Settle VOid comment tab Not visible ')
+  247 |             throw e
+  248 |         }
+  249 |
+  250 |     }
+  251 |
+  252 |      
+  253 |     async validateAuthorizationComments(){
+  254 |         try{
+  255 |             await this.authorizationPassword.fill(testData.Credentials.QApassword)
+  256 |             await this.authorizationReason.selectOption('System Testing')
+  257 |             await this.authorizationComments.fill(testData.scriptingData.comment)
+  258 |             await this.authorizationSubmit.click()
+  259 |             await this.authorizationOK.click()
+  260 |             await this.authorizationClosePopUp.click()
+  261 |             console.log('Comments Authorize as expected')
+  262 |         }catch(e){
+  263 |             console.log('Comment Authorization tab Not visible ')
+  264 |             throw e
+  265 |         }
+  266 |
+  267 |     }
+  268 |
+  269 |
+  270 |
+  271 |     async validateCommentTab_Elements(){
+  272 |         try{
+  273 |
+  274 |             await this.settleVoidComment_tab.highlight({timeout:3000})
+  275 |             await this.editComment_Tab.highlight({timeout:3000})
+  276 |             await this.replyComment_Tab.highlight({timeout:3000})
+  277 |             await this.viewSettledVoidedComment_tab.highlight({timeout:3000})
+  278 |             await this.addComment_tab.highlight()
+  279 |                 console.log("here rttt")
+  280 |
+  281 |             // await  expect(this.settleVoidComment_tab).toBeVisible()
+  282 |             // await  expect(this.editComment_Tab).toBeVisible( )
+  283 |             // await  expect(this.replyComment_Tab).toBeVisible()
+  284 |             // await  expect(this.viewSettledVoidedComment_tab).toBeVisible()
+  285 |             // await  expect(this.addComment_tab).toBeVisible()
+  286 |
+  287 |             await this.closeCommentFrame.click()
+  288 |              
+  289 |             console.log('All Comment Tab Elements are present as expected  ')
+  290 |         }catch(e){
+  291 |             console.log('Comment Tab Elements are NOT Displyed on Comment Pop Up')
+  292 |             throw e
+  293 |         }
+  294 |
+  295 |     }
+  296 |
+  297 |     async clickViewAllComment_Tab(){
+  298 |         try{
+  299 |             await this.viewComment_Tab.click()
+  300 |             console.log('User on View All comment tab  ')
+  301 |         }catch(e){
+  302 |             console.log('View Al comment tab Not visible ')
+  303 |             throw e
+  304 |         }
+  305 |
+  306 |     }
+  307 |
+  308 |     async clickCommentFirstRow_Tab(){
+  309 |         try{
+  310 |             //await this.page.pause()this wil change base on test comments entered in the commwent sections 
+  311 |            
+  312 |             await this.CommentFirstRow_Tab.first().click({timeout:5000})
+  313 |             console.log('Comment First Row tab Opens')
+  314 |         }catch(e){
+  315 |             console.log('Comment First Row Tab Not visible ')
+  316 |             throw e
+  317 |         }
+  318 |
+  319 |     }
+  320 |     
+  321 |
+  322 |     async clickEditComment_Tab(){
+  323 |         try{
+  324 |             await this.editComment_tab.click()
+  325 |
+  326 |             console.log('User Edited comment ')
+  327 |         }catch(e){
+  328 |             console.log('Edit comment tab not visible ')
+```

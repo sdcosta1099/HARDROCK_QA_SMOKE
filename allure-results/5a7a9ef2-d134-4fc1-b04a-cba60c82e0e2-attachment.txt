@@ -1,0 +1,14 @@
+------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------
+Environment selected =  QA
+Using QA Environment URL:https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx 
+User is log to Halo QA ADMIN Env
+PlayerID found = 807879762
+User on Comm Preference page
+User on Global Preferenes Tab 
+Toggled Mail Unity By hard Rock NOT available
+Toggled Mail Casino NOT available
+Hotel and Resort Toggled NOT tavailable
+Rock Shop Toggled not available
+Scroll element not visible
+Save Button Not Available
+log Out Btn not available

@@ -1,0 +1,13 @@
+------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------
+Environment selected =  QA
+Using QA Environment URL:https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx 
+User is log to Halo QA ADMIN Env
+PlayerID found = 807881503
+User on player Function Tab
+User on comment tab  
+Comment Added as expected
+Comment Date is : 12/16/2025
+Comment added by Admin:  TU_LAB_HALO_NIN_ADM  is Validated as expected
+Comment Details Validated as expected
+User logs out as expected
+-------------------------END OF QA AUTOMATION TEST EXECUTION -----------------------------------------

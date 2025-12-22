@@ -1,0 +1,7 @@
+------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------
+User is log to Halo QA ADMIN Env
+Environment selected =  QA
+Using QA Environment URL:https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx 
+PlayerID found = 660302931
+Com validation not assigned
+log Out Btn not available

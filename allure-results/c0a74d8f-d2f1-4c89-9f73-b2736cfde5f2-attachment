@@ -1,0 +1,359 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UH10527 Change LOB and Validate Player transaction in Halo
+- Location: C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\lineOfBusinessTestCases\UH10527TestCase.spec.js:7:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByText('Manual Line Of Business')
+    - locator resolved to <a onclick="launchManualLOBAdjustment('#dialogLaunchManualLOBAdjustment','ManualLineOfBusinessAdjustment.aspx?Child=1000238','','8564529')">Manual Line Of Business Adjustment</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <iframe width="100%" height="100%" scrolling="no" frameborder="0" name="FramePopUp7" id="ctl00_FramePopUp7" src="ViewEnhancedComments.aspx?Child=0&PlayerId=1"></iframe> from <div id="dialogEnhancedComments" class="windowEnhancedComments">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <iframe width="100%" height="100%" scrolling="no" frameborder="0" name="FramePopUp7" id="ctl00_FramePopUp7" src="ViewEnhancedComments.aspx?Child=0&PlayerId=1"></iframe> from <div id="dialogEnhancedComments" class="windowEnhancedComments">…</div> subtree intercepts pointer events
+  2 × retrying click action
+      - waiting 100ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div id="mask">↵        </div> intercepts pointer events
+  10 × retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <iframe width="100%" height="100%" scrolling="no" frameborder="0" name="FramePopUp7" id="ctl00_FramePopUp7" src="ViewEnhancedComments.aspx?Child=0&PlayerId=1"></iframe> from <div id="dialogEnhancedComments" class="windowEnhancedComments">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <iframe width="100%" height="100%" scrolling="no" frameborder="0" name="FramePopUp7" id="ctl00_FramePopUp7" src="ViewEnhancedComments.aspx?Child=0&PlayerId=1"></iframe> from <div id="dialogEnhancedComments" class="windowEnhancedComments">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div id="mask">↵        </div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div id="mask">↵        </div> intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <iframe width="100%" height="100%" scrolling="no" frameborder="0" name="FramePopUp7" id="ctl00_FramePopUp7" src="ViewEnhancedComments.aspx?Child=0&PlayerId=1"></iframe> from <div id="dialogEnhancedComments" class="windowEnhancedComments">…</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+
+    at playerFunctionsSteps.clickLineOfBusiness_Tab (C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\testSteps\playerFunctionsSteps.js:516:47)
+    at C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\lineOfBusinessTestCases\UH10527TestCase.spec.js:18:22
+```
+
+# Page snapshot
+
+```yaml
+- text: HALO 25.10.2 Logged in as TU_LAB_HALO_NIN_ADM
+- img "HR Casino, Northern Indiana"
+- link "Logout":
+  - img "Logout"
+- list:
+  - listitem:
+    - link "Player Functions"
+    - list:
+      - listitem:
+        - link "User Transaction Log"
+      - listitem:
+        - link "Enroll Player"
+      - listitem:
+        - link "Edit Patron Data"
+      - listitem: View Comment
+      - listitem: View Tier History
+      - listitem: Adjust Player Tier Credits
+      - listitem: Property Play Popup
+      - listitem: Adjust Bucket Value
+      - listitem:
+        - link "Merge"
+      - listitem: Guest Information Sync
+      - listitem: Push Player Enrollment
+      - listitem: Link Player
+      - listitem: Unlink Player
+      - listitem: Reset Pin
+      - listitem: Change PIN
+      - listitem: Manage Player Interests & Preferences
+      - listitem: Player Transaction Log
+      - listitem: Balance Transfer Logs
+      - listitem: Player Tier With Tier Match
+      - listitem: Manual Line Of Business Adjustment
+      - listitem:
+        - link "Event Check-in"
+      - listitem:
+        - link "Credit & Front Money Account Updates"
+      - listitem:
+        - link "Redeem Prizes"
+      - listitem:
+        - link "Manage Redeemed Prizes"
+      - listitem: Visit Appeasement
+  - listitem:
+    - link "Configuration"
+  - listitem:
+    - link "Administration"
+- table:
+  - rowgroup:
+    - row "PLAYER SEARCH - 807879748 - DANIEL UTTLEY Go To Employee Dashboard 0":
+      - cell "PLAYER SEARCH"
+      - cell "- 807879748 - DANIEL UTTLEY"
+      - cell "Go To Employee Dashboard":
+        - link "Go To Employee Dashboard":
+          - img
+      - cell:
+        - link "Expand Search":
+          - img
+      - cell "0"
+- table:
+  - rowgroup:
+    - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+      - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+        - table:
+          - rowgroup:
+            - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+              - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet"
+            - row:
+              - cell
+- text: Comments for DANIEL UTTLEY - 807879748 Close
+```
+
+# Test source
+
+```ts
+  416 |             await this.viewSettledVoidedComment_tab.click({timeout:5000})
+  417 |             await this.closeCommentFrame.click()
+  418 |
+  419 |             console.log('User Viewed, Settle Voided Comments  ')
+  420 |         }catch(e){
+  421 |             console.log('View comment tab not visible ')
+  422 |             throw e
+  423 |         }
+  424 |
+  425 |     }
+  426 |
+  427 |     async clickCancellComment_tab(){
+  428 |         try{
+  429 |             await this.cancelComment_Tab.click()
+  430 |
+  431 |             console.log(' Comments Cancel ')
+  432 |         }catch(e){
+  433 |             console.log('Cancel COmment Not Visible')
+  434 |             throw e
+  435 |         }
+  436 |
+  437 |     }
+  438 |     
+  439 |     async clickReplyComment_Tab(){
+  440 |         try{
+  441 |             await this.replyComment_Tab.click()
+  442 |
+  443 |             console.log('Reply Comment')
+  444 |         }catch(e){
+  445 |             console.log('Reply Comment not visible ')
+  446 |             throw e
+  447 |         }
+  448 |
+  449 |     }
+  450 |     
+  451 |     async validateCommentPopUp_Header_Present(){
+  452 |         try{
+  453 |             console.log('Start Validation for Comment Pop Up Header  ')
+  454 |             if (this.closeCommentPopUp_Header.toBeVisible()){
+  455 |                        this.closeCommentPopUp_Header.click()
+  456 |                        console.log('Comment Pop Up Header Close')
+  457 |             }else{
+  458 |                 console.log('Message comment not visible')
+  459 |             }
+  460 |         }catch(e){
+  461 |             console.log('Comment Pop Up Header Not Availbale')
+  462 |             throw e
+  463 |         }
+  464 |     }
+  465 |
+  466 |
+  467 |
+  468 |     // async closeCommentPopUp_Header(){
+  469 |     //     try{
+  470 |     //         console.log('Start Validation for Comment Pop Up Header  ')
+  471 |     //         if (this.closeCommentPopUp_Header.toBeVisible()){
+  472 |     //                    closeCommentPopUp_Header.click()
+  473 |     //                    console.log('Comment Pop Up Header Close')
+  474 |     //         }else{
+  475 |     //             console.log('Message comment not visible')
+  476 |     //         }
+  477 |     //     }catch(e){
+  478 |     //         console.log('Comment Pop Up Header Not Availbale')
+  479 |     //         throw e
+  480 |     //     }
+  481 |     // }
+  482 |
+  483 |
+  484 |
+  485 |
+  486 |     async clickCloseCommentPopUp_Message(){
+  487 |         try{
+  488 |             await this.closeCommentPopUp_Message.click()
+  489 |
+  490 |             console.log('Comment Pop Up Message Close')
+  491 |         }catch(e){
+  492 |             console.log('Comment Pop Up Message Not Availbale')
+  493 |             throw e
+  494 |         }
+  495 |     }
+  496 |      
+  497 |
+  498 |     async clickSaveComment_tab(){
+  499 |         try{ 
+  500 |          
+  501 |         await this.saveComment_tab.click()
+  502 |          
+  503 |         console.log('Comment Saved as expected')
+  504 |         }catch(e){
+  505 |             console.log('Save tab  Not visible')
+  506 |             throw e
+  507 |         }
+  508 |     }
+  509 |
+  510 |     /////////////////////////Functional Methods for Line Of Business Page //////////////////////////////////////////////////////////
+  511 |
+  512 |
+  513 |             async clickLineOfBusiness_Tab(){
+  514 |                 
+  515 |             try{
+> 516 |                 await this.LineOfBusiness_Tab.click()
+      |                                               ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  517 |                   console.log('Line Of business tab Opens')
+  518 |             }catch(e){
+  519 |                 console.log('Line Of business tab Not Available')
+  520 |                 throw e
+  521 |             }
+  522 |         }
+  523 |     
+  524 | ///////////////////////////////////////////Functional Methods for Player Tansactions Log page ////////////////////////////////////
+  525 |        
+  526 |
+  527 |         async clickplayerTransactionLog_Tab(){
+  528 |             
+  529 |         try{
+  530 |             await this.playerTransactionLog_Tab.click()
+  531 |             console.log('Player Transaction Tab Opens')
+  532 |         }catch(e){
+  533 |             console.log('Player Transaction Tab not available')
+  534 |             throw e
+  535 |         }
+  536 |     }
+  537 |
+  538 |     async validateComment_PlayerTransactionLog(){
+  539 |             
+  540 |         try{
+  541 |
+  542 |             const creatorAdmin= testData.Credentials.QAuserName
+  543 |             await expect(this.logTransactionDateTime).toHaveText('Transaction Date/Time')
+  544 |             await expect(this.logTransactionDescription).toHaveText('Transaction Description')
+  545 |             //await expect(this.logTransactionComment).toContainText('Player Comment')
+  546 |             await expect(this.logTransactionCreator).toHaveText('Creator')
+  547 |             await expect(this.logTransactionCreatorAdmin).toHaveText(creatorAdmin) 
+  548 |             console.log('Comment Creator Admin: ' +creatorAdmin)
+  549 |             await expect(this.logTransactionPropertyName).toHaveText('Property Name')
+  550 |             console.log('All comment validated as expected on Player Transaction Tab')        
+  551 |             await this.closeCommentPopupheader3.click({timeout:2500})  
+  552 |         }catch(e){
+  553 |             console.log('Player Transaction Tab not available')
+  554 |             throw e
+  555 |         }
+  556 |     }
+  557 |
+  558 |     
+  559 |
+  560 |
+  561 |     async ClickClosePopUpPlayerTransactionLog(){
+  562 |             
+  563 |         try{
+  564 |             await this.closePopUpPlayerTransactionLog.click()
+  565 |             console.log('Player Transaction Pop UP CLose  ')
+  566 |         }catch(e){
+  567 |             console.log('Player Transaction Pop Up not Available')
+  568 |             throw e
+  569 |         }
+  570 |     }
+  571 |
+  572 |
+  573 |     async  clickPlayerTransactionLog_FisrtEntry(textInFirstRow){
+  574 |             
+  575 |         try{
+  576 |             await this.playerTransactionLog_FisrtEntry.click()
+  577 |             await expect.page.toHaveText(textInFirstRow)
+  578 |             console.log('Text in First Row ' +textInFirstRow +' Displaye as expected')
+  579 |              
+  580 |         }catch(e){
+  581 |             console.log('Account Not Created')
+  582 |             throw e
+  583 |         }
+  584 |     }
+  585 |     
+  586 |
+  587 |     async  clickPlayerTransactionLog_FisrtEntryDataValidation(data){
+  588 |             
+  589 |         try{
+  590 |             await this.playerTransactionLog_FisrtEntryDataValidation.click()
+  591 |             await expect.page.toHaveText(data)
+  592 |             console.log(data + ':  Player Transaction first entry Data Validated as expected')
+  593 |             console.log('Espected Data: ' +data)
+  594 |         }catch(e){
+  595 |             console.log('Player Transaction first entry Data NOT able to be validated')
+  596 |             throw e
+  597 |         }
+  598 |     }
+  599 |
+  600 |
+  601 |     /////////////////////////// Visit Appeasement Functions and Method /////////////////////////////////
+  602 |     async clickVisitAppeasement_Tab(){
+  603 |
+  604 |         try{
+  605 |             await this.visitAppeasement_Tab.click()
+  606 |             console.log('visit Appeasement Page Opens as expected')
+  607 |         }catch(e){
+  608 |             console.log('visit Appeasement Page NOT Available')
+  609 |             throw e
+  610 |         }
+  611 |
+  612 |     }
+  613 |
+  614 |     async validateVisitAppeasementPage(){
+  615 |         try{
+  616 |           //  await this.page.pause()
+```
