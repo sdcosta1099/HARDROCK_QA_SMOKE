@@ -16,10 +16,11 @@ test('UH-16774 Halo | Create/Add New Comment Expired Date', async ({ page }) => 
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16774)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
-    await playerFunctionPage.addCommentDetails()
+  
+    //await playerFunctionPage.addCommentDetails()
     await playerFunctionPage.verifyCommentExpiredDate()
     await  gblFuntSteps.logOut()
      
-    //await page.pause()
 })
 
+ 

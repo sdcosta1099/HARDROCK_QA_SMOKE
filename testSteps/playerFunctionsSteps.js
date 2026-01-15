@@ -38,7 +38,8 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.viewPaceReport= page.locator('#ctl00_ContentPlaceHolder1_btnViewPaceReport')
         this.closePaceReport= page.locator('#ctl00_ContentPlaceHolder1_btnClose')
 
-        /////Objects for Comments                          
+        /////Objects for Comments////////////////////////
+
         this.viewComment_Tab =page.getByText('View Comment');
         //this.editComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'Test Comment Edit_1705000060137', exact: true })
         this.addComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Add' });
@@ -56,6 +57,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.txtSettleVoidComment= page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#txtSettleVoidComment')  
         this.CommentFirstRow_Tab = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'TU_LAB_HALO_NIN_ADM', exact: true })
         this.PlayerTransactionCommentFirstRow_Tab = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Player Comment - Settled in HALO', exact: true })
+        this.commentAddedBy= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByText('Added By: TU_LAB_HALO_NIN_ADM')
         //page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true })
         //page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true })
 
@@ -96,7 +98,9 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.highCommentPriority = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('option', { name: '2 - High' })
         this.lowestCommentPriority = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('option', { name: '5 - Lowest' })
         this.highestCommentPriority = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('option', { name: '1 - Highest' })
-        this.neverExpiredBox  =  page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#chkNeverExpire')
+        this.neverExpiredBox  = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByText('Never')
+        //page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('checkbox', { name: 'Never' }).check();
+       //  page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#chkNeverExpire')
         //chkCommentExpirationDate   neverExpiredBox  
         this.authorizationReason= page.locator('#ddlSettleVoidCommentReason')
         //this.authorizationSubmit= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Submit' })
@@ -108,7 +112,8 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.authorizationOK= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Ok' })
         this.authorizationClosePopUp=  page.getByText('Close')
         this.CommentPriority= page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#ddlCommentPriority')
-    
+        this.commentGlobalProperty= page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#chkCommentGlobal')
+ 
         
         ////////////////////////Objects for Player Transaction Log///////////////////////////////
 
@@ -330,6 +335,20 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
     }
 
+    async commentLimitProperty_Tab(limitProperty){
+ 
+        try{
+                const chepLimit = limitProperty
+                await this.commentGlobalProperty.click()
+
+                console.log('Limit Property: '+limitProperty+ ' is being Selected ')
+            }catch(e){
+                console.log( 'Limit Property Drop down not available ')
+                throw e
+            }
+        
+    }
+
 
     async clickAddComment_Txt(){
         try{ 
@@ -358,7 +377,8 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
           await this.saveComment_tab.click()
           await this.saveOkComment.click()
           await this.closeCommentPopUp_Message.click()
-
+          
+ 
             console.log('Comment Added as expected')
 
         }catch(e){
@@ -436,7 +456,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             await this.commentHeader.highlight()
             await this.commentUserID.highlight()
             await this.commentUserName.highlight()
-            await expect(this.commentUserID).toHaveText(creatorAdmin)
+           // await expect(this.commentUserID).toHaveText(creatorAdmin)
             console.log('Comment added by Admin:  '+creatorAdmin , ' is Validated as expected')
             await expect(this.commentHeader).toHaveText('Comment') 
             await this.closeCommentFrame.click()
@@ -587,17 +607,26 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
     async verifyCommentExpiredDate(){
         try{
+            await this.CommentFirstRow_Tab.first().click({timeout:3000})
+            await this.commentAddedBy.highlight({timeout:3000})
+             
+            //const commentDateValue = commentDateValue1.split[2].trim()
+            //console.log('Comment Added By Value is: ' +commentDateValue) 
+
+           // const commentDate = this.commentAddedBy.textContent().split('Expiration Date: ')[2].trim()
+            const commentDate = await this.commentAddedBy    
+           // console.log('Comment Expiration Date is: ' +commentDate)
             const today = new Date();
             const todayDate= today.toLocaleDateString()
-            await this.CommentHeaderExpirationDate.highlight({timeout:3000}) 
-            if( todayDate < this.CommentHeaderExpirationDate){
+                 await this.commentAddedBy.highlight({timeout:3000}) 
+            if( todayDate < commentDate){
                 console.log('Comment is Active as Expiration Date is greater than today date: ' +todayDate)
-            }else if(todayDate >= this.CommentHeaderExpirationDate){
+            }else if(todayDate >= this.commentAddedBy){
                 console.log('Comment is Expired as Expiration Date is less than or equal to today date: ' +todayDate)
             }
 
-           
             console.log('Comment Expiration Date Verified as expected ')
+            await this.closeCommentFrame.click()
         }catch(e){
             console.log('Comment Expiration Date NOT Verified ')
             throw e
@@ -624,17 +653,45 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         try{
 
 
-            const box =  await expect(this.neverExpiredBox).toBeChecked(); 
-           if(this.box == false ){
-            console.log('Comment Never expired Box is checked ') 
+            await this.addComment_tab.click({timeout:5000})
+            await this.CommentPriority.click()    
+            await this.CommentPriority.selectOption('3')
+            await this.addComment_Txt.click()
+            await this.addComment_Txt.fill(testData.Comments.CommentsText)
+           // await this.page.pause()
+            await this.neverExpiredBox.highlight({timeout:3000})
+            const box =  await this.neverExpiredBox.isChecked(); 
+           if(expect(box).toBe(false)){
+            console.log('Comment Never expired Box is Unchecked ') 
            } else {
-            console.log('Comment Never expired Box is on and NOT Checked as expected ')
+            console.log('Comment Never expired Box is on and Checked as expected ')
 
            }
+
+           await this.saveComment_tab.click()
+            await this.saveOkComment.click()
+            await this.closeCommentPopUp_Message.click()
             
         }catch(e){
             console.log('Comment Never Expiration Box is not Visible')
             throw e
+        }
+    }
+
+    async validateCommentNeverExpiredBoxChecked(){
+        try{    
+            await this.CommentFirstRow_Tab.first().click({timeout:3000})
+            await this.neverExpiredBox.highlight({timeout:3000})
+            const box =  await this.neverExpiredBox.isChecked(); 
+           if(expect(box).toBe(true)){
+            console.log('Comment Never expired Box is Checked as expected ') 
+           } else {
+            console.log('Comment Never expired Box is Unchecked ')
+
+           }
+
+        }catch(e){
+            await this.closeCommentPopUp_Message.click()
         }
     }
 

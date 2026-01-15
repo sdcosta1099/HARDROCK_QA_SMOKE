@@ -4,7 +4,7 @@ import{playerSearchSteps}from '../../testSteps/playerSearchSteps'
 import{playerFunctionsSteps}from '../../testSteps/playerFunctionsSteps'
 const testData= JSON.parse(JSON.stringify(require("../../testData.json")))
 
-test.skip('UH16777 CMP | Halo | Create New Comment with Never Expired from CMP', async ({ page }) => {
+test('UH16777 CMP | Halo | Create New Comment with Never Expired from CMP', async ({ page }) => {
      
 
     const gblFuntSteps = new globalFUnctionSteps(page)
@@ -16,6 +16,9 @@ test.skip('UH16777 CMP | Halo | Create New Comment with Never Expired from CMP',
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16777)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
+    await playerFunctionPage.validateCommentNeverExpiredBoxChecked()
+    
+    console.log("comment with Never expired dates validate in Halo As expected")
      
     await  gblFuntSteps.logOut()
      
