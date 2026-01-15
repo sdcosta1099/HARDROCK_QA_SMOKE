@@ -4,7 +4,7 @@ import{playerSearchSteps}from '../../testSteps/playerSearchSteps'
 import{playerFunctionsSteps}from '../../testSteps/playerFunctionsSteps'
 const testData= JSON.parse(JSON.stringify(require("../../testData.json")))
 
-test.skip(' UH16782 CMP | Halo | Create New Comment Limit Property from CMP', async ({ page }) => {
+test(' UH16782 CMP | Halo | Create New Comment Limit Property from CMP', async ({ page }) => {
      
 
     const gblFuntSteps = new globalFUnctionSteps(page)
@@ -14,9 +14,10 @@ test.skip(' UH16782 CMP | Halo | Create New Comment Limit Property from CMP', as
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16782)
+    console.log( "User to create limit property on CMP then validate the limkt on Halo ")
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
-    await playerFunctionPage.clickAddComment_Tab()
+    await playerFunctionPage.validateCommentsDetails()
     await  gblFuntSteps.logOut()
      
     //await page.pause()

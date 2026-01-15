@@ -1,0 +1,266 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UH10483  HALO | Online Account Settings | Online account settings for a Patron with an Online account and Activated via Web/Mobile
+- Location: C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\accountSettingTestCases\UH10483TestCase.spec.js:6:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('#ifrContent').contentFrame().getByRole('cell', { name: 'Resend Activation Link', exact: true }).locator('div')
+
+    at playerSearchSteps.clickResendActivation_link (C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\testSteps\playerSearchSteps.js:718:42)
+    at C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\accountSettingTestCases\UH10483TestCase.spec.js:17:26
+```
+
+# Page snapshot
+
+```yaml
+- text: HALO 25.10.2 Logged in as TU_LAB_HALO_NIN_ADM
+- img "HR Casino, Northern Indiana"
+- link "Logout":
+  - img "Logout"
+- list:
+  - listitem:
+    - link "Player Functions"
+  - listitem:
+    - link "Configuration"
+  - listitem:
+    - link "Administration"
+- table:
+  - rowgroup:
+    - row "PLAYER SEARCH - 807879573 - ANGELA HOBBS Go To Employee Dashboard 0":
+      - cell "PLAYER SEARCH"
+      - cell "- 807879573 - ANGELA HOBBS"
+      - cell "Go To Employee Dashboard":
+        - link "Go To Employee Dashboard":
+          - img
+      - cell:
+        - link "Expand Search":
+          - img
+      - cell "0"
+- table:
+  - rowgroup:
+    - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+      - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+        - table:
+          - rowgroup:
+            - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+              - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet"
+            - row:
+              - cell
+```
+
+# Test source
+
+```ts
+  618 |     }catch(e){
+  619 |         console.log('PlayerID NOT found')
+  620 |         throw e
+  621 |     }
+  622 |
+  623 |  }
+  624 |
+  625 |  async clickSearchBtn(){
+  626 |     try{
+  627 |     await this.search_btn.click()
+  628 |     console.log('User click on Search Btn')
+  629 |
+  630 |     }catch(e){
+  631 |             console.log('Search Btn not found')
+  632 |     }
+  633 |     }
+  634 |
+  635 |
+  636 |  /////////////////////////Functional Methods of Commpreference page   /////////////////////////////////////////////////////
+  637 |
+  638 |     async clickCommPreferences_btn(){
+  639 |         try{
+  640 |
+  641 |         await this.commPreferences_btn.click()
+  642 |         console.log('User on Comm Preference page')
+  643 |
+  644 |          }catch(e){
+  645 |             console.log('Comm Preference page Tab not found')
+  646 |             throw e
+  647 |         }
+  648 |     }
+  649 |
+  650 |     async clickCommPreferences_btn_NegativeScenario(){
+  651 |         //try{
+  652 |
+  653 |       //  await this.commPreferences_btn.click()
+  654 |         await expect(this.commPreferences_btn).not.toBeVisible()
+  655 |         //await expect(commPreferences_btn).toHaveCount(0);
+  656 |        // console.log('User on Comm Preference page')
+  657 |
+  658 |         // }catch(e){
+  659 |             console.log('Comm Preference Tab not found as expected on NON ADMIN Page ')
+  660 |            // throw e
+  661 |        // }
+  662 |     }
+  663 |
+  664 |
+  665 |     async clickAccountSettings_tab(){
+  666 |         try{
+  667 |                 await expect.soft(this.accountSettings_tab).toBeVisible()
+  668 |                 await this.accountSettings_tab.click()
+  669 |                 await this.page.waitForTimeout(3000)
+  670 |                 console.log('User on Account Setting')
+  671 |         }catch(e){
+  672 |             console.log('Account setting Tab not found')
+  673 |             throw e
+  674 |         }
+  675 |        
+  676 |     }
+  677 |    ////////////////////////////Global Preferences Methods and Functions////////////////////////////////////////////////////////////////
+  678 |    async clickGloblaPreferences_Tab(){
+  679 |     try{
+  680 |         
+  681 |         await this.globalPreferences_Tab.click()
+  682 |          
+  683 |         console.log('User on Global Preferenes Tab ')
+  684 |     }catch(e){
+  685 |         console.log('Global Preferences Tab not availbale ')
+  686 |     }
+  687 |    
+  688 | }
+  689 |
+  690 |    ////////////////////////////////////Functional Methods Account Setting Page////////////////////////////////
+  691 |    async clickOnlineAccountCreated_link(){
+  692 |     try{
+  693 |     await this.onlineAccountCreated_link.click()
+  694 |     console.log('online Account Created as expected ')
+  695 |    }catch(e){
+  696 |     console.log('Online Account not created')
+  697 |     }
+  698 |  }
+  699 |
+  700 |
+  701 |
+  702 | async clickActivateOnlineAccount_link(){
+  703 |     try{
+  704 |
+  705 |         await this.activateOnlineAccount_link.click()
+  706 |
+  707 |         console.log('online account activated as expected')
+  708 |     }catch(e){
+  709 |         console.log('Activate Online account Link not visible')
+  710 |         throw e
+  711 |     }
+  712 |
+  713 | }
+  714 |
+  715 |
+  716 | async clickResendActivation_link(){
+  717 |     try{
+> 718 |         await this.resendActivation_link.click()
+      |                                          ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  719 |         console.log('activation link resent')
+  720 |
+  721 |     }catch(e){
+  722 |         console.log('resend activation Link not Visible')
+  723 |         throw e;
+  724 |     }
+  725 | }
+  726 |  
+  727 |    async validateAnableAccount_link(){
+  728 |     try{
+  729 |         expect(await this.page(enableAccount_link).toHaveTitle('Enable Account'))
+  730 |         console.log('Account is Enable as expected')
+  731 |
+  732 |     }catch(e){
+  733 |         console.log('Account Anable Link is NOT Present')
+  734 |         throw e
+  735 |     }
+  736 |     
+  737 |    }
+  738 |
+  739 |    async clickAnableAccount_Link(){
+  740 |
+  741 |     try{
+  742 |          await this.enableAccount_link.click()
+  743 |          await this.anableAccount_PopUP.click()
+  744 |          await this.closeAnableAccount_PopUp.click()
+  745 |         //  await page.frameLocator('#ifrContent').getByRole('button', { name: 'Enable' }).click();
+  746 |         //  await page.frameLocator('#ifrContent').getByRole('button', { name: 'Close' }).click();
+  747 |         console.log('Enable account as expected')
+  748 |
+  749 |     }catch(e){
+  750 |         console.log('Enable Account Link is NOT Present disable')
+  751 |         throw e
+  752 |     }
+  753 |
+  754 |    }
+  755 |
+  756 |
+  757 |    async clickAccountDisable_link (){
+  758 |     try{
+  759 |         
+  760 |           await this.disableAccount_link.click()
+  761 |           await this.disableAccount_PopUP.click()
+  762 |           await this.closeDisableAccount_Popup.click()
+  763 |          
+  764 |         //   await page.frameLocator('#ifrContent').getByRole('button', { name: 'Disable' }).click();
+  765 |         //   await page.frameLocator('#ifrContent').getByRole('button', { name: 'Close' }).click();
+  766 |           console.log('Account is Disable as expected')
+  767 |         //  await this.page.pause()
+  768 |
+  769 |     }catch(e){
+  770 |         console.log('Disbale Account link is not available')
+  771 |         throw e
+  772 |     }
+  773 |     
+  774 |    }
+  775 |
+  776 |    async validateAccountDisable_link(){
+  777 |
+  778 |      try{
+  779 |
+  780 |         await expect(this.disableAccount_link).toHaveText('Disable Account')
+  781 |         console.log('Account Disable link is present as expected')
+  782 |
+  783 |         }catch(e){
+  784 |             console.log('Account Disable link is not Present')
+  785 |             throw e;
+  786 |         }
+  787 |    }
+  788 |    
+  789 |
+  790 |
+  791 |    async validateResetPassword_link(){
+  792 |     try{
+  793 |         expect(this.page.toHaveTitle('Reset Password'))
+  794 |         
+  795 |         console.log('Reset passowrd link available')
+  796 |     }catch(e){
+  797 |         console.log('Reset passord link not NOT Available')
+  798 |         throw e;
+  799 |     }
+  800 |
+  801 |    }
+  802 |
+  803 |
+  804 |    async clickResetPassword_link(){
+  805 |     try{
+  806 |         await this.page.waitForTimeout(5000)
+  807 |         await expect.soft(this.resetPassword_link).toBeVisible()
+  808 |         await this.resetPassword_link.click()
+  809 |         await this.resetPassword_PopUSend.click()
+  810 |         await this.resetPassword_PopUMessage.click()
+  811 |         console.log('Reset password link Clickable')
+  812 |     }catch(e){
+  813 |         console.log('Reset password link NOT clickable')
+  814 |         throw e
+  815 |     }
+  816 |
+  817 |    }
+  818 |
+```

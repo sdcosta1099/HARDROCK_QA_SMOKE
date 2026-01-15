@@ -4,7 +4,7 @@ import{playerSearchSteps}from '../../testSteps/playerSearchSteps'
 import{playerFunctionsSteps}from '../../testSteps/playerFunctionsSteps'
 const testData= JSON.parse(JSON.stringify(require("../../testData.json")))
 
-test.skip('UH16776 CMP | Halo | Create New Comment with Expired date from CMP', async ({ page }) => {
+test('UH16776 CMP | Halo | Create New Comment with Expired date from CMP', async ({ page }) => {
      
 
     const gblFuntSteps = new globalFUnctionSteps(page)
@@ -13,10 +13,13 @@ test.skip('UH16776 CMP | Halo | Create New Comment with Expired date from CMP', 
 
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
+    console.log("User Create New Comment with Expired date from CMP then validate in Halo ")
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16776)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
-    await playerFunctionPage.clickAddComment_Tab()
+    //await playerFunctionPage.clickAddComment_Tab()
+    await playerFunctionPage.verifyCommentExpiredDate()
+    console.log("comment expired dates validate in Halo As expected")
     await  gblFuntSteps.logOut()
      
     //await page.pause()

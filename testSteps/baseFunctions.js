@@ -1,6 +1,15 @@
+
+const{expect, test} = require("@playwright/test");
+// const { pipeline } = require("stream");
+// const testData = JSON.parse(JSON.stringify(require("../testData.json")))
+
+
+
 const { randomInt } = require("crypto")
 
 exports.baseFunction = class baseFunction{
+
+    
 
 
 constructor (page){
@@ -34,6 +43,18 @@ constructor (page){
         console.log('File removed as expected')
         }catch(e){
             console.log('No file to remove')
+        }
+
+    }
+
+
+
+       async pagination(){
+        try{
+        
+        console.log ('Pagination works as expected')
+        }catch(e){
+            console.log(' Pagination not working as expected')
         }
 
     }

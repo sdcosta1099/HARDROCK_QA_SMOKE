@@ -16,7 +16,7 @@ test('UH-16769 Halo | Create/ Add New Comment Priority 2-High', async ({ page })
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16769)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
-    await playerFunctionPage.clickAddComment_Tab()
+    await playerFunctionPage.addPriorityComments(2)
     await  gblFuntSteps.logOut()
      
     //await page.pause()

@@ -4,7 +4,7 @@ import{playerSearchSteps}from '../../testSteps/playerSearchSteps'
 import{playerFunctionsSteps}from '../../testSteps/playerFunctionsSteps'
 const testData= JSON.parse(JSON.stringify(require("../../testData.json")))
 
-test('UH-9786 Priority Field Validations', async ({ page }) => {
+test(' UH-9754 HALO | Patron Dashoard | Player Function | Comments | Edit Comment', async ({ page }) => {
      
 
     const gblFuntSteps = new globalFUnctionSteps(page)
@@ -16,7 +16,7 @@ test('UH-9786 Priority Field Validations', async ({ page }) => {
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH9786)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
-    await playerFunctionPage.clickAddComment_Tab()
+    await playerFunctionPage.addCommentDetails()
     await  gblFuntSteps.logOut()
      
     //await page.pause()

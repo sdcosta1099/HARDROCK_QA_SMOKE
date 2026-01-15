@@ -16,7 +16,9 @@ test('UH-16781  Halo | Create/Add New Limit Property Comment', async ({ page }) 
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16781)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
-    await playerFunctionPage.clickAddComment_Tab()
+    await playerFunctionPage.addCommentDetails()
+    console.log("Limit Property 'ALL' Comment added successfully as expected")
+     
     await  gblFuntSteps.logOut()
      
     //await page.pause()

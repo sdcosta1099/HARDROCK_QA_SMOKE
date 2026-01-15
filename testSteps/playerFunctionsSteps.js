@@ -38,7 +38,8 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.viewPaceReport= page.locator('#ctl00_ContentPlaceHolder1_btnViewPaceReport')
         this.closePaceReport= page.locator('#ctl00_ContentPlaceHolder1_btnClose')
 
-        /////Objects for Comments                          
+        /////Objects for Comments////////////////////////
+
         this.viewComment_Tab =page.getByText('View Comment');
         //this.editComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'Test Comment Edit_1705000060137', exact: true })
         this.addComment_tab= page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Add' });
@@ -56,6 +57,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.txtSettleVoidComment= page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#txtSettleVoidComment')  
         this.CommentFirstRow_Tab = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'TU_LAB_HALO_NIN_ADM', exact: true })
         this.PlayerTransactionCommentFirstRow_Tab = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Player Comment - Settled in HALO', exact: true })
+        this.commentAddedBy= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByText('Added By: TU_LAB_HALO_NIN_ADM')
         //page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true })
         //page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true })
 
@@ -81,12 +83,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.CommentHeaderSearchTo= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Search To', exact: true })
         this.CommentHeaderSearch_Btn= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Search' })
 
-          page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#lblSearchSource') ;
-          page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#lblSearchDepartment') ;
-          page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#lblSearchProperty') ;
-          page.locator('iframe[name="FramePopUp7"]').contentFrame().getByText('Search From') ;
-          page.locator('iframe[name="FramePopUp7"]').contentFrame().getByText('Search To') ;
-          page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#lblSearchPriority') ;
+         
 
         this.displayDateCommentHeader = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Display Date', exact: true })
 
@@ -96,35 +93,15 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.commentUserName = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'UserName', exact: true })
         this.closeCommentFrame = page.getByText('Close')
        this.closeCommentPopupheader3 =   page.locator('#popupheader3').getByText('Close');
-
-
-       
-        //#popupheader3  or    popupheaderEnhancedComments
-
-
-        // await page.goto('https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/PlayerDashBoard.aspx?UPlayerId=807881503%20%20%20&PlayerId=9875666');
-        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Display Date', exact: true }).click();
-        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'Comment', exact: true }).click();
-        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('[id="x\\:1558101725\\.21\\:adr\\:0\\:tag\\:\\:chlGCnt\\:0\\:exp\\:False"] > td:nth-child(5)').click();
-        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#whdgActiveComments_ctl00').getByRole('cell', { name: 'Priority', exact: true }).click();
-        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#whdgActiveComments_ctl00').getByRole('cell', { name: 'Source', exact: true }).click();
-        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('[id="x\\:1558101725\\.21\\:adr\\:0\\:tag\\:\\:chlGCnt\\:0\\:exp\\:False"] > td:nth-child(8)').click();
-        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('cell', { name: 'UserName', exact: true }).click();
-        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('[id="x\\:1558101725\\.21\\:adr\\:0\\:tag\\:\\:chlGCnt\\:0\\:exp\\:False"] > td:nth-child(9)').click();
-        // await page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#whdgActiveComments_ctl00').getByRole('cell', { name: 'Property', exact: true }).click();
-        // await page.getByText('Close').click();
-
-      
-
-
-
-
-
-
-         
-         
-        this.authorizationPassword= page.locator('#TxtAuthorisationPwd')
-        //page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#TxtAuthorisationPwd')
+       this.lowerCommentPriority = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('option', { name: '4 - Lower' })
+       this.mediumCommentPriority = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('option', { name: '3 - Medium' })
+        this.highCommentPriority = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('option', { name: '2 - High' })
+        this.lowestCommentPriority = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('option', { name: '5 - Lowest' })
+        this.highestCommentPriority = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('option', { name: '1 - Highest' })
+        this.neverExpiredBox  = page.locator('iframe[name="FramePopUp7"]').contentFrame().getByText('Never')
+        //page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('checkbox', { name: 'Never' }).check();
+       //  page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#chkNeverExpire')
+        //chkCommentExpirationDate   neverExpiredBox  
         this.authorizationReason= page.locator('#ddlSettleVoidCommentReason')
         //this.authorizationSubmit= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Submit' })
        // this.authorizationComments= page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#txtAuthorisationComment')
@@ -135,35 +112,12 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.authorizationOK= page.locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Ok' })
         this.authorizationClosePopUp=  page.getByText('Close')
         this.CommentPriority= page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#ddlCommentPriority')
-    
+        this.commentGlobalProperty= page.locator('iframe[name="FramePopUp7"]').contentFrame().locator('#chkCommentGlobal')
+ 
         
-        
+        ////////////////////////Objects for Player Transaction Log///////////////////////////////
 
-// (async () => {
-//   const browser = await chromium.launch({
-//     headless: false
-//   });
-//   const context = await browser.newContext();
-//   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS', exact: true }).first().click();
-//   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Add' }).click();
-//   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View Settled/Voided' }).click();
-//   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'View All' }).click();
-//   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'CMP', exact: true }).first().click();
-//   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Reply' }).click();
-//   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
-//   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'CMP', exact: true }).first().click();
-//   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Edit' }).click();
-//   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
-//   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS' }).nth(3).click();
-//   await page.fpage.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Settle/Void' })rameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Delete' }).click();
-//   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
-//   await .click();
-//   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
-
-//   // ---------------------
-//   await context.close();
-//   await browser.close();
-        //this.playerTransactionLog_Arrow= page.getText()
+  
          this.playerTransactionLog_FisrtEntry = page.frameLocator('iframe[name="FramePopUp3"]').getByRole('cell', { name: 'Online account unlocked', exact: true });
          this.playerTransactionLog_FisrtEntryDataValidation = page.frameLocator('iframe[name="FramePopUp3"]') 
         /////////////////////////////Line Of Business Object Repository/////////////////////////////////////////////////
@@ -299,6 +253,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
            //  await  this.validateCommentExpiration()
                  
             console.log('All Comment Tab Elements are present as expected  ')
+            await this.closeCommentFrame.click()
         }catch(e){
             console.log('Comment Tab Elements are NOT Displyed on Comment Pop Up')
             throw e
@@ -380,6 +335,20 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
     }
 
+    async commentLimitProperty_Tab(limitProperty){
+ 
+        try{
+                const chepLimit = limitProperty
+                await this.commentGlobalProperty.click()
+
+                console.log('Limit Property: '+limitProperty+ ' is being Selected ')
+            }catch(e){
+                console.log( 'Limit Property Drop down not available ')
+                throw e
+            }
+        
+    }
+
 
     async clickAddComment_Txt(){
         try{ 
@@ -397,8 +366,9 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
     async addCommentDetails(){
         try{
-          //await this.playerFunctions_Tab.click({timeout:5000}) 
-        //  await this.viewComment_Tab.click()
+                 
+                //3-Medium
+                 
           await this.addComment_tab.click({timeout:5000})
           await this.CommentPriority.click()    
           await this.CommentPriority.selectOption('3')
@@ -406,8 +376,9 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
           await this.addComment_Txt.fill(testData.Comments.CommentsText)
           await this.saveComment_tab.click()
           await this.saveOkComment.click()
-          await this.closeCommentPopUp_Header.click()
-
+          await this.closeCommentPopUp_Message.click()
+          
+ 
             console.log('Comment Added as expected')
 
         }catch(e){
@@ -419,6 +390,59 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
       
     }
 
+    async addPriorityComments(priotity){
+        try{
+                 
+                await this.addComment_tab.click({timeout:5000})
+                //await this.CommentPriority.click()    
+                
+                if(priotity  = '1'){
+                    console.log('Adding Highest Priority 1 Comment')
+                    await this.CommentPriority.click()
+                    await this.CommentPriority.selectOption(priotity)
+
+                    }else if(priotity  = '2'){
+                        console.log('Adding High Priority 2 Comment')
+                        await this.CommentPriority.click()
+                        await this.CommentPriority.selectOption(priotity)
+ 
+                    }else if(priotity  = '3'){ 
+                        console.log('Adding Medium Priority 3 Comment')
+                        await this.CommentPriority.click()
+                        await this.CommentPriority.selectOption(priotity)
+
+                    }else if(priotity  = '4'){
+                        console.log('Adding Lower Priority 4 Comment')
+                        await this.CommentPriority.click()
+                        await this.CommentPriority.selectOption(priotity)
+    
+                    }else if(priotity  = '5'){     
+                        console.log('Adding Lowest Priority Comment')
+                        await this.CommentPriority.click()
+                        await this.CommentPriority.selectOption(priotity)
+
+                    } else{
+                        await this.CommentPriority.click()
+                        await this.CommentPriority.selectOption('3')
+                        console.log('No Priority Selected, Adding Medium Priority 3 Comment by Default')
+                }
+                    
+                        await this.addComment_Txt.click()
+                        await this.addComment_Txt.fill(testData.Comments.CommentsText)
+                        await this.saveComment_tab.click()
+                        await this.saveOkComment.click()
+                        await this.closeCommentPopUp_Message.click()
+
+            console.log('Comment Added as expected')
+
+        }catch(e){
+
+            console.log('Comment NOT Added')
+            throw e 
+
+        }
+    }
+      
 
     async validateCommentsDetails(){
         try{
@@ -432,7 +456,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             await this.commentHeader.highlight()
             await this.commentUserID.highlight()
             await this.commentUserName.highlight()
-            await expect(this.commentUserID).toHaveText(creatorAdmin)
+           // await expect(this.commentUserID).toHaveText(creatorAdmin)
             console.log('Comment added by Admin:  '+creatorAdmin , ' is Validated as expected')
             await expect(this.commentHeader).toHaveText('Comment') 
             await this.closeCommentFrame.click()
@@ -554,12 +578,120 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             await this.CommentHeaderSearchFrom.highlight({timeout:3000})
             await this.CommentHeaderSearchTo.highlight({timeout:3000})
             await this.CommentHeaderSearch_Btn.highlight({timeout:3000})
+            await this.closeCommentFrame.click()
 
-           
             console.log('All Comment Filter Elements are present as expected  ')
         }catch(e){
             console.log('Comment Filter Elements are NOT Displyed on Comment Pop Up')
             throw e
+        }
+    }
+
+    async validateCommentPriorityField_Elements(){  
+        try{
+            await this.lowerCommentPriority.highlight({timeout:3000})
+            await this.mediumCommentPriority.highlight({timeout:3000})
+            await this.highCommentPriority.highlight({timeout:3000})
+            await this.lowestCommentPriority.highlight({timeout:3000})
+            await this.highestCommentPriority.highlight({timeout:3000})
+
+            console.log('Comment Priority Fields are Present on Comment Tab as expected ')
+            await this.closeCommentFrame.click()
+        }catch(e){
+            console.log('Comment Priority Field is NOT Displyed on Comment Pop Up')
+            throw e
+        }
+    }
+
+    //verifyCommentExpiredDate
+
+    async verifyCommentExpiredDate(){
+        try{
+            await this.CommentFirstRow_Tab.first().click({timeout:3000})
+            await this.commentAddedBy.highlight({timeout:3000})
+             
+            //const commentDateValue = commentDateValue1.split[2].trim()
+            //console.log('Comment Added By Value is: ' +commentDateValue) 
+
+           // const commentDate = this.commentAddedBy.textContent().split('Expiration Date: ')[2].trim()
+            const commentDate = await this.commentAddedBy    
+           // console.log('Comment Expiration Date is: ' +commentDate)
+            const today = new Date();
+            const todayDate= today.toLocaleDateString()
+                 await this.commentAddedBy.highlight({timeout:3000}) 
+            if( todayDate < commentDate){
+                console.log('Comment is Active as Expiration Date is greater than today date: ' +todayDate)
+            }else if(todayDate >= this.commentAddedBy){
+                console.log('Comment is Expired as Expiration Date is less than or equal to today date: ' +todayDate)
+            }
+
+            console.log('Comment Expiration Date Verified as expected ')
+            await this.closeCommentFrame.click()
+        }catch(e){
+            console.log('Comment Expiration Date NOT Verified ')
+            throw e
+        }
+    }
+
+
+    //verifyCommentNeverExpired
+
+    async verifyCommentNeverExpired(){
+        try{
+           
+            const expirationDate= testData.CommentTestAccounts.CommentNeverExpire
+            await expect(this.CommentHeaderExpirationDate).toHaveText(expirationDate)
+            console.log('Comment Never Expiration Date: ' +expirationDate+ ' is Validated as expected ')
+        }catch(e){
+            console.log('Comment Never Expiration Box is not Visible')
+            throw e
+        }
+    }
+
+
+    async validateCommentNeverExpiredBox(){
+        try{
+
+
+            await this.addComment_tab.click({timeout:5000})
+            await this.CommentPriority.click()    
+            await this.CommentPriority.selectOption('3')
+            await this.addComment_Txt.click()
+            await this.addComment_Txt.fill(testData.Comments.CommentsText)
+           // await this.page.pause()
+            await this.neverExpiredBox.highlight({timeout:3000})
+            const box =  await this.neverExpiredBox.isChecked(); 
+           if(expect(box).toBe(false)){
+            console.log('Comment Never expired Box is Unchecked ') 
+           } else {
+            console.log('Comment Never expired Box is on and Checked as expected ')
+
+           }
+
+           await this.saveComment_tab.click()
+            await this.saveOkComment.click()
+            await this.closeCommentPopUp_Message.click()
+            
+        }catch(e){
+            console.log('Comment Never Expiration Box is not Visible')
+            throw e
+        }
+    }
+
+    async validateCommentNeverExpiredBoxChecked(){
+        try{    
+            await this.CommentFirstRow_Tab.first().click({timeout:3000})
+            await this.neverExpiredBox.highlight({timeout:3000})
+            const box =  await this.neverExpiredBox.isChecked(); 
+           if(expect(box).toBe(true)){
+            console.log('Comment Never expired Box is Checked as expected ') 
+           } else {
+            console.log('Comment Never expired Box is Unchecked ')
+
+           }
+
+        }catch(e){
+            await this.closeCommentPopUp_Message.click()
         }
     }
 

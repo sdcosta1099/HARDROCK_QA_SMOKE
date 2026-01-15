@@ -4,7 +4,7 @@ import{playerSearchSteps}from '../../testSteps/playerSearchSteps'
 import{playerFunctionsSteps}from '../../testSteps/playerFunctionsSteps'
 const testData= JSON.parse(JSON.stringify(require("../../testData.json")))
 
-test.skip(' UH16784CMP | Halo | Create New Comment Global Property from CMP', async ({ page }) => {
+test(' UH16784CMP | Halo | Create New Comment Global Property from CMP', async ({ page }) => {
      
 
     const gblFuntSteps = new globalFUnctionSteps(page)
@@ -14,9 +14,10 @@ test.skip(' UH16784CMP | Halo | Create New Comment Global Property from CMP', as
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16784)
+    console.log( "Validate Global property comment from CMP ")
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
-    await playerFunctionPage.clickAddComment_Tab()
+    await playerFunctionPage.validateCommentsDetails()
     await  gblFuntSteps.logOut()
      
     //await page.pause()

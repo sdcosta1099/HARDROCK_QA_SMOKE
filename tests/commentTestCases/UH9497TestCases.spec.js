@@ -16,9 +16,7 @@ test('UH-9497 HALO | Patron Dashboard | Player Function | Comments | Filters | P
     await gblFuntSteps.loginAdminQA()
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH9497)
     await playerFunctionPage.clickPlayerFunctions_Tab()
-    await page.pause()
     await playerFunctionPage.clickViewComment_Tab()
-
 
     await playerFunctionPage.validateCommentsFilter_Elements()
     await  gblFuntSteps.logOut()
