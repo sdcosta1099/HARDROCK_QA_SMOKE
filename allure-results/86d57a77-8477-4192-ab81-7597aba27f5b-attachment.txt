@@ -1,0 +1,10 @@
+------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------
+Environment selected =  QA
+Using QA Environment URL:https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx 
+User is log to Halo QA ADMIN Env
+PlayerID found = 807879520
+User clicks on Disrationary Comp Tab 
+Voidable Option Not Available
+View Comp Details button not available
+View Comp Details button not available
+log Out Btn not available

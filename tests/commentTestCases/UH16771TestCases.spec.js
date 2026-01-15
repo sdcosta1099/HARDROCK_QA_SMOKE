@@ -4,7 +4,7 @@ import{playerSearchSteps}from '../../testSteps/playerSearchSteps'
 import{playerFunctionsSteps}from '../../testSteps/playerFunctionsSteps'
 const testData= JSON.parse(JSON.stringify(require("../../testData.json")))
 
-test.skip('16771 CMP | Halo | Create New Comment Priority 2 from CMP', async ({ page }) => {
+test('16771 CMP | Halo | Create New Comment Priority 2 from CMP', async ({ page }) => {
      
 
     const gblFuntSteps = new globalFUnctionSteps(page)
@@ -13,10 +13,11 @@ test.skip('16771 CMP | Halo | Create New Comment Priority 2 from CMP', async ({ 
 
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
+    console.log("Create Comment Priority 2 on CMP then validate in Halo" )
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16771)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
-    await playerFunctionPage.clickAddComment_Tab()
+    await playerFunctionPage.addPriorityComments(2)
     await  gblFuntSteps.logOut()
      
     //await page.pause()

@@ -1,0 +1,13 @@
+------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------
+Environment selected =  QA
+Using QA Environment URL:https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx 
+User is log to Halo QA ADMIN Env
+OfferName = QA-Automation-Quick-Offer-UH9437-3839
+Quick Offer Name: QA-Automation-Quick-Offer-UH9437-3839
+User is on Configuration Tab
+ON Quick Offer Page as Expected
+Quick Offer Header Validated as Expected
+On Manage Quick Offer Page as expected 
+Quick Offer is Sorted by: Property as expected
+User logs out as expected
+-------------------------END OF QA AUTOMATION TEST EXECUTION -----------------------------------------

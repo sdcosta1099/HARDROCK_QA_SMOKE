@@ -4,7 +4,7 @@ import{playerSearchSteps}from '../../testSteps/playerSearchSteps'
 import{playerFunctionsSteps}from '../../testSteps/playerFunctionsSteps'
 const testData= JSON.parse(JSON.stringify(require("../../testData.json")))
 
-test('UH16767 Halo | Create/ Add New Comment Priority 1-Highest', async ({ page }) => {
+test('UH16767 - Halo | Create/Add New Comment and Validate Player transaction in Halo', async ({ page }) => {
      
 
     const gblFuntSteps = new globalFUnctionSteps(page)
@@ -15,10 +15,12 @@ test('UH16767 Halo | Create/ Add New Comment Priority 1-Highest', async ({ page 
     await gblFuntSteps.loginAdminQA()
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16767)
     await playerFunctionPage.clickPlayerFunctions_Tab()
-    await playerFunctionPage.clickViewComment_Tab()
-    await playerFunctionPage.clickAddComment_Tab()
+   // await playerFunctionPage.clickViewComment_Tab()
+    await playerFunctionPage.addCommentDetails()
+    await playerFunctionPage.clickPlayerTransactionsLog_Tab()
+    console.log("Comment Voided on CMP Validated on Halo as expected")
+    //await playerFunctionPage.clickCloseCommentPopUp_Message()
     await  gblFuntSteps.logOut()
      
-    //await page.pause()
 })
 

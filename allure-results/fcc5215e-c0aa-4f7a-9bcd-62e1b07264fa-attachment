@@ -1,0 +1,300 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UH-9493 HALO | Patron Dashboard | Player Function | View Comments | Settle Comment
+- Location: C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\commentTestCases\UH9493TestCases.spec.js:7:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('iframe[name="FramePopUp7"]').contentFrame().getByRole('button', { name: 'Settle/Void' })
+
+    at playerFunctionsSteps.clickSettleVoidComment_tab (C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\testSteps\playerFunctionsSteps.js:261:46)
+    at C:\Automation\OldHello\Regression_QA\HaloOldUI - QA\tests\commentTestCases\UH9493TestCases.spec.js:22:30
+```
+
+# Page snapshot
+
+```yaml
+- text: HALO 25.10.2 Logged in as TU_LAB_HALO_NIN_ADM
+- img "HR Casino, Northern Indiana"
+- link "Logout":
+  - img "Logout"
+- list:
+  - listitem:
+    - link "Player Functions"
+    - list:
+      - listitem:
+        - link "User Transaction Log"
+      - listitem:
+        - link "Enroll Player"
+      - listitem:
+        - link "Edit Patron Data"
+      - listitem: View Comment
+      - listitem: View Tier History
+      - listitem: Adjust Player Tier Credits
+      - listitem: Property Play Popup
+      - listitem: Adjust Bucket Value
+      - listitem:
+        - link "Merge"
+      - listitem: Guest Information Sync
+      - listitem: Push Player Enrollment
+      - listitem: Link Player
+      - listitem: Unlink Player
+      - listitem: Reset Pin
+      - listitem: Change PIN
+      - listitem: Manage Player Interests & Preferences
+      - listitem: Player Transaction Log
+      - listitem: Balance Transfer Logs
+      - listitem: Player Tier With Tier Match
+      - listitem: Manual Line Of Business Adjustment
+      - listitem:
+        - link "Event Check-in"
+      - listitem:
+        - link "Credit & Front Money Account Updates"
+      - listitem:
+        - link "Redeem Prizes"
+      - listitem:
+        - link "Manage Redeemed Prizes"
+      - listitem: Visit Appeasement
+  - listitem:
+    - link "Configuration"
+  - listitem:
+    - link "Administration"
+- table:
+  - rowgroup:
+    - row "PLAYER SEARCH - 807881503 - Jason Roy Go To Employee Dashboard 0":
+      - cell "PLAYER SEARCH"
+      - cell "- 807881503 - Jason Roy"
+      - cell "Go To Employee Dashboard":
+        - link "Go To Employee Dashboard":
+          - img
+      - cell:
+        - link "Expand Search":
+          - img
+      - cell "0"
+- table:
+  - rowgroup:
+    - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+      - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+        - table:
+          - rowgroup:
+            - row "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet":
+              - cell "Player Info Transactions Trips Tier History Tier Credits Earnings Offers Unity Points Earnings Earnings Running Balances Promotions Pending Earnings Earnings Overflow Earnings Contact Information Discretionary Comps Discounts Gaming Activity Events & Offers Free Play Rewards Reservations Comm Preferences Consent Management Discreet"
+            - row:
+              - cell
+```
+
+# Test source
+
+```ts
+  161 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'CMP', exact: true }).first().click();
+  162 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Edit' }).click();
+  163 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
+  164 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('cell', { name: 'LAWS' }).nth(3).click();
+  165 | //   await page.fpage.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Settle/Void' })rameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Delete' }).click();
+  166 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
+  167 | //   await .click();
+  168 | //   await page.frameLocator('iframe[name="FramePopUp7"]').getByRole('button', { name: 'Cancel' }).click();
+  169 |
+  170 | //   // ---------------------
+  171 | //   await context.close();
+  172 | //   await browser.close();
+  173 |         //this.playerTransactionLog_Arrow= page.getText()
+  174 |          this.playerTransactionLog_FisrtEntry = page.frameLocator('iframe[name="FramePopUp3"]').getByRole('cell', { name: 'Online account unlocked', exact: true });
+  175 |          this.playerTransactionLog_FisrtEntryDataValidation = page.frameLocator('iframe[name="FramePopUp3"]') 
+  176 |         /////////////////////////////Line Of Business Object Repository/////////////////////////////////////////////////
+  177 |         this.LineOfBusiness_Tab = page.getByText('Manual Line Of Business')
+  178 |
+  179 |         ////////////////////// visit Appeasement Object Repo//////////////////////
+  180 |         this.visitAppeasement_Tab= page.getByText('Visit Appeasement');
+  181 |         this.uniqueLocationVisited = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Unique Locations Visited :' })
+  182 |         this.locationVisited = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Locations Visited (Lifetime) :' })
+  183 |         this.hotelVisited = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Hotel Visits :' })
+  184 |         this.locationName = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Location Name', exact: true }) 
+  185 |         this.totalVisits = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Total Visits', exact: true })
+  186 |         this.firstVisitDate = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'First Visit Date', exact: true })
+  187 |         this.lastVisitDate = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Last Visit Date', exact: true })
+  188 |         this.visitVerified =  page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Verified', exact: true })
+  189 |
+  190 |
+  191 |
+  192 |         //this.closeVisitAppeasement_Tab = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Close' })
+  193 |         this.closeVisitAppeasement_Tab =   page.getByText('Close')
+  194 |
+  195 |
+  196 |
+  197 | //////////////////////////////Functions and Methods for Player FUnction ////////////////////////
+  198 |          
+  199 |     }
+  200 |
+  201 |     async clickPlayerFunctions_Tab(){
+  202 |         try{
+  203 |             await this.playerFunctions_Tab.click() 
+  204 |             console.log('User on player Function Tab')
+  205 |         }catch(e){
+  206 |             console.log('player Function Tab not visible')
+  207 |             throw e
+  208 |         }
+  209 |         
+  210 |     }
+  211 |
+  212 |
+  213 |     async clickPlayerTransactionsLog_Tab(){
+  214 |         try{
+  215 |
+  216 |             await this.playerTransactionLog_Tab.click() 
+  217 |             console.log('User on player Transaction Log  Tab')
+  218 |         }catch(e){
+  219 |             console.log('player Transaction Log  Tab not visible')
+  220 |             throw e
+  221 |         }
+  222 |         
+  223 |     }
+  224 |
+  225 |      
+  226 |
+  227 |
+  228 |     async clickPlayerFunctions_TabPT(){
+  229 |         try{
+  230 |
+  231 |             await this.playerFunctions_TabPT.click() 
+  232 |             console.log('User on player Function Tab  PT')
+  233 |         }catch(e){
+  234 |             console.log('player Function Tab not visible PT')
+  235 |             throw e
+  236 |         }
+  237 |         
+  238 |     }
+  239 |
+  240 |
+  241 |
+  242 |
+  243 |
+  244 |     //////////////////////////////Functions and Methods for Player FUnction tab and Comment tab ////////////////////////
+  245 |
+  246 |    
+  247 |     async clickViewComment_Tab(){
+  248 |         try{
+  249 |             await this.viewComment_Tab.click()
+  250 |             console.log('User on View comment tab  ')
+  251 |         }catch(e){
+  252 |             console.log('View comment tab Not visible ')
+  253 |             throw e
+  254 |         }
+  255 |
+  256 |     }
+  257 |
+  258 |
+  259 |     async clickSettleVoidComment_tab(){
+  260 |         try{
+> 261 |             await this.settleVoidComment_tab.click()
+      |                                              ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  262 |             await this.txtSettleVoidComment.fill(testData.scriptingData.comment)
+  263 |             await this.clickSubmit_SettleVoidComment_Btn.click() 
+  264 |             await this.clickConfirm_SettleVoidComment_Btn.click()
+  265 |             console.log('Settle VOid comment tab opens as expected')
+  266 |         }catch(e){
+  267 |             console.log('Settle VOid comment tab Not visible ')
+  268 |             throw e
+  269 |         }
+  270 |
+  271 |     }
+  272 |
+  273 |      
+  274 |     async validateAuthorizationComments(){
+  275 |         try{
+  276 |             await this.authorizationPassword.fill(testData.Credentials.QApassword)
+  277 |             await this.authorizationReason.selectOption('System Testing')
+  278 |             await this.authorizationComments.fill(testData.scriptingData.comment)
+  279 |             await this.authorizationSubmit.click()
+  280 |             await this.authorizationOK.click()
+  281 |             await this.authorizationClosePopUp.click()
+  282 |             console.log('Comments Authorize as expected')
+  283 |         }catch(e){
+  284 |             console.log('Comment Authorization tab Not visible ')
+  285 |             throw e
+  286 |         }
+  287 |
+  288 |     }
+  289 |
+  290 |
+  291 |
+  292 |     async validateCommentTab_Elements(){
+  293 |         try{
+  294 |
+  295 |             await this.settleVoidComment_tab.highlight({timeout:3000})
+  296 |             await this.editComment_Tab.highlight({timeout:3000})
+  297 |             await this.replyComment_Tab.highlight({timeout:3000})
+  298 |             await this.viewSettledVoidedComment_tab.highlight({timeout:3000})
+  299 |             await this.addComment_tab.highlight()
+  300 |             await this.CommentHeaderExpirationDate.highlight({timeout:3000}) 
+  301 |             
+  302 |             // const expirationDate= testData.CommentTestAccounts.CommentExpirationDate
+  303 |             // await expect(this.CommentHeaderExpirationDate).toHaveText(expirationDate)
+  304 |
+  305 |              console.log('Expiration Date Field is Present on Comment Tab as expected ')
+  306 |            //  await  this.validateCommentExpiration()
+  307 |                  
+  308 |             console.log('All Comment Tab Elements are present as expected  ')
+  309 |             await this.closeCommentFrame.click()
+  310 |         }catch(e){
+  311 |             console.log('Comment Tab Elements are NOT Displyed on Comment Pop Up')
+  312 |             throw e
+  313 |         }
+  314 |
+  315 |     }
+  316 |
+  317 |     async validateCommentExpiration(){
+  318 |
+  319 |         try{
+  320 |             const today = new Date();
+  321 |             const todayDate= today.toLocaleDateString()
+  322 |             await this.CommentHeaderExpirationDate.highlight({timeout:3000}) 
+  323 |             if( todayDate < this.CommentHeaderExpirationDate){
+  324 |                 console.log('Comment is Active as Expiration Date is greater than today date: ' +todayDate)
+  325 |             }else if(todayDate >= this.CommentHeaderExpirationDate){
+  326 |                 console.log('Comment is Expired as Expiration Date is less than or equal to today date: ' +todayDate)
+  327 |             }
+  328 |
+  329 |             const expirationDate= testData.CommentTestAccounts.CommentExpirationDate
+  330 |             await expect(this.CommentHeaderExpirationDate).toHaveText(expirationDate)
+  331 |             console.log('Comment Expiration Date: ' +expirationDate+ ' is Validated as expected ')
+  332 |         }catch(e){
+  333 |             console.log('Comment Expiration Date NOT Validated ')
+  334 |             throw e
+  335 |         }
+  336 |     }
+  337 |
+  338 |
+  339 |
+  340 |     async clickViewAllComment_Tab(){
+  341 |         try{
+  342 |             await this.viewComment_Tab.click()
+  343 |             console.log('User on View All comment tab  ')
+  344 |         }catch(e){
+  345 |             console.log('View Al comment tab Not visible ')
+  346 |             throw e
+  347 |         }
+  348 |
+  349 |     }
+  350 |
+  351 |     async clickCommentFirstRow_Tab(){
+  352 |         try{
+  353 |             //await this.page.pause()this wil change base on test comments entered in the commwent sections 
+  354 |            
+  355 |             await this.CommentFirstRow_Tab.first().click({timeout:5000})
+  356 |             console.log('Comment First Row tab Opens')
+  357 |         }catch(e){
+  358 |             console.log('Comment First Row Tab Not visible ')
+  359 |             throw e
+  360 |         }
+  361 |
+```

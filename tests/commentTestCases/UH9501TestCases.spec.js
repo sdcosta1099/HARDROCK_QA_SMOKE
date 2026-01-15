@@ -16,6 +16,7 @@ test('UH-9501 Priority Field Validations', async ({ page }) => {
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH9501)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
+    await playerFunctionPage.validateCommentPriorityField_Elements()
      
     await  gblFuntSteps.logOut()
      

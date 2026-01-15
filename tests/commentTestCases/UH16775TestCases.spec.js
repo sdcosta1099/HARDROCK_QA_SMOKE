@@ -16,7 +16,9 @@ test('UH-16775 Halo | Create/Add New Comment Never check box selected on Expired
     await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16775)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickViewComment_Tab()
-    await playerFunctionPage.clickAddComment_Tab()
+    await playerFunctionPage.addCommentDetails()
+    await playerFunctionPage.validateCommentNeverExpiredBox()
+    
     await  gblFuntSteps.logOut()
      
     //await page.pause()

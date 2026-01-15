@@ -23,10 +23,8 @@ test(' UH-9496 HALO | Patron Dashboard | Player Function | Comments |Expiration 
     await playerFunctionPage.validateCommentTab_Elements()
 
     //await playerFunctionPage.validateCommentExpiration()
-
    // await playerFunctionPage.clickPlayerTransactionsLog_Tab()
    // await playerFunctionPage.validateComment_PlayerTransactionLog()  
-
     //await playerFunctionPage.validateCommentTab_Elements()
     // await playerFunctionPage.clickPlayerTransactionsLog_Tab()
     // await playerFunctionPage.validateComment_PlayerTransactionLog() 

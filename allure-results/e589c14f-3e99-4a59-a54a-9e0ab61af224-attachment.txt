@@ -1,0 +1,13 @@
+------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------
+Environment selected =  QA
+Using QA Environment URL:https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx 
+User is log to Halo QA ADMIN Env
+PlayerID found = 807879762
+User on Comm Preference page
+User on Global Preferenes Tab 
+resend all Pending Email Verification Verbiage NOT AVAILABLE
+All Email Link Resent as expected
+CONFIRM All Email Link Resent as expected
+CLOSE All Email Link Resent Pop Up as expected
+User logs out as expected
+-------------------------END OF QA AUTOMATION TEST EXECUTION -----------------------------------------
