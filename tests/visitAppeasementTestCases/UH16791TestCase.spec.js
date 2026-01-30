@@ -13,10 +13,10 @@ test('UH-16791 Halo | Visit Appeasement | Add visit LOB others', async ({ page }
 
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
-    await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16791)
+    await searchPlayerID.searchPlayerID(testData.visitAppeasementTestAccounts.UH16791)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickVisitAppeasement_Tab()
-    
+    await playerFunctionPage.addVisits('LOB others','Universal Studios Hollywood')
     
     await gblFuntSteps.logOut()
      

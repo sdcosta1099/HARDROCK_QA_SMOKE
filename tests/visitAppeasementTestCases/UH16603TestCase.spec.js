@@ -4,7 +4,7 @@ import{playerSearchSteps}from '../../testSteps/playerSearchSteps'
 import{playerFunctionsSteps}from '../../testSteps/playerFunctionsSteps'
 const testData= JSON.parse(JSON.stringify(require("../../testData.json")))
 
-test('UH-16603 Validate Visit History', async ({ page }) => {
+test('UH-16603 Validate |  Validate Visit History ', async ({ page }) => {
      
 
     const gblFuntSteps = new globalFUnctionSteps(page)

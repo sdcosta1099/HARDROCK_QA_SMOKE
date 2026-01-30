@@ -3,7 +3,7 @@ import{globalFUnctionSteps}from '../../testSteps/gobalFunctionsSteps'
 import{playerSearchSteps}from '../../testSteps/playerSearchSteps'
 const testData= JSON.parse(JSON.stringify(require("../../testData.json")))
 
-test('UH-10416 test Case Description', async ({ page }) => {
+test(' UH-10437 HALO|Comm Preferences|Contact Information Tab|Player Information|Verify Dropdown list for Address Type', async ({ page }) => {
      
 
     const gblFuntSteps = new globalFUnctionSteps(page)

@@ -13,10 +13,10 @@ test('UH-16790 Halo | Visit Appeasement | Add visit Rock Shop', async ({ page })
 
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
-    await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16790)
+    await searchPlayerID.searchPlayerID(testData.visitAppeasementTestAccounts.UH16790)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickVisitAppeasement_Tab()
-    
+    await playerFunctionPage.addVisits('Rock Shop','Hard Rock Cafe Hollywood')
     
     await gblFuntSteps.logOut()
      

@@ -13,9 +13,11 @@ test('UH-16852 Halo | Visit Appeasement | Add 3 visits to a different LOB', asyn
 
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
-    await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16852)
+    await searchPlayerID.searchPlayerID(testData.visitAppeasementTestAccounts.UH16852)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickVisitAppeasement_Tab()
+    // await playerFunctionPage.addVisits('Cafe', 'Hard Rock Cafe Hollywood ')
+    await playerFunctionPage.validateVisitAppeasementPage()
     
     
     await gblFuntSteps.logOut()

@@ -13,12 +13,9 @@ test('UH-16789 Add visit Cafe - Patron with no of visits to a Cafe', async ({ pa
 
     await gblFuntSteps.gotoQALoginPage()
     await gblFuntSteps.loginAdminQA()
-    await searchPlayerID.searchPlayerID(testData.CommentTestAccounts.UH16789)
+    await searchPlayerID.searchPlayerID(testData.visitAppeasementTestAccounts.UH16789)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickVisitAppeasement_Tab()
-    
-    
-    await gblFuntSteps.logOut()
-     
-    //await page.pause()
+    await playerFunctionPage.addVisits('Cafe', 'Hard Rock Cafe Hollywood ')
+
 })
