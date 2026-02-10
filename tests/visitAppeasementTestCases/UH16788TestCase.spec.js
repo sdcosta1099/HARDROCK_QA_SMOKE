@@ -16,14 +16,9 @@ test('UH-16788 Add visit Hotel', async ({ page }) => {
     await searchPlayerID.searchPlayerID(testData.visitAppeasementTestAccounts.UH16788)
     await playerFunctionPage.clickPlayerFunctions_Tab()
     await playerFunctionPage.clickVisitAppeasement_Tab()
-    //await page.pause()
-    await playerFunctionPage.addVisits()
-
-    
-    // await this.page.pause()
-    // await playerFunctionPage.addVisitHotel('Test Hotel','2024-06-01','2024-06-05','Business Trip')
-    
-    
+    console.log('Validate visits for: Patron with an Activated account. Patron with NO previous visits added to Hotel.')
+    await playerFunctionPage.validateVisitAppeasementPage()
+   // await page.pause()
     await gblFuntSteps.logOut()
      
     //await page.pause()

@@ -194,8 +194,10 @@
             "UH16855":"807879446",
             "UH16856":"807879751",
             "UH16870":"807879446",
-            "Location Visited":"0"
-            },
+            "Location Visited":"0",
+            "VisitAppeasementReport":" http://haqasga-dbrpt-1.seminolehardrock.fl.local/reports/report/HaloCoreReports/VisitAppeasementReport"
+            
+        },
 
         "scriptingData":{
             "comment":"QA Test Comment Data"

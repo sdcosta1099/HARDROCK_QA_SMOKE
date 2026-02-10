@@ -134,6 +134,20 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
         this.lastVisitDate = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Last Visit Date', exact: true })
         this.visitVerified =  page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: 'Verified', exact: true })
 
+        this.property_txt = page.locator('iframe[name="FramePopUp1"]').contentFrame().getByText('Property :')
+        this.visitPropertyType = page.locator('#dialog1 iframe[name="FramePopUp1"]').contentFrame().locator('#ddlProperty')  
+        this.visitDate = page.locator('#dialog1 iframe[name="FramePopUp1"]').contentFrame().getByRole('img')
+        
+        this.datePick = page.locator('.igmc_Day igmc_TodayDay')
+        //page.locator('#dialog1 iframe[name="FramePopUp1"]').cui-datepicker-calendar tbody tr td aontentFrame().getByRole('cell', { name: '', exact: true })
+        this.revenueType_txt = page.locator('#dialog1 iframe[name="FramePopUp1"]').contentFrame().getByText('Revenue Type :')
+        this.visitRevenueType = page.locator('#dialog1 iframe[name="FramePopUp1"]').contentFrame().locator('#ddlRevenueType')
+        this.visitAppeasement_submitBtn = page.locator('#dialog1 iframe[name="FramePopUp1"]').contentFrame().getByRole('button', { name: 'Submit' }) 
+        this.visitAppeasement_cancelBtn = page.locator('#dialog1 iframe[name="FramePopUp1"]').contentFrame().getByRole('button', { name: 'Cancel' }) 
+        this.visitAppeasement_successMessage = page.locator('#dialog1 iframe[name="FramePopUp1"]').contentFrame().getByText('Visit Appeasement added successfully.')
+        this.visitAppeasement_errorMessage = page.locator('#dialog1 iframe[name="FramePopUp1"]').contentFrame().getByText('Error occurred while adding Visit Appeasement. Please try again.')
+        this.visitAppeasement_okBtn = page.locator('#dialog1 iframe[name="FramePopUp1"]').contentFrame().getByRole('button', { name: 'OK' })
+        this.visitAppeasement_closeBtn = page.locator('#dialog1 iframe[name="FramePopUp1"]').contentFrame().getByRole('button', { name: 'Close' })    
 
 
         //this.closeVisitAppeasement_Tab = page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Close' })
@@ -821,6 +835,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
             
             await this.closeVisitAppeasement_Tab.click()
 
+
         }catch(e){
             console.log('Visit Appeasement functions are NOT VALIDATED')
             throw e
@@ -830,25 +845,38 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
     }
 
 
-    async addVisits(){
+    async addVisits(revenueType, propertyType){
         try{
+            const today = new Date();
+           
+             console.log('Date Visited: ' +today.toDateString())
+             const date = today.getDate()
+             console.log('date is :' +date)
+             const now = today.toLocaleDateString('en-US')
+             console.log('date is US :' +now)
+            // await this.property_txt.click()
+             //await this.property_txt.highlight()
+             await this.visitPropertyType.selectOption('72')
+            console.log('User Selected Property Type: ' +propertyType)
 
+            await this.visitDate.click()
+          
+            //await this.page.locator(`//td[@role='gridcell' and text()='${date}']`).click()
 
-            //const  offerStartDate = this.getNextDate(1)
-            // const offerEndDate = this.getNextDate(2)
-             const   today = today.getDate()
-             console.log('date: ' +today)
+           await this.visitDate.click()
+           await this.visitDate.fill(now)
 
-           // await this.startDate_Txt.fill(offerStartDate);
-           // await this.endDate_Txt.fill(offerEndDate)
+            console.log('User Selected Visit Date: ' +now)
+           
+            await this.revenueType_txt.highlight()   
+            //await this.visitRevenueType.click()
+            await  this.visitRevenueType.selectOption('2')
+            console.log('User Selected Revenue Type: ' +revenueType)
+            //await this.page.pause()
 
-            // await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('img').click();
-            // await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: '22', exact: true }).click();
-            // await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Submit' }).click();
-            // await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Ok' }).click();
-
-            const date= getnext
-
+            await  this.visitAppeasement_submitBtn.click()
+            await  this.visitAppeasement_okBtn.click()
+           
             console.log('Vist appeasements added as expected')
         }catch(e){
             console.log('Vist appeasements NOT ABLE TO add')
@@ -861,6 +889,7 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
     async validateAddedVisits(){
         try{
             await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('img').click();
+            
             await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('cell', { name: '22', exact: true }).click();
             await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Submit' }).click();
             await page.frameLocator('#dialog1 iframe[name="FramePopUp1"]').getByRole('button', { name: 'Ok' }).click();
@@ -873,6 +902,29 @@ const testData = JSON.parse(JSON.stringify(require("../testData.json")))
 
 
     }
+ async openVisitAppeasementReport(){
+        try{
+            await this.page.goto(testData.visitAppeasementTestAccounts.VisitAppeasementReport)
+            console.log('Visit Appeasement Report Opened as expected')
+        }catch(e){
+            console.log('Visit Appeasement Report NOT able to be Opened')
+            throw e
+        }
+
+    }
+
+
+    async closeVisitAppeasementReport(){
+        try{
+            this.page.close()
+            console.log('Visit Appeasement Report Closes as expected')
+        }catch(e){
+            console.log('Visit Appeasement Report NOT able to be Close')
+            throw e
+        }
+
+    }
+     
 
 
 ////////////////Event Check-In Tab 
