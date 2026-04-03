@@ -1,7 +1,0 @@
-------------------BEGIN OF QA AUTOMATION TEST EXECUTION-------------------------------
-Environment selected =  QA
-Using QA Environment URL:https://haqasga-wbapp-1.seminolehardrock.fl.local/HaloWebApp/Login.aspx 
-NON ADMIN User with View Only Permission is log to Halo QA Env
-PlayerID found = 807879426
-Comment Pop Up is not Displayed
-Comm Preference page Tab not found
